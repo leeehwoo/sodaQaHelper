@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta charset="UTF-8">
+        <title>Main Camera Scheme</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery.qrcode.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <style>
+            #showQrCode{position:relative;}
+            #ul_list{position:absolute;top:820px;left:100px;}
+            #ul_list li{height:100px;list-style:none;}
+	    </style>
+    </head>
+
+    <body>
+        <h1>SODA/Tianyan QA Helper</h1>
+        <h2>Main Camera Scheme</h2>
+        <br>
+        <h2>Scheme Select</h2>
+        선택하는 Camera에 따라 Page 이동 (Page 3개 생성, 추가 Spec은 Page 생성 및 Button 추가하여 이동하는 방식?)
+        <br>
+        Main Camera를 선택하면 go? Scheme / Discover를 선택하면 studio? or eventCamera Scheme / Beauty Recipes를 선택하면 eventWebCaemra? Scheme
+        <br>
+        <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
+        <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
+        <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+        <h2>App Select</h2>
+        <select name="app" id="appSelect">
+            <option value="soda">SODA REAL</option>
+            <option value="sodab">SODA BETA</option>
+            <option value="tianyan">Tianyan REAL</option>
+            <option value="tianyanb">Tianyan BETA</option>
+        </select>
+        <h2>Style</h2>
+        Style ID : <input type="number" id="mainCameraStyleId">
+        <button id="mainCameraStyleSet">SET</button>
+        <button id="mainCameraStyleUnset">UNSET</button>
+        //
+        <button id="moveMainStyleList" onclick="location.href='mainStyleListPage.html'">Style List</button>
+        <br>
+        Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성?
+        <h2>Filter</h2>
+        Filter ID : <input type="number" id="mainCameraFilterId">
+        <button id="mainCameraFilterSet">SET</button>
+        <button id="mainCameraFilterUnset">UNSET</button>
+        //
+        <button id="moveMainFilterList" onclick="location.href='mainFilterListPage.html'">Filter List</button>
+        <h2>Face Shape</h2>
+        <select name="mainCameraFaceShape" id="mainCameraFaceShape">
+            <option value="original">original</option>
+            <option value="natural">natural</option>
+            <option value="baby">baby</option>
+            <option value="slim">slim</option>
+            <option value="beauty">beauty</option>
+            <option value="basic">basic</option>
+            <option value="daily">daily</option>
+        </select>
+        <button id="mainCameraFaceShapeSet">SET</button>
+        <button id="mainCameraFaceShapeUnset">UNSET</button>
+        <h2>Beauty</h2>
+        <select name="mainCameraBeautyKeyname" id="mainCameraBeauty">
+            <option value="bodyslim">bodyslim</option>
+            <option value="head">head</option>
+            <option value="smooth">smooth</option>
+            <option value="balance">balance</option>
+            <option value="clear">clear</option>
+            <option value="toneup">toneup</option>
+            <option value="enlarge">enlarge</option>
+            <option value="narrow">narrow</option>
+            <option value="wrinkle">wrinkle</option>
+            <option value="cheekbone">cheekbone</option>
+            <option value="slim">slim</option>
+            <option value="short">short</option>
+            <option value="brow">brow</option>
+            <option value="clarity">clarity</option>
+            <option value="eyebag">eyebag</option>
+            <option value="teeth">teeth</option>
+            <option value="lift">lift</option>
+            <option value="chin">chin</option>
+            <option value="jawbone">jawbone</option>
+            <option value="span">span</option>
+            <option value="alar">alar</option>
+            <option value="noselength">noselength</option>
+            <option value="temple">temple</option>
+            <option value="vshape">vshape</option>
+            <option value="position">position</option>
+            <option value="eyesize">eyesize</option>
+            <option value="eyewidth">eyewidth</option>
+            <option value="corner">corner</option>
+            <option value="pupil">pupil</option>
+            <option value="inner">inner</option>
+            <option value="eyelength">eyelength</option>
+            <option value="under">under</option>
+            <option value="eyetail">eyetail</option>
+            <option value="plim">plim</option>
+            <option value="nose">nose</option>
+            <option value="bridge">bridge</option>
+            <option value="radixnasi">radixnasi</option>
+            <option value="tip">tip</option>
+            <option value="mouth">mouth</option>
+            <option value="philtrum">philtrum</option>
+            <option value="lipwidth">lipwidth</option>
+            <option value="upperlip">upperlip</option>
+            <option value="lowerlip">lowerlip</option>
+            <option value="mlip">mlip</option>
+            <option value="smile">smile</option>
+            <option value="thick">thick</option>
+            <option value="eyebrowlift">eyebrowlift</option>
+            <option value="glabella">glabella</option>
+            <option value="eyebrow">eyebrow</option>
+            <option value="shape">shape</option>
+            <option value="front">front</option>
+            <option value="behind">behind</option>
+        </select>
+        / Intensity : <input type="number" id="mainCameraBeautyIntensity" max="100">
+        <button id="mainCameraBeautySet">SET</button>
+        <button id="mainCameraBeautyUnset">UNSET</button>
+        <h2>Option</h2>
+        <select name="schemeOption" id="schemeOption">
+            <option value="autoDownload">Auto DL</option>
+            <option value="manualDownload">Manual DL</option>
+            <option value="frontCamera">Front Camera</option>
+            <option value="backCamera">Back Camera</option>
+        </select>
+        <button id="mainCameraOptionSet">SET</button>
+        <button id="mainCameraOptionUnset">UNSET</button>
+        <h2>* Scheme</h2>
+        <input id="mainUrl" readonly style="width: 1000px;">
+        <br>
+        <button id="schemeCopy">Scheme Copy</button>
+        <br>
+        <h2>*QR Code</h2>
+        <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
+        <input type="reset" id="reset" value="Reset">
+        <br>
+        <br>
+        <div id="showQrCode">
+            <ul id="ul_list"></ul>
+        </div>
+    </body>
+</html>
