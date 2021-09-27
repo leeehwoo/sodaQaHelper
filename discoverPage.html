@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta charset="UTF-8">
+        <title>Main Camera Scheme</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery.qrcode.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <style>
+            #showQrCode{position:relative;}
+            #ul_list{position:absolute;top:820px;left:100px;}
+            #ul_list li{height:100px;list-style:none;}
+	    </style>
+    </head>
+
+    <body>
+        <h1>SODA/Tianyan QA Helper</h1>
+        <h2>Discover Scheme</h2>
+        <br>
+        <h2>Scheme Select</h2>
+        <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
+        <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
+        <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+        <h2>App Select</h2>
+        <select name="app" id="appSelect">
+            <option value="soda">SODA REAL</option>
+            <option value="sodab">SODA BETA</option>
+            <option value="tianyan">Tianyan REAL</option>
+            <option value="tianyanb">Tianyan BETA</option>
+        </select>
+        <h2>Template</h2>
+        여기서 사용하는 스킴은 soda://studio?templateId=TemplateID
+        <br>
+        Template Id : <input type="number" id="templateId">
+        <button id="templateIdSet">set</button>
+        <button id="templateIdUnset">unset</button>
+        <h2>Discover Event Camera</h2>
+        여기서 사용하는 스킴은 soda://eventCamera?cameraPosition=cameraPosition&styleId=styleId&filterId=filterId (실제 admin 사용 스킴)
+        <br>
+        <h4>Camera Position</h4>
+        <select name="discoverCameraPosition" id="discoverCameraPosotion">
+            <option value="discoverFrontCamera">Front Camera</option>
+            <option value="discoverBackCamera">Back Camera</option>
+        </select>
+        <button id="discoverCameraPositionSet">set</button>
+        <button id="discoverCameraPositionUnset">unset</button>
+        <h4>Style</h4>
+        Style ID : <input type="number" id="discoverStyleId">
+        <button id="discoverStyleIdSet">SET</button>
+        <button id="discoverStyleIdUnset">UNSET</button>
+        <h4>Filter</h4>
+        Filter ID : <input type="number" id="discoverFilterId">
+        <button id="discoverFilterIdSet">SET</button>
+        <button id="discoverFilterIdUnset">UNSET</button>
+        <h2>* Scheme</h2>
+        <input id="mainUrl" readonly style="width: 1000px;">
+        <br>
+        <button id="schemeCopy">Scheme Copy</button>
+        <br>
+        <h2>*QR Code</h2>
+        <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
+        <input type="reset" id="reset" value="Reset">
+        <br>
+        <br>
+        <div id="showQrCode">
+            <ul id="ul_list"></ul>
+        </div>
+    </body>
+</html>
