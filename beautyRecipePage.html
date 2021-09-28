@@ -4,14 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta http-equiv="Pragma" content="no-cache">
         <meta charset="UTF-8">
-        <title>Main Camera Scheme</title>
+        <title>Beauty Recipe Scheme</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript" src="jquery.qrcode.js"></script>
         <script type="text/javascript" src="qrcode.js"></script>
         <style>
             #showQrCode{position:relative;}
-            #ul_list{position:absolute;top:820px;left:100px;}
-            #ul_list li{height:100px;list-style:none;}
+            #qrUl{position:absolute;top:820px;left:100px;}
+            #qrUl li{height:100px;list-style:none;position:relative;}
 	    </style>
     </head>
 
@@ -121,9 +121,8 @@
         <input type="reset" id="reset" value="Reset">
         <br>
         <br>
-        <div id="showQrCode">
-            <ul id="qrUl"></ul>
-        </div>
+        <div id="showQrCode"></div>
+        <ul id="qrUl"></ul>
 
         <script>
             const appMain = {
