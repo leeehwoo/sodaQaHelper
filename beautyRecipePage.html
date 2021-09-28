@@ -4,14 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <meta http-equiv="Pragma" content="no-cache">
         <meta charset="UTF-8">
-        <title>Beauty Recipe Scheme</title>
+        <title>Beauty Recipes</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script type="text/javascript" src="jquery.qrcode.js"></script>
         <script type="text/javascript" src="qrcode.js"></script>
         <style>
             #showQrCode{position:relative;}
-            #qrUl{position:absolute;top:820px;left:100px;}
-            #qrUl li{height:100px;list-style:none;position:relative;}
+		    #qrUl{position:absolute;top:910px;left:100px;}
+		    #qrUl li{height:100px;list-style:none;}
 	    </style>
     </head>
 
@@ -116,13 +116,15 @@
         <br>
         <button id="schemeCopy">Scheme Copy</button>
         <br>
-        <h2>*QR Code</h2>
+        <h2>* QR Code</h2>
         <input type="button" id="addQrcode" value="Show QR Code" onclick="actionAdd()">
-        <input type="reset" id="reset" value="Reset">
+        <input type="button" id="reset" value="Reset">
         <br>
         <br>
         <div id="showQrCode"></div>
-        <ul id="qrUl"></ul>
+            <ul id="qrUl">
+
+            <ul>
 
         <script>
             const appMain = {
@@ -293,8 +295,8 @@
             $("#addQrcode").click(function () {
                 jQuery("#showQrCode").qrcode({
                     render: "table",
-                    width: 130,
-                    height: 130,
+                    width: 100,
+                    height: 100,
                     text: $("#mainUrl").val()
                 });
                 // $('#name').html($("#mainUrl").val());
