@@ -117,14 +117,211 @@
         <button id="schemeCopy">Scheme Copy</button>
         <br>
         <h2>*QR Code</h2>
-        <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
+        <input type="button" id="addQrcode" value="Show QR Code" onclick="actionAdd()">
         <input type="reset" id="reset" value="Reset">
         <br>
         <br>
         <div id="showQrCode">
-            <ul id="ul_list"></ul>
+            <ul id="qrUl"></ul>
         </div>
 
-        
+        <script>
+            const appMain = {
+                url: '',
+                style: '',
+                filter: '',
+                faceShape: '',
+                faceShpaeIntensity: '',
+                beauty: [],
+                allUrl: '',
+            }
+
+            $(function () {
+                appMain.url = $("#appSelect").val() + "://";
+
+                setUrl();
+
+                $("#appSelect").change(function() {
+                    appMain.url = $(this).val() + "://";
+                    setUrl();
+                });
+
+                $("#beautyRecipeStyleIdSet").click(function () {
+                    var styleId = $("#beautyRecipeStyleId").val();
+                    if (styleId === '') {
+                        return false;
+                    }
+                    appMain.style = 'styleId=' + styleId;
+                    setUrl();
+                });
+
+                $("#beautyRecipeStyleIdUnset").click(function () {
+                    if(appMain.style.indexOf("beautyRecipeStyleId") !== -1) {
+                        appMain.style = '';
+                        setUrl();
+                    }
+                });
+
+                $("#beautyRecipeFilterIdSet").click(function () {
+                    var filterId = $("beautyRecipeFilterId").val();
+                    if (filterId === '') {
+                        return false;
+                    }
+                    appMain.filter = 'filterId=' + filterId;
+                    setUrl();
+                });
+
+                $("#beautyRecipeFilterIdUnset").click(function () {
+                    if(appMain.filter.indexOf("beautyRecipeFilterId") !== -1) {
+                        appMain.filter = '';
+                        setUrl();
+                    }
+                });
+
+                $("#beautyRecipeFaceShape").change(function () {
+                    var face = $(this).val();
+                    appMain.faceShape = 'faceShape=' + face;
+                    setUrl();
+                });
+
+                $("#beautyRecipeFaceShapeSet").click(function () {
+                    var face = $("#beautyRecipeFaceShape").val();
+                    appMain.faceShape = 'faceShape=' + face;
+                    setUrl();
+                });
+
+                $("#beautyRecipeFaceShapeUnset").click(function () {
+                    appMain.faceShape = '';
+                    setUrl();
+                });
+
+                $("#beautyRecipeFaceShapeIntensitySet").click(function () {
+                    var faceIntensity = $("#beautyRecipeFaceShapeIntensity").val();
+                    if (faceIntensity === '') {
+                        return false;
+                    }
+                    appMain.faceShpaeIntensity = 'faceShapeIntensity=' + faceIntensity;
+                    setUrl();
+                });
+
+                $("#beautyRecipeFaceShapeIntensityUnset").click(function () {
+                    appMain.faceShpaeIntensity = '';
+                    setUrl();
+                });
+                
+                $("#beautyRecipeBeautySet").click(function () {
+                    var beautySelect = $("#beautyRecipeBeauty").val();
+                    var beautyIntensity = $("#beautyRecipeBeautyIntensity").val();
+
+                    if (beautyIntensity === '') {
+                        return false;
+                    }
+
+                    var addKeynameIntensity = appMain.beauty.some(p => p.name === beautySelect);
+
+                    if (addKeynameIntensity) {
+                        var i = appMain.beauty.findIndex(p => p.name === beautySelect);
+                        appMain.beauty[i].val = beautyIntensity;
+                    } else {
+                        appMain.beauty.push({ 'name' : beautySelect, 'val' : beautyIntensity});
+                    }
+
+                    setUrl();
+                });
+
+                $("#beautyRecipeBeautyUnset").click(function () {
+                    var beautySelect = $("#beautyRecipeBeauty").val();
+                    for (var i = 0; i < appMain.beauty.length; i++) {
+                        if (appMain.beauty[i] === beautySelect) {
+                            appMain.beauty.splice(i, 1);
+                        }
+                    }
+                    setUrl();
+                });
+
+                $("#mainUrl").click(function () {
+                    var url = $(this).val();
+                    window.open(url);
+                });
+            })
+
+            function setUrl() {
+                const param = [appMain.style, appMain.filter, appMain.faceShape, appMain.faceShpaeIntensity, appMain.beauty]
+                console.log(param);
+                var all = appMain.url + "eventWebCamera?type=beautyRecipe";
+                var ck = false;
+                for (var i = 0; i < param.length; i++) {
+                    if (Array.isArray(param[i])) {
+                        if (param[i].length === 0) {
+
+                        }
+                        else {
+                            if (ck) {
+                                for (var j = 0; j < param[i].length; j++) {
+                                    all += '&' + param[i][j].name + '=' +param[i][j].val;
+                                }
+                            }
+                            else {
+                                for (var j = 0; j < param[i].length; j++) {
+                                    if (j === 0) {
+                                        all += '&' + param[i][j].name + '=' + param[i][j].val;
+                                    }
+                                    else {
+                                        all += '&' + param[i][j].name + '=' + param[i][j].val;
+                                    }
+                                }
+                                ck = true;
+                            }
+                        }
+                    } else {
+                        if (param[i] === '') {
+
+                        } else {
+                            if (ck) {
+                                all += '&' + param[i];
+                            } else {
+                                all += '&' + param[i];
+                                ck = true;
+                            }
+                        }
+                    }
+                }
+                $("#mainUrl").val(all);
+                appMain.allUrl = all;
+            }
+
+            //qrcode 보기
+            $("#addQrcode").click(function () {
+                jQuery("#showQrCode").qrcode({
+                    render: "table",
+                    width: 130,
+                    height: 130,
+                    text: $("#mainUrl").val()
+                });
+                // $('#name').html($("#mainUrl").val());
+            })
+
+            function actionAdd(){
+			var textAdd = $("#mainUrl").val(); //입력할 글씨
+			var qrUl = $("#qrUl"); //ul_list선언
+			qrUl.append("<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
+            }
+
+            //qrcode reset
+            $("#reset").click(function () {
+                $("#showQrCode").empty();
+                $("#qrUl").empty();
+            })
+
+            //scheme copy
+            jQuery("#schemeCopy").click (
+                function() {
+                    var urlInfo = document.getElementById("mainUrl");
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add scheme to clipboard!")
+                }
+            )
+        </script>
     </body>
 </html>
