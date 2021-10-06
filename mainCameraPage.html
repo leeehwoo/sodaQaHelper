@@ -60,6 +60,9 @@
         </select>
         <button id="mainCameraFaceShapeSet">SET</button>
         <button id="mainCameraFaceShapeUnset">UNSET</button>
+        / Intensity : <input type="number" id="mainCameraFaceShapeIntensity" max="100">
+        <button id="mainCameraFaceShapeIntensitySet">SET</button>
+        <button id="mainCameraFaceShapeIntensityUnset">UNSET</button>
         <h2>Beauty</h2>
         <select name="mainCameraBeautyKeyname" id="mainCameraBeauty">
             <option value="bodyslim">bodyslim</option>
@@ -137,8 +140,92 @@
         <input type="reset" id="reset" value="Reset">
         <br>
         <br>
-        <div id="showQrCode">
-            <ul id="ul_list"></ul>
-        </div>
+        <div id="showQrCode"></div>
+            <ul id="ul_list">
+                
+            <ul>
+
+        <script>
+            const mainCameraAppMain = {
+                mainCameraUrl: '',
+                mainCameraStyle: '',
+                mainCameraFilter: '',
+                mainCameraFaceShape: '',
+                mainCameraFaceShapeIntensity: '',
+                mainCameraBeauty: [],
+                mainAllUrl: '',
+            }
+
+            $(function () {
+                mainCameraAppMain.mainAllUrl = $("#appSelect").val() + "://";
+                mainCameraSetUrl();
+
+                $("#appSelect").change(function() {
+                    mainCameraAppMain.mainAllUrl = $(this).val() + "://";
+                    mainCameraSetUrl();
+                });
+
+                $("#mainCameraStyleSet").click(function() {
+                    var mainStyleId = $("#mainCameraStyleId").val();
+                    if (mainStyleId === '') {
+                        return false;
+                    }
+                    mainCameraAppMain.mainCameraStyle = 'styleId=' + mainStyleId;
+                    mainCameraSetUrl();
+                });
+
+                $("#mainCameraStyleUnset").click(function() {
+                    if(mainCameraAppMain.mainCameraStyle.indexOf("#mainCameraStyleId") !== -1) {
+                        mainCameraAppMain.mainCameraStyle = '';
+                        mainCameraSetUrl();
+                    }
+                });
+            })
+
+            function mainCameraSetUrl() {
+                const mainParam = [mainCameraAppMain.mainCameraStyle, mainCameraAppMain.mainCameraFilter, mainCameraAppMain.mainCameraFaceShape, mainCameraAppMain.mainCameraFaceShapeIntensity, mainCameraAppMain.mainCameraBeauty]
+                console.log(mainParam);
+                var StartScheme = mainCameraAppMain.mainAllUrl + "go?";
+                var cheakScheme = false;
+                for (var i = 0; i > mainParam.length; i++) {
+                    if (Array.isArray(mainParam[i])) {
+                        if (mainParam[i].length === 0) {
+
+                        }
+                        else {
+                            if (cheakScheme) {
+                                for (var j = 0; j < mainParam[i].length; j++) {
+                                    StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                                }
+                            }
+                            else {
+                                for (var j = 0; j < mainParam[i].length; j++) {
+                                    if (j === 0) {
+                                        StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                                    }
+                                    else {
+                                        StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                                    }
+                                }
+                                cheakScheme = true;
+                            }
+                        }
+                    } else {
+                        if (mainParam[i] === '') {
+
+                        } else {
+                            if (checkScheme) {
+                                StartScheme += '&' + mainParam[i];
+                            } else {
+                                StartScheme += '&' + mainParam[i];
+                                cheakScheme = true;
+                            }
+                        }
+                    }
+                }
+                $("#mainUrl").val(StartScheme);
+                mainCameraAppMain.mainAllUrl = StartScheme;
+            }
+        </script>
     </body>
 </html>

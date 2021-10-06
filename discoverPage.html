@@ -1,71 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta charset="UTF-8">
-        <title>Discover Scheme</title>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="jquery.qrcode.js"></script>
-        <script type="text/javascript" src="qrcode.js"></script>
-        <style>
-            #showQrCode{position:relative;}
-            #ul_list{position:absolute;top:820px;left:100px;}
-            #ul_list li{height:100px;list-style:none;}
-	    </style>
-    </head>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta charset="UTF-8">
+		<title>Discover Scheme</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="jquery.qrcode.js"></script>
+		<script type="text/javascript" src="qrcode.js"></script>
+		<style>
+			#showQrCode{position:relative;}
+			#qrUl{position:absolute;top:63px;left:100px;}
+			#qrUl li{height:100px;list-style:none;}
+		</style>
+	</head>
 
-    <body>
-        <h1>SODA/Tianyan QA Helper</h1>
-        <h2>Discover Scheme</h2>
-        <br>
-        <h2>Scheme Select</h2>
-        <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
-        <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
-        <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
-        <h2>App Select</h2>
-        <select name="app" id="appSelect">
-            <option value="soda">SODA REAL</option>
-            <option value="sodab">SODA BETA</option>
-            <option value="tianyan">Tianyan REAL</option>
-            <option value="tianyanb">Tianyan BETA</option>
-        </select>
-        <h2>Template</h2>
-        여기서 사용하는 스킴은 soda://studio?templateId=TemplateID
-        <br>
-        Template Id : <input type="number" id="templateId">
-        <button id="templateIdSet">set</button>
-        <button id="templateIdUnset">unset</button>
-        <h2>Discover Event Camera</h2>
-        여기서 사용하는 스킴은 soda://eventCamera?cameraPosition=cameraPosition&styleId=styleId&filterId=filterId (실제 admin 사용 스킴)
-        <br>
-        <h4>Camera Position</h4>
-        <select name="discoverCameraPosition" id="discoverCameraPosotion">
-            <option value="discoverFrontCamera">Front Camera</option>
-            <option value="discoverBackCamera">Back Camera</option>
-        </select>
-        <button id="discoverCameraPositionSet">set</button>
-        <button id="discoverCameraPositionUnset">unset</button>
-        <h4>Style</h4>
-        Style ID : <input type="number" id="discoverStyleId">
-        <button id="discoverStyleIdSet">SET</button>
-        <button id="discoverStyleIdUnset">UNSET</button>
-        <h4>Filter</h4>
-        Filter ID : <input type="number" id="discoverFilterId">
-        <button id="discoverFilterIdSet">SET</button>
-        <button id="discoverFilterIdUnset">UNSET</button>
-        <h2>* Scheme</h2>
-        <input id="mainUrl" readonly style="width: 1000px;">
-        <br>
-        <button id="schemeCopy">Scheme Copy</button>
-        <br>
-        <h2>*QR Code</h2>
-        <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
-        <input type="reset" id="reset" value="Reset">
-        <br>
-        <br>
-        <div id="showQrCode">
-            <ul id="ul_list"></ul>
-        </div>
-    </body>
+	<body>
+		<h1>SODA/Tianyan QA Helper</h1>
+		<h2>Discover Scheme</h2>
+		<br>
+		<h2>Scheme Select</h2>
+		<button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
+		<button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
+		<button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+		<h2>App Select</h2>
+		<select name="app" id="appSelect">
+			<option value="soda">SODA REAL</option>
+			<option value="sodab">SODA BETA</option>
+			<option value="tianyan">Tianyan REAL</option>
+			<option value="tianyanb">Tianyan BETA</option>
+		</select>
+		<h2>Template</h2>
+		여기서 사용하는 스킴은 soda://studio?templateId=TemplateID
+		<br>
+		Template Id : <input type="number" id="templateId">
+		<button id="templateIdSet">set</button>
+		<button id="templateIdUnset">unset</button>
+		<h2>Discover Event Camera</h2>
+		여기서 사용하는 스킴은 soda://eventCamera?cameraPosition=cameraPosition&styleId=styleId&filterId=filterId (실제 admin 사용 스킴)
+		<br>
+		<h4>Camera Position</h4>
+		<select name="discoverCameraPosition" id="discoverCameraPosotion">
+			<option value="0">Front Camera</option>
+			<option value="1">Back Camera</option>
+		</select>
+		<button id="discoverCameraPositionSet">set</button>
+		<button id="discoverCameraPositionUnset">unset</button>
+		<h4>Style</h4>
+		Style ID : <input type="number" id="discoverStyleId">
+		<button id="discoverStyleIdSet">SET</button>
+		<button id="discoverStyleIdUnset">UNSET</button>
+		<h4>Filter</h4>
+		Filter ID : <input type="number" id="discoverFilterId">
+		<button id="discoverFilterIdSet">SET</button>
+		<button id="discoverFilterIdUnset">UNSET</button>
+		<h2>* Scheme</h2>
+		<input id="mainUrl" readonly style="width: 1000px;">
+		<br>
+		<button id="schemeCopy">Scheme Copy</button>
+		<br>
+		<h2>*QR Code</h2>
+		<input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
+		<input type="reset" id="reset" value="Reset">
+		<br>
+		<br>
+		<div id="showQrCode">
+			<div id="showQrCodeDiv"></div>
+			<ul id="qrUl"><ul>
+		</div>
+
+		<script>
+			const appMain = {
+				url: '',
+				template: '',
+				style: '',
+				filter: '',
+				position: '',
+				allUrl: '',
+			}
+
+			$(function () {
+				appMain.url = $("#appSelect").val() + "://studio";
+
+				setUrl();
+
+				$("#appSelect").change(function() {
+					if (appMain.template) {
+						appMain.url = $("#appSelect").val() + "://studio";
+					} else if( appMain.style || appMain.filter ) {
+						appMain.url = $("#appSelect").val() + "://eventCamera";
+					} else {
+						appMain.url = $(this).val() + "://studio";
+					}
+					setUrl();
+				});
+
+				$("#templateIdSet").click(function () {
+					var templateId = $("#templateId").val();
+					if (templateId === '') {
+						return false;
+					}
+					appMain.url = $("#appSelect").val() + "://studio";
+					appMain.template = 'templateId=' + templateId;
+					reSetEventCamera ();
+					setUrl();
+				});
+
+				$("#templateIdUnset").click(function () {
+					if(appMain.template.indexOf("templateId") !== -1) {
+						appMain.template = '';
+						setUrl();
+					}
+				});
+
+
+
+
+				$("#discoverCameraPosotion").change(function () {
+					var cameraPosition = $(this).val();
+					appMain.position = 'cameraPosition=' + cameraPosition;
+					setUrl();
+				});
+
+				$("#discoverCameraPositionSet").click(function () {
+					var cameraPosition = $("#discoverCameraPosotion").val();
+					appMain.position = 'cameraPosition=' + cameraPosition;
+					setUrl();
+				});
+
+				$("#discoverCameraPositionUnset").click(function () {
+					appMain.position = '';
+					setUrl();
+				});
+
+
+
+
+				$("#discoverStyleIdSet").click(function () {
+					var styleId = $("#discoverStyleId").val();
+					if (styleId === '') {
+						return false;
+					}
+					appMain.url = $("#appSelect").val() + "://eventCamera";
+					appMain.style = 'styleId=' + styleId;
+					reSetTemplate ();
+					setUrl();
+				});
+
+				$("#discoverStyleIdUnset").click(function () {
+					if(appMain.style.indexOf("styleId") !== -1) {
+						appMain.style = '';
+						setUrl();
+					}
+				});
+
+				$("#discoverFilterIdSet").click(function () {
+					var filterId = $("#discoverFilterId").val();
+					if (filterId === '') {
+						return false;
+					}
+					appMain.url = $("#appSelect").val() + "://eventCamera";
+					appMain.filter = 'filterId=' + filterId;
+					reSetTemplate ();
+					setUrl();
+				});
+
+				$("#discoverFilterIdUnset").click(function () {
+					if(appMain.filter.indexOf("filterId") !== -1) {
+						appMain.filter = '';
+						setUrl();
+					}
+				});
+
+
+
+				$("#mainUrl").click(function () {
+					var url = $(this).val();
+					window.open(url);
+				});
+			})
+
+			function reSetTemplate () {
+				appMain.template = '';
+			}
+
+			function reSetEventCamera () {
+				appMain.style = '';
+				appMain.filter = '';
+			}
+
+			function setUrl() {
+				const param = [appMain.template, appMain.style, appMain.filter, appMain.position]
+				console.log(param);
+				var all = appMain.url;
+				var ck = false;
+				for (var i = 0; i < param.length; i++) {
+					if (Array.isArray(param[i])) {
+						for (var j = 0; j < param[i].length; j++) {
+							if (ck) {
+								all += '&' + param[i][j].name + '=' +param[i][j].val;
+							} else {
+								all += '?' + param[i][j].name + '=' +param[i][j].val;
+								ck = true;
+							}
+						}
+					} else {
+						if (param[i] === '') {
+						} else {
+							if (ck) {
+								all += '&' + param[i];
+							} else {
+								all += '?' + param[i];
+								ck = true;
+							}
+						}
+					}
+				}
+				$("#mainUrl").val(all);
+				appMain.allUrl = all;
+			}
+
+			//qrcode 보기
+			$("#addQrcode").click(function () {
+				jQuery("#showQrCode #showQrCodeDiv").qrcode({
+					render: "table",
+					width: 100,
+					height: 100,
+					text: $("#mainUrl").val()
+				});
+				// $('#name').html($("#mainUrl").val());
+			})
+
+			function actionAdd(){
+				var textAdd = $("#mainUrl").val(); //입력할 글씨
+				var qrUl = $("#qrUl"); //ul_list선언
+				qrUl.append("<li>"+textAdd+"</li>"); //qrUl안쪽에 li추가
+			}
+
+			//qrcode reset
+			$("#reset").click(function () {
+				$("#showQrCode #showQrCodeDiv").empty();
+				$("#qrUl").empty();
+			})
+
+			//scheme copy
+			jQuery("#schemeCopy").click (
+				function() {
+					var urlInfo = document.getElementById("mainUrl");
+					urlInfo.select();
+					document.execCommand("Copy");
+					alert("Add scheme to clipboard!")
+				}
+			)
+		</script>
+	</body>
 </html>
