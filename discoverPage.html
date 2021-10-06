@@ -10,8 +10,8 @@
 		<script type="text/javascript" src="qrcode.js"></script>
 		<style>
 			#showQrCode{position:relative;}
-			#ul_list{position:absolute;top:63px;left:100px;}
-			#ul_list li{height:100px;list-style:none;}
+			#qrUl{position:absolute;top:63px;left:100px;}
+			#qrUl li{height:100px;list-style:none;}
 		</style>
 	</head>
 
@@ -65,7 +65,8 @@
 		<br>
 		<br>
 		<div id="showQrCode">
-			<ul id="ul_list"></ul>
+			<div id="showQrCodeDiv"></div>
+			<ul id="qrUl"><ul>
 		</div>
 
 		<script>
@@ -221,7 +222,7 @@
 
 			//qrcode 보기
 			$("#addQrcode").click(function () {
-				jQuery("#showQrCode").qrcode({
+				jQuery("#showQrCode #showQrCodeDiv").qrcode({
 					render: "table",
 					width: 100,
 					height: 100,
@@ -230,16 +231,16 @@
 				// $('#name').html($("#mainUrl").val());
 			})
 
-			function action_add(){
+			function actionAdd(){
 				var textAdd = $("#mainUrl").val(); //입력할 글씨
-				var qrUl = $("#ul_list"); //ul_list선언
-				qrUl.append("<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
+				var qrUl = $("#qrUl"); //ul_list선언
+				qrUl.append("<li>"+textAdd+"</li>"); //qrUl안쪽에 li추가
 			}
 
 			//qrcode reset
 			$("#reset").click(function () {
-				$("#showQrCode").empty();
-				$("#ul_list").empty();
+				$("#showQrCode #showQrCodeDiv").empty();
+				$("#qrUl").empty();
 			})
 
 			//scheme copy
