@@ -48,7 +48,7 @@
         <button id="mainCameraFilterUnset">UNSET</button>
         //
         <button id="moveMainFilterList" onclick="location.href='mainFilterListPage.html'">Filter List</button>
-        <h2>Face Shape</h2>
+        <!-- <h2>Face Shape</h2>
         <select name="mainCameraFaceShape" id="mainCameraFaceShape">
             <option value="original">original</option>
             <option value="natural">natural</option>
@@ -120,7 +120,7 @@
         </select>
         / Intensity : <input type="number" id="mainCameraBeautyIntensity" max="100">
         <button id="mainCameraBeautySet">SET</button>
-        <button id="mainCameraBeautyUnset">UNSET</button>
+        <button id="mainCameraBeautyUnset">UNSET</button> -->
         <h2>Option</h2>
         <select name="schemeOption" id="schemeOption">
             <option value="autoDownload">Auto DL</option>
@@ -157,11 +157,11 @@
             }
 
             $(function () {
-                mainCameraAppMain.mainAllUrl = $("#appSelect").val() + "://";
+                mainCameraAppMain.mainCameraUrl = $("#appSelect").val() + "://";
                 mainCameraSetUrl();
 
                 $("#appSelect").change(function() {
-                    mainCameraAppMain.mainAllUrl = $(this).val() + "://";
+                    mainCameraAppMain.mainCameraUrl = $(this).val() + "://";
                     mainCameraSetUrl();
                 });
 
@@ -175,56 +175,101 @@
                 });
 
                 $("#mainCameraStyleUnset").click(function() {
-                    if(mainCameraAppMain.mainCameraStyle.indexOf("#mainCameraStyleId") !== -1) {
+                    if(mainCameraAppMain.mainCameraStyle.indexOf("styleId") !== -1) {
                         mainCameraAppMain.mainCameraStyle = '';
                         mainCameraSetUrl();
                     }
                 });
+
+                $("#mainCameraFilterSet").click(function() {
+                    var mainFilterId = $("#mainCameraFilterId").val();
+                    if (mainFilterId === '') {
+                        return false;
+                    }
+                    mainCameraAppMain.mainCameraFilter = 'filterId=' + mainFilterId;
+                    mainCameraSetUrl();
+                });
+
+                $("#mainCameraFilterUnset").click(function() {
+                    if(mainCameraAppMain.mainCameraFilter.indexOf("filterId") !== -1) {
+                        mainCameraAppMain.mainCameraFilter = '';
+                        mainCameraSetUrl();
+                    }
+                });
+
+                // $("#mainCameraFaceShape").change(function() {
+                //     var mainFace = $(this).val();
+                //     mainCameraAppMain.mainCameraFaceShape = 'faceShape=' + mainFace;
+                //     mainCameraSetUrl();
+                // });
+
+                // $("#mainCameraFaceShapeSet").click(function() {
+                //     var mainFace = $("#mainCameraFaceShape").val();
+                //     mainCameraAppMain.mainCameraFaceShape = 'faceShape=' + mainFace;
+                //     mainCameraSetUrl();
+                // });
+
+                // $("#mainCameraFaceShapeUnset").click(function() {
+                //     mainCameraAppMain.mainCameraFaceShape = '';
+                //     mainCameraSetUrl();
+                // });
+
+                // $("#mainCameraFaceShapeIntensitySet").click(function() {
+                //     var mainFaceIntensity = $("#mainCameraFaceShapeIntensity").val();
+                //     if (mainFaceIntensity === '') {
+                //         return false;
+                //     }
+                //     mainCameraAppMain.mainCameraFaceShapeIntensity = 'faceShapeIntensity=' + mainFaceIntensity;
+                //     mainCameraSetUrl();
+                // });
+
+                // $("#mainCameraFaceShapeIntensityUnset").click(function() {
+                //     mainCameraAppMain.mainCameraFaceShapeIntensity = '';
+                //     mainCameraSetUrl();
+                // });
+
+                // $("#mainCameraBeautySet").click(function() {
+                //     var mainBeautySelect = $("#mainCameraBeauty").val();
+                //     var mainBeautyIntensity = $("#mainCameraBeautyIntensity").val();
+
+                //     if (mainBeautyIntensity === '') {
+                //         return false;
+                //     }
+
+                //     var addKeynameIntensity = mainCameraAppMain.mainCameraBeauty.some(p => p.name === mainBeautySelect);
+                    
+                //     if (addKeynameIntensity) {
+                //         var i = mainCameraAppMain.mainCameraBeauty.findIndex(p => p.name === mainBeautySelect);
+                //         mainCameraAppMain.mainCameraBeauty[i].val = mainBeautyIntensity;
+                //     } else {
+                //         mainCameraAppMain.mainCameraBeauty.push({ 'name' : mainBeautySelect, 'val' : mainBeautyIntensity});
+                //     }
+
+                //     mainCameraSetUrl();
+                // });
+
+
             })
 
             function mainCameraSetUrl() {
                 const mainParam = [mainCameraAppMain.mainCameraStyle, mainCameraAppMain.mainCameraFilter, mainCameraAppMain.mainCameraFaceShape, mainCameraAppMain.mainCameraFaceShapeIntensity, mainCameraAppMain.mainCameraBeauty]
                 console.log(mainParam);
-                var StartScheme = mainCameraAppMain.mainAllUrl + "go?";
-                var cheakScheme = false;
-                for (var i = 0; i > mainParam.length; i++) {
+                var all = mainCameraAppMain.mainCameraUrl + "go?";
+                for (var i = 0; i < mainParam.length; i++) {
                     if (Array.isArray(mainParam[i])) {
-                        if (mainParam[i].length === 0) {
-
-                        }
-                        else {
-                            if (cheakScheme) {
-                                for (var j = 0; j < mainParam[i].length; j++) {
-                                    StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
-                                }
-                            }
-                            else {
-                                for (var j = 0; j < mainParam[i].length; j++) {
-                                    if (j === 0) {
-                                        StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
-                                    }
-                                    else {
-                                        StartScheme += '&' + mainParam[i][j].name + '=' + mainParam[i][j].val;
-                                    }
-                                }
-                                cheakScheme = true;
-                            }
+                        for (var j = 0; j < mainParam[i].length; j++) {
+                            all += '$' + mainParam[i][j].name + '=' + mainParam[i][j].val;
                         }
                     } else {
                         if (mainParam[i] === '') {
 
                         } else {
-                            if (checkScheme) {
-                                StartScheme += '&' + mainParam[i];
-                            } else {
-                                StartScheme += '&' + mainParam[i];
-                                cheakScheme = true;
-                            }
+                            all += '&' + mainParam[i];
                         }
                     }
                 }
-                $("#mainUrl").val(StartScheme);
-                mainCameraAppMain.mainAllUrl = StartScheme;
+                $("#mainUrl").val(all);
+                mainCameraAppMain.mainAllUrl = all;
             }
         </script>
     </body>
