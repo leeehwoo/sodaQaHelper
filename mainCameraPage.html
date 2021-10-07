@@ -18,12 +18,11 @@
     <body>
         <h1>SODA/Tianyan QA Helper</h1>
         <h2>Main Camera Scheme</h2>
-        <br>
         <h2>Scheme Select</h2>
-        선택하는 Camera에 따라 Page 이동 (Page 3개 생성, 추가 Spec은 Page 생성 및 Button 추가하여 이동하는 방식?)
+        <!-- 선택하는 Camera에 따라 Page 이동 (Page 3개 생성, 추가 Spec은 Page 생성 및 Button 추가하여 이동하는 방식?)
         <br>
         Main Camera를 선택하면 go? Scheme / Discover를 선택하면 studio? or eventCamera Scheme / Beauty Recipes를 선택하면 eventWebCaemra? Scheme
-        <br>
+        <br> -->
         <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
         <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
         <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
@@ -40,8 +39,8 @@
         <button id="mainCameraStyleUnset">UNSET</button>
         //
         <button id="moveMainStyleList" onclick="location.href='mainStyleListPage.html'">Style List</button>
-        <br>
-        Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성?
+        <!-- <br>
+        Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성? -->
         <h2>Filter</h2>
         Filter ID : <input type="number" id="mainCameraFilterId">
         <button id="mainCameraFilterSet">SET</button>
@@ -122,20 +121,54 @@
         <button id="mainCameraBeautySet">SET</button>
         <button id="mainCameraBeautyUnset">UNSET</button> -->
         <h2>Option</h2>
-        <select name="schemeOption" id="schemeOption">
+        <!-- <select name="schemeOption" id="schemeOption">
             <option value="autoDownload">Auto DL</option>
             <option value="manualDownload">Manual DL</option>
             <option value="frontCamera">Front Camera</option>
             <option value="backCamera">Back Camera</option>
         </select>
         <button id="mainCameraOptionSet">SET</button>
-        <button id="mainCameraOptionUnset">UNSET</button>
+        <button id="mainCameraOptionUnset">UNSET</button> -->
+        - Download Mode >> 
+        <select name="downloadMode" id="downloadMode">
+            <option value="autoDownload">Auto</option>
+            <option value="manualDownload">Manual</option>
+        </select>
+        <button id="downloadModeSet">SET</button>
+        <button id="downloadModeUnset">UNSET</button>
+        <br>
+        <br>
+        - Camera Position >> 
+        <select name="cameraPosition" id="cameraPosition">
+            <option value="front">Front</option>
+            <option value="back">Back</option>
+        </select>
+        <button id="cameraPositionSet">SET</button>
+        <button id="cameraPositionUnset">UNSET</button>
+        <br>
+        <br>
+        - Beauty Mode >> 
+        <select name="beautyMode" id="beautyMode">
+            <option value="normal">Normal</option>
+            <option value="original">Original</option>
+        </select>
+        <button id="beautyModeSet">SET</button>
+        <button id="beautyModeUnset">UNSET</button>
+        <br>
+        <br>
+        - Take Mode >> 
+        <select name="takeMode" id="takeMode">
+            <option value="photo">Photo</option>
+            <option value="video">Video</option>
+        </select>
+        <button id="takeModeSet">SET</button>
+        <button id="takeModeUnset">UNSET</button>
         <h2>* Scheme</h2>
         <input id="mainUrl" readonly style="width: 1000px;">
         <br>
         <button id="schemeCopy">Scheme Copy</button>
         <br>
-        <h2>*QR Code</h2>
+        <h2>* QR Code</h2>
         <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
         <input type="reset" id="reset" value="Reset">
         <br>
@@ -154,6 +187,10 @@
                 mainCameraFaceShapeIntensity: '',
                 mainCameraBeauty: [],
                 mainAllUrl: '',
+                optionDownload: '',
+                optionCameraPosition: '',
+                optionBeautyMode: '',
+                optionTakeMode:'',
             }
 
             $(function () {
@@ -248,11 +285,23 @@
                 //     mainCameraSetUrl();
                 // });
 
-
+                // $("#downloadMode").change(function() {
+                //     var downloadModeOption = $(this).val();
+                //     if (downloadModeOption = autoDownload) {
+                //         mainCameraAppMain.optionDownload = 'autoDownload=true';
+                //     } else {
+                //         mainCameraAppMain.optionDownload = 'autoDownload=false';
+                //     }
+                // });
             })
 
             function mainCameraSetUrl() {
-                const mainParam = [mainCameraAppMain.mainCameraStyle, mainCameraAppMain.mainCameraFilter, mainCameraAppMain.mainCameraFaceShape, mainCameraAppMain.mainCameraFaceShapeIntensity, mainCameraAppMain.mainCameraBeauty]
+                const mainParam = [mainCameraAppMain.mainCameraStyle, 
+                mainCameraAppMain.mainCameraFilter, mainCameraAppMain.mainCameraFaceShape, 
+                mainCameraAppMain.mainCameraFaceShapeIntensity, mainCameraAppMain.mainCameraBeauty,
+                mainCameraAppMain.optionDownload, mainCameraAppMain.optionCameraPosition,
+                mainCameraAppMain.optionBeautyMode, mainCameraAppMain.optionTakeMode
+            ]
                 console.log(mainParam);
                 var all = mainCameraAppMain.mainCameraUrl + "go?";
                 for (var i = 0; i < mainParam.length; i++) {
