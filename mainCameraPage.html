@@ -315,6 +315,11 @@
                     mainCameraAppMain.optionTakeMode = '';
                     mainCameraSetUrl();
                 });
+
+                $("#mainUrl").click(function() {
+                    var schemeUrl = $(this).val();
+                    window.open(schemeUrl);
+                });
             })
 
             function mainCameraSetUrl() {
