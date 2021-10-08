@@ -10,8 +10,9 @@
 		<script type="text/javascript" src="qrcode.js"></script>
 		<style>
 			#showQrCode{position:relative;}
-			#qrUl{position:absolute;top:63px;left:100px;}
+			#qrUl{position:absolute;top:20px;left:120px;}
 			#qrUl li{height:100px;list-style:none;}
+            #showQrCodeDiv{position:absolute;left: 20px;}
 		</style>
 	</head>
 
@@ -280,7 +281,9 @@
 			function actionAdd(){
 				var textAdd = $("#mainUrl").val(); //입력할 글씨
 				var qrUl = $("#qrUl"); //ul_list선언
-				qrUl.append("<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
+				qrUl.append("<br>"+"<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
+                var space = $("#showQrCodeDiv");
+                space.append("<br>");
 			}
 
 			//qrcode reset

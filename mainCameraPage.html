@@ -10,8 +10,9 @@
         <script type="text/javascript" src="qrcode.js"></script>
         <style>
             #showQrCode{position:relative;}
-            #ul_list{position:absolute;top:820px;left:100px;}
-            #ul_list li{height:100px;list-style:none;}
+            #qrUl{position:absolute;top:20px;left:120px;}
+            #qrUl li{height:100px;list-style:none;}
+            #showQrCodeDiv{position:absolute;left: 20px;}
 	    </style>
     </head>
 
@@ -131,37 +132,41 @@
         <button id="mainCameraOptionUnset">UNSET</button> -->
         - Download Mode >> 
         <select name="downloadMode" id="downloadMode">
-            <option value="autoDownload">Auto</option>
-            <option value="manualDownload">Manual</option>
+            <option value="none" selected disabled>---</option>
+            <option value="true">Auto</option>
+            <option value="false">Manual</option>
         </select>
-        <button id="downloadModeSet">SET</button>
+        <!-- <button id="downloadModeSet">SET</button> -->
         <button id="downloadModeUnset">UNSET</button>
         <br>
         <br>
         - Camera Position >> 
         <select name="cameraPosition" id="cameraPosition">
-            <option value="front">Front</option>
-            <option value="back">Back</option>
+            <option value="none" selected disabled>---</option>
+            <option value="0">Front</option>
+            <option value="1">Back</option>
         </select>
-        <button id="cameraPositionSet">SET</button>
+        <!-- <button id="cameraPositionSet">SET</button> -->
         <button id="cameraPositionUnset">UNSET</button>
         <br>
         <br>
         - Beauty Mode >> 
         <select name="beautyMode" id="beautyMode">
-            <option value="normal">Normal</option>
-            <option value="original">Original</option>
+            <option value="none" selected disabled>---</option>
+            <option value="0">Normal</option>
+            <option value="1">Original</option>
         </select>
-        <button id="beautyModeSet">SET</button>
+        <!-- <button id="beautyModeSet">SET</button> -->
         <button id="beautyModeUnset">UNSET</button>
         <br>
         <br>
         - Take Mode >> 
         <select name="takeMode" id="takeMode">
-            <option value="photo">Photo</option>
-            <option value="video">Video</option>
+            <option value="none" selected disabled>---</option>
+            <option value="0">Photo</option>
+            <option value="1">Video</option>
         </select>
-        <button id="takeModeSet">SET</button>
+        <!-- <button id="takeModeSet">SET</button> -->
         <button id="takeModeUnset">UNSET</button>
         <h2>* Scheme</h2>
         <input id="mainUrl" readonly style="width: 1000px;">
@@ -169,15 +174,17 @@
         <button id="schemeCopy">Scheme Copy</button>
         <br>
         <h2>* QR Code</h2>
-        <input type="button" id="addQrcode" value="Show QR Code" onclick="action_add()">
+        <input type="button" id="addQrcode" value="Show QR Code" onclick="actionAdd()">
         <input type="reset" id="reset" value="Reset">
         <br>
         <br>
-        <div id="showQrCode"></div>
-            <ul id="ul_list">
-                
-            <ul>
+        <div id="showQrCode">
+            <div id="showQrCodeDiv"></div>
+            <ul id="qrUl"><ul>
+        </div>
 
+
+        
         <script>
             const mainCameraAppMain = {
                 mainCameraUrl: '',
@@ -234,37 +241,6 @@
                     }
                 });
 
-                // $("#mainCameraFaceShape").change(function() {
-                //     var mainFace = $(this).val();
-                //     mainCameraAppMain.mainCameraFaceShape = 'faceShape=' + mainFace;
-                //     mainCameraSetUrl();
-                // });
-
-                // $("#mainCameraFaceShapeSet").click(function() {
-                //     var mainFace = $("#mainCameraFaceShape").val();
-                //     mainCameraAppMain.mainCameraFaceShape = 'faceShape=' + mainFace;
-                //     mainCameraSetUrl();
-                // });
-
-                // $("#mainCameraFaceShapeUnset").click(function() {
-                //     mainCameraAppMain.mainCameraFaceShape = '';
-                //     mainCameraSetUrl();
-                // });
-
-                // $("#mainCameraFaceShapeIntensitySet").click(function() {
-                //     var mainFaceIntensity = $("#mainCameraFaceShapeIntensity").val();
-                //     if (mainFaceIntensity === '') {
-                //         return false;
-                //     }
-                //     mainCameraAppMain.mainCameraFaceShapeIntensity = 'faceShapeIntensity=' + mainFaceIntensity;
-                //     mainCameraSetUrl();
-                // });
-
-                // $("#mainCameraFaceShapeIntensityUnset").click(function() {
-                //     mainCameraAppMain.mainCameraFaceShapeIntensity = '';
-                //     mainCameraSetUrl();
-                // });
-
                 // $("#mainCameraBeautySet").click(function() {
                 //     var mainBeautySelect = $("#mainCameraBeauty").val();
                 //     var mainBeautyIntensity = $("#mainCameraBeautyIntensity").val();
@@ -287,12 +263,58 @@
 
                 // $("#downloadMode").change(function() {
                 //     var downloadModeOption = $(this).val();
-                //     if (downloadModeOption = autoDownload) {
+                //     if (downloadModeOption = "#autoDownload") {
                 //         mainCameraAppMain.optionDownload = 'autoDownload=true';
-                //     } else {
+                //         mainCameraSetUrl();
+                //     } else if (downloadModeOption = "#manualDownload"){
                 //         mainCameraAppMain.optionDownload = 'autoDownload=false';
+                //         mainCameraSetUrl();
                 //     }
                 // });
+
+                $("#downloadMode").change(function() {
+                    var downloadModeOption = $(this).val();
+                    mainCameraAppMain.optionDownload = 'autoDownload=' + downloadModeOption;
+                    mainCameraSetUrl();
+                });
+
+                $("#downloadModeUnset").click(function() {
+                    mainCameraAppMain.optionDownload = '';
+                    mainCameraSetUrl();
+                });
+
+                $("#cameraPosition").change(function() {
+                    var cameraPositionOption = $(this).val();
+                    mainCameraAppMain.optionCameraPosition = 'cameraPosition=' + cameraPositionOption;
+                    mainCameraSetUrl();
+                });
+
+                $("#cameraPositionUnset").click(function() {
+                    mainCameraAppMain.optionCameraPosition = '';
+                    mainCameraSetUrl();
+                });
+
+                $("#beautyMode").change(function() {
+                    var beautyModeOption = $(this).val();
+                    mainCameraAppMain.optionBeautyMode = 'beautyMode=' + beautyModeOption;
+                    mainCameraSetUrl();
+                });
+                
+                $("#beautyModeUnset").click(function() {
+                    mainCameraAppMain.optionBeautyMode = '';
+                    mainCameraSetUrl();
+                });
+
+                $("#takeMode").change(function() {
+                    var takeModeOption = $(this).val();
+                    mainCameraAppMain.optionTakeMode = 'takemode=' + takeModeOption;
+                    mainCameraSetUrl();
+                });
+
+                $("#takeModeUnset").click(function() {
+                    mainCameraAppMain.optionTakeMode = '';
+                    mainCameraSetUrl();
+                });
             })
 
             function mainCameraSetUrl() {
@@ -303,23 +325,69 @@
                 mainCameraAppMain.optionBeautyMode, mainCameraAppMain.optionTakeMode
             ]
                 console.log(mainParam);
-                var all = mainCameraAppMain.mainCameraUrl + "go?";
+                var all = mainCameraAppMain.mainCameraUrl + "go";
+                var ck = false;
                 for (var i = 0; i < mainParam.length; i++) {
                     if (Array.isArray(mainParam[i])) {
                         for (var j = 0; j < mainParam[i].length; j++) {
-                            all += '$' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                            if (ck) {
+                                all += '$' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                            } else {
+                                all += '?' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                                ck = true;
+                            }
                         }
                     } else {
                         if (mainParam[i] === '') {
 
                         } else {
-                            all += '&' + mainParam[i];
+                            if (ck) {
+                                all += '&' + mainParam[i];
+                            } else {
+                                all += '?' + mainParam[i];
+                                ck = true;
+                            }
                         }
                     }
                 }
                 $("#mainUrl").val(all);
                 mainCameraAppMain.mainAllUrl = all;
             }
+
+            //qrcode 보기
+			$("#addQrcode").click(function () {
+				jQuery("#showQrCode #showQrCodeDiv").qrcode({
+					render: "table",
+					width: 100,
+					height: 100,
+					text: $("#mainUrl").val()
+				});
+				// $('#name').html($("#mainUrl").val());
+			})
+
+            function actionAdd(){
+				var textAdd = $("#mainUrl").val(); //입력할 글씨
+				var qrUl = $("#qrUl"); //ul_list선언
+				qrUl.append("<br>"+"<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
+                var space = $("#showQrCodeDiv");
+                space.append("<br>");
+			}
+
+            //qrcode reset
+			$("#reset").click(function () {
+				$("#showQrCode #showQrCodeDiv").empty();
+				$("#qrUl").empty();
+			})
+
+            //scheme copy
+			jQuery("#schemeCopy").click (
+				function() {
+					var urlInfo = document.getElementById("mainUrl");
+					urlInfo.select();
+					document.execCommand("Copy");
+					alert("Add scheme to clipboard!")
+				}
+			)
         </script>
     </body>
 </html>
