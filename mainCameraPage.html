@@ -393,6 +393,21 @@
 					alert("Add scheme to clipboard!")
 				}
 			)
+
+            //mobile_pc 구분
+            jQuery("#moveMainStyleList").click (
+                function() {
+                    // var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Widnows CE', 'Windows CE;', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'Symbian', 'Opera Mobi', 'Opera Mini', 'IEmobile');
+                    var pcFilter = "win16|win32|win64|mac|macintel";
+                    if(navigator.platform ) {
+                        if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0 ) {
+                            location.href = "https://www.naver.com";
+                        } else {
+                            location.href = "https://www.google.com";
+                        }
+                    }
+                }
+            )
         </script>
     </body>
 </html>
