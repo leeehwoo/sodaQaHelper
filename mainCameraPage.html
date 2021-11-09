@@ -39,7 +39,7 @@
         <button id="mainCameraStyleSet">SET</button>
         <button id="mainCameraStyleUnset">UNSET</button>
         //
-        <button id="moveMainStyleList" onclick="location.href='mainStyleListPage.html'">Style List</button>
+        <button id="moveMainStyleList">Style List</button>
         <!-- <br>
         Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성? -->
         <h2>Filter</h2>
@@ -403,7 +403,6 @@
                         if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0 ) {
                             location.href = "https://www.naver.com";
                         } else {
-                            // location.href = "https://www.google.com";
                             alert('Available for PC only.');
                         }
                     }
