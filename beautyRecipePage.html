@@ -19,27 +19,26 @@
 	<body>
 		<h1>SODA/Tianyan QA Helper</h1>
 		<h2>Beauty Recipes Scheme</h2>
-		<br>
-		<h2>Scheme Select</h2>
+		<h3>Scheme Select</h3>
 		<button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
 		<button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
 		<button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
-		<h2>App Select</h2>
+		<h3>App Select</h3>
 		<select name="app" id="appSelect">
 			<option value="soda">SODA REAL</option>
 			<option value="sodab">SODA BETA</option>
 			<option value="tianyan">Tianyan REAL</option>
 			<option value="tianyanb">Tianyan BETA</option>
 		</select>
-		<h2>Style</h2>
+		<h3>Style</h3>
 		Style ID : <input type="number" id="beautyRecipeStyleId">
 		<button id="beautyRecipeStyleIdSet">SET</button>
 		<button id="beautyRecipeStyleIdUnset">UNSET</button>
-		<h2>Filter</h2>
+		<h3>Filter</h3>
 		Filter ID : <input type="number" id="beautyRecipeFilterId">
 		<button id="beautyRecipeFilterIdSet">SET</button>
 		<button id="beautyRecipeFilterIdUnset">UNSET</button>
-		<h2>Face Shape</h2>
+		<h3>Face Shape</h3>
 		<select name="beautyRecipeFaceShape" id="beautyRecipeFaceShape">
 			<option value="original">original</option>
 			<option value="natural">natural</option>
@@ -54,7 +53,7 @@
 		/ Intensity : <input type="number" id="beautyRecipeFaceShapeIntensity" max="100">
 		<button id="beautyRecipeFaceShapeIntensitySet">SET</button>
 		<button id="beautyRecipeFaceShapeIntensityUnset">UNSET</button>
-		<h2>Beauty</h2>
+		<h3>Beauty</h3>
 		<select name="beautyRecipeBeautyKeyname" id="beautyRecipeBeauty">
 			<option value="bodyslim">bodyslim</option>
 			<option value="head">head</option>
@@ -275,7 +274,6 @@
 					height: 100,
 					text: $("#mainUrl").val()
 				});
-				// $('#name').html($("#mainUrl").val());
 			})
 
 			function actionAdd(){

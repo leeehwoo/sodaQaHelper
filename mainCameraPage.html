@@ -19,22 +19,18 @@
     <body>
         <h1>SODA/Tianyan QA Helper</h1>
         <h2>Main Camera Scheme</h2>
-        <h2>Scheme Select</h2>
-        <!-- 선택하는 Camera에 따라 Page 이동 (Page 3개 생성, 추가 Spec은 Page 생성 및 Button 추가하여 이동하는 방식?)
-        <br>
-        Main Camera를 선택하면 go? Scheme / Discover를 선택하면 studio? or eventCamera Scheme / Beauty Recipes를 선택하면 eventWebCaemra? Scheme
-        <br> -->
+        <h3>Scheme Select</h3>
         <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
         <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
         <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
-        <h2>App Select</h2>
+        <h3>App Select</h3>
         <select name="app" id="appSelect">
             <option value="soda">SODA REAL</option>
             <option value="sodab">SODA BETA</option>
             <option value="tianyan">Tianyan REAL</option>
             <option value="tianyanb">Tianyan BETA</option>
         </select>
-        <h2>Style</h2>
+        <h3>Style</h3>
         Style ID : <input type="number" id="mainCameraStyleId">
         <button id="mainCameraStyleSet">SET</button>
         <button id="mainCameraStyleUnset">UNSET</button>
@@ -42,7 +38,7 @@
         <button id="moveMainStyleList">Style List</button>
         <!-- <br>
         Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성? -->
-        <h2>Filter</h2>
+        <h3>Filter</h3>
         Filter ID : <input type="number" id="mainCameraFilterId">
         <button id="mainCameraFilterSet">SET</button>
         <button id="mainCameraFilterUnset">UNSET</button>
@@ -121,15 +117,7 @@
         / Intensity : <input type="number" id="mainCameraBeautyIntensity" max="100">
         <button id="mainCameraBeautySet">SET</button>
         <button id="mainCameraBeautyUnset">UNSET</button> -->
-        <h2>Option</h2>
-        <!-- <select name="schemeOption" id="schemeOption">
-            <option value="autoDownload">Auto DL</option>
-            <option value="manualDownload">Manual DL</option>
-            <option value="frontCamera">Front Camera</option>
-            <option value="backCamera">Back Camera</option>
-        </select>
-        <button id="mainCameraOptionSet">SET</button>
-        <button id="mainCameraOptionUnset">UNSET</button> -->
+        <h3>Option</h3>
         - Download Mode >> 
         <select name="downloadMode" id="downloadMode">
             <option value="none" selected disabled>---</option>
@@ -171,6 +159,7 @@
         <h2>* Scheme</h2>
         <input id="mainUrl" readonly style="width: 600px;">
         <br>
+        <br>
         <button id="schemeCopy">Scheme Copy</button>
         <br>
         <h2>* QR Code</h2>
@@ -183,8 +172,6 @@
             <ul id="qrUl"><ul>
         </div>
 
-
-        
         <script>
             const mainCameraAppMain = {
                 mainCameraUrl: '',
@@ -367,7 +354,6 @@
 					height: 100,
 					text: $("#mainUrl").val()
 				});
-				// $('#name').html($("#mainUrl").val());
 			})
 
             function actionAdd(){

@@ -10,52 +10,50 @@
 		<script type="text/javascript" src="qrcode.js"></script>
 		<style>
 			#showQrCode{position:relative;}
-			#qrUl{position:absolute;top:63px;left:100px;}
+			#qrUl{position:absolute;top:20px;left:120px;}
 			#qrUl li{height:100px;list-style:none;}
+			#showQrCodeDiv{position:absolute;left: 20px;}
 		</style>
 	</head>
 
 	<body>
-		<h1>SODA/Tianyan QAAAAAA Helper</h1>
-		<h2>Discover Scheme</h2>
-		<br>
-		<h2>Scheme Select</h2>
+		<h1>SODA/Tianyan QA Helper</h1>
+		<h2>Discover/Event Camera Scheme</h2>
+		<h3>Scheme Select</h3>
 		<button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
 		<button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
 		<button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
-		<h2>App Select</h2>
+		<h3>App Select</h3>
 		<select name="app" id="appSelect">
 			<option value="soda">SODA REAL</option>
 			<option value="sodab">SODA BETA</option>
 			<option value="tianyan">Tianyan REAL</option>
 			<option value="tianyanb">Tianyan BETA</option>
 		</select>
-		<h2>Template</h2>
-		여기서 사용하는 스킴은 soda://studio?templateId=TemplateID
-		<br>
+		<h2>Discover Scheme</h2>
+		<h3>Template</h3>
 		Template Id : <input type="number" id="templateId">
 		<button id="templateIdSet">set</button>
 		<button id="templateIdUnset">unset</button>
 		<h2>Discover Event Camera</h2>
-		여기서 사용하는 스킴은 soda://eventCamera?cameraPosition=cameraPosition&styleId=styleId&filterId=filterId (실제 admin 사용 스킴)
-		<br>
-		<h4>Camera Position</h4>
+		<h3>Camera Position</h3>
 		<select name="discoverCameraPosition" id="discoverCameraPosotion">
 			<option value="0">Front Camera</option>
 			<option value="1">Back Camera</option>
 		</select>
 		<button id="discoverCameraPositionSet">set</button>
 		<button id="discoverCameraPositionUnset">unset</button>
-		<h4>Style</h4>
+		<h3>Style</h3>
 		Style ID : <input type="number" id="discoverStyleId">
 		<button id="discoverStyleIdSet">SET</button>
 		<button id="discoverStyleIdUnset">UNSET</button>
-		<h4>Filter</h4>
+		<h3>Filter</h3>
 		Filter ID : <input type="number" id="discoverFilterId">
 		<button id="discoverFilterIdSet">SET</button>
 		<button id="discoverFilterIdUnset">UNSET</button>
 		<h2>* Scheme</h2>
 		<input id="mainUrl" readonly style="width: 1000px;">
+		<br>
 		<br>
 		<button id="schemeCopy">Scheme Copy</button>
 		<br>
@@ -113,9 +111,6 @@
 					}
 				});
 
-
-
-
 				$("#discoverCameraPosotion").change(function () {
 					var cameraPosition = $(this).val();
 					appMain.position = 'cameraPosition=' + cameraPosition;
@@ -132,9 +127,6 @@
 					appMain.position = '';
 					setUrl();
 				});
-
-
-
 
 				$("#discoverStyleIdSet").click(function () {
 					var styleId = $("#discoverStyleId").val();
@@ -171,8 +163,6 @@
 						setUrl();
 					}
 				});
-
-
 
 				$("#mainUrl").click(function () {
 					var url = $(this).val();
@@ -228,13 +218,14 @@
 					height: 100,
 					text: $("#mainUrl").val()
 				});
-				// $('#name').html($("#mainUrl").val());
 			})
 
 			function actionAdd(){
 				var textAdd = $("#mainUrl").val(); //입력할 글씨
 				var qrUl = $("#qrUl"); //ul_list선언
-				qrUl.append("<li>"+textAdd+"</li>"); //qrUl안쪽에 li추가
+				qrUl.append("<br>"+"<li>"+textAdd+"</li>"); //qrUl안쪽에 li추가
+				var space = $("#showQrCodeDiv");
+				space.append("<br>");
 			}
 
 			//qrcode reset
