@@ -43,7 +43,7 @@
         <button id="mainCameraFilterSet">SET</button>
         <button id="mainCameraFilterUnset">UNSET</button>
         //
-        <button id="moveMainFilterList" onclick="location.href='mainFilterListPage.html'">Filter List</button>
+        <button id="moveMainFilterList">Filter List</button>
         <!-- <h2>Face Shape</h2>
         <select name="mainCameraFaceShape" id="mainCameraFaceShape">
             <option value="original">original</option>
@@ -362,6 +362,7 @@
 				qrUl.append("<br>"+"<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
                 var space = $("#showQrCodeDiv");
                 space.append("<br>");
+                window.scrollTo(0,document.body.scrollHeight);
 			}
 
             //qrcode reset
@@ -388,6 +389,19 @@
                     if(navigator.platform ) {
                         if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0 ) {
                             location.href = "https://www.naver.com";
+                        } else {
+                            alert('Available for PC only.');
+                        }
+                    }
+                }
+            )
+
+            jQuery("#moveMainFilterList").click (
+                function() {
+                    var pcFilter = "win16|win32|win64|mac|macintel";
+                    if(navigator.platform) {
+                        if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0) {
+                            location.href = "https://www.google.com";
                         } else {
                             alert('Available for PC only.');
                         }
