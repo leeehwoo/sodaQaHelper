@@ -362,7 +362,7 @@
 				qrUl.append("<br>"+"<li>"+textAdd+"</li>"); //ul_list안쪽에 li추가
                 var space = $("#showQrCodeDiv");
                 space.append("<br>");
-                window.scrollTo(0,document.body.scrollHeight);
+                window.scrollTo(0,document.body.scrollHeight)
 			}
 
             //qrcode reset
@@ -388,7 +388,7 @@
                     var pcFilter = "win16|win32|win64|mac|macintel";
                     if(navigator.platform ) {
                         if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0 ) {
-                            location.href = "https://www.naver.com";
+                            location.href = "http://ec2-52-79-180-36.ap-northeast-2.compute.amazonaws.com:8080/style";
                         } else {
                             alert('Available for PC only.');
                         }
@@ -401,7 +401,7 @@
                     var pcFilter = "win16|win32|win64|mac|macintel";
                     if(navigator.platform) {
                         if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0) {
-                            location.href = "http://ec2-52-79-180-36.ap-northeast-2.compute.amazonaws.com:8080/style";
+                            location.href = "https://www.google.com";
                         } else {
                             alert('Available for PC only.');
                         }
