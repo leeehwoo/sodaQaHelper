@@ -19,6 +19,7 @@
     <body>
         <h1>SODA/Tianyan QA Helper</h1>
         <h2>Main Camera Scheme</h2>
+        <br>
         <h3>Scheme Select</h3>
         <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
         <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
@@ -401,7 +402,8 @@
                     var pcFilter = "win16|win32|win64|mac|macintel";
                     if(navigator.platform) {
                         if(pcFilter.indexOf(navigator.platform.toLowerCase()) > 0) {
-                            location.href = "https://www.google.com";
+                            // location.href = "http://ec2-54-180-141-79.ap-northeast-2.compute.amazonaws.com/style";
+                            alert('Preparing to update');
                         } else {
                             alert('Available for PC only.');
                         }
