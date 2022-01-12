@@ -1,0 +1,115 @@
+.setStyle {
+    color: green;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.setStyle:hover {
+    color: rgb(140, 179, 149);
+}
+
+.unsetStyle {
+    color: red;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.unsetStyle:hover {
+    color: rgb(236, 157, 157);
+}
+
+.listStyle {
+    color: blue;
+    font-size: larger;
+}
+
+.copyStyle {
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.copyStyle:hover {
+    color: rgb(194, 192, 192);
+}
+
+.qrcodeStyle {
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.qrcodeStyle:hover {
+    color: rgb(194, 192, 192);
+}
+
+.resetStyle {
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.resetStyle:hover {
+    color: rgb(194, 192, 192);
+}
+
+#mainCamera {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    size: 10px;
+    padding: 10px;
+    width: 110px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+#mainCamera:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#discover {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 110px;
+    height: 40px;
+    margin: 5px;
+}
+
+#discover:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#beautyRecipe {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    width: 110px;
+    height: 40px;
+    margin: 5px;
+}
+
+#beautyRecipe:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#titleAreaSoda {
+    background-color: rgb(175, 226, 247);
+}
+
+#titleAreaTianyan {
+    background-color: rgb(250, 207, 214);
+}
+
+#optionArea {
+    margin: 20px;
+}

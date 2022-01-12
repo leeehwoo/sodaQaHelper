@@ -19,24 +19,17 @@
 	</head>
 
 	<body>
-		<h2>Discover/Event Camera Scheme (SODA Real)</h2>
-		<div id="titleAreaSoda">
+		<h2>Discover/Event Camera Scheme (Tianyan Beta)</h2>
+		<div id="titleAreaTianyan">
 			<h3>Scheme Select</h3>
 		</div>
-		<div id="optionArea">
-			<button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
-			<button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
-			<button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
-		</div>
-		<!-- <h3>App Select</h3>
-		<select name="app" id="appSelect">
-			<option value="soda">SODA REAL</option>
-			<option value="sodab">SODA BETA</option>
-			<option value="tianyan">Tianyan REAL</option>
-			<option value="tianyanb">Tianyan BETA</option>
-		</select> -->
+        <div id="optionArea">
+            <button id="mainCamera" onclick="location.href='mainCameraPageTianyanBeta.html'">Main Camera</button>
+		    <button id="discover" onclick="location.href='discoverPageTianyanBeta.html'">Discover</button>
+		    <button id="beautyRecipe" onclick="location.href='beautyRecipePageTianyanBeta.html'">Beauty Recipe</button>
+        </div>
 		<h2>Discover Scheme</h2>
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h3>Template</h3>
 		</div>
 		<div id="optionArea">
@@ -44,11 +37,8 @@
 			<i class="fas fa-plus setStyle" id="templateIdSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="templateIdUnset"></i>
 		</div>
-		<!-- Template Id : <input type="number" id="templateId">
-		<button id="templateIdSet">set</button>
-		<button id="templateIdUnset">unset</button> -->
 		<h2>Discover Event Camera</h2>
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h3>Camera Position</h3>
 		</div>
 		<div id="optionArea">
@@ -59,13 +49,7 @@
 			<i class="fas fa-plus setStyle" id="discoverCameraPositionSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="discoverCameraPositionUnset"></i>
 		</div>
-		<!-- <select name="discoverCameraPosition" id="discoverCameraPosotion">
-			<option value="0">Front Camera</option>
-			<option value="1">Back Camera</option>
-		</select>
-		<button id="discoverCameraPositionSet">set</button>
-		<button id="discoverCameraPositionUnset">unset</button> -->
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h3>Style</h3>
 		</div>
 		<div id="optionArea">
@@ -73,10 +57,7 @@
 			<i class="fas fa-plus setStyle" id="discoverStyleIdSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="discoverStyleIdUnset"></i>
 		</div>
-		<!-- Style ID : <input type="number" id="discoverStyleId">
-		<button id="discoverStyleIdSet">SET</button>
-		<button id="discoverStyleIdUnset">UNSET</button> -->
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h3>Filter</h3>
 		</div>
 		<div id="optionArea">
@@ -84,22 +65,19 @@
 			<i class="fas fa-plus setStyle" id="discoverFilterIdSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="discoverFilterIdUnset"></i>
 		</div>
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h2>* Scheme</h2>
 		</div>
 		<input id="mainUrl" readonly style="width: 600px;">
 		<br>
 		<br>
 		<i class="fas fa-copy copyStyle" id="schemeCopy"></i>
-		<!-- <button id="schemeCopy">Scheme Copy</button> -->
 		<br>
-		<div id="titleAreaSoda">
+		<div id="titleAreaTianyan">
 			<h2>*QR Code</h2>
 		</div>
 		<i class="fas fa-qrcode qrcodeStyle" id="addQrcode" value="Show QR Code" onclick="actionAdd()"></i>
         <i class="fas fa-redo-alt resetStyle" id="reset" value="Reset"></i>
-		<!-- <input type="button" id="addQrcode" value="Show QR Code" onclick="actionAdd()">
-		<input type="reset" id="reset" value="Reset"> -->
 		<br>
 		<br>
 		<div id="showQrCode">
@@ -118,53 +96,31 @@
 			}
 
 			$(function () {
-				appMain.url = "soda://studio";
-				// appMain.url = $("#appSelect").val() + "://studio";
+				appMain.url = "tianyanb://studio";
+
 				setUrl();
 
 				$("#appSelect").change(function() {
 					if (appMain.template) {
-						appMain.url = "soda://studio";
+						appMain.url = "tianyanb://studio";
 					} else if( appMain.style || appMain.filter ) {
-						appMain.url = "soda://eventCamera";
+						appMain.url = "tianyanb://eventCamera";
 					} else {
-						appMain.url = $(this).val() + "soda://studio";
+						appMain.url = $(this).val() + "tianyanb://studio";
 					}
 					setUrl();
 				});
-
-				// $("#appSelect").change(function() {
-				// 	if (appMain.template) {
-				// 		appMain.url = $("#appSelect").val() + "://studio";
-				// 	} else if( appMain.style || appMain.filter ) {
-				// 		appMain.url = $("#appSelect").val() + "://eventCamera";
-				// 	} else {
-				// 		appMain.url = $(this).val() + "://studio";
-				// 	}
-				// 	setUrl();
-				// });
 
 				$("#templateIdSet").click(function () {
 					var templateId = $("#templateId").val();
 					if (templateId === '') {
 						return false;
 					}
-					appMain.url = "soda://studio";
+					appMain.url = "tianyanb://studio";
 					appMain.template = 'templateId=' + templateId;
 					reSetEventCamera ();
 					setUrl();
 				});
-
-				// $("#templateIdSet").click(function () {
-				// 	var templateId = $("#templateId").val();
-				// 	if (templateId === '') {
-				// 		return false;
-				// 	}
-				// 	appMain.url = $("#appSelect").val() + "://studio";
-				// 	appMain.template = 'templateId=' + templateId;
-				// 	reSetEventCamera ();
-				// 	setUrl();
-				// });
 
 				$("#templateIdUnset").click(function () {
 					if(appMain.template.indexOf("templateId") !== -1) {
@@ -195,22 +151,11 @@
 					if (styleId === '') {
 						return false;
 					}
-					appMain.url = "soda://eventCamera";
+					appMain.url = "tianyanb://eventCamera";
 					appMain.style = 'styleId=' + styleId;
 					reSetTemplate ();
 					setUrl();
 				});
-
-				// $("#discoverStyleIdSet").click(function () {
-				// 	var styleId = $("#discoverStyleId").val();
-				// 	if (styleId === '') {
-				// 		return false;
-				// 	}
-				// 	appMain.url = $("#appSelect").val() + "://eventCamera";
-				// 	appMain.style = 'styleId=' + styleId;
-				// 	reSetTemplate ();
-				// 	setUrl();
-				// });
 
 				$("#discoverStyleIdUnset").click(function () {
 					if(appMain.style.indexOf("styleId") !== -1) {
@@ -224,22 +169,11 @@
 					if (filterId === '') {
 						return false;
 					}
-					appMain.url = "soda://eventCamera";
+					appMain.url = "tianyanb://eventCamera";
 					appMain.filter = 'filterId=' + filterId;
 					reSetTemplate ();
 					setUrl();
 				});
-
-				// $("#discoverFilterIdSet").click(function () {
-				// 	var filterId = $("#discoverFilterId").val();
-				// 	if (filterId === '') {
-				// 		return false;
-				// 	}
-				// 	appMain.url = $("#appSelect").val() + "://eventCamera";
-				// 	appMain.filter = 'filterId=' + filterId;
-				// 	reSetTemplate ();
-				// 	setUrl();
-				// });
 
 				$("#discoverFilterIdUnset").click(function () {
 					if(appMain.filter.indexOf("filterId") !== -1) {

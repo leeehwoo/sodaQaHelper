@@ -19,26 +19,16 @@
     </head>
 
     <body>
-        <h2>Main Camera Scheme (SODA Real)</h2>
-        <div id="titleAreaSoda">
+        <h2>Main Camera Scheme (Tianyan Real)</h2>
+        <div id="titleAreaTianyan">
             <h3>Scheme Select</h3>
         </div>
         <div id="optionArea">
-            <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
-            <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
-            <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+            <button id="mainCamera" onclick="location.href='mainCameraPageTianyanReal.html'">Main Camera</button>
+            <button id="discover" onclick="location.href='discoverPageTianyanReal.html'">Discover</button>
+            <button id="beautyRecipe" onclick="location.href='beautyRecipePageTianyanReal.html'">Beauty Recipe</button>
         </div>
-        <!-- <h3>App Select</h3> -->
-        <!-- <div name="app" id="appSelect">
-            <div value="soda">SODA REAL</div>
-        </div> -->
-        <!-- <select name="app" id="appSelect">
-            <option value="soda">SODA REAL</option>
-            <option value="sodab">SODA BETA</option>
-            <option value="tianyan">Tianyan REAL</option>
-            <option value="tianyanb">Tianyan BETA</option>
-        </select> -->
-        <div id="titleAreaSoda">
+        <div id="titleAreaTianyan">
             <h3>Style</h3>
         </div>
         <div id="optionArea">
@@ -46,14 +36,7 @@
             <i class="fas fa-plus setStyle" id="mainCameraStyleSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="mainCameraStyleUnset"></i>
         </div>
-        <!-- Style ID : <input type="number" id="mainCameraStyleId">
-        <button id="mainCameraStyleSet">SET</button>
-        <button id="mainCameraStyleUnset">UNSET</button>
-        //
-        <button id="moveMainStyleList">Style List</button> -->
-        <!-- <br>
-        Style List를 누르면 현재 App에서 보여지는 Style 전체가 보여지는 List의 새로운 Page로 이동 >> Style List도 새로운 Page 생성? -->
-        <div id="titleAreaSoda">
+        <div id="titleAreaTianyan">
             <h3>Filter</h3>
         </div>
         <div id="optionArea">
@@ -61,85 +44,7 @@
             <i class="fas fa-plus setStyle" id="mainCameraFilterSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="mainCameraStyleUnset"></i>
         </div>
-        <!-- Filter ID : <input type="number" id="mainCameraFilterId">
-        <button id="mainCameraFilterSet">SET</button>
-        <button id="mainCameraFilterUnset">UNSET</button>
-        //
-        <button id="moveMainFilterList">Filter List</button> -->
-        <!-- <h2>Face Shape</h2>
-        <select name="mainCameraFaceShape" id="mainCameraFaceShape">
-            <option value="original">original</option>
-            <option value="natural">natural</option>
-            <option value="baby">baby</option>
-            <option value="slim">slim</option>
-            <option value="beauty">beauty</option>
-            <option value="basic">basic</option>
-            <option value="daily">daily</option>
-        </select>
-        <button id="mainCameraFaceShapeSet">SET</button>
-        <button id="mainCameraFaceShapeUnset">UNSET</button>
-        / Intensity : <input type="number" id="mainCameraFaceShapeIntensity" max="100">
-        <button id="mainCameraFaceShapeIntensitySet">SET</button>
-        <button id="mainCameraFaceShapeIntensityUnset">UNSET</button>
-        <h2>Beauty</h2>
-        <select name="mainCameraBeautyKeyname" id="mainCameraBeauty">
-            <option value="bodyslim">bodyslim</option>
-            <option value="head">head</option>
-            <option value="smooth">smooth</option>
-            <option value="balance">balance</option>
-            <option value="clear">clear</option>
-            <option value="toneup">toneup</option>
-            <option value="enlarge">enlarge</option>
-            <option value="narrow">narrow</option>
-            <option value="wrinkle">wrinkle</option>
-            <option value="cheekbone">cheekbone</option>
-            <option value="slim">slim</option>
-            <option value="short">short</option>
-            <option value="brow">brow</option>
-            <option value="clarity">clarity</option>
-            <option value="eyebag">eyebag</option>
-            <option value="teeth">teeth</option>
-            <option value="lift">lift</option>
-            <option value="chin">chin</option>
-            <option value="jawbone">jawbone</option>
-            <option value="span">span</option>
-            <option value="alar">alar</option>
-            <option value="noselength">noselength</option>
-            <option value="temple">temple</option>
-            <option value="vshape">vshape</option>
-            <option value="position">position</option>
-            <option value="eyesize">eyesize</option>
-            <option value="eyewidth">eyewidth</option>
-            <option value="corner">corner</option>
-            <option value="pupil">pupil</option>
-            <option value="inner">inner</option>
-            <option value="eyelength">eyelength</option>
-            <option value="under">under</option>
-            <option value="eyetail">eyetail</option>
-            <option value="plim">plim</option>
-            <option value="nose">nose</option>
-            <option value="bridge">bridge</option>
-            <option value="radixnasi">radixnasi</option>
-            <option value="tip">tip</option>
-            <option value="mouth">mouth</option>
-            <option value="philtrum">philtrum</option>
-            <option value="lipwidth">lipwidth</option>
-            <option value="upperlip">upperlip</option>
-            <option value="lowerlip">lowerlip</option>
-            <option value="mlip">mlip</option>
-            <option value="smile">smile</option>
-            <option value="thick">thick</option>
-            <option value="eyebrowlift">eyebrowlift</option>
-            <option value="glabella">glabella</option>
-            <option value="eyebrow">eyebrow</option>
-            <option value="shape">shape</option>
-            <option value="front">front</option>
-            <option value="behind">behind</option>
-        </select>
-        / Intensity : <input type="number" id="mainCameraBeautyIntensity" max="100">
-        <button id="mainCameraBeautySet">SET</button>
-        <button id="mainCameraBeautyUnset">UNSET</button> -->
-        <div id="titleAreaSoda">
+        <div id="titleAreaTianyan">
             <h3>Option</h3>
         </div>
         <div id="optionArea">
@@ -149,9 +54,7 @@
                 <option value="true">Auto</option>
                 <option value="false">Manual</option>
             </select>
-            <!-- <button id="downloadModeSet">SET</button> -->
             <i class="fas fa-redo-alt unsetStyle" id="downloadModeUnset"></i>
-            <!-- <button id="downloadModeUnset">UNSET</button> -->
             <br>
             <br>
             - Camera Position >> 
@@ -160,8 +63,6 @@
                 <option value="0">Front</option>
                 <option value="1">Back</option>
             </select>
-            <!-- <button id="cameraPositionSet">SET</button> -->
-            <!-- <button id="cameraPositionUnset">UNSET</button> -->
             <i class="fas fa-redo-alt unsetStyle" id="cameraPositionUnset"></i>
             <br>
             <br>
@@ -171,8 +72,6 @@
                 <option value="0">Normal</option>
                 <option value="1">Original</option>
             </select>
-            <!-- <button id="beautyModeSet">SET</button> -->
-            <!-- <button id="beautyModeUnset">UNSET</button> -->
             <i class="fas fa-redo-alt unsetStyle" id="beautyModeUnset"></i>
             <br>
             <br>
@@ -182,11 +81,9 @@
                 <option value="0">Photo</option>
                 <option value="1">Video</option>
             </select>
-            <!-- <button id="takeModeSet">SET</button> -->
-            <!-- <button id="takeModeUnset">UNSET</button> -->
             <i class="fas fa-redo-alt unsetStyle" id="takeModeUnset"></i>
         </div>
-        <div id="titleAreaSoda">
+        <div id="titleAreaTianyan">
             <h2>* Scheme</h2>
         </div>
         <input id="mainUrl" readonly style="width: 600px;">
@@ -194,7 +91,7 @@
         <br>
         <i class="fas fa-copy copyStyle" id="schemeCopy"></i>
         <br>
-        <div id="titleAreaSoda">
+        <div id="titleAreaTianyan">
             <h2>* QR Code</h2>
         </div>
         <i class="fas fa-qrcode qrcodeStyle" id="addQrcode" value="Show QR Code" onclick="actionAdd()"></i>
@@ -222,8 +119,7 @@
             }
 
             $(function () {
-                // mainCameraAppMain.mainCameraUrl = $("#appSelect").val() + "://";
-                mainCameraAppMain.mainCameraUrl = "soda://";
+                mainCameraAppMain.mainCameraUrl = "tianyan://";
                 mainCameraSetUrl();
 
                 $("#appSelect").change(function() {
@@ -262,37 +158,6 @@
                         mainCameraSetUrl();
                     }
                 });
-
-                // $("#mainCameraBeautySet").click(function() {
-                //     var mainBeautySelect = $("#mainCameraBeauty").val();
-                //     var mainBeautyIntensity = $("#mainCameraBeautyIntensity").val();
-
-                //     if (mainBeautyIntensity === '') {
-                //         return false;
-                //     }
-
-                //     var addKeynameIntensity = mainCameraAppMain.mainCameraBeauty.some(p => p.name === mainBeautySelect);
-                    
-                //     if (addKeynameIntensity) {
-                //         var i = mainCameraAppMain.mainCameraBeauty.findIndex(p => p.name === mainBeautySelect);
-                //         mainCameraAppMain.mainCameraBeauty[i].val = mainBeautyIntensity;
-                //     } else {
-                //         mainCameraAppMain.mainCameraBeauty.push({ 'name' : mainBeautySelect, 'val' : mainBeautyIntensity});
-                //     }
-
-                //     mainCameraSetUrl();
-                // });
-
-                // $("#downloadMode").change(function() {
-                //     var downloadModeOption = $(this).val();
-                //     if (downloadModeOption = "#autoDownload") {
-                //         mainCameraAppMain.optionDownload = 'autoDownload=true';
-                //         mainCameraSetUrl();
-                //     } else if (downloadModeOption = "#manualDownload"){
-                //         mainCameraAppMain.optionDownload = 'autoDownload=false';
-                //         mainCameraSetUrl();
-                //     }
-                // });
 
                 $("#downloadMode").change(function() {
                     var downloadModeOption = $(this).val();
