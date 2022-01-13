@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./sodaqahelper.css">
+        <title>Main Camera Scheme</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery.qrcode.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="title">
+            SODA/Tianyan QA Helper
+        </div>
+        <div id="totalArea">
+            <div id="appiconAreaSoda">
+                <div>
+                    <input type="image" src="./image/sodaIconReal.png" class="appIcon">
+                </div>
+                <div id="appName">
+                    <p>SODA REAL</p>
+                </div>
+            </div>
+            <div id="optionAreaSoda">
+                <div>
+                    <button id="appdeployAos" onclick="window.open('https://appdeploy.linecorp.com/White/android/RELEASE')">Download Android appdeploy</button>
+                </div>
+                <div>
+                    <button id="appdeployIos" onclick="window.open('https://appdeploy.linecorp.com/White/iphone/RC')">Download iOS appdeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployAos" onclick="window.open('https://ndeploy.navercorp.com/app/981/project/19208/os/Android/stage/stage')">Download Android ndeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployIos" onclick="window.open('https://ndeploy.navercorp.com/app/981/project/19188/os/iOS/stage/stage')">Download iOS ndeploy</button>
+                </div>
+                <div>
+                    <button id="schemeMove" onclick="location.href='mainCameraPage.html'">Scheme</button>
+                </div>
+                <div>
+                    <button id="styleMove">Style List</button>
+                </div>
+                <div>
+                    <button id="filterMove">Filter List</button>
+                </div>
+            </div>
+        </div>
+        <div id="totalArea">
+            <div id="appiconAreaSoda">
+                <div>
+                    <input type="image" src="./image/sodaIconBeta.png" class="appIcon">
+                </div>
+                <div id="appName">
+                    <p>SODA BETA</p>
+                </div>
+            </div>
+            <div id="optionAreaSoda">
+                <div>
+                    <button id="appdeployAos" onclick="window.open('https://appdeploy.linecorp.com/White/android/BETA')">Download Android appdeploy</button>
+                </div>
+                <div>
+                    <button id="appdeployIos" onclick="window.open('https://appdeploy.linecorp.com/White/iphone/BETA')">Download iOS appdeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployAos" onclick="window.open('https://ndeploy.navercorp.com/app/981/project/19208/os/Android/stage/test')">Download Android ndeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployIos" onclick="window.open('https://ndeploy.navercorp.com/app/981/project/19188/os/iOS/stage/test')">Download iOS ndeploy</button>
+                </div>
+                <div>
+                    <button id="schemeMove" onclick="location.href='mainCameraPageSodaBeta.html'">Scheme</button>
+                </div>
+                <div>
+                    <button id="styleMove">Style List</button>
+                </div>
+                <div>
+                    <button id="filterMove">Filter List</button>
+                </div>
+                <div>
+                    <button id="xltMove" onclick="window.open('http://qa.snowcorp.com/qahelper/XLTInfo.html?appName=SODA')">XLT</button>
+                </div>
+                <div>
+                    <button id="nclickMove" onclick="window.open('http://qa.snowcorp.com/qahelper/nclick/?appName=SODA&serverName=BETA&ip=&ac=&st=&et=&p=%5B%5D&pf=')">nclick</button>
+                </div>
+            </div>
+        </div>
+        <div id="totalArea">
+            <div id="appiconAreaTianyan">
+                <div>
+                    <input type="image" src="./image/tianyanIconReal.png" class="appIcon">
+                </div>
+                <div id="appNameTianyan">
+                    <p>Tianyan REAL</p>
+                </div>
+            </div>
+            <div id="optionAreaTianyan">
+                <div>
+                    <button id="appdeployAos" onclick="window.open('https://appdeploy.linecorp.com/whitecn/android/RELEASE')">Download Android appdeploy</button>
+                </div>
+                <div>
+                    <button id="appdeployIos" onclick="window.open('https://appdeploy.linecorp.com/whitecn/iphone/RC')">Download iOS appdeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployAos" onclick="window.open('https://ndeploy.navercorp.com/app/982/project/19210/os/Android/stage/stage')">Download Android ndeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployIos" onclick="window.open('https://ndeploy.navercorp.com/app/982/project/19189/os/iOS/stage/stage')">Download iOS ndeploy</button>
+                </div>
+                <div>
+                    <button id="schemeMove" onclick="location.href='mainCameraPageTianyanReal.html'">Scheme</button>
+                </div>
+                <div>
+                    <button id="styleMove">Style List</button>
+                </div>
+                <div>
+                    <button id="filterMove">Filter List</button>
+                </div>
+            </div>
+        </div>
+        <div id="totalArea">
+            <div id="appiconAreaTianyan">
+                <div>
+                    <input type="image" src="./image/tianyanIconBeta.png" class="appIcon">
+                </div>
+                <div id="appNameTianyan">
+                    <p>Tianyan Beta</p>
+                </div>
+            </div>
+            <div id="optionAreaTianyan">
+                <div>
+                    <button id="appdeployAos" onclick="window.open('https://appdeploy.linecorp.com/whitecn/android/BETA')">Download Android appdeploy</button>
+                </div>
+                <div>
+                    <button id="appdeployIos" onclick="window.open('https://appdeploy.linecorp.com/whitecn/iphone/BETA')">Download iOS appdeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployAos" onclick="window.open('https://ndeploy.navercorp.com/app/982/project/19210/os/Android/stage/test')">Download Android ndeploy</button>
+                </div>
+                <div>
+                    <button id="ndeployIos" onclick="window.open('https://ndeploy.navercorp.com/app/982/project/19189/os/iOS/stage/test')">Download iOS ndeploy</button>
+                </div>
+                <div>
+                    <button id="schemeMove" onclick="location.href='mainCameraPageTianyanBeta.html'">Scheme</button>
+                </div>
+                <div>
+                    <button id="styleMove">Style List</button>
+                </div>
+                <div>
+                    <button id="filterMove">Filter List</button>
+                </div>
+                <div>
+                    <button id="xltMove" onclick="window.open('http://qa.snowcorp.com/qahelper/XLTInfo.html?appName=TIANYAN')">XLT</button>
+                </div>
+                <div>
+                    <button id="nclickMove" onclick="window.open('http://qa.snowcorp.com/qahelper/nclick/?appName=TIANYAN&serverName=BETA&ip=&ac=&st=&et=&p=%5B%5D&pf=')">nclick</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
