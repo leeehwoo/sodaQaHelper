@@ -116,3 +116,19 @@
 #optionArea {
     margin: 20px;
 }
+
+#mainTitleArea {
+    display: flex;
+    flex-direction: row;
+}
+
+#moveHome {
+    margin-top: 23px;
+    margin-left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#moveHome:hover {
+    color: rgb(194, 192, 192);
+}
