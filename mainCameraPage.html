@@ -190,6 +190,18 @@
             <!-- <button id="takeModeSet">SET</button> -->
             <!-- <button id="takeModeUnset">UNSET</button> -->
             <i class="fas fa-redo-alt unsetStyle" id="takeModeUnset"></i>
+            <br>
+            <br>
+            - Tab >>
+            <select name="tab" id="tab">
+                <option value="none" selected disabled>---</option>
+                <option value="Filter">Filter</option>
+                <option value="Makeup">Makeup</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Layout">Layout</option>
+            </select>
+            <i class="fas fa-redo-alt unsetStyle" id="tabUnset"></i>
         </div>
         <div id="titleAreaSoda">
             <h2>* Scheme</h2>
@@ -224,6 +236,7 @@
                 optionCameraPosition: '',
                 optionBeautyMode: '',
                 optionTakeMode:'',
+                optionTab:'',
             }
 
             $(function () {
@@ -343,6 +356,17 @@
                     mainCameraSetUrl();
                 });
 
+                $("#tab").change(function () {
+                    var tapOption = $(this).val();
+                    mainCameraAppMain.optionTab = 'tab=' + tapOption;
+                    mainCameraSetUrl();
+                });
+
+                $("#tabUnset").click(function () {
+                    mainCameraAppMain.optionTab = '';
+                    mainCameraSetUrl();
+                });
+
                 $("#mainUrl").click(function() {
                     var schemeUrl = $(this).val();
                     window.open(schemeUrl);
@@ -354,7 +378,7 @@
                 mainCameraAppMain.mainCameraFilter, mainCameraAppMain.mainCameraFaceShape, 
                 mainCameraAppMain.mainCameraFaceShapeIntensity, mainCameraAppMain.mainCameraBeauty,
                 mainCameraAppMain.optionDownload, mainCameraAppMain.optionCameraPosition,
-                mainCameraAppMain.optionBeautyMode, mainCameraAppMain.optionTakeMode
+                mainCameraAppMain.optionBeautyMode, mainCameraAppMain.optionTakeMode, mainCameraAppMain.optionTab
             ]
                 console.log(mainParam);
                 var all = mainCameraAppMain.mainCameraUrl + "go";
