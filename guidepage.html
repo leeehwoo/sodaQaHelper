@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta charset="UTF-8">
+        <title>Main Camera Scheme</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery.qrcode.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <link rel="stylesheet" href="./guidepage.css">
+        <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        Guide page 제작 예정
+        <div id="guideTitle">
+            <h2>SODA/Tianyan QAHelper Guide</h2>
+        </div>
+        <div id="appDlTitle">
+            <h3>App Download</h3>
+        </div>
+        <div>
+            <input type="image" src="./image/appdlimage.png" class="dlImage">
+        </div>
+        <div id="dlContent">
+            appdeploy : 중국 외 국가 접근 가능
+            <br>
+            ndeploy : 모든 국가 접근 가능 (중국 지역 Download 용)
+        </div>
+        <br>
+        <div id="schemeTitle">
+            <h3>Scheme</h3>
+        </div>
+        <div id="schemeContent">
+            <input type="image" src="./image/schemeSelectImage.png" class="schemeSelectImage">
+            <br>
+            <div id="schemeSelectContent">
+                Main Camera / Discover / Beauty Recipe에서 사용하는 Scheme을 따로 관리
+            </div>
+        </div>
     </body>
 </html>

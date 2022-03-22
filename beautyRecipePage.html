@@ -217,9 +217,20 @@
 		<button id="beautyRecipeBeautySet">SET</button>
 		<button id="beautyRecipeBeautyUnset">UNSET</button> -->
 		<div id="titleAreaSoda">
+			<h3>Option</h3>
+		</div>
+		<div id="optionArea">
+			- Compare Button >>
+			<select name="compare" id="compare">
+				<option value="false">Off</option>
+				<option value="true">On</option>
+			</select>
+			<i class="fas fa-redo-alt unsetStyle" id="compareBtnUnset"></i>
+		</div>
+		<div id="titleAreaSoda">
 			<h2>* Scheme</h2>
 		</div>
-		<input id="mainUrl" readonly style="width: 600px;">
+		<input id="mainUrl" readonly style="width: 900px;">
 		<br>
 		<br>
 		<i class="fas fa-copy copyStyle" id="schemeCopy"></i>
@@ -247,6 +258,7 @@
 				faceShpaeIntensity: '',
 				beauty: [],
 				allUrl: '',
+				optionCompare:'',
 			}
 
 			$(function () {
@@ -352,6 +364,17 @@
 					setUrl();
 				});
 
+				$("#compare").change(function () {
+					var compareOption = $(this).val();
+					appMain.optionCompare = 'comparebutton=' + compareOption;
+					setUrl();
+				})
+
+				$("#compareBtnUnset").click(function (){
+					appMain.optionCompare = '';
+					setUrl();
+				});
+
 				$("#mainUrl").click(function () {
 					var url = $(this).val();
 					window.open(url);
@@ -359,9 +382,9 @@
 			})
 
 			function setUrl() {
-				const param = [appMain.style, appMain.filter, appMain.faceShape, appMain.faceShpaeIntensity, appMain.beauty]
+				const param = [appMain.style, appMain.filter, appMain.faceShape, appMain.faceShpaeIntensity, appMain.beauty, appMain.optionCompare]
 				console.log(param);
-				var all = appMain.url + "eventWebCamera?type=beautyRecipe";
+				var all = appMain.url + "eventCamera?type=beautyRecipe";
 				for (var i = 0; i < param.length; i++) {
 					if (Array.isArray(param[i])) {
 						for (var j = 0; j < param[i].length; j++) {
