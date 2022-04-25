@@ -39,6 +39,11 @@
 			Template Id : <input type="number" id="templateId">
 			<i class="fas fa-plus setStyle" id="templateIdSet"></i>
             <i class="fas fa-redo-alt unsetStyle" id="templateIdUnset"></i>
+			<br>
+			<br>
+			Collection Template ID : <input type="number" id="collectionTemplateId">
+			<i class="fas fa-plus setStyle" id="collectionTemplateIdSet"></i>
+			<i class="fas fa-redo-alt unsetStyle" id="collectionTemplateIdUnset"></i>
 		</div>
 		<h2>Discover Event Camera</h2>
 		<div id="titleAreaTianyan">
@@ -96,6 +101,7 @@
 				filter: '',
 				position: '',
 				allUrl: '',
+				collectionTemplate: '',
 			}
 
 			$(function () {
@@ -128,6 +134,23 @@
 				$("#templateIdUnset").click(function () {
 					if(appMain.template.indexOf("templateId") !== -1) {
 						appMain.template = '';
+						setUrl();
+					}
+				});
+
+				$("#collectionTemplateIdSet").click(function () {
+					var collectionTemplateId = $("#collectionTemplateId").val();
+					if (collectionTemplateId === '') {
+						return false;
+					}
+					appMain.collectionTemplate = 'mappedtemplateId=' + collectionTemplateId;
+					reSetEventCamera ();
+					setUrl();
+				});
+
+				$("#collectionTemplateIdUnset").click(function () {
+					if(appMain.collectionTemplate.indexOf("mappedtemplateId") !== -1) {
+						appMain.collectionTemplate = '';
 						setUrl();
 					}
 				});
@@ -201,7 +224,7 @@
 			}
 
 			function setUrl() {
-				const param = [appMain.template, appMain.style, appMain.filter, appMain.position]
+				const param = [appMain.template, appMain.style, appMain.filter, appMain.position, appMain.collectionTemplate]
 				console.log(param);
 				var all = appMain.url;
 				var ck = false;
