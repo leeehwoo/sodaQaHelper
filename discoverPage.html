@@ -49,6 +49,11 @@
             <i class="fas fa-redo-alt unsetStyle" id="templateIdUnset"></i>
 			<br>
 			<br>
+			Tag ID : <input typeof="number" id="tagId">
+			<i class="fas fa-plus setStyle" id="tagIdSet"></i>
+			<i class="fas fa-redo-alt unsetStyle" id="tagIdUnset"></i>
+			<br>
+			<br>
 			Collection Template ID : <input type="number" id="collectionTemplateId">
 			<i class="fas fa-plus setStyle" id="collectionTemplateIdSet"></i>
 			<i class="fas fa-redo-alt unsetStyle" id="collectionTemplateIdUnset"></i>
@@ -125,6 +130,7 @@
 				position: '',
 				allUrl: '',
 				collectionTemplate: '',
+				tag: ''
 			}
 
 			$(function () {
@@ -179,6 +185,23 @@
 				$("#templateIdUnset").click(function () {
 					if(appMain.template.indexOf("templateId") !== -1) {
 						appMain.template = '';
+						setUrl();
+					}
+				});
+
+				$("#tagIdSet").click(function () {
+					var tagId = $("#tagId").val();
+					if (tagId === '') {
+						return false;
+					}
+					appMain.tag = 'tagId=' + tagId;
+					reSetEventCamera ();
+					setUrl();
+				});
+
+				$("#tagIdUnset").click(function () {
+					if(appMain.tag.indexOf("tagId") !== -1) {
+						appMain.tag = '';
 						setUrl();
 					}
 				});
@@ -291,7 +314,7 @@
 			}
 
 			function setUrl() {
-				const param = [appMain.template, appMain.style, appMain.filter, appMain.position, appMain.collectionTemplate]
+				const param = [appMain.template, appMain.style, appMain.filter, appMain.position, appMain.collectionTemplate, appMain.tag]
 				console.log(param);
 				var all = appMain.url;
 				var ck = false;
