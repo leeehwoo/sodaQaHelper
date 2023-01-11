@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta charset="UTF-8">
+        <title>Edit Scheme</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="jquery.qrcode.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <link rel="stylesheet" href="./schemePageStyle.css">
+        <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea">
+        <h2>Edit Scheme (SODA Real)</h2>
+        <i class="fas fa-home" id="moveHome" onclick="location.href='sodaqahelper.html'"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Scheme Select</h3>
+    </div>
+    <div id="optionArea">
+        <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
+        <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
+        <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+        <button id="edit" onclick="location.href='editPage.html'">Edit</button>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Menu</h3>
+    </div>
+    <div id="subOptionArea">
+        <div>
+            <button id="editMenuStyleBtn">Style</button>
+        </div>
+        <div>
+            <button id="editMenuHdSkinBtn">HD Skin</button>
+        </div>
+        <div>
+            <button id="editMenuOneTouchBtn">One Touch</button>
+        </div>
+        <div>
+            <button id="editMenuReshapeBtn">Reshape</button>
+        </div>
+        <div>
+            <button id="editMenuFilterBtn">Filter</button>
+        </div>
+        <div>
+            <button id="editMenuMakeupBtn">Makeup</button>
+        </div>
+        <div>
+            <button id="editMenuLiquifyBtn">Liquify</button>
+        </div>
+        <div>
+            <button id="eidtMenuDslrBtn">DSLR</button>
+        </div>
+    </div>
+    <div id="insertValueArea">
+        <details id="beautyKeynameDetails">
+            <summary id="beautyKeynameSummary">Onetouch, Reshape</summary>
+            <div id="beautyKeyNameTitleAreaSoda">
+                Insert Beauty Keyname
+            </div>
+            <div id="beautyKeyNameInsertArea">
+                Beauty Keyname : <input type="text" id="beautyKeyname" disabled>
+                <i class="fas fa-plus setStyle" id="beautyKeynameSet"></i>
+                <i class="fas fa-redo-alt unsetStyle" id="beautyKeynameUnset"></i>
+            </div>
+            <div>
+                <button id="moveBeautyKeynamePage" onclick="window.open('https://wiki.navercorp.com/display/LFS/SODA.Statistics#SODA.Statistics-BeautyPartsID(NBP)')">Beauty Keyname List</button>
+            </div>
+        </details>
+        <details id="styleDetails">
+            <summary id="styleSummary">Style</summary>
+            <div id="styleCategoryIdTitleAreaSoda">
+                Insert Category/Contents ID
+            </div>
+            <div id="insertStyleIdArea">
+                <div id="styleCategoryArea">
+                    Category ID : <input type="text" id="styleCategoryId" disabled>
+                    <i class="fas fa-plus setStyle" id="styleCategoryIdSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="styleCategoryIdUnset"></i>
+                </div>
+                <div id="styleContentsArea">
+                    Contents ID : <input type="text" id="styleContentsId" disabled>
+                    <i class="fas fa-plus setStyle" id="styleContentsIdSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="styleContentsIdUnset"></i>
+                </div>
+            </div>
+        </details>
+        <details id="filterDetails">
+            <summary id="filterSummary">Filter</summary>
+            <div id="filterCategoryIdTitleAreaSoda">
+                Insert Category/Contents ID
+            </div>
+            <div id="insertFilterIdArea">
+                <div id="filterCategoryArea">
+                    Category ID : <input type="text" id="filterCategoryId" disabled>
+                    <i class="fas fa-plus setStyle" id="filterCategoryIdSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="filterCategoryIdUnset"></i>
+                </div>
+                <div id="filterContentsArea">
+                    Contents ID : <input type="text" id="filterContentsId" disabled>
+                    <i class="fas fa-plus setStyle" id="filterContentsIdSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="filterContentsIdUnset"></i>
+                </div>
+            </div>
+        </details>
+        <details id="makeupDetails">
+            <summary id="makeupSummary">Makeup</summary>
+            <div id="makeupKeynameTitleAreaSoda">
+                Insert Makeup Info
+            </div>
+            <div id="makeupInfoArea">
+                <div id="makeupKeynameListArea">
+                    <div id="firstList">
+                        <div>
+                            <button id="skintone">skintone</button>
+                        </div>
+                        <div>
+                            <button id="contour">contour</button>
+                        </div>
+                        <div>
+                            <button id="blush">blush</button>
+                        </div>
+                        <div>
+                            <button id="lipColor">lip_color</button>
+                        </div>
+                        <div>
+                            <button id="eyeLight">eye_light</button>
+                        </div>
+                        <div>
+                            <button id="eyeColor">eye_color</button>
+                        </div>
+                    </div>
+                    <div id="secondList">
+                        <div>
+                            <button id="doublEyelid">double_eyelid</button>
+                        </div>
+                        <div>
+                            <button id="beautyMark">beauty_mark</button>
+                        </div>
+                        <div>
+                            <button id="eyebrows">eyebrows</button>
+                        </div>
+                        <div>
+                            <button id="eyeShadow">eye_shadow</button>
+                        </div>
+                        <div>
+                            <button id="eyeLiner">eye_liner</button>
+                        </div>
+                        <div>
+                            <button id="eyelashes">eyelashes</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="makeupKeynameInsertArea">
+                    Makeup Keyname : <input type="text" id="makeupKeyname" disabled> /
+                    Makeup Asset Keyname : <input type="text" id="makeupAssetKeyname" disabled> /
+                    Makeup Intensity : <input type="number" id="makeupIntensity" disabled>
+                    <i class="fas fa-plus setStyle" id="makeupKeynameSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="makeupKeynameUnset"></i>
+                </div>
+                <div id="makeupSubIdInsertArea">
+                    Sub ID (Vertical) : <input type="text" id="makeupSubId" disabled>
+                    <i class="fas fa-plus setStyle" id="makeupSubIdSet"></i>
+                    <i class="fas fa-redo-alt unsetStyle" id="makeupSubIdUnset"></i>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div id="titleAreaSoda">
+        <h2>* Scheme</h2>
+    </div>
+    <input id="mainUrl" readonly style="width: 600px;">
+    <button id="resetBtn">Reset</button>
+    <br>
+    <br>
+    <i class="fas fa-copy copyStyle" id="schemeCopy"></i>
+    <br>
+    <div id="titleAreaSoda">
+        <h2>* QR Code</h2>
+    </div>
+    <i class="fas fa-qrcode qrcodeStyle" id="addQrcode" value="Show QR Code" onclick="actionAdd()"></i>
+    <i class="fas fa-redo-alt resetStyle" id="reset" value="Reset"></i>
+    <i class="fas fa-reqular fa-download qrDownloadStyle" id="downloadQrBtn" value="Download QR Code"></i>
+    <br>
+    <br>
+    <div id="qrCodeArea">
+        <div id="showQrCode">
+            <div id="showQrCodeDiv"></div>
+            <ul id="qrUl"></ul>
+        </div>
+    </div>
+
+    <script>
+        const schemeAppMain = {
+            mainSchemeUrl: '',
+            editStyle: '',
+            editHdSkin: '',
+            editOneTouch: '',
+            editReshape: '',
+            editFilter: '',
+            editMakeup: '',
+            editLiquify: '',
+            editDslr: '',
+            valueBeautyKeyname: '',
+            valueStyleCategoryId: '',
+            valueStyleContentsId: '',
+            valueFilterCategoryId: '',
+            valueFilterContentsId: '',
+            valueMakeupKeyname: '',
+            valueMakeupAssetKeyname: '',
+            valueMakeupIntensity: '',
+            valueMakeupSubId: '',
+            valueMakeupKeynameSkintone: '',
+            valueMakeupKeynameContour: '',
+            valueMakeupKeynameBlush: '',
+            valueMakeupKeynameLipColor: '',
+            valueMakeupKeynameEyeLight: '',
+            valueMakeupKeynameEyeColor: '',
+            valueMakeupKeynameDoubleEyelid: '',
+            valueMakeupKeynameBeautyMark: '',
+            valueMakeupKeynameEyebrows: '',
+            valueMakeupKeynameEyeShadow: '',
+            valueMakeupKeynameEyeLiner: '',
+            valueMakeupKeynameEyelashes: '',
+            mainAllUrl:'',
+        }
+
+        $(function () {
+
+            $("#editMenuStyleBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = true;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=style";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",false).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",false).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",false).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",false).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+            });
+
+            $("#editMenuHdSkinBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=hdskin";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+            });
+
+            $("#editMenuOneTouchBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = true;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=onetouch";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                var openOneTouchDetails = document.getElementById("beautyKeynameDetails");
+                openOneTouchDetails.open = true;
+            });
+
+            $("#editMenuReshapeBtn").click(function() {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = true;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=reshape";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                var openReshapeDetails = document.getElementById("beautyKeynameDetails");
+                openReshapeDetails.open = true;
+            });
+
+            $("#editMenuFilterBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = true;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=filter";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",false).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",false).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                var openfilterDetails = document.getElementById("filterDetails");
+                openfilterDetails.open = true;
+            });
+
+            $("#editMenuMakeupBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = true;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=makeup";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",false).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",false).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",false).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",false).attr("readonly",false);
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = true;
+            });
+
+            $("#editMenuLiquifyBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=liquify";
+                mainSchemeSetUrl();
+            });
+
+            $("#eidtMenuDslrBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "soda://pick?tab=dslr";
+                mainSchemeSetUrl();
+            });
+
+            $("#styleCategoryIdSet").click(function () {
+                var styleCategoryId = $("#styleCategoryId").val();
+                if (styleCategoryId === '') {
+                    return false;
+                }
+                schemeAppMain.valueStyleCategoryId = 'styleCategoryId=' + styleCategoryId;
+                mainSchemeSetUrl();
+            });
+
+            $("#styleCategoryIdUnset").click(function () {
+                if (schemeAppMain.valueStyleCategoryId.indexOf("styleCategoryId") !== -1) {
+                    schemeAppMain.valueStyleCategoryId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#styleContentsIdSet").click(function () {
+                var styleContentsId = $("#styleContentsId").val();
+                if (styleContentsId === '') {
+                    return false;
+                }
+                schemeAppMain.valueStyleContentsId = 'styleContentsId=' + styleContentsId;
+                mainSchemeSetUrl();
+            });
+
+            $("#styleContentsIdUnset").click(function () {
+                if (schemeAppMain.valueStyleContentsId.indexOf("styleContentsId") !== -1) {
+                    schemeAppMain.valueStyleContentsId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#beautyKeynameSet").click(function () {
+                var beautyKeyname = $("#beautyKeyname").val();
+                if (beautyKeyname === '') {
+                    return false;
+                }
+                schemeAppMain.valueBeautyKeyname = 'beautyKeyname=' + beautyKeyname;
+                mainSchemeSetUrl();
+            });
+
+            $("#beautyKeynameUnset").click(function () {
+                if (schemeAppMain.valueBeautyKeyname.indexOf("beautyKeyname") !== -1) {
+                    schemeAppMain.valueBeautyKeyname = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#filterCategoryIdSet").click(function () {
+                var filterCategoryId = $("#filterCategoryId").val();
+                if (filterCategoryId === '') {
+                    return false;
+                }
+                schemeAppMain.valueStyleCategoryId = 'filterCategoryId=' + filterCategoryId;
+                // schemeAppMain.mainSchemeUrl = 'soda://pick?tab=filter&filterCategoryId' + filterCategoryId;
+                mainSchemeSetUrl();
+            });
+
+            $("#filterCategoryIdUnset").click(function () {
+                if (schemeAppMain.valueFilterCategoryId.indexOf("filterCategoryId") !== -1) {
+                    schemeAppMain.valueFilterCategoryId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#filterContentsIdSet").click(function () {
+                var filterContentsId = $("#filterContentsId").val();
+                if (filterContentsId === '') {
+                    return false;
+                }
+                schemeAppMain.valueFilterContentsId = 'filterContentsId=' + filterContentsId;
+                mainSchemeSetUrl();
+            });
+
+            $("#filterContentsIdUnset").click(function () {
+                if (schemeAppMain.valueFilterContentsId.indexOf("filterContentsId") !== -1) {
+                    schemeAppMain.valueFilterContentsId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#makeupKeynameSet").click(function () {
+                var makeupKeyname = $("#makeupKeyname").val();
+                if (makeupKeyname === '') {
+                    return false
+                }
+
+                var makeupAssetKeyName = $("#makeupAssetKeyname").val();
+                if (makeupAssetKeyName === '') {
+                    return false
+                }
+                var makeupIntensity = $("#makeupIntensity").val();
+                if (makeupIntensity === '') {
+                    return false
+                }
+                // schemeAppMain.valueMakeupKeyname = 'makeupOpen=' + makeupKeyname + "(" + makeupAssetKeyName + "," + makeupIntensity + ")";
+                // schemeAppMain.valueMakeupKeyname = "(" + makeupAssetKeyName + "," + makeupIntensity + ")";
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=' + makeupKeyname + "(" + makeupAssetKeyName + "," + makeupIntensity + ")";
+
+                mainSchemeSetUrl();
+            });
+
+            $("#makeupKeynameUnset").click(function () {
+                if (schemeAppMain.valueMakeupKeyname.indexOf("makeupOpen") !== -1) {
+                    schemeAppMain.valueMakeupKeyname = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#makeupSubIdSet").click(function () {
+                var makeupSubId = $("#makeupSubId").val();
+                if (makeupSubId === '') {
+                    return false
+                }
+                schemeAppMain.valueMakeupSubId = 'subId=' + makeupSubId;
+                mainSchemeSetUrl();
+            });
+
+            $("#skintone").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=skintone';
+                mainSchemeSetUrl();
+                var inputValue = $("#skintone").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#contour").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=contour';
+                mainSchemeSetUrl();
+                var inputValue = $("#contour").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#blush").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=blush';
+                mainSchemeSetUrl();
+                var inputValue = $("#blush").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#lipColor").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=lip_color';
+                mainSchemeSetUrl();
+                var inputValue = $("#lipColor").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyeLight").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eye_light';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyeLight").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyeColor").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eye_color';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyeColor").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#doublEyelid").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=double_eyelid';
+                mainSchemeSetUrl();
+                var inputValue = $("#doublEyelid").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#beautyMark").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=beauty_mark';
+                mainSchemeSetUrl();
+                var inputValue = $("#beautyMark").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyebrows").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eyebrows';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyebrows").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyeShadow").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eye_shadow';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyeShadow").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyeLiner").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eye_liner';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyeLiner").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#eyelashes").click(function () {
+                schemeAppMain.mainSchemeUrl = 'soda://pick?tab=makeup&makeupOpen=eyelashes';
+                mainSchemeSetUrl();
+                var inputValue = $("#eyelashes").text();
+                $("#makeupKeyname").val(inputValue);
+            });
+
+            $("#mainUrl").click(function () {
+                var schemeUrl = $(this).val();
+                window.open(schemeUrl);
+            });
+
+            $("#resetBtn").click(function () {
+                // var inputValue = document.getElementById("mainUrl");
+                // inputValue.value = null;
+                window.location.reload();
+            });
+        })
+
+        function mainSchemeSetUrl() {
+            const mainParam = [
+                schemeAppMain.editStyle,
+                schemeAppMain.editHdSkin,
+                schemeAppMain.editOneTouch,
+                schemeAppMain.editReshape,
+                schemeAppMain.editFilter,
+                schemeAppMain.editMakeup,
+                schemeAppMain.editLiquify,
+                schemeAppMain.editDslr,
+                schemeAppMain.valueBeautyKeyname,
+                schemeAppMain.valueStyleCategoryId,
+                schemeAppMain.valueStyleContentsId,
+                schemeAppMain.valueFilterCategoryId,
+                schemeAppMain.valueFilterContentsId,
+                schemeAppMain.valueMakeupKeyname,
+                schemeAppMain.valueMakeupAssetKeyname,
+                schemeAppMain.valueMakeupIntensity,
+                schemeAppMain.valueMakeupSubId,
+                schemeAppMain.valueMakeupKeynameSkintone,
+                schemeAppMain.valueMakeupKeynameContour,
+                schemeAppMain.valueMakeupKeynameBlush,
+                schemeAppMain.valueMakeupKeynameLipColor,
+                schemeAppMain.valueMakeupKeynameEyeLight,
+                schemeAppMain.valueMakeupKeynameEyeColor,
+                schemeAppMain.valueMakeupKeynameDoubleEyelid,
+                schemeAppMain.valueMakeupKeynameBeautyMark,
+                schemeAppMain.valueMakeupKeynameEyebrows,
+                schemeAppMain.valueMakeupKeynameEyeShadow,
+                schemeAppMain.valueMakeupKeynameEyeLiner,
+                schemeAppMain.valueMakeupKeynameEyelashes
+            ]
+            var all = schemeAppMain.mainSchemeUrl;
+            for (var i = 0; i < mainParam.length; i++) {
+                if (mainParam[i] !== '') {
+                    all += '&' + mainParam[i];
+                }
+            }
+            $("#mainUrl").val(all);
+            schemeAppMain.mainAllUrl = all;
+        }
+
+        $("#addQrcode").click(function () {
+            $("#showQrCode #showQrCodeDiv").empty();
+            jQuery("#showQrCode #showQrCodeDiv").qrcode({
+            render: "table",
+            width: 100,
+            height: 100,
+            text: $("#mainUrl").val()
+            });
+        })
+
+        function actionAdd() {
+            $("#qrUl").empty();
+            var textAdd = $("#mainUrl").val();
+            var qrUl = $("#qrUl");
+            qrUl.append("<br>"+"<li>"+textAdd+"</li>");
+            var space = $("#showQrCodeDiv");
+            space.append("<br>");
+            window.scrollTo(0, document.body.scrollHeight)
+        }
+
+        $("#reset").click(function() {
+            $("#showQrCode #showQrCodeDiv").empty();
+            $("#qrUl").empty();
+        })
+
+        $("#schemeCopy").click (
+            function() {
+                var urlInfo = document.getElementById("mainUrl");
+                urlInfo.select();
+                document.execCommand("Copy");
+                alert("Add scheme to clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#downloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#showQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

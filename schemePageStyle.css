@@ -53,7 +53,7 @@
     color: rgb(194, 192, 192);
 }
 
-#mainCamera {
+#mainCamera, #edit {
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
@@ -66,7 +66,7 @@
     cursor: pointer;
 }
 
-#mainCamera:hover {
+#mainCamera:hover, #edit:hover {
     background-color: rgb(194, 192, 192);
     color: white;
 }
@@ -131,4 +131,142 @@
 
 #moveHome:hover {
     color: rgb(194, 192, 192);
+}
+
+#subOptionArea, #firstList, #secondList {
+    display: flex;
+}
+
+#editMenuStyleBtn, #editMenuHdSkinBtn, #editMenuOneTouchBtn, #editMenuReshapeBtn, #editMenuFilterBtn, #editMenuMakeupBtn, #editMenuLiquifyBtn, #eidtMenuDslrBtn {
+    margin: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    width: 67px;
+    height: 67px;
+    cursor: pointer;
+}
+
+#editMenuStyleBtn:hover, #editMenuHdSkinBtn:hover, #editMenuOneTouchBtn:hover, #editMenuReshapeBtn:hover, #editMenuFilterBtn:hover, #editMenuMakeupBtn:hover, #editMenuLiquifyBtn:hover, #eidtMenuDslrBtn:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#skintone, #contour, #blush, #lipColor, #eyeLight, #eyeColor, #doublEyelid, #beautyMark, #eyebrows, #eyeShadow, #eyeLiner, #eyelashes {
+    margin: 7px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    width: 100px;
+    height: 37px;
+    cursor: pointer;
+}
+
+#skintone:hover, #contour:hover, #blush:hover, #lipColor:hover, #eyeLight:hover, #eyeColor:hover, #doublEyelid:hover, #beautyMark:hover, #eyebrows:hover, #eyeShadow:hover, #eyeLiner:hover, #eyelashes:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#beautyKeynameSet, #styleCategoryIdSet, #styleContentsIdSet, #filterCategoryIdSet, #filterContentsIdSet, #makeupKeynameSet, #makeupAssetKeynameSet, #makeupIntensitySet, #makeupSubIdSet {
+    color: green;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#beautyKeynameSet:hover, #styleCategoryIdSet:hover, #styleContentsIdSet:hover, #filterCategoryIdSet:hover, #filterContentsIdSet:hover, #makeupKeynameSet:hover, #makeupAssetKeynameSet:hover, #makeupIntensitySet:hover, #makeupSubIdSet:hover {
+    color: rgb(140, 179, 149);
+}
+
+#beautyKeynameUnset, #styleCategoryIdUnset, #styleContentsIdUnset, #filterCategoryIdUnset, #filterContentsIdUnset, #makeupKeynameUnset, #makeupAssetKeynameUnset, #makeupIntensityUnset, #makeupSubIdUnset {
+    color: red;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#beautyKeynameUnset:hover, #styleCategoryIdUnset:hover, #styleContentsIdUnset:hover, #filterCategoryIdUnset:hover, #filterContentsIdUnset:hover, #makeupKeynameUnset:hover, makeupAssetKeynameUnset:hover, #makeupIntensityUnset:hover, #makeupSubIdUnset:hover {
+    color: rgb(236, 157, 157);
+}
+
+#beautyKeyNameTitleAreaTianyan, #styleCategoryIdTitleAreaTianyan, #filterCategoryIdTitleAreaTianyan, #makeupKeynameTitleAreaTianyan {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
+    background-color: rgb(193, 232, 248);
+}
+
+#beautyKeyNameTitleAreaSoda, #styleCategoryIdTitleAreaSoda, #filterCategoryIdTitleAreaSoda, #makeupKeynameTitleAreaSoda {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
+    background-color: rgb(248, 217, 222);
+}
+
+#beautyKeyNameInsertArea, #insertStyleIdArea, #insertFilterIdArea, #makeupInfoArea {
+    margin-left: 35px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: large;
+}
+
+#moveBeautyKeynamePage {
+    margin-left: 45px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#moveBeautyKeynamePage:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+}
+
+#insertStyleIdArea, #insertFilterIdArea, #insertMakeupAssetArea {
+    margin: 20px;
+}
+
+#styleCategoryArea, #styleContentsArea, #filterCategoryArea, #filterContentsArea, #makeupAssetKeynameInsertArea, #makeupIntensityInsertArea, #makeupSubIdInsertArea {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#showQrCode {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 700px;
+}
+
+#showQrCodeDiv, #qrUl {
+  margin: 20px;
+}
+
+.qrcodeStyle, .resetStyle, .qrDownloadStyle {
+  color: black;
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.qrcodeStyle:hover, .resetStyle:hover, .qrDownloadStyle:hover {
+  color: rgb(194, 192, 192);
+}
+
+#beautyKeynameSummary, #styleSummary, #filterSummary, #makeupSummary {
+    cursor: pointer;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#makeupKeynameInsertArea, #makeupSubIdInsertArea {
+    margin-top: 10px;
 }
