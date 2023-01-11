@@ -2,15 +2,15 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta charset="UTF-8">
-        <title>Edit Scheme</title>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="jquery.qrcode.js"></script>
-        <script type="text/javascript" src="qrcode.js"></script>
-        <link rel="stylesheet" href="./schemePageStyle.css">
-        <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
-        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>Edit Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./schemePageStyle.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <div id="mainTitleArea">
@@ -417,12 +417,12 @@
                 if (styleContentsId === '') {
                     return false;
                 }
-                schemeAppMain.valueStyleContentsId = 'styleContentsId=' + styleContentsId;
+                schemeAppMain.valueStyleContentsId = 'styleId=' + styleContentsId;
                 mainSchemeSetUrl();
             });
 
             $("#styleContentsIdUnset").click(function () {
-                if (schemeAppMain.valueStyleContentsId.indexOf("styleContentsId") !== -1) {
+                if (schemeAppMain.valueStyleContentsId.indexOf("styleId") !== -1) {
                     schemeAppMain.valueStyleContentsId = '';
                     mainSchemeSetUrl();
                 }
@@ -449,8 +449,7 @@
                 if (filterCategoryId === '') {
                     return false;
                 }
-                schemeAppMain.valueStyleCategoryId = 'filterCategoryId=' + filterCategoryId;
-                // schemeAppMain.mainSchemeUrl = 'soda://pick?tab=filter&filterCategoryId' + filterCategoryId;
+                schemeAppMain.valueFilterCategoryId = 'filterCategoryId=' + filterCategoryId;
                 mainSchemeSetUrl();
             });
 
@@ -466,12 +465,12 @@
                 if (filterContentsId === '') {
                     return false;
                 }
-                schemeAppMain.valueFilterContentsId = 'filterContentsId=' + filterContentsId;
+                schemeAppMain.valueFilterContentsId = 'filterId=' + filterContentsId;
                 mainSchemeSetUrl();
             });
 
             $("#filterContentsIdUnset").click(function () {
-                if (schemeAppMain.valueFilterContentsId.indexOf("filterContentsId") !== -1) {
+                if (schemeAppMain.valueFilterContentsId.indexOf("filterId") !== -1) {
                     schemeAppMain.valueFilterContentsId = '';
                     mainSchemeSetUrl();
                 }
@@ -621,10 +620,10 @@
                 schemeAppMain.editLiquify,
                 schemeAppMain.editDslr,
                 schemeAppMain.valueBeautyKeyname,
-                schemeAppMain.valueStyleCategoryId,
                 schemeAppMain.valueStyleContentsId,
-                schemeAppMain.valueFilterCategoryId,
+                schemeAppMain.valueStyleCategoryId,
                 schemeAppMain.valueFilterContentsId,
+                schemeAppMain.valueFilterCategoryId,
                 schemeAppMain.valueMakeupKeyname,
                 schemeAppMain.valueMakeupAssetKeyname,
                 schemeAppMain.valueMakeupIntensity,

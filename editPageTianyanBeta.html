@@ -2,15 +2,15 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta charset="UTF-8">
-        <title>Edit Scheme</title>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script type="text/javascript" src="jquery.qrcode.js"></script>
-        <script type="text/javascript" src="qrcode.js"></script>
-        <link rel="stylesheet" href="./schemePageStyle.css">
-        <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
-        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>Edit Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./schemePageStyle.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <div id="mainTitleArea">
@@ -449,7 +449,7 @@
                 if (filterCategoryId === '') {
                     return false;
                 }
-                schemeAppMain.valueStyleCategoryId = 'filterCategoryId=' + filterCategoryId;
+                schemeAppMain.valueFilterCategoryId = 'filterCategoryId=' + filterCategoryId;
                 // schemeAppMain.mainSchemeUrl = 'soda://pick?tab=filter&filterCategoryId' + filterCategoryId;
                 mainSchemeSetUrl();
             });
