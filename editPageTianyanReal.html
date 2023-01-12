@@ -417,12 +417,12 @@
                 if (styleContentsId === '') {
                     return false;
                 }
-                schemeAppMain.valueStyleContentsId = 'styleContentsId=' + styleContentsId;
+                schemeAppMain.valueStyleContentsId = 'styleId=' + styleContentsId;
                 mainSchemeSetUrl();
             });
 
             $("#styleContentsIdUnset").click(function () {
-                if (schemeAppMain.valueStyleContentsId.indexOf("styleContentsId") !== -1) {
+                if (schemeAppMain.valueStyleContentsId.indexOf("styleId") !== -1) {
                     schemeAppMain.valueStyleContentsId = '';
                     mainSchemeSetUrl();
                 }
@@ -466,12 +466,12 @@
                 if (filterContentsId === '') {
                     return false;
                 }
-                schemeAppMain.valueFilterContentsId = 'filterContentsId=' + filterContentsId;
+                schemeAppMain.valueFilterContentsId = 'filterId=' + filterContentsId;
                 mainSchemeSetUrl();
             });
 
             $("#filterContentsIdUnset").click(function () {
-                if (schemeAppMain.valueFilterContentsId.indexOf("filterContentsId") !== -1) {
+                if (schemeAppMain.valueFilterContentsId.indexOf("filterId") !== -1) {
                     schemeAppMain.valueFilterContentsId = '';
                     mainSchemeSetUrl();
                 }
@@ -621,10 +621,10 @@
                 schemeAppMain.editLiquify,
                 schemeAppMain.editDslr,
                 schemeAppMain.valueBeautyKeyname,
-                schemeAppMain.valueStyleCategoryId,
                 schemeAppMain.valueStyleContentsId,
-                schemeAppMain.valueFilterCategoryId,
+                schemeAppMain.valueStyleCategoryId,
                 schemeAppMain.valueFilterContentsId,
+                schemeAppMain.valueFilterCategoryId,
                 schemeAppMain.valueMakeupKeyname,
                 schemeAppMain.valueMakeupAssetKeyname,
                 schemeAppMain.valueMakeupIntensity,
