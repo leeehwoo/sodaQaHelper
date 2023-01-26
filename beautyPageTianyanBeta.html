@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>Beauty Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./schemePageStyle.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea">
+        <h2>Beauty Scheme (Tianyan Beta)</h2>
+        <i class="fas fa-home" id="moveHome" onclick="location.href='sodaqahelper.html'"></i>
+    </div>
+    <div id="titleAreaTianyan">
+        <h3>Scheme Select</h3>
+    </div>
+    <div id="optionArea">
+        <button id="mainCamera" onclick="location.href='mainCameraPageTianyanBeta.html'">Main Camera</button>
+        <button id="discover" onclick="location.href='discoverPageTianyanBeta.html'">Discover</button>
+        <button id="beautyRecipe" onclick="location.href='beautyRecipePageTianyanBeta.html'">Beauty Recipe</button>
+        <button id="edit" onclick="location.href='editPageTianyanBeta.html'">Edit</button>
+        <button id="beauty" onclick="location.href='beautyPageTianyanBeta.html'">Beauty</button>
+    </div>
+    <div id="titleAreaTianyan">
+        <h3>Beauty Keyname</h3>
+    </div>
+    <div id="optionArea">
+        <div id="beautyKeyNameArea">
+            Beauty Keyname : <input type="text" id="beautyKeyname2">
+            <i class="fas fa-plus setStyle" id="beautyKeynameSet2"></i>
+            <i class="fas fa-redo-alt unsetStyle" id="beautyKeynameUnset2"></i>
+        </div>
+        <div>
+            <button id="moveBeautyKeyname" onclick="window.open('https://wiki.navercorp.com/display/LFS/SODA.Statistics#SODA.Statistics-BeautyPartsID(NBP)')">Beauty Keyname List</button>
+        </div>
+    </div>
+    <div id="titleAreaTianyan">
+        <h3>Tab</h3>
+    </div>
+    <div id="optionArea">
+        <select name="tabValue" id="tabValue">
+            <option value="none" selected disabled>---</option>
+            <option value="beauty">Beauty</option>
+            <option value="advanced">Advanced</option>
+        </select>
+        <i class="fas fa-redo-alt unsetStyle" id="beautyTabUnset"></i>
+    </div>
+    <div id="titleAreaTianyan">
+        <h2>* Scheme</h2>
+    </div>
+    <input id="mainUrl" readonly style="width: 600px;">
+    <br>
+    <br>
+    <i class="fas fa-copy copyStyle" id="schemeCopy"></i>
+    <br>
+    <div id="titleAreaTianyan">
+        <h2>* QR Code</h2>
+    </div>
+    <i class="fas fa-qrcode qrcodeStyle" id="addQrcode" value="Show QR Code" onclick="actionAdd()"></i>
+    <i class="fas fa-redo-alt resetStyle" id="reset" value="Reset"></i>
+    <i class="fas fa-reqular fa-download qrDownloadStyle" id="downloadQrBtn" value="Download QR Code"></i>
+    <br>
+    <br>
+    <div id="qrCodeArea">
+        <div id="showQrCode">
+            <div id="showQrCodeDiv"></div>
+            <ul id="qrUl"></ul>
+        </div>
+    </div>
+
+    <script>
+        const schemeAppMain = {
+            mainSchemeUrl: '',
+            beautyKeyname: '',
+            optionTab: '',
+            mainAllUrl: ''
+        }
+
+        $(function () {
+            schemeAppMain.mainSchemeUrl = "tianyanb://";
+            mainCameraSetUrl();
+
+            $("#beautyKeynameSet2").click(function () {
+                var beautyKeynameVal = $("#beautyKeyname2").val();
+                if (beautyKeynameVal === '') {
+                    return false;
+                }
+                schemeAppMain.beautyKeyname = 'beautyKeyname=' + beautyKeynameVal;
+                mainCameraSetUrl();
+            });
+
+            $("#beautyKeynameUnset2").click(function () {
+                if (schemeAppMain.beautyKeyname.indexOf("beautyKeyname") !== -1) {
+                    schemeAppMain.beautyKeyname = '';
+                    mainCameraSetUrl();
+                }
+            });
+
+            $("#tabValue").change(function () {
+                var tabOption = $(this).val();
+                schemeAppMain.optionTab = 'tab=' + tabOption;
+                mainCameraSetUrl();
+            });
+
+            $("#beautyTabUnset").click(function () {
+                schemeAppMain.optionTab = '';
+                mainCameraSetUrl();
+            });
+
+            $("#mainUrl").click(function () {
+                var schemeUrl = $(this).val();
+                window.open(schemeUrl);
+            });
+        })
+
+        function mainCameraSetUrl() {
+            const mainParam = [
+                schemeAppMain.beautyKeyname,
+                schemeAppMain.optionTab,
+            ]
+            var all = schemeAppMain.mainSchemeUrl + "go";
+            var ck = false;
+            for (var i = 0; i < mainParam.length; i++) {
+                if (Array.isArray(mainParam[i])) {
+                    for (var j = 0; j < mainParam[i].length; j++) {
+                        if (ck) {
+                            all += '$' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                        } else {
+                            all += '?' + mainParam[i][j].name + '=' + mainParam[i][j].val;
+                            ck = true;
+                        }
+                    }
+                } else {
+                    if (mainParam[i] === '') {
+
+                    } else {
+                        if (ck) {
+                            all += '&' + mainParam[i];
+                        } else {
+                            all += '?' + mainParam[i];
+                            ck = true;
+                        }
+                    }
+                }
+            }
+            $("#mainUrl").val(all);
+            schemeAppMain.mainAllUrl = all;
+        }
+
+        $("#addQrcode").click(function () {
+            $("#showQrCode #showQrCodeDiv").empty();
+            jQuery("#showQrCode #showQrCodeDiv").qrcode({
+            render: "table",
+            width: 100,
+            height: 100,
+            text: $("#mainUrl").val()
+            });
+        })
+
+        function actionAdd() {
+            $("#qrUl").empty();
+            var textAdd = $("#mainUrl").val();
+            var qrUl = $("#qrUl");
+            qrUl.append("<br>"+"<li>"+textAdd+"</li>");
+            var space = $("#showQrCodeDiv");
+            space.append("<br>");
+            window.scrollTo(0, document.body.scrollHeight)
+        }
+
+        $("#reset").click(function() {
+            $("#showQrCode #showQrCodeDiv").empty();
+            $("#qrUl").empty();
+        })
+
+        $("#schemeCopy").click (
+            function() {
+                var urlInfo = document.getElementById("mainUrl");
+                urlInfo.select();
+                document.execCommand("Copy");
+                alert("Add scheme to clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#downloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#showQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
