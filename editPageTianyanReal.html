@@ -30,7 +30,7 @@
     <div id="titleAreaTianyan">
         <h3>Menu</h3>
     </div>
-    <div id="subOptionArea">
+    <div id="subOptionAreaFirst">
         <div>
             <button id="editMenuStyleBtn">Style</button>
         </div>
@@ -41,8 +41,13 @@
             <button id="editMenuOneTouchBtn">One Touch</button>
         </div>
         <div>
+            <button id="editMenu3dreshapeBtn">3D Reshape</button>
+        </div>
+        <div>
             <button id="editMenuReshapeBtn">Reshape</button>
         </div>
+    </div>
+    <div id="subOptionAreaSecond">
         <div>
             <button id="editMenuFilterBtn">Filter</button>
         </div>
@@ -58,7 +63,7 @@
     </div>
     <div id="insertValueArea">
         <details id="beautyKeynameDetails">
-            <summary id="beautyKeynameSummary">Onetouch, Reshape</summary>
+            <summary id="beautyKeynameSummary">Onetouch, 3D Reshape, Reshape</summary>
             <div id="beautyKeyNameTitleAreaTianyan">
                 Insert Beauty Keyname
             </div>
@@ -200,6 +205,7 @@
             editStyle: '',
             editHdSkin: '',
             editOneTouch: '',
+            edit3dReshape: '',
             editReshape: '',
             editFilter: '',
             editMakeup: '',
@@ -285,6 +291,30 @@
                 var openStyleDetails = document.getElementById("styleDetails");
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "tianyan://pick?tab=onetouch";
+                mainSchemeSetUrl();
+                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
+                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
+                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
+                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
+                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
+                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
+                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                var openOneTouchDetails = document.getElementById("beautyKeynameDetails");
+                openOneTouchDetails.open = true;
+            });
+
+            $("#editMenu3dreshapeBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = true;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "tianyan://pick?tab=3dreshape";
                 mainSchemeSetUrl();
                 $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
                 $("#styleContentsId").attr("disabled",true).attr("readonly",false);
@@ -616,6 +646,7 @@
                 schemeAppMain.editStyle,
                 schemeAppMain.editHdSkin,
                 schemeAppMain.editOneTouch,
+                schemeAppMain.edit3dReshape,
                 schemeAppMain.editReshape,
                 schemeAppMain.editFilter,
                 schemeAppMain.editMakeup,

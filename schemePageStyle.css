@@ -133,11 +133,11 @@
     color: rgb(194, 192, 192);
 }
 
-#subOptionArea, #firstList, #secondList {
+#subOptionAreaFirst, #subOptionAreaSecond, #firstList, #secondList {
     display: flex;
 }
 
-#editMenuStyleBtn, #editMenuHdSkinBtn, #editMenuOneTouchBtn, #editMenuReshapeBtn, #editMenuFilterBtn, #editMenuMakeupBtn, #editMenuLiquifyBtn, #eidtMenuDslrBtn {
+#editMenuStyleBtn, #editMenuHdSkinBtn, #editMenuOneTouchBtn, #editMenuReshapeBtn, #editMenuFilterBtn, #editMenuMakeupBtn, #editMenuLiquifyBtn, #eidtMenuDslrBtn, #editMenu3dreshapeBtn{
     margin: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -146,7 +146,7 @@
     cursor: pointer;
 }
 
-#editMenuStyleBtn:hover, #editMenuHdSkinBtn:hover, #editMenuOneTouchBtn:hover, #editMenuReshapeBtn:hover, #editMenuFilterBtn:hover, #editMenuMakeupBtn:hover, #editMenuLiquifyBtn:hover, #eidtMenuDslrBtn:hover {
+#editMenuStyleBtn:hover, #editMenuHdSkinBtn:hover, #editMenuOneTouchBtn:hover, #editMenuReshapeBtn:hover, #editMenuFilterBtn:hover, #editMenuMakeupBtn:hover, #editMenuLiquifyBtn:hover, #eidtMenuDslrBtn:hover, #editMenu3dreshapeBtn:hover {
     background-color: rgb(194, 192, 192);
     color: white;
 }
