@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>Flutter Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./schemePageStyle.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea">
+        <h2>Flutter Scheme (SODA Real)</h2>
+        <i class="fas fa-home" id="moveHome" onclick="location.href='sodaqahelper.html'"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Scheme Select</h3>
+    </div>
+    <div id="optionArea">
+        <button id="mainCamera" onclick="location.href='mainCameraPage.html'">Main Camera</button>
+        <button id="discover" onclick="location.href='discoverPage.html'">Discover</button>
+        <button id="beautyRecipe" onclick="location.href='beautyRecipePage.html'">Beauty Recipe</button>
+        <button id="edit" onclick="location.href='editPage.html'">Edit</button>
+        <button id="beauty" onclick="location.href='beautyPage.html'">Beauty</button>
+        <button id="flutter" onclick="location.href='flutterPage.html'">Flutter</button>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Home</h3>
+    </div>
+    <div id="subOptionAreaFirst">
+        <div>
+            <button id="benefitPageHome">Benefit Page Home</button>
+        </div>
+    </div>
+    <div id="subOptionAreaFirst">
+        <h4>Category</h4>
+    </div>
+    <div id="subOptionAreaSecond">
+        <div>
+            <button id="flutterFilter">Filter</button>
+        </div>
+        <div>
+            <button id="flutterBanner">Banner</button>
+        </div>
+        <div>
+            <button id="flutterTopchart">Top chart</button>
+        </div>
+        <div>
+            <button id="flutterShortcut">Short cut</button>
+        </div>
+    </div>
+    <div id="insertGroupIdArea">
+        Group ID : <input type="text" id="homeGroupId" disabled>
+        <i class="fas fa-plus setStyle" id="homeGroupIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="homeGroupIdUnset"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>2depth</h3>
+    </div>
+    <div id="subOptionAreaFirst">
+        <div>
+            <button id="benefitPage2depth">Benefit Page 2depth</button>
+        </div>
+    </div>
+    <div id="insertGroupIdArea">
+        Group ID : <input type="text" id="2depthGroupId" disabled>
+        <i class="fas fa-plus setStyle" id="2depthGroupIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="2depthGroupIdUnset"></i>
+    </div>
+    <div id="insertItemIdArea">
+        Item ID : <input type="text" id="2depthItemId" disabled>
+        <i class="fas fa-plus setStyle" id="2depthItemIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="2depthItemIdUnset"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>End Page</h3>
+    </div>
+    <div id="subOptionAreaFirst">
+        <div>
+            <button id="benefitPageEndPage">Benefit End Page</button>
+        </div>
+    </div>
+    <div id="insertGroupIdArea">
+        Group ID : <input type="text" id="endpageGroupId" disabled>
+        <i class="fas fa-plus setStyle" id="endpageGroupIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="endpageGroupIdUnset"></i>
+    </div>
+    <div id="insertItemIdArea">
+        Item ID : <input type="text" id="endpageItemId" disabled>
+        <i class="fas fa-plus setStyle" id="endpageItemIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="endpageItemIdUnset"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Detail Page</h3>
+    </div>
+    <div id="subOptionAreaFirst">
+        <div>
+            <button id="benefitPageDetailPage">Benefit Detail Page</button>
+        </div>
+    </div>
+    <div id="insertGroupIdArea">
+        Group ID : <input type="text" id="detailpageGroupId" disabled>
+        <i class="fas fa-plus setStyle" id="detailpageGroupIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="detailpageGroupIdUnset"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h3>Detail End Page</h3>
+    </div>
+    <div id="subOptionAreaFirst">
+        <div>
+            <button id="benefitPageDetailEndPage">Benefit Detail End Page</button>
+        </div>
+    </div>
+    <div id="insertGroupIdArea">
+        Group ID : <input type="text" id="detailEndpageGroupId" disabled>
+        <i class="fas fa-plus setStyle" id="detailEndpageGroupIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="detailEndpageGroupIdUnset"></i>
+    </div>
+    <div id="insertItemIdArea">
+        Item ID : <input type="text" id="detailEndpageItemId" disabled>
+        <i class="fas fa-plus setStyle" id="detailEndpageItemIdSet"></i>
+        <i class="fas fa-redo-alt unsetStyle" id="detailEndpageItemIdUnset"></i>
+    </div>
+    <div id="titleAreaSoda">
+        <h2>* Scheme</h2>
+    </div>
+    <input id="mainUrl" readonly style="width: 600px;">
+    <button id="resetBtn">Reset</button>
+    <br>
+    <br>
+    <i class="fas fa-copy copyStyle" id="schemeCopy"></i>
+    <br>
+    <div id="titleAreaSoda">
+        <h2>* QR Code</h2>
+    </div>
+    <i class="fas fa-qrcode qrcodeStyle" id="addQrcode" value="Show QR Code" onclick="actionAdd()"></i>
+    <i class="fas fa-redo-alt resetStyle" id="reset" value="Reset"></i>
+    <i class="fas fa-reqular fa-download qrDownloadStyle" id="downloadQrBtn" value="Download QR Code"></i>
+    <br>
+    <br>
+    <div id="qrCodeArea">
+        <div id="showQrCode">
+            <div id="showQrCodeDiv"></div>
+            <ul id="qrUl"></ul>
+        </div>
+    </div>
+
+    <script>
+        const schemeAppMain = {
+            mainSchemeUrl: '',
+            benefitHome: '',
+            benefitFilter: '',
+            benefitBanner: '',
+            benefitTopchart: '',
+            benefitShortcut: '',
+            benefit2depth: '',
+            benefit2depthGroupId: '',
+            benefit2depthItemId: '',
+            benefitEndPage: '',
+            benefitEndPageGroupId: '',
+            benefitEndPageItemId: '',
+            benefitDetailPage: '',
+            benefitDetailPageGroupId: '',
+            benefitDetailEndPage: '',
+            benefitDetailEndPageGroupId: '',
+            benefitDetailEndPageItemId: '',
+            mainAllUrl: '',
+        }
+
+        $(function () {
+
+            $("#benefitPageHome").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#flutterFilter").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&category=filter";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();s
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#flutterBanner").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&category=banner";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#flutterTopchart").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&category=topchart";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#flutterShortcut").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&category=shortcut";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#homeGroupIdSet").click(function () {
+                var homeGroupId = $("#homeGroupId").val();
+                if (homeGroupId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitHome = 'groupid=' + homeGroupId;
+                mainSchemeSetUrl();
+            });
+
+            $("#homeGroupIdUnset").click(function () {
+                if (schemeAppMain.benefitHome.indexOf("groupid") !== -1) {
+                    schemeAppMain.benefitHome = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#benefitPage2depth").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&twodepthcategory=filter";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",false).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",false).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#homeGroupIdUnset").click();
+                $("#homeGroupIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#2depthGroupIdSet").click(function () {
+                var twoDepthGroupId = $("#2depthGroupId").val();
+                if (twoDepthGroupId === '') {
+                    return false;
+                }
+                schemeAppMain.benefit2depthGroupId = 'groupId=' + twoDepthGroupId;
+                mainSchemeSetUrl();
+            });
+
+            $("#2depthGroupIdUnset").click(function () {
+                if (schemeAppMain.benefit2depthGroupId.indexOf("groupId") !== -1) {
+                    schemeAppMain.benefit2depthGroupId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#2depthItemIdSet").click(function () {
+                var twoDepthItemId = $("#2depthItemId").val();
+                if (twoDepthItemId === '') {
+                    return false;
+                }
+                schemeAppMain.benefit2depthItemId = 'itemId=' + twoDepthItemId;
+                mainSchemeSetUrl();
+            });
+
+            $("#2depthItemIdUnset").click(function () {
+                if (schemeAppMain.benefit2depthItemId.indexOf("itemId") !== -1) {
+                    schemeAppMain.benefit2depthItemId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#benefitPageEndPage").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=main&endpage=filter";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",false).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",false).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#homeGroupIdUnset").click();
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#endpageGroupIdSet").click(function () {
+                var endpageGroupId = $("#endpageGroupId").val();
+                if (endpageGroupId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitEndPageGroupId = 'groupId=' + endpageGroupId;
+                mainSchemeSetUrl();
+            });
+
+            $("#endpageGroupIdUnset").click(function () {
+                if (schemeAppMain.benefitEndPageGroupId.indexOf("groupId") !== -1) {
+                    schemeAppMain.benefitEndPageGroupId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#endpageItemIdSet").click(function () {
+                var endpageItemId = $("#endpageItemId").val();
+                if (endpageItemId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitEndPageItemId = 'itemId=' + endpageItemId;
+                mainSchemeSetUrl();
+            });
+
+            $("#endpageItemIdUnset").click(function () {
+                if (schemeAppMain.benefitEndPageItemId.indexOf("itemId") !== -1) {
+                    schemeAppMain.benefitEndPageItemId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#benefitPageDetailPage").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=detail&twodepthcategory=filter";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",false).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#homeGroupIdUnset").click();
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailEndpageGroupIdUnset").click();
+                $("#detailEndpageItemIdUnset").click();
+            });
+
+            $("#detailpageGroupIdSet").click(function () {
+                var detailpageGroupId = $("#detailpageGroupId").val();
+                if (detailpageGroupId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitDetailPageGroupId = 'groupId=' + detailpageGroupId;
+                mainSchemeSetUrl();
+            });
+
+            $("#detailpageGroupIdUnset").click(function () {
+                if (schemeAppMain.benefitDetailPageGroupId.indexOf("groupId") !== -1) {
+                    schemeAppMain.benefitDetailPageGroupId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#benefitPageDetailEndPage").click(function () {
+                schemeAppMain.mainSchemeUrl = "soda://flutter?page=detail&category=filter";
+                mainSchemeSetUrl();
+                $("#homeGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthGroupId").attr("disabled",true).attr("readonly",false);
+                $("#2depthItemId").attr("disabled",true).attr("readonly",false);
+                $("#endpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#endpageItemId").attr("disabled",true).attr("readonly",false);
+                $("#detailpageGroupId").attr("disabled",true).attr("readonly",false);
+                $("#detailEndpageGroupId").attr("disabled",false).attr("readonly",false);
+                $("#detailEndpageItemId").attr("disabled",false).attr("readonly",false);
+                $("#homeGroupIdUnset").click();
+                $("#2depthGroupIdUnset").click();
+                $("#2depthItemIdUnset").click();
+                $("#endpageGroupIdUnset").click();
+                $("#endpageItemIdUnset").click();
+                $("#detailpageGroupIdUnset").click();
+            });
+
+             $("#detailEndpageGroupIdSet").click(function () {
+                var detailEndpageGroupId = $("#detailEndpageGroupId").val();
+                if (detailEndpageGroupId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitDetailEndPageGroupId = 'groupId=' + detailEndpageGroupId;
+                mainSchemeSetUrl();
+            });
+
+            $("#detailEndpageGroupIdUnset").click(function () {
+                if (schemeAppMain.benefitDetailEndPageGroupId.indexOf("groupId") !== -1) {
+                    schemeAppMain.benefitDetailEndPageGroupId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#detailEndpageItemIdSet").click(function () {
+                var detailEndpageItemId = $("#detailEndpageItemId").val();
+                if (detailEndpageItemId === '') {
+                    return false;
+                }
+                schemeAppMain.benefitDetailEndPageItemId = 'itemId=' + detailEndpageItemId;
+                mainSchemeSetUrl();
+            });
+
+            $("#detailEndpageItemIdUnset").click(function () {
+                if (schemeAppMain.benefitDetailEndPageItemId.indexOf("itemId") !== -1) {
+                    schemeAppMain.benefitDetailEndPageItemId = '';
+                    mainSchemeSetUrl();
+                }
+            });
+
+            $("#mainUrl").click(function () {
+                var schemeUrl = $(this).val();
+                window.open(schemeUrl);
+            });
+
+            $("#resetBtn").click(function () {
+                // var inputValue = document.getElementById("mainUrl");
+                // inputValue.value = null;
+                window.location.reload();
+            });
+        })
+
+        function mainSchemeSetUrl() {
+            const mainParam = [
+                schemeAppMain.benefitHome,
+                schemeAppMain.benefitFilter,
+                schemeAppMain.benefitBanner,
+                schemeAppMain.benefitTopchart,
+                schemeAppMain.benefitShortcut,
+                schemeAppMain.benefit2depth,
+                schemeAppMain.benefit2depthGroupId,
+                schemeAppMain.benefit2depthItemId,
+                schemeAppMain.benefitEndPage,
+                schemeAppMain.benefitEndPageGroupId,
+                schemeAppMain.benefitEndPageItemId,
+                schemeAppMain.benefitDetailPage,
+                schemeAppMain.benefitDetailPageGroupId,
+                schemeAppMain.benefitDetailEndPage,
+                schemeAppMain.benefitDetailEndPageGroupId,
+                schemeAppMain.benefitDetailEndPageItemId
+            ]
+            var all = schemeAppMain.mainSchemeUrl;
+            for (var i = 0; i < mainParam.length; i++) {
+                if (mainParam[i] !== '') {
+                    all += '&' + mainParam[i];
+                }
+            }
+            $("#mainUrl").val(all);
+            schemeAppMain.mainAllUrl = all;
+        }
+
+        $("#addQrcode").click(function () {
+            $("#showQrCode #showQrCodeDiv").empty();
+            jQuery("#showQrCode #showQrCodeDiv").qrcode({
+            render: "table",
+            width: 100,
+            height: 100,
+            text: $("#mainUrl").val()
+            });
+        })
+
+        function actionAdd() {
+            $("#qrUl").empty();
+            var textAdd = $("#mainUrl").val();
+            var qrUl = $("#qrUl");
+            qrUl.append("<br>"+"<li>"+textAdd+"</li>");
+            var space = $("#showQrCodeDiv");
+            space.append("<br>");
+            window.scrollTo(0, document.body.scrollHeight)
+        }
+
+        $("#reset").click(function() {
+            $("#showQrCode #showQrCodeDiv").empty();
+            $("#qrUl").empty();
+        })
+
+        $("#schemeCopy").click (
+            function() {
+                var urlInfo = document.getElementById("mainUrl");
+                urlInfo.select();
+                document.execCommand("Copy");
+                alert("Add scheme to clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#downloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#showQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
