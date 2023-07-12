@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Pragma" content="no-cache">
@@ -12,6 +13,7 @@
     <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
+
 <body>
     <div id="mainTitleArea">
         <h2>Edit Scheme (SODA Beta)</h2>
@@ -61,6 +63,15 @@
         <div>
             <button id="eidtMenuDslrBtn">DSLR</button>
         </div>
+        <div>
+            <button id="eidtMenuLiquifyBtn">Liquify</button>
+        </div>
+        <div>
+            <button id="eidtMenuEnhanceBtn">Enhance</button>
+        </div>
+        <div>
+            <button id="eidtMenuremoveBtn">Remove</button>
+        </div>
     </div>
     <div id="insertValueArea">
         <details id="beautyKeynameDetails">
@@ -74,7 +85,9 @@
                 <i class="fas fa-redo-alt unsetStyle" id="beautyKeynameUnset"></i>
             </div>
             <div>
-                <button id="moveBeautyKeynamePage" onclick="window.open('https://wiki.navercorp.com/display/LFS/SODA.Statistics#SODA.Statistics-BeautyPartsID(NBP)')">Beauty Keyname List</button>
+                <button id="moveBeautyKeynamePage"
+                    onclick="window.open('https://wiki.navercorp.com/display/LFS/SODA.Statistics#SODA.Statistics-BeautyPartsID(NBP)')">Beauty
+                    Keyname List</button>
             </div>
         </details>
         <details id="styleDetails">
@@ -233,7 +246,7 @@
             valueMakeupKeynameEyeShadow: '',
             valueMakeupKeynameEyeLiner: '',
             valueMakeupKeynameEyelashes: '',
-            mainAllUrl:'',
+            mainAllUrl: '',
         }
 
         $(function () {
@@ -249,15 +262,15 @@
                 openStyleDetails.open = true;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=style";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",false).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",false).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",false).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",false).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", false).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", false).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", false).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", false).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
             });
 
             $("#editMenuHdSkinBtn").click(function () {
@@ -271,15 +284,15 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=hdskin";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", true).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
             });
 
             $("#editMenuOneTouchBtn").click(function () {
@@ -293,15 +306,15 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=onetouch";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", true).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", false).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
                 var openOneTouchDetails = document.getElementById("beautyKeynameDetails");
                 openOneTouchDetails.open = true;
             });
@@ -317,20 +330,20 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=reshape3d";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", true).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", false).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
                 var openOneTouchDetails = document.getElementById("beautyKeynameDetails");
                 openOneTouchDetails.open = true;
             });
 
-            $("#editMenuReshapeBtn").click(function() {
+            $("#editMenuReshapeBtn").click(function () {
                 var openBeautyDetails = document.getElementById("beautyKeynameDetails");
                 openBeautyDetails.open = true;
                 var openFilterDetails = document.getElementById("filterDetails");
@@ -341,15 +354,15 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=reshape";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",false).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", true).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", false).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
                 var openReshapeDetails = document.getElementById("beautyKeynameDetails");
                 openReshapeDetails.open = true;
             });
@@ -365,17 +378,53 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=filter";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",false).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",false).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",true).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",true).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", false).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", false).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", true).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", true).attr("readonly", false);
                 var openfilterDetails = document.getElementById("filterDetails");
                 openfilterDetails.open = true;
+            });
+            $("#eidtMenuLiquifyBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "sodab://pick?tab=liquify";
+                mainSchemeSetUrl2();
+            });
+            $("#eidtMenuEnhanceBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "sodab://pick?tab=enhance";
+                mainSchemeSetUrl2();
+            });
+            $("#eidtMenuremoveBtn").click(function () {
+                var openBeautyDetails = document.getElementById("beautyKeynameDetails");
+                openBeautyDetails.open = false;
+                var openFilterDetails = document.getElementById("filterDetails");
+                openFilterDetails.open = false;
+                var openMakeupDetails = document.getElementById("makeupDetails");
+                openMakeupDetails.open = false;
+                var openStyleDetails = document.getElementById("styleDetails");
+                openStyleDetails.open = false;
+                schemeAppMain.mainSchemeUrl = "sodab://pick?tab=remove";
+                mainSchemeSetUrl2();
             });
 
             $("#editMenuMakeupBtn").click(function () {
@@ -389,15 +438,15 @@
                 openStyleDetails.open = false;
                 schemeAppMain.mainSchemeUrl = "sodab://pick?tab=makeup";
                 mainSchemeSetUrl();
-                $("#styleCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#styleContentsId").attr("disabled",true).attr("readonly",false);
-                $("#filterCategoryId").attr("disabled",true).attr("readonly",false);
-                $("#filterContentsId").attr("disabled",true).attr("readonly",false);
-                $("#beautyKeyname").attr("disabled",true).attr("readonly",false);
-                $("#makeupKeyname").attr("disabled",false).attr("readonly",false);
-                $("#makeupAssetKeyname").attr("disabled",false).attr("readonly",false);
-                $("#makeupIntensity").attr("disabled",false).attr("readonly",false);
-                $("#makeupSubId").attr("disabled",false).attr("readonly",false);
+                $("#styleCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#styleContentsId").attr("disabled", true).attr("readonly", false);
+                $("#filterCategoryId").attr("disabled", true).attr("readonly", false);
+                $("#filterContentsId").attr("disabled", true).attr("readonly", false);
+                $("#beautyKeyname").attr("disabled", true).attr("readonly", false);
+                $("#makeupKeyname").attr("disabled", false).attr("readonly", false);
+                $("#makeupAssetKeyname").attr("disabled", false).attr("readonly", false);
+                $("#makeupIntensity").attr("disabled", false).attr("readonly", false);
+                $("#makeupSubId").attr("disabled", false).attr("readonly", false);
                 var openMakeupDetails = document.getElementById("makeupDetails");
                 openMakeupDetails.open = true;
             });
@@ -685,13 +734,20 @@
             schemeAppMain.mainAllUrl = all;
         }
 
+        function mainSchemeSetUrl2() {
+            var all = schemeAppMain.mainSchemeUrl;
+
+            $("#mainUrl").val(all);
+            schemeAppMain.mainAllUrl = all;
+        }
+
         $("#addQrcode").click(function () {
             $("#showQrCode #showQrCodeDiv").empty();
             jQuery("#showQrCode #showQrCodeDiv").qrcode({
-            render: "table",
-            width: 100,
-            height: 100,
-            text: $("#mainUrl").val()
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#mainUrl").val()
             });
         })
 
@@ -699,19 +755,19 @@
             $("#qrUl").empty();
             var textAdd = $("#mainUrl").val();
             var qrUl = $("#qrUl");
-            qrUl.append("<br>"+"<li>"+textAdd+"</li>");
+            qrUl.append("<br>" + "<li>" + textAdd + "</li>");
             var space = $("#showQrCodeDiv");
             space.append("<br>");
             window.scrollTo(0, document.body.scrollHeight)
         }
 
-        $("#reset").click(function() {
+        $("#reset").click(function () {
             $("#showQrCode #showQrCodeDiv").empty();
             $("#qrUl").empty();
         })
 
-        $("#schemeCopy").click (
-            function() {
+        $("#schemeCopy").click(
+            function () {
                 var urlInfo = document.getElementById("mainUrl");
                 urlInfo.select();
                 document.execCommand("Copy");
@@ -722,7 +778,7 @@
         $(function () {
             $("#downloadQrBtn").on("click", function () {
                 html2canvas(document.querySelector("#showQrCode")).then(canvas => {
-                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
                 });
             });
             function saveAs(uri, filename) {
@@ -740,4 +796,5 @@
         });
     </script>
 </body>
+
 </html>
