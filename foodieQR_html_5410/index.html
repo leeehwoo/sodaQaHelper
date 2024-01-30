@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QR - Code</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+		integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+
+	<div class="container-sm pt-4" style="width: 1100px;padding-bottom: 100px;">
+		<div class="card">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Adjustment.v2]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEAv2" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=adjustment&adjustKeyname=
+							</span>
+							<select name="" id="FEAv2AdKeyname" class="form-select" style="width: 150px;">
+								<option value="brilliance">brilliance</option>
+								<option value="brightness">brightness</option>
+								<option value="contrast">contrast</option>
+								<option value="saturation">saturation</option>
+								<option value="vibrance">vibrance</option>
+								<option value="texture">texture</option>
+								<option value="grain">grain</option>
+								<option value="dust">dust</option>
+								<option value="color">color</option>
+								<option value="highlight">highlight</option>
+								<option value="shadow">shadow</option>
+								<option value="sharpen">sharpen</option>
+								<option value="warmth">warmth</option>
+								<option value="tint">tint</option>
+								<option value="fade">fade</option>
+								<option value="vignette">vignette</option>
+								<option value="blur">blur</option>
+								<option value="hsl">hsl</option>
+								<option value="lux">lux</option>
+								<option value="clarity">clarity</option>
+								<option value="curve">curve</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FEAv2Value"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEAv2"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEAv2-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Adjustment.v2.intensity]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEAv2Intensity" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=adjustment&adjustKeyname=
+							</span>
+							<select name="" id="FEAv2AdKeynameIntensity" class="form-select" style="width: 150px;">
+								<option value="brilliance">brilliance</option>
+								<option value="brightness">brightness</option>
+								<option value="contrast">contrast</option>
+								<option value="saturation">saturation</option>
+								<option value="vibrance">vibrance</option>
+								<option value="texture">texture</option>
+								<option value="grain">grain</option>
+								<option value="highlight">highlight</option>
+								<option value="shadow">shadow</option>
+								<option value="sharpen">sharpen</option>
+								<option value="warmth">warmth</option>
+								<option value="tint">tint</option>
+								<option value="fade">fade</option>
+								<option value="vignette">vignette</option>
+								<option value="lux">lux</option>
+								<option value="clarity">clarity</option>
+							</select>
+							<span>
+								&intensity=
+							</span>
+							<select name="" id="FEAv2IntensityIntensity" class="form-select" style="width: 100px;">
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FEAv2ValueIntensity"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEAv2Intensity"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEAv2Intensity-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Merge]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEM" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=
+							</span>
+							<select name="" id="FEMTab" class="form-select" style="width: 150px;">
+								<option value="filter">filter</option>
+								<option value="effect">effect</option>
+								<option value="adjustment">adjustment</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FEMValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEM"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEM-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Merge - filter]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEMF" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=filter&filterId=
+							</span>
+							<input type="text" class="form-control" id="FEMFFilter" value="00000" style="width: 80px;">
+							<span>
+								&filterCategoryId=
+							</span>
+							<input type="text" class="form-control" id="FEMFCategory" value="00000"
+								style="width: 80px;">
+						</div>
+						<a href="#" class="mt-2" id="FEMFValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEMF"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEMF-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Merge - effect]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEME" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=
+							</span>
+							<select name="" id="FEMEFselect" class="form-select" style="width: 200px;">
+								<option value="effect&effectId">effect&effectId</option>
+								<option value="filter&filterId">filter&filterId</option>
+							</select>
+							<span>
+								=
+							</span>
+							<input type="text" class="form-control" id="FEMENumber" value="00000" style="width: 80px;">
+						</div>
+						<a href="#" class="mt-2" id="FEMEValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEME"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEME-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Edit.Merge - store]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FEMT" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://pick?tab=
+							</span>
+							<select name="" id="FEMTTab" class="form-select" style="width: 150px;">
+								<option value="main">main</option>
+								<option value="filter">filter</option>
+								<option value="effect">effect</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FEMTValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FEMT"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FEMT-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.iOS.Camera.Zoom.Improvement]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FICZI" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://go?tab=
+							</span>
+							<select name="" id="FICZITab" class="form-select" style="width: 150px;">
+								<option value="Filter">Filter</option>
+								<option value="Makeup">Makeup</option>
+								<option value="Beauty">Beauty</option>
+								<option value="Advanced">Advanced</option>
+								<option value="Layout Burst">Layout Burst</option>
+								<option value="Smartblur">Smartblur</option>
+								<option value="zoom">zoom</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FICZIValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FICZI"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FICZI-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.iOS.Camera.Zoom.Improvement - cameraPosition]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FICZICamera" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://go?tab=zoom&cameraPosition=
+							</span>
+							<select name="" id="FICZICameraPosition" class="form-select" style="width: 150px;">
+								<option value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FICZICameraValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FICZICamera"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FICZICamera-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.iOS.Camera.Zoom.Improvement - takemode]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FICZITake" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://go?tab=zoom&takemode=
+							</span>
+							<select name="" id="FICZITakeMode" class="form-select" style="width: 150px;">
+								<option value="film">film</option>
+								<option value="photo">photo</option>
+								<option value="video">video</option>
+							</select>
+							<span>
+								&cameraPosition=
+							</span>
+							<select name="" id="FICZITakeCameraPosition" class="form-select" style="width: 150px;">
+								<option value="0">0</option>
+								<option value="1">1</option>
+							</select>
+						</div>
+						<a href="#" class="mt-2" id="FICZITakeValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FICZITake"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FICZITake-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Store.Improvement]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FSI" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://store?&tab=
+							</span>
+							<select name="" id="FSITab" class="form-select" style="width: 150px;">
+								<option value="main">main</option>
+								<option value="filter">filter</option>
+								<option value="effect">effect</option>
+							</select>
+							<span>
+								&category=
+							</span>
+							<select name="" id="FSICategory" class="form-select" style="width: 150px;">
+								<option value="filter">filter</option>
+								<option value="effect">effect</option>
+								<option value="bigbanner">bigbanner</option>
+								<option value="topchart">topchart</option>
+							</select>
+							<span>
+								&groupid=
+							</span>
+							<input type="text" class="form-control" id="FSICNumber" value="00000" style="width: 80px;">
+						</div>
+						<a href="#" class="mt-2" id="FSIValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FSI"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FSI-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.Store.Improvement - group]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FSIIEM" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://store?&tab=
+							</span>
+							<select name="" id="FSIIEMTab" class="form-select" style="width: 150px;">
+								<option value="main">main</option>
+								<option value="filter">filter</option>
+								<option value="effect">effect</option>
+							</select>
+							<span>
+								&groupid=
+							</span>
+							<input type="text" class="form-control" id="FSIIEMTabGroup" value="00000"
+								style="width: 80px;">
+							<span>
+								&itemid=
+							</span>
+							<input type="text" class="form-control" id="FSIIEMTabNumber" value="00000"
+								style="width: 80px;">
+						</div>
+						<a href="#" class="mt-2" id="FSIIEMValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FSIIEM"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FSIIEM-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-body">
+				<h1>[Foodie.DefaultGallery.Share]</h1>
+
+				<div class="d-flex align-items-center">
+					<div class="d-flex flex-column my-4">
+						<div class="d-flex align-items-center">
+							<select name="" id="FDS" class="form-select" style="width: 150px;">
+								<option value="foodie">foodie</option>
+								<option value="foodieb">foodieb</option>
+								<option value="foodiecn">foodiecn</option>
+								<option value="foodiecnb">foodiecnb</option>
+							</select>
+							<span>
+								://edit?mediatype=
+							</span>
+							<select name="" id="FDSType" class="form-select" style="width: 150px;">
+								<option value="Image">Image</option>
+								<option value="Video">Video</option>
+							</select>
+							<span>
+								&filepath=
+							</span>
+							<input type="text" class="form-control" id="FDSPath" value="filepath" style="width: 200px;">
+						</div>
+						<a href="#" class="mt-2" id="FDSValue"></a>
+					</div>
+
+					<div class="ms-5">
+						<div class="qr-FDS"></div>
+						<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-FDS-link">다운로드</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="./js/jquery-qrcode-0.18.0.min.js"></script>
+	<script src="./js/common.js"></script>
+	<script src="./js/FEAv2.js"></script>
+	<script src="./js/FEAv2Intensity.js"></script>
+	<script src="./js/FEM.js"></script>
+	<script src="./js/FEMF.js"></script>
+	<script src="./js/FEME.js"></script>
+	<script src="./js/FEMT.js"></script>
+	<script src="./js/FICZI.js"></script>
+	<script src="./js/FICZICamera.js"></script>
+	<script src="./js/FICZITake.js"></script>
+	<script src="./js/FSI.js"></script>
+	<script src="./js/FSIItem.js"></script>
+	<script src="./js/FDS.js"></script>
+</body>
+
+</html>
