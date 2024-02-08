@@ -337,7 +337,7 @@
     color: white;
 }
 
-#insertGroupIdArea, #insertItemIdArea {
+#insertGroupIdArea, #insertItemIdArea, #insertOptionParameterArea {
     margin-left: 10px;
     margin-top: 20px;
     font-weight: bold;
