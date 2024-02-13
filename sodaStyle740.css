@@ -1,0 +1,19 @@
+#titleAreaSoda740 {
+    background-color: rgb(193, 232, 248);
+}
+
+#optionArea740 {
+    margin: 20px;
+}
+
+#qrCodeArea740 {
+    display: flex;
+    flex-direction: row;
+}
+
+.qrcodeStyle, .resetStyle, .qrDownloadStyle {
+  color: black;
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}

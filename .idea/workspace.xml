@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/soda_740.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beautyPageSodaBeta.html" beforeDir="false" afterPath="$PROJECT_DIR$/beautyPageSodaBeta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutterPageSodaBeta.html" beforeDir="false" afterPath="$PROJECT_DIR$/flutterPageSodaBeta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemePageStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/schemePageStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sodaStyle740.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soda_740.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda740.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,7 +44,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/Desktop/sodaQaHelper&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/Desktop/sodaQaHelper&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -107,7 +107,9 @@
       <workItem from="1684980229476" duration="3000" />
       <workItem from="1707184361761" duration="6846000" />
       <workItem from="1707269998426" duration="12479000" />
-      <workItem from="1707354188424" duration="9193000" />
+      <workItem from="1707354188424" duration="11921000" />
+      <workItem from="1707388290103" duration="2866000" />
+      <workItem from="1707791299605" duration="116000" />
     </task>
     <servers />
   </component>
