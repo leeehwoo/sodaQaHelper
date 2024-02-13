@@ -8,7 +8,12 @@
 
 #qrCodeArea740 {
     display: flex;
+}
+
+#bodyOneDepthShowQrCode, #skinOneDepthShowQrCode, #skinTwoDepthShowQrCode,#skinToneOneDepthShowQrCode, #middleFaceOneDepthShowQrCode, #middleFaceTwoDepthShowQrCode, #reshapeOneDepthShowQrCode, #reshapeTwoDepthShowQrCode {
+    display: flex;
     flex-direction: row;
+    margin: 20px;
 }
 
 .qrcodeStyle, .resetStyle, .qrDownloadStyle {
@@ -16,4 +21,24 @@
   font-size: 30px;
   margin-left: 20px;
   cursor: pointer;
+}
+
+#bodyOneDepthschemeCopy,#skinOneDepthSchemeCopy, #skinTwoDepthSchemeCopy, #skinToneOneDepthSchemeCopy, #middleFaceOneDepthSchemeCopy, #middleFaceTwoDepthSchemeCopy, #reshapeOneDepthSchemeCopy, #reshapeTwoDepthSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#bodyOneDepthDownloadQrBtn, #skinOneDepthDownloadQrBtn, #skinTwoDepthDownloadQrBtn, #skinToneOneDepthDownloadQrBtn, #middleFaceOneDepthDownloadQrBtn, #middleFaceTwoDepthDownloadQrBtn, #reshapeOneDepthDownloadQrBtn, #reshapeTwoDepthDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
 }
