@@ -401,7 +401,7 @@
         $(function () {
             $("#skinOneDepthAppList").change(function () {
                 var skinOneDepthAppOption = $(this).val();
-                skinOneDepthMain.skinOneDepthApp = skinOneDepthAppOption + '://pick?tab=skin';
+                skinOneDepthMain.skinOneDepthApp = skinOneDepthAppOption + '://pick?tab=onetouch';
                 skinOneDepthSetUrl();
             });
         })
@@ -482,7 +482,7 @@
             function skinTwoDepthScheme() {
                 var skinTwoDepthAppValue = skinTwoDepthAppSelect.value;
                 var skinTwoDepthBeautyKeynameValue = skinTwoDepthBeautyKeynameSelect.value;
-                skinTwoDepthSchemeValue.value = skinTwoDepthAppValue + '://pick?tab=skin&beautyKeyname=' + skinTwoDepthBeautyKeynameValue;
+                skinTwoDepthSchemeValue.value = skinTwoDepthAppValue + '://pick?tab=onetouch&beautyKeyname=' + skinTwoDepthBeautyKeynameValue;
             }
         });
 
