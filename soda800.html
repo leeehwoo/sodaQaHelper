@@ -331,6 +331,11 @@
         }
       });
 
+      $("#manualSkinOneDepthMainUrl").click(function () {
+          var manualSkinOneDepthSchemeUrl = $(this).val();
+          window.open(manualSkinOneDepthSchemeUrl);
+      });
+
       $("#manualSkinOneDepthAddQrcode").click(function () {
         $("#manualSkinOneDepthShowQrCode #manualSkinOneDepthShowQrCodeDiv").empty();
         jQuery("#manualSkinOneDepthShowQrCode #manualSkinOneDepthShowQrCodeDiv").qrcode({
@@ -402,6 +407,11 @@
         }
       });
 
+      $("#manualSkinTwoDepthMainUrl").click(function () {
+          var manualSkinTwoDepthSchemeUrl = $(this).val();
+          window.open(manualSkinTwoDepthSchemeUrl);
+      });
+
       $("#manualSkinTwoDepthAddQrcode").click(function () {
         $("#manualSkinTwoDepthShowQrCode #manualSkinTwoDepthShowQrCodeDiv").empty();
         jQuery("#manualSkinTwoDepthShowQrCode #manualSkinTwoDepthShowQrCodeDiv").qrcode({
@@ -468,6 +478,11 @@
           var autoSkinOneDepthAppValue = autoSkinOneDepthAppSelect.value;
           autoSkinOneDepthSchemeValue.value = autoSkinOneDepthAppValue + '://pick?tab=onetouch';
         }
+      });
+
+      $("#autoSkinOneDepthMainUrl").click(function () {
+          var autoSkinOneDepthSchemeUrl = $(this).val();
+          window.open(autoSkinOneDepthSchemeUrl);
       });
 
       $("#autoSkinOneDepthAddQrcode").click(function () {
@@ -541,6 +556,11 @@
         }
       });
 
+      $("#autoSkinTwoDepthMainUrl").click(function () {
+          var autoSkinTwoDepthSchemeUrl = $(this).val();
+          window.open(autoSkinTwoDepthSchemeUrl);
+      });
+
       $("#autoSkinTwoDepthAddQrcode").click(function () {
         $("#autoSkinTwoDepthShowQrCode #autoSkinTwoDepthShowQrCodeDiv").empty();
         jQuery("#autoSkinTwoDepthShowQrCode #autoSkinTwoDepthShowQrCodeDiv").qrcode({
@@ -610,6 +630,11 @@
           var aiFaceOneDepthTabValue = aiFaceOneDepthTabSelect.value;
           aiFaceOneDepthSchemeValue.value = aiFaceOneDepthAppValue + '://pick?tab=' + aiFaceOneDepthTabValue;
         }
+      });
+
+      $("#aiFaceOneDepthMainUrl").click(function () {
+          var aiFaceOneDepthSchemeUrl = $(this).val();
+          window.open(aiFaceOneDepthSchemeUrl);
       });
 
       $("#aiFaceOneDepthAddQrcode").click(function () {
@@ -684,6 +709,11 @@
         }
       });
 
+      $("#aiFaceCategoryIdMainUrl").click(function () {
+          var aiFaceCategoryIdSchemeUrl = $(this).val();
+          window.open(aiFaceCategoryIdSchemeUrl);
+      });
+
       $("#aiFaceCategoryIdAddQrcode").click(function () {
         $("#aiFaceCategoryIdShowQrCode #aiFaceCategoryIdShowQrCodeDiv").empty();
         jQuery("#aiFaceCategoryIdShowQrCode #aiFaceCategoryIdShowQrCodeDiv").qrcode({
@@ -753,6 +783,11 @@
           var aiFaceContentIdInputValue = aiFaceContentInputId.value;
           aiFaceContentIdSchemeValue.value = aiFaceContentIdAppValue + '://pick?tab=aiface&contentId=' + aiFaceContentIdInputValue;
         }
+      });
+
+      $("#aiFaceContentIdMainUrl").click(function () {
+          var aiFaceContentIdSchemeUrl = $(this).val();
+          window.open(aiFaceContentIdSchemeUrl);
       });
 
       $("#aiFaceContentIdAddQrcode").click(function () {
@@ -827,6 +862,11 @@
           var aiFaceCombineCategoryIdInputValue = aiFaceCombineCategoryInputId.value;
           aiFaceCombineContentCategoryIdSchemeValue.value = aiFaceCombineContentCategoryIdAppValue + '://pick?tab=aiface&contentId=' + aiFaceCombineContentIdInputValue + '&contentCategoryId=' + aiFaceCombineCategoryIdInputValue;
         }
+      });
+
+      $("#aiFaceCombineContentCategoryIdMainUrl").click(function () {
+          var aiFaceCombineContentCategoryIdSchemeUrl = $(this).val();
+          window.open(aiFaceCombineContentCategoryIdSchemeUrl);
       });
 
       $("#aiFaceCombineContentCategoryIdAddQrcode").click(function () {
