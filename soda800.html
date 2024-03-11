@@ -331,10 +331,16 @@
         }
       });
 
-      $("#manualSkinOneDepthMainUrl").click(function () {
-          var manualSkinOneDepthSchemeUrl = $(this).val();
-          window.open(manualSkinOneDepthSchemeUrl);
-      });
+      // $("#manualSkinOneDepthMainUrl").click(function () {
+      //     var manualSkinOneDepthSchemeUrl = $(this).val();
+      //     window.open(manualSkinOneDepthSchemeUrl);
+      // });
+
+      document.getElementById("manualSkinOneDepthQrUl").addEventListener("click", function (event) {
+          var urlInput = document.getElementById("manualSkinOneDepthMainUrl");
+          var url = urlInput.value;
+          window.open(url, "_blank")
+      })
 
       $("#manualSkinOneDepthAddQrcode").click(function () {
         $("#manualSkinOneDepthShowQrCode #manualSkinOneDepthShowQrCodeDiv").empty();
