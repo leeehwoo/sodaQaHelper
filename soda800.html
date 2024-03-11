@@ -42,7 +42,7 @@
       <div id="qrCodeArea800">
         <div id="manualSkinOneDepthShowQrCode">
           <div id="manualSkinOneDepthShowQrCodeDiv"></div>
-          <ul id="manualSkinOneDepthQrUl"></ul>
+          <a id="manualSkinOneDepthQrUl" href="#" target="_blank"></a>
         </div>
       </div>
     </div>
@@ -337,10 +337,13 @@
       // });
 
       document.getElementById("manualSkinOneDepthQrUl").addEventListener("click", function (event) {
+          event.preventDefault();
           var urlInput = document.getElementById("manualSkinOneDepthMainUrl");
           var url = urlInput.value;
+          var openLink = document.getElementById("manualSkinOneDepthQrUl");
+          openLink.href = url;
           window.open(url, "_blank")
-      })
+      });
 
       $("#manualSkinOneDepthAddQrcode").click(function () {
         $("#manualSkinOneDepthShowQrCode #manualSkinOneDepthShowQrCodeDiv").empty();
