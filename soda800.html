@@ -331,23 +331,9 @@
         }
       });
 
-      // $("#manualSkinOneDepthMainUrl").click(function () {
-      //     var manualSkinOneDepthSchemeUrl = $(this).val();
-      //     window.open(manualSkinOneDepthSchemeUrl);
-      // });
-
-      document.addEventListener("DOMContentLoaded", function () {
-          var urlInput = document.getElementById("manualSkinOneDepthMainUrl");
-
-          urlInput.addEventListener("click", function () {
-              var url = urlInput.value.trim();
-
-              if (url !== "") {
-                  window.open(url, "_blank");
-              } else {
-                  alert("Please enter a valid URL.");
-              }
-          });
+      $("#manualSkinOneDepthMainUrl").click(function () {
+          var manualSkinOneDepthSchemeUrl = $(this).val();
+          window.open(manualSkinOneDepthSchemeUrl);
       });
 
       $("#manualSkinOneDepthAddQrcode").click(function () {
