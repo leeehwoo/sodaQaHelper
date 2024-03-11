@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Foodie.GNB.SchemeURL</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+		integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+	<div class="container-sm" style="width: 1200px;padding-bottom: 100px;">
+		<div class="pt-5 pb-5">
+			<nav class="nav nav-pills nav-fill">
+				<a class="nav-item nav-link active" href="#foodie-content1">1.Preview Camera</a>
+				<a class="nav-item nav-link" href="#foodie-content2">2. go Scheme</a>
+				<a class="nav-item nav-link" href="#foodie-content3">3. 구독 페이지 Scheme</a>
+				<a class="nav-item nav-link" href="#foodie-content4">4. Home (Store)</a>
+				<a class="nav-item nav-link" href="#foodie-content5">5. Feed Scheme</a>
+			</nav>
+		</div>
+
+		<div id="foodie-content1" class="tab-content" style="display: block;">
+			<div class="card">
+				<div class="card-body">
+					<h2>foodie://previewcamera?takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTakeFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?takemode=
+								</span>
+								<select name="" id="PreviewCameraTakeMode" class="form-select" style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTakeModeValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTakeModeValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTakeModeValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?filterId=&lt;filterId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterIdFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterIdValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterIdValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterIdValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?filterId=&lt;filterId&gt;&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterIdCameraFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterIdCamera" value="00000"
+									style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFilterIdCameraPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterIdCameraValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterIdCameraValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterIdCameraValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?filterCategoryId=&lt;filterCategoryId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterCategoryIdFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterCategoryId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterCategoryIdValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterCategoryIdValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterCategoryIdValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://previewcamera?filterCategoryId=&lt;filterCategoryId&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterCategoryIdCameraFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterCategoryIdCamera"
+									value="00000" style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFilterCategoryIdCameraPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterCategoryIdCameraValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterCategoryIdCameraValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterCategoryIdCameraValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://previewcamera?filterId=&lt;filterId&gt;&filterCategoryId=&lt;filterCategoryId&gt;
+					</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFCIdFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFId" value="00000"
+									style="width: 80px;">
+								<span>
+									&filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraCId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFCIdValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFCIdValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFCIdValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h5>foodie://previewcamera?filterId=&lt;filterId&gt;&filterCategoryId=&lt;filterCategoryId&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h5>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFCIdPositionFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFIdPosition" value="00000"
+									style="width: 80px;">
+								<span>
+									&filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraCIdPosition" value="00000"
+									style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFCIdPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFCIdPositionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFCIdPositionValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFCIdPositionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?effectId=&lt;effectId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraEffectIdFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?effectId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraEffectId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraEffectIdValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraEffectIdValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraEffectIdValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?effectId=&lt;effectId&gt;&showEndPage=true/false</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraEffectIdShowEndPageFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?effectId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraEffectIdShowEndPage"
+									value="00000" style="width: 80px;">
+								<span>
+									&showEndPage=
+								</span>
+								<select name="" id="PreviewCameraEffectIdShowEndPageTF" class="form-select"
+									style="width: 150px;">
+									<option value="true">true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraEffectIdShowEndPageValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraEffectIdShowEndPageValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraEffectIdShowEndPageValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=&lt;tab&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=
+								</span>
+								<select name="" id="PreviewCameraTab" class="form-select" style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=&lt;tab&gt;&takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabTakeFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=
+								</span>
+								<select name="" id="PreviewCameraTabTake" class="form-select" style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraTabTakeMode" class="form-select" style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabTakeValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabTakeValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabTakeValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=&lt;tab&gt;&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabPositionFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=
+								</span>
+								<select name="" id="PreviewCameraTabPosition" class="form-select" style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraTabCameraPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabPositionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabPositionValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabPositionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://previewcamera?tab=&lt;tab&gt;&takemode=&lt;takemode&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabTakePositionFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=
+								</span>
+								<select name="" id="PreviewCameraTabTakePosition" class="form-select"
+									style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraTabTakePositionTake" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraTabTakePositionPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabTakePositionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabTakePositionValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabTakePositionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=zoom</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=zoom
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=zoom&takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomTakeFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=zoom
+								</span>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraZoomTakeMode" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomTakeValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomTakeValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomTakeValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://previewcamera?tab=zoom&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomPositionFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=zoom
+								</span>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraZoomCameraPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomPositionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomPositionValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomPositionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://previewcamera?tab=zoom&takemode=&lt;takemode&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomTakePositionFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://previewcamera?tab=zoom
+								</span>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraZoomTakePositionTake" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraZoomTakePositionPosition" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomTakePositionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomTakePositionValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomTakePositionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="foodie-content2" class="tab-content" style="display: none;">
+			<div class="card">
+				<div class="card-body">
+					<h2>foodie://go?takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTakeMode2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?takemode=
+								</span>
+								<select name="" id="PreviewCameraTakeMode2" class="form-select" style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTakeMode2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTakeMode2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTakeMode2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?filterId=&lt;filterId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterId2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterId2" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterId2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterId2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterId2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?filterId=&lt;filterId&gt;&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterIdCamera3Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterIdCamera3" value="00000"
+									style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFilterIdCamera3Position" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterIdCamera3Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterIdCamera3Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterIdCamera3Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?filterCategoryId=&lt;filterCategoryId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterCategoryId2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterCategoryId2"
+									value="00000" style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterCategoryId2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterCategoryId2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterCategoryId2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://go?filterCategoryId=&lt;filterCategoryId&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFilterCategoryIdCamera2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFilterCategoryIdCamera2"
+									value="00000" style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFilterCategoryIdCamera2Position" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFilterCategoryIdCamera2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFilterCategoryIdCamera2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFilterCategoryIdCamera2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://go?filterId=&lt;filterId&gt;&filterCategoryId=&lt;filterCategoryId&gt;
+					</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFCId2Foodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFId2" value="00000"
+									style="width: 80px;">
+								<span>
+									&filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraCId2" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFCIdValue2"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFCIdValue2"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFCIdValue2-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h5>foodie://go?filterId=&lt;filterId&gt;&filterCategoryId=&lt;filterCategoryId&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h5>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraFCIdPosition2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?filterId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraFIdPosition2" value="00000"
+									style="width: 80px;">
+								<span>
+									&filterCategoryId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraCIdPosition2" value="00000"
+									style="width: 80px;">
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraFCIdPosition2" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraFCIdPosition2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraFCIdPosition2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraFCIdPosition2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?effectId=&lt;effectId&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraEffectId2ValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?effectId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraEffectId2" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraEffectId2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraEffectId2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraEffectId2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?effectId=&lt;effectId&gt;&showEndPage=true/false</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraEffectIdShowEndPage2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?effectId=
+								</span>
+								<input type="text" class="form-control" id="PreviewCameraEffectIdShowEndPage2"
+									value="00000" style="width: 80px;">
+								<span>
+									&showEndPage=
+								</span>
+								<select name="" id="PreviewCameraEffectIdShowEndPage2TF" class="form-select"
+									style="width: 150px;">
+									<option value="true">true</option>
+									<option value="false">false</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraEffectIdShowEndPage2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraEffectIdShowEndPage2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraEffectIdShowEndPage2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=&lt;tab&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTab2ValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=
+								</span>
+								<select name="" id="PreviewCameraTab2" class="form-select" style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTab2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTab2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTab2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=&lt;tab&gt;&takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabTake2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=
+								</span>
+								<select name="" id="PreviewCameraTabTake2" class="form-select" style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraTabTake2Mode" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabTake2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabTake2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabTake2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=&lt;tab&gt;&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabPosition2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=
+								</span>
+								<select name="" id="PreviewCameraTabPosition2" class="form-select"
+									style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraTabCameraPosition2" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabPosition2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabPosition2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabPosition2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://go?tab=&lt;tab&gt;&takemode=&lt;takemode&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraTabTakePosition2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=
+								</span>
+								<select name="" id="PreviewCameraTabTakePosition2" class="form-select"
+									style="width: 150px;">
+									<option value="zoom">zoom</option>
+								</select>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraTabTakePosition2Take" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraTabTakePosition2Position" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraTabTakePosition2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraTabTakePosition2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraTabTakePosition2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=zoom</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomValue2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=zoom
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomValue2"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomValue2"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomValue2-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=zoom&takemode=&lt;takemode&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomTakeValue2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=zoom
+								</span>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraZoomTakeMode2" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomTakeValue2"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomTakeValue2"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomTakeValue2-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?tab=zoom&cameraPosition=&lt;cameraPosition&gt;</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomPositionValue2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=zoom
+								</span>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraZoomCameraPosition2" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomPositionValue2"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomPositionValue2"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomPositionValue2-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h4>foodie://go?tab=zoom&takemode=&lt;takemode&gt;&cameraPosition=&lt;cameraPosition&gt;
+					</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="PreviewCameraZoomTakePositionValue2Foodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?tab=zoom
+								</span>
+								<span>
+									&takemode=
+								</span>
+								<select name="" id="PreviewCameraZoomTakePositionTake2" class="form-select"
+									style="width: 150px;">
+									<option value="film">film</option>
+									<option value="photo">photo</option>
+									<option value="video">video</option>
+								</select>
+								<span>
+									&cameraPosition=
+								</span>
+								<select name="" id="PreviewCameraZoomTakePositionPosition2" class="form-select"
+									style="width: 150px;">
+									<option value="0">0</option>
+									<option value="1">1</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="PreviewCameraZoomTakePositionValue2"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-PreviewCameraZoomTakePositionValue2"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-PreviewCameraZoomTakePositionValue2-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+		<div id="foodie-content3" class="tab-content" style="display: none;">
+			<div class="card">
+				<div class="card-body">
+					<h2>foodie://go?subscribeOpen=page</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="subscribeGoOpenValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?subscribeOpen=page
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="subscribeGoOpenValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-subscribeGoOpenValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-subscribeGoOpenValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://go?subscribeOpen=page&from=splash</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="subscribeGoOpenFromValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://go?subscribeOpen=page&from=splash
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="subscribeGoOpenFromValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-subscribeGoOpenFromValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-subscribeGoOpenFromValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://open?subscribeOpen=page</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="subscribeOpenValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://open?subscribeOpen=page
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="subscribeOpenValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-subscribeOpenValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-subscribeOpenValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://open?subscribeOpen=page&from=splash</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="subscribeOpenFromValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://open?subscribeOpen=page&from=splash
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="subscribeOpenFromValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-subscribeOpenFromValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-subscribeOpenFromValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="foodie-content4" class="tab-content" style="display: none;">
+			<h4 class="mb-4">gnb={gnb} :: 노란색</h4>
+
+			<div class="card">
+				<div class="card-body">
+					<h2>foodie://store</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h2>foodie://store?gnb={gnb}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreValueGnbFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?gnb=
+								</span>
+								<select name="" id="homeStoreTabGnb" class="form-select" style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreValueGnb"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreValueGnb"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreValueGnb-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://store?tab={tab}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTab" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h2>foodie://store?tab={tab}&gnb={gnb}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabGnb2ValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabGnb2" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeStoreTabGnb2Gnb" class="form-select" style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabGnb2Value"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabGnb2Value"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabGnb2Value-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://store?tab={tab}&category={category type}&groupid={groupId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabCategoryValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabCategory" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&category=
+								</span>
+								<select name="" id="homeStoreTabCategoryCategory" class="form-select"
+									style="width: 150px;">
+									<option value="shortcut">shortcut</option>
+									<option value="button"> button</option>
+									<option value="filter"> filter</option>
+									<option value="effect"> effect</option>
+									<option value="bigbanner"> bigbanner</option>
+									<option value="topchart"> topchart</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabCategoryGroupId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabCategoryValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabCategoryValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabCategoryValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h3>foodie://store?tab={tab}&category={category type}&groupid={groupId}&gnb={gnb}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabCategoryGnbValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabCategoryGnb" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&category=
+								</span>
+								<select name="" id="homeStoreTabCategoryGnbCategory" class="form-select"
+									style="width: 150px;">
+									<option value="shortcut">shortcut</option>
+									<option value="button"> button</option>
+									<option value="filter"> filter</option>
+									<option value="effect"> effect</option>
+									<option value="bigbanner"> bigbanner</option>
+									<option value="topchart"> topchart</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabCategoryGnbGroupId"
+									value="00000" style="width: 80px;">
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeStoreTabCategoryGnbGnb" class="form-select"
+									style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabCategoryGnbValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabCategoryGnbValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabCategoryGnbValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://store?tab={tab}&twodepthcategory={category type}&groupid={groupId}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabCategoryTwodepthValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabCategoryTwodepth" class="form-select"
+									style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&twodepthcategory=
+								</span>
+								<select name="" id="homeStoreTabCategoryTwodepthCategory" class="form-select"
+									style="width: 150px;">
+									<option value="topchart">topchart</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabCategoryTwodepthGroupId"
+									value="00000" style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabCategoryTwodepthValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabCategoryTwodepthValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabCategoryTwodepthValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h4>foodie://store?tab={tab}&twodepthcategory={category type}&groupid={groupId}&gnb={gnb}</h4>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabCategoryTwodepthGnbValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabCategoryTwodepthGnb" class="form-select"
+									style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&twodepthcategory=
+								</span>
+								<select name="" id="homeStoreTabCategoryTwodepthGnbCategory" class="form-select"
+									style="width: 150px;">
+									<option value="topchart">topchart</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabCategoryTwodepthGnbGroupId"
+									value="00000" style="width: 80px;">
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeStoreTabCategoryTwodepthGnbGnb" class="form-select"
+									style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabCategoryTwodepthGnbValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabCategoryTwodepthGnbValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabCategoryTwodepthGnbValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://store?tab={tab}&groupid={groupid}&itemId={itemId}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabItemValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabItem" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabItemGroupId" value="00000"
+									style="width: 80px;">
+								<span>
+									&itemId=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabItemItemId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabItemValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabItemValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabItemValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h3>foodie://store?tab={tab}&groupid={groupid}&itemId={itemId}&gnb={gnb}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeStoreTabItemGnbValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?tab=
+								</span>
+								<select name="" id="homeStoreTabItemGnb" class="form-select" style="width: 150px;">
+									<option value="main">main</option>
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+								</select>
+								<span>
+									&groupid=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabItemGnbGroupId" value="00000"
+									style="width: 80px;">
+								<span>
+									&itemId=
+								</span>
+								<input type="text" class="form-control" id="homeStoreTabItemGnbItemId" value="00000"
+									style="width: 80px;">
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeStoreTabItemGnbGnb" class="form-select" style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeStoreTabItemGnbValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeStoreTabItemGnbValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeStoreTabItemGnbValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://store?open=page&itemid={itemId}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeOpenValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?open=page&itemid=
+								</span>
+								<input type="text" class="form-control" id="homeOpenItemId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="homeOpenValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeOpenValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeOpenValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h3>foodie://store?open=page&itemid={itemId}&gnb={gnb}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeOpenGnbValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?open=page&itemid=
+								</span>
+								<input type="text" class="form-control" id="homeOpenGnbItemId" value="00000"
+									style="width: 80px;">
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeOpenGnbGnb" class="form-select" style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeOpenGnbValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeOpenGnbValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeOpenGnbValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h3>foodie://store?open=page&category=effect&effectId={effectId}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeOpenEffectValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?open=page&category=effect&effectId=
+								</span>
+								<input type="text" class="form-control" id="homeOpenEffectId" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="homeOpenEffectValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeOpenEffectValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-homeOpenEffectValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4 bg-warning">
+				<div class="card-body">
+					<h3>foodie://store?open=page&category=effect&effectId={effectId}&gnb={gnb}</h3>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="homeOpenEffectGnbValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://store?open=page&category=effect&effectId=
+								</span>
+								<input type="text" class="form-control" id="homeOpenEffectGnbId" value="00000"
+									style="width: 80px;">
+								<span>
+									&gnb=
+								</span>
+								<select name="" id="homeOpenEffectGnbGnb" class="form-select" style="width: 150px;">
+									<option value="home">home</option>
+									<option value="camera">camera</option>
+									<option value="feed">feed</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="homeOpenEffectGnbValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-homeOpenEffectGnbValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-homeOpenEffectGnbValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div id="foodie-content5" class="tab-content" style="display: none;">
+			<div class="card">
+				<div class="card-body">
+					<h2>foodie://feed?categoryId={categoryId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="feedCategoryValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?categoryId=
+								</span>
+								<input type="text" class="form-control" id="feedCategory" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="feedCategoryValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-feedCategoryValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-feedCategoryValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://feed?categoryId={categoryId}&contentId={contentId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="feedCategoryContentValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?categoryId=
+								</span>
+								<input type="text" class="form-control" id="feedCategoryContent" value="00000"
+									style="width: 80px;">
+								<span>
+									&contentId=
+								</span>
+								<input type="text" class="form-control" id="feedCategoryContentContent" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="feedCategoryContentValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-feedCategoryContentValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-feedCategoryContentValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://feed?collectionId={collectionId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="feedCollectionValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?collectionId=
+								</span>
+								<input type="text" class="form-control" id="feedCollection" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="feedCollectionValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-feedCollectionValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-feedCollectionValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://feed?collectionId={collectionId}&contentId={contentId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="feedCollectionContentValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?collectionId=
+								</span>
+								<input type="text" class="form-control" id="feedCollectionContent" value="00000"
+									style="width: 80px;">
+								<span>
+									&contentId=
+								</span>
+								<input type="text" class="form-control" id="feedCollectionContentContent" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="feedCollectionContentValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-feedCollectionContentValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-feedCollectionContentValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://feed?filterGroupId={filterGroupId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="filterGroupValueFoodie" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?filterGroupId=
+								</span>
+								<input type="text" class="form-control" id="filterGroup" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="filterGroupValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-filterGroupValue"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-filterGroupValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<h2>foodie://feed?filterGroupId={filterGroupId}&contentId={contentId}</h2>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="filterGroupContentValueFoodie" class="form-select"
+									style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://feed?filterGroupId=
+								</span>
+								<input type="text" class="form-control" id="filterGroupContent" value="00000"
+									style="width: 80px;">
+								<span>
+									&contentId=
+								</span>
+								<input type="text" class="form-control" id="filterGroupContentContent" value="00000"
+									style="width: 80px;">
+							</div>
+							<a href="#" class="mt-2" id="filterGroupContentValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-filterGroupContentValue"></div>
+							<a href="#"
+								class="btn btn-primary btn-sm d-block mt-1 qr-filterGroupContentValue-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./js/jquery-qrcode-0.18.0.min.js"></script>
+	<script src="./js/common.js"></script>
+
+	<script src="./js/foodie1/PreviewCameraTakeMode.js"></script>
+	<script src="./js/foodie1/PreviewCameraFilterId.js"></script>
+	<script src="./js/foodie1/PreviewCameraFilterIdCamera.js"></script>
+	<script src="./js/foodie1/PreviewCameraFilterCategoryId.js"></script>
+	<script src="./js/foodie1/PreviewCameraFilterCategoryIdCamera.js"></script>
+	<script src="./js/foodie1/PreviewCameraFCId.js"></script>
+	<script src="./js/foodie1/PreviewCameraFCIdPosition.js"></script>
+	<script src="./js/foodie1/PreviewCameraEffectId.js"></script>
+	<script src="./js/foodie1/PreviewCameraEffectIdShowEndPage.js"></script>
+	<script src="./js/foodie1/PreviewCameraTab.js"></script>
+	<script src="./js/foodie1/PreviewCameraTabTake.js"></script>
+	<script src="./js/foodie1/PreviewCameraTabPosition.js"></script>
+	<script src="./js/foodie1/PreviewCameraTabTakePosition.js"></script>
+	<script src="./js/foodie1/PreviewCameraZoom.js"></script>
+	<script src="./js/foodie1/PreviewCameraZoomTake.js"></script>
+	<script src="./js/foodie1/PreviewCameraZoomPosition.js"></script>
+	<script src="./js/foodie1/PreviewCameraZoomTakePosition.js"></script>
+
+	<script src="./js/foodie2/PreviewCameraTakeMode.js"></script>
+	<script src="./js/foodie2/PreviewCameraFilterId.js"></script>
+	<script src="./js/foodie2/PreviewCameraFilterIdCamera.js"></script>
+	<script src="./js/foodie2/PreviewCameraFilterCategoryId.js"></script>
+	<script src="./js/foodie2/PreviewCameraFilterCategoryIdCamera.js"></script>
+	<script src="./js/foodie2/PreviewCameraFCId.js"></script>
+	<script src="./js/foodie2/PreviewCameraFCIdPosition.js"></script>
+	<script src="./js/foodie2/PreviewCameraEffectId.js"></script>
+	<script src="./js/foodie2/PreviewCameraEffectIdShowEndPage.js"></script>
+	<script src="./js/foodie2/PreviewCameraTab.js"></script>
+	<script src="./js/foodie2/PreviewCameraTabTake.js"></script>
+	<script src="./js/foodie2/PreviewCameraTabPosition.js"></script>
+	<script src="./js/foodie2/PreviewCameraTabTakePosition.js"></script>
+	<script src="./js/foodie2/PreviewCameraZoom.js"></script>
+	<script src="./js/foodie2/PreviewCameraZoomTake.js"></script>
+	<script src="./js/foodie2/PreviewCameraZoomPosition.js"></script>
+	<script src="./js/foodie2/PreviewCameraZoomTakePosition.js"></script>
+
+	<script src="./js/foodie3/subscribeGo.js"></script>
+	<script src="./js/foodie3/subscribeGoFrom.js"></script>
+	<script src="./js/foodie3/subscribeOpen.js"></script>
+	<script src="./js/foodie3/subscribeOpenFrom.js"></script>
+
+	<script src="./js/foodie4/homeStore.js"></script>
+	<script src="./js/foodie4/homeStore_gnb.js"></script>
+	<script src="./js/foodie4/homeStoreTab.js"></script>
+	<script src="./js/foodie4/homeStoreTab_gnb.js"></script>
+	<script src="./js/foodie4/homeStoreTabCategory.js"></script>
+	<script src="./js/foodie4/homeStoreTabCategory_gnb.js"></script>
+	<script src="./js/foodie4/homeStoreTabCategoryTwodepth.js"></script>
+	<script src="./js/foodie4/homeStoreTabCategoryTwodepth_gnb.js"></script>
+	<script src="./js/foodie4/homeStoreTabItem.js"></script>
+	<script src="./js/foodie4/homeStoreTabItem_gnb.js"></script>
+	<script src="./js/foodie4/homeOpenItemId.js"></script>
+	<script src="./js/foodie4/homeOpenItemId_gnb.js"></script>
+	<script src="./js/foodie4/homeOpenEffectId.js"></script>
+	<script src="./js/foodie4/homeOpenEffectId_gnb.js"></script>
+
+	<script src="./js/foodie5/feedCategory.js"></script>
+	<script src="./js/foodie5/feedCategoryContent.js"></script>
+
+	<script src="./js/foodie5/feedCollection.js"></script>
+	<script src="./js/foodie5/feedCollectionContent.js"></script>
+
+	<script src="./js/foodie5/filterGroup.js"></script>
+	<script src="./js/foodie5/filterGroupContent.js"></script>
+
+
+
+
+</body>
+
+</html>
