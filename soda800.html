@@ -227,6 +227,11 @@
       <input id="aiFaceCategoryId" style="width: 100px">
       <br>
       <br>
+      SODA - ID : 35 (Eyelid) / 34 (Expression)
+      <br>
+      Tianyan - ID : 39 (Eyelid) / 38 (Expression)
+      <br>
+      <br>
       <input id="aiFaceCategoryIdMainUrl" readonly style="width: 600px;">
       <i class="fas fa-copy copyStyle" id="aiFaceCategoryIdSchemeCopy"></i>
       <br>
@@ -261,6 +266,11 @@
       <br>
       Content ID :
       <input id="aiFaceContentId" style="width: 100px">
+      <br>
+      <br>
+      SODA - ID : 133732 (Eyelid) / 129413 (Expression)
+      <br>
+      Tianyan - ID : 133733 (Eyelid) / 136959 (Expression)
       <br>
       <br>
       <input id="aiFaceContentIdMainUrl" readonly style="width: 600px;">
@@ -300,6 +310,14 @@
       <br>
       Category ID :
       <input id="aiFaceCombineCategoryId" style="width: 100px">
+      <br>
+      <br>
+<!--      <button id="aiFaceCombineContentCategoryAutoInsert" value1="133735" value2="35">ID 자동 입력</button>-->
+<!--      <br>-->
+<!--      <br>-->
+      SODA - Content Id : 133735 / Category ID : 35
+      <br>
+      Tianyan - Content ID : 129416 / Category Id : 38
       <br>
       <br>
       <input id="aiFaceCombineContentCategoryIdMainUrl" readonly style="width: 600px;">
@@ -845,6 +863,18 @@
         }
       });
 
+      // document.addEventListener("DOMContentLoaded", function () {
+      //     var autoInsertContentId = document.getElementById("aiFaceCombineContentId");
+      //     var autoInsertCategoryId = document.getElementById("aiFaceCombineCategoryId");
+      //     var autoInsertButton = document.getElementById("aiFaceCombineContentCategoryAutoInsert");
+      //
+      //     autoInsertButton.addEventListener("click", function () {
+      //         var autoInsertContentIdValue = autoInsertButton.getAttribute("value1");
+      //         var autoInsertCategoryIdValue = autoInsertButton.getAttribute("value2");
+      //         autoInsertContentId.value = autoInsertContentIdValue;
+      //         autoInsertCategoryId.value = autoInsertCategoryIdValue;
+      //     });
+      // });
 
       document.addEventListener("DOMContentLoaded", function () {
         var aiFaceCombineContentCategoryIdAppSelect = document.getElementById("aiFaceCombineContentCategoryIdAppList");
