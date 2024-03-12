@@ -1,7 +1,7 @@
 let filterGroupContentValueFoodie = "foodie";
 let filterGroupContent = "00000";
-let filterGroupContentContent = "00000";
-let filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&contentId=${filterGroupContentContent}`;
+let filterGroupContentfilterId = "00000";
+let filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&filterId=${filterGroupContentfilterId}`;
 
 // 최초
 linkQr(
@@ -14,7 +14,7 @@ linkQr(
 $("#filterGroupContentValueFoodie").change(function () {
     const val = $(this).val();
     filterGroupContentValueFoodie = val;
-    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&contentId=${filterGroupContentContent}`;
+    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&filterId=${filterGroupContentfilterId}`;
 
     linkQr(
         "#filterGroupContentValue",
@@ -27,7 +27,7 @@ $("#filterGroupContentValueFoodie").change(function () {
 $("#filterGroupContent").keyup(function () {
     const val = $(this).val();
     filterGroupContent = val;
-    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&contentId=${filterGroupContentContent}`;
+    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&filterId=${filterGroupContentfilterId}`;
 
     linkQr(
         "#filterGroupContentValue",
@@ -37,10 +37,10 @@ $("#filterGroupContent").keyup(function () {
 });
 
 // Input
-$("#filterGroupContentContent").keyup(function () {
+$("#filterGroupContentfilterId").keyup(function () {
     const val = $(this).val();
-    filterGroupContentContent = val;
-    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&contentId=${filterGroupContentContent}`;
+    filterGroupContentfilterId = val;
+    filterGroupContentResult = `${filterGroupContentValueFoodie}://feed?filterGroupId=${filterGroupContent}&filterId=${filterGroupContentfilterId}`;
 
     linkQr(
         "#filterGroupContentValue",
