@@ -1,7 +1,7 @@
 let PreviewCameraZoomTakeValue2Foodie = "foodie";
 let PreviewCameraZoomTake2 = "zoom";
 let PreviewCameraZoomTakeMode2 = "film";
-let PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?zoom=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
+let PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?tab=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
 
 // 최초
 linkQr(
@@ -14,7 +14,7 @@ linkQr(
 $("#PreviewCameraZoomTakeValue2Foodie").change(function () {
     const val = $(this).val();
     PreviewCameraZoomTakeValue2Foodie = val;
-    PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?zoom=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
+    PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?tab=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
 
     linkQr(
         "#PreviewCameraZoomTakeValue2",
@@ -27,7 +27,7 @@ $("#PreviewCameraZoomTakeValue2Foodie").change(function () {
 $("#PreviewCameraZoomTakeMode2").change(function () {
     const val = $(this).val();
     PreviewCameraZoomTakeMode2 = val;
-    PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?zoom=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
+    PreviewCameraZoomTakeResult2 = `${PreviewCameraZoomTakeValue2Foodie}://go?tab=zoom&takemode=${PreviewCameraZoomTakeMode2}`;
 
     linkQr(
         "#PreviewCameraZoomTakeValue2",

@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-light">
-	<div class="container-sm" style="width: 1200px;padding-bottom: 100px;">
+	<div class="container-sm" style="width: 1300px;padding-bottom: 100px;">
 		<div class="pt-5 pb-5">
 			<nav class="nav nav-pills nav-fill">
 				<a class="nav-item nav-link active" href="#foodie-content1">1.Preview Camera</a>
@@ -2231,9 +2231,10 @@
 				</div>
 			</div>
 
+			<!-- [D] 수정 -->
 			<div class="card mt-4">
 				<div class="card-body">
-					<h2>foodie://feed?filterGroupId={filterGroupId}&contentId={contentId}</h2>
+					<h2>foodie://feed?filterGroupId={filterGroupId}&filterId={filterId}</h2>
 
 					<div class="d-flex align-items-center">
 						<div class="d-flex flex-column my-4">
@@ -2251,9 +2252,9 @@
 								<input type="text" class="form-control" id="filterGroupContent" value="00000"
 									style="width: 80px;">
 								<span>
-									&contentId=
+									&filterId=
 								</span>
-								<input type="text" class="form-control" id="filterGroupContentContent" value="00000"
+								<input type="text" class="form-control" id="filterGroupContentfilterId" value="00000"
 									style="width: 80px;">
 							</div>
 							<a href="#" class="mt-2" id="filterGroupContentValue"></a>
@@ -2328,13 +2329,10 @@
 	<script src="./js/foodie4/homeOpenItemId_gnb.js"></script>
 	<script src="./js/foodie4/homeOpenEffectId.js"></script>
 	<script src="./js/foodie4/homeOpenEffectId_gnb.js"></script>
-
 	<script src="./js/foodie5/feedCategory.js"></script>
 	<script src="./js/foodie5/feedCategoryContent.js"></script>
-
 	<script src="./js/foodie5/feedCollection.js"></script>
 	<script src="./js/foodie5/feedCollectionContent.js"></script>
-
 	<script src="./js/foodie5/filterGroup.js"></script>
 	<script src="./js/foodie5/filterGroupContent.js"></script>
 

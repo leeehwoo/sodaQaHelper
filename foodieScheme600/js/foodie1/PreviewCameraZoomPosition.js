@@ -1,7 +1,7 @@
 let PreviewCameraZoomPositionFoodie = "foodie";
 let PreviewCameraZoomPosition = "zoom";
 let PreviewCameraZoomCameraPosition = "0";
-let PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?zoom=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
+let PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?tab=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
 
 // 최초
 linkQr(
@@ -14,7 +14,7 @@ linkQr(
 $("#PreviewCameraZoomPositionFoodie").change(function () {
     const val = $(this).val();
     PreviewCameraZoomPositionFoodie = val;
-    PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?zoom=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
+    PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?tab=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
 
     linkQr(
         "#PreviewCameraZoomPositionValue",
@@ -27,7 +27,7 @@ $("#PreviewCameraZoomPositionFoodie").change(function () {
 $("#PreviewCameraZoomCameraPosition").change(function () {
     const val = $(this).val();
     PreviewCameraZoomCameraPosition = val;
-    PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?zoom=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
+    PreviewCameraZoomPositionResult = `${PreviewCameraZoomPositionFoodie}://previewcamera?tab=zoom&cameraPosition=${PreviewCameraZoomCameraPosition}`;
 
     linkQr(
         "#PreviewCameraZoomPositionValue",

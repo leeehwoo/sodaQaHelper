@@ -2,7 +2,7 @@ let PreviewCameraZoomTakePositionFoodie = "foodie";
 let PreviewCameraZoomTakePosition = "zoom";
 let PreviewCameraZoomTakePositionTake = "film";
 let PreviewCameraZoomTakePositionPosition = "0";
-let PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?zoom=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
+let PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?tab=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
 
 // 최초
 linkQr(
@@ -15,7 +15,7 @@ linkQr(
 $("#PreviewCameraZoomTakePositionFoodie").change(function () {
     const val = $(this).val();
     PreviewCameraZoomTakePositionFoodie = val;
-    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?zoom=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
+    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?tab=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
 
     linkQr(
         "#PreviewCameraZoomTakePositionValue",
@@ -28,7 +28,7 @@ $("#PreviewCameraZoomTakePositionFoodie").change(function () {
 $("#PreviewCameraZoomTakePositionTake").change(function () {
     const val = $(this).val();
     PreviewCameraZoomTakePositionTake = val;
-    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?zoom=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
+    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?tab=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
 
     linkQr(
         "#PreviewCameraZoomTakePositionValue",
@@ -41,7 +41,7 @@ $("#PreviewCameraZoomTakePositionTake").change(function () {
 $("#PreviewCameraZoomTakePositionPosition").change(function () {
     const val = $(this).val();
     PreviewCameraZoomTakePositionPosition = val;
-    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?zoom=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
+    PreviewCameraZoomTakePositionResult = `${PreviewCameraZoomTakePositionFoodie}://previewcamera?tab=${PreviewCameraZoomTakePosition}&takemode=${PreviewCameraZoomTakePositionTake}&cameraPosition=${PreviewCameraZoomTakePositionPosition}`;
 
     linkQr(
         "#PreviewCameraZoomTakePositionValue",
