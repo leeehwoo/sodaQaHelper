@@ -333,6 +333,11 @@
             $("#bodyOneDepthMainUrl").val(all);
         }
 
+        $("#bodyOneDepthMainUrl").click(function () {
+            var bodyOneDepthSchemeUrl = $(this).val();
+            window.open(bodyOneDepthSchemeUrl);
+        });
+
         //qrcode 보기
         $("#bodyOneDepthAddQrcode").click(function () {
             $("#bodyOneDepthShowQrCode #bodyOneDepthShowQrCodeDiv").empty();
@@ -411,6 +416,11 @@
             $("#skinOneDepthMainUrl").val(all);
         }
 
+        $("#skinOneDepthMainUrl").click(function () {
+            var skinOneDepthSchemeUrl = $(this).val();
+            window.open(skinOneDepthSchemeUrl);
+        });
+
         //qrcode 보기
         $("#skinOneDepthAddQrcode").click(function () {
             $("#skinOneDepthShowQrCode #skinOneDepthShowQrCodeDiv").empty();
@@ -486,6 +496,11 @@
             }
         });
 
+        $("#skinTwoDepthMainUrl").click(function () {
+            var skinTwoDepthSchemeUrl = $(this).val();
+            window.open(skinTwoDepthSchemeUrl);
+        });
+
         //qrcode 보기
         $("#skinTwoDepthAddQrcode").click(function () {
             $("#skinTwoDepthShowQrCode #skinTwoDepthShowQrCodeDiv").empty();
@@ -557,6 +572,11 @@
             }
         });
 
+        $("#skinToneOneDepthMainUrl").click(function () {
+            var skinToneOneDepthSchemeUrl = $(this).val();
+            window.open(skinToneOneDepthSchemeUrl);
+        });
+
         //qrcode 보기
         $("#skinToneOneDepthAddQrcode").click(function () {
             $("#skinToneOneDepthShowQrCode #skinToneOneDepthShowQrCodeDiv").empty();
@@ -626,6 +646,11 @@
                 var middleFaceOneDepthAppValue = middleFaceOneDepthAppSelect.value;
                 middleFaceOneDepthSchemeValue.value = middleFaceOneDepthAppValue + '://pick?tab=faceratio';
             }
+        });
+
+        $("#middleFaceOneDepthMainUrl").click(function () {
+            var middleFaceOneDepthSchemeUrl = $(this).val();
+            window.open(middleFaceOneDepthSchemeUrl);
         });
 
         //qrcode 보기
@@ -702,6 +727,11 @@
             }
         });
 
+        $("#middleFaceTwoDepthMainUrl").click(function () {
+            var middleFaceTwoDepthSchemeUrl = $(this).val();
+            window.open(middleFaceTwoDepthSchemeUrl);
+        });
+
         //qrcode 보기
         $("#middleFaceTwoDepthAddQrcode").click(function () {
             $("#middleFaceTwoDepthShowQrCode #middleFaceTwoDepthShowQrCodeDiv").empty();
@@ -771,6 +801,11 @@
                 var reshapeOneDepthAppValue = reshapeOneDepthAppSelect.value;
                 reshapeOneDepthSchemeValue.value = reshapeOneDepthAppValue + '://pick?tab=reshape';
             }
+        });
+
+        $("#reshapeOneDepthMainUrl").click(function () {
+            var reshapeOneDepthSchemeUrl = $(this).val();
+            window.open(reshapeOneDepthSchemeUrl);
         });
 
         //qrcode 보기
@@ -845,6 +880,11 @@
                 var reshapeTwoDepthCategoryValue = reshapeTwoDepthCategorySelect.value;
                 reshapeTwoDepthSchemeValue.value = reshapeTwoDepthAppValue + '://pick?tab=reshape&category=' + reshapeTwoDepthCategoryValue;
             }
+        });
+
+        $("#reshapeTwoDepthMainUrl").click(function () {
+            var reshapeTwoDepthSchemeUrl = $(this).val();
+            window.open(reshapeTwoDepthSchemeUrl);
         });
 
         //qrcode 보기

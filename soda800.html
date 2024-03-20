@@ -227,6 +227,11 @@
       <input id="aiFaceCategoryId" style="width: 100px">
       <br>
       <br>
+      SODA - ID : 35 (Eyelid) / 34 (Expression)
+      <br>
+      Tianyan - ID : 39 (Eyelid) / 38 (Expression)
+      <br>
+      <br>
       <input id="aiFaceCategoryIdMainUrl" readonly style="width: 600px;">
       <i class="fas fa-copy copyStyle" id="aiFaceCategoryIdSchemeCopy"></i>
       <br>
@@ -261,6 +266,11 @@
       <br>
       Content ID :
       <input id="aiFaceContentId" style="width: 100px">
+      <br>
+      <br>
+      SODA - ID : 133732 (Eyelid) / 129413 (Expression)
+      <br>
+      Tianyan - ID : 133733 (Eyelid) / 136959 (Expression)
       <br>
       <br>
       <input id="aiFaceContentIdMainUrl" readonly style="width: 600px;">
@@ -302,6 +312,14 @@
       <input id="aiFaceCombineCategoryId" style="width: 100px">
       <br>
       <br>
+<!--      <button id="aiFaceCombineContentCategoryAutoInsert" value1="133735" value2="35">ID 자동 입력</button>-->
+<!--      <br>-->
+<!--      <br>-->
+      SODA - Content Id : 133735 / Category ID : 35
+      <br>
+      Tianyan - Content ID : 129416 / Category Id : 38
+      <br>
+      <br>
       <input id="aiFaceCombineContentCategoryIdMainUrl" readonly style="width: 600px;">
       <i class="fas fa-copy copyStyle" id="aiFaceCombineContentCategoryIdSchemeCopy"></i>
       <br>
@@ -329,6 +347,11 @@
           var manualSkinOneDepthAppValue = manualSkinOneDepthAppSelect.value;
           manualSkinOneDepthSchemeValue.value = manualSkinOneDepthAppValue + '://pick?tab=manualskin';
         }
+      });
+
+      $("#manualSkinOneDepthMainUrl").click(function () {
+          var manualSkinOneDepthSchemeUrl = $(this).val();
+          window.open(manualSkinOneDepthSchemeUrl);
       });
 
       $("#manualSkinOneDepthAddQrcode").click(function () {
@@ -402,6 +425,11 @@
         }
       });
 
+      $("#manualSkinTwoDepthMainUrl").click(function () {
+          var manualSkinTwoDepthSchemeUrl = $(this).val();
+          window.open(manualSkinTwoDepthSchemeUrl);
+      });
+
       $("#manualSkinTwoDepthAddQrcode").click(function () {
         $("#manualSkinTwoDepthShowQrCode #manualSkinTwoDepthShowQrCodeDiv").empty();
         jQuery("#manualSkinTwoDepthShowQrCode #manualSkinTwoDepthShowQrCodeDiv").qrcode({
@@ -468,6 +496,11 @@
           var autoSkinOneDepthAppValue = autoSkinOneDepthAppSelect.value;
           autoSkinOneDepthSchemeValue.value = autoSkinOneDepthAppValue + '://pick?tab=onetouch';
         }
+      });
+
+      $("#autoSkinOneDepthMainUrl").click(function () {
+          var autoSkinOneDepthSchemeUrl = $(this).val();
+          window.open(autoSkinOneDepthSchemeUrl);
       });
 
       $("#autoSkinOneDepthAddQrcode").click(function () {
@@ -541,6 +574,11 @@
         }
       });
 
+      $("#autoSkinTwoDepthMainUrl").click(function () {
+          var autoSkinTwoDepthSchemeUrl = $(this).val();
+          window.open(autoSkinTwoDepthSchemeUrl);
+      });
+
       $("#autoSkinTwoDepthAddQrcode").click(function () {
         $("#autoSkinTwoDepthShowQrCode #autoSkinTwoDepthShowQrCodeDiv").empty();
         jQuery("#autoSkinTwoDepthShowQrCode #autoSkinTwoDepthShowQrCodeDiv").qrcode({
@@ -610,6 +648,11 @@
           var aiFaceOneDepthTabValue = aiFaceOneDepthTabSelect.value;
           aiFaceOneDepthSchemeValue.value = aiFaceOneDepthAppValue + '://pick?tab=' + aiFaceOneDepthTabValue;
         }
+      });
+
+      $("#aiFaceOneDepthMainUrl").click(function () {
+          var aiFaceOneDepthSchemeUrl = $(this).val();
+          window.open(aiFaceOneDepthSchemeUrl);
       });
 
       $("#aiFaceOneDepthAddQrcode").click(function () {
@@ -684,6 +727,11 @@
         }
       });
 
+      $("#aiFaceCategoryIdMainUrl").click(function () {
+          var aiFaceCategoryIdSchemeUrl = $(this).val();
+          window.open(aiFaceCategoryIdSchemeUrl);
+      });
+
       $("#aiFaceCategoryIdAddQrcode").click(function () {
         $("#aiFaceCategoryIdShowQrCode #aiFaceCategoryIdShowQrCodeDiv").empty();
         jQuery("#aiFaceCategoryIdShowQrCode #aiFaceCategoryIdShowQrCodeDiv").qrcode({
@@ -755,6 +803,11 @@
         }
       });
 
+      $("#aiFaceContentIdMainUrl").click(function () {
+          var aiFaceContentIdSchemeUrl = $(this).val();
+          window.open(aiFaceContentIdSchemeUrl);
+      });
+
       $("#aiFaceContentIdAddQrcode").click(function () {
         $("#aiFaceContentIdShowQrCode #aiFaceContentIdShowQrCodeDiv").empty();
         jQuery("#aiFaceContentIdShowQrCode #aiFaceContentIdShowQrCodeDiv").qrcode({
@@ -810,6 +863,18 @@
         }
       });
 
+      // document.addEventListener("DOMContentLoaded", function () {
+      //     var autoInsertContentId = document.getElementById("aiFaceCombineContentId");
+      //     var autoInsertCategoryId = document.getElementById("aiFaceCombineCategoryId");
+      //     var autoInsertButton = document.getElementById("aiFaceCombineContentCategoryAutoInsert");
+      //
+      //     autoInsertButton.addEventListener("click", function () {
+      //         var autoInsertContentIdValue = autoInsertButton.getAttribute("value1");
+      //         var autoInsertCategoryIdValue = autoInsertButton.getAttribute("value2");
+      //         autoInsertContentId.value = autoInsertContentIdValue;
+      //         autoInsertCategoryId.value = autoInsertCategoryIdValue;
+      //     });
+      // });
 
       document.addEventListener("DOMContentLoaded", function () {
         var aiFaceCombineContentCategoryIdAppSelect = document.getElementById("aiFaceCombineContentCategoryIdAppList");
@@ -827,6 +892,11 @@
           var aiFaceCombineCategoryIdInputValue = aiFaceCombineCategoryInputId.value;
           aiFaceCombineContentCategoryIdSchemeValue.value = aiFaceCombineContentCategoryIdAppValue + '://pick?tab=aiface&contentId=' + aiFaceCombineContentIdInputValue + '&contentCategoryId=' + aiFaceCombineCategoryIdInputValue;
         }
+      });
+
+      $("#aiFaceCombineContentCategoryIdMainUrl").click(function () {
+          var aiFaceCombineContentCategoryIdSchemeUrl = $(this).val();
+          window.open(aiFaceCombineContentCategoryIdSchemeUrl);
       });
 
       $("#aiFaceCombineContentCategoryIdAddQrcode").click(function () {
