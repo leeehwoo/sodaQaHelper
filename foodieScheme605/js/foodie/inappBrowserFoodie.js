@@ -1,5 +1,5 @@
 let inappBrowserFoodie = "foodie";
-let inappBrowserLink = "https://webview-org.snow.me/v2/snow/ai_cooking_studio";
+let inappBrowserLink = "https://qa-b6s-webview.snow.me/foodie/events/ko/foodie/ai_events/ai_cooking_studio/";
 let inappBrowserResult = `${inappBrowserFoodie}://inappBrowser?url=${inappBrowserLink}`;
 
 // 최초

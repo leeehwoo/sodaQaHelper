@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="Default Changelist">
+    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="hiresmode의 take 중첩 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodieScheme605/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFoodie.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFoodie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFromFoodie.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFromFoodie.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +61,21 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/PycharmProjects/sodaQaHelper/foodieScheme600&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/PycharmProjects/sodaQaHelper&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/foodieScheme600" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/foodieScheme600" />
+      <recent name="$PROJECT_DIR$/foodieScheme600/foodie6" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -141,6 +146,18 @@
       <workItem from="1710132707962" duration="10685000" />
       <workItem from="1710207124010" duration="2878000" />
       <workItem from="1710933181393" duration="26000" />
+      <workItem from="1710982403273" duration="153000" />
+      <workItem from="1712545152662" duration="601000" />
+      <workItem from="1712800318184" duration="79000" />
+      <workItem from="1712800478459" duration="73000" />
+      <workItem from="1712800554192" duration="1363000" />
+      <workItem from="1713202507329" duration="216000" />
+      <workItem from="1713202756229" duration="35000" />
+      <workItem from="1713202793947" duration="624000" />
+      <workItem from="1713203538061" duration="175000" />
+      <workItem from="1713203765830" duration="59000" />
+      <workItem from="1713203855128" duration="794000" />
+      <workItem from="1713232979962" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
@@ -156,7 +173,28 @@
       <option name="project" value="LOCAL" />
       <updated>1710933114115</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- 버그 수정&#10;- ID 디폴트 값 설정&#10;- 탭 6 hiresmode 추가">
+      <created>1710982545928</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710982545928</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hiresmode의 take 중첩 수정">
+      <created>1712800386373</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712800386373</updated>
+    </task>
+    <task id="LOCAL-00005" summary="hiresmode의 take 중첩 수정">
+      <created>1713232582999</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713232582999</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +213,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Default Changelist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+    <MESSAGE value="- 버그 수정&#10;- ID 디폴트 값 설정&#10;- 탭 6 hiresmode 추가" />
+    <MESSAGE value="hiresmode의 take 중첩 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="hiresmode의 take 중첩 수정" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 let inappBrowserFromFoodie = "foodie";
 let inappBrowserFromLink =
-    "https://webview-org.snow.me/v2/snow/ai_cooking_studio";
+    "https://qa-b6s-webview.snow.me/foodie/events/ko/foodie/ai_events/ai_cooking_studio/";
 let inappBrowserFromFrom = "push";
 let inappBrowserFromResult = `${inappBrowserFromFoodie}://inappBrowserFrom?url=${inappBrowserFromLink}?from=${inappBrowserFromFrom}`;
 
