@@ -29,4 +29,3 @@ $(".qr-inappBrowserValue-link").click(function (e) {
     const imgURL = $(this).prev("div").find("img").attr("src");
     imgDownload(imgURL, inappBrowserResult);
 });
-
