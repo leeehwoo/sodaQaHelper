@@ -1,7 +1,7 @@
 let hiresmodeTakeFoodie = "foodie";
 let hiresmodeTake = "standard";
 let hiresmodeTakeTake = "film";
-let hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmodeTake=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
+let hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmode=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
 
 // 최초
 linkQr("#hiresmodeTakeValue", ".qr-hiresmodeTakeValue", hiresmodeTakeResult);
@@ -10,7 +10,7 @@ linkQr("#hiresmodeTakeValue", ".qr-hiresmodeTakeValue", hiresmodeTakeResult);
 $("#hiresmodeTakeFoodie").change(function () {
     const val = $(this).val();
     hiresmodeTakeFoodie = val;
-    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmodeTake=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
+    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmode=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
 
     linkQr(
         "#hiresmodeTakeValue",
@@ -23,7 +23,7 @@ $("#hiresmodeTakeFoodie").change(function () {
 $("#hiresmodeTake").change(function () {
     const val = $(this).val();
     hiresmodeTake = val;
-    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmodeTake=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
+    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmode=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
 
     linkQr(
         "#hiresmodeTakeValue",
@@ -36,7 +36,7 @@ $("#hiresmodeTake").change(function () {
 $("#hiresmodeTakeTake").change(function () {
     const val = $(this).val();
     hiresmodeTakeTake = val;
-    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmodeTake=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
+    hiresmodeTakeResult = `${hiresmodeTakeFoodie}://previewcamera?hiresmode=${hiresmodeTake}&takemode=${hiresmodeTakeTake}`;
 
     linkQr(
         "#hiresmodeTakeValue",
