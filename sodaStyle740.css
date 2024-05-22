@@ -1,12 +1,12 @@
-#titleAreaSoda740, #titleAreaSoda800 {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820 {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800 {
+#optionArea740, #optionArea800, #optionArea820 {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800 {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820 {
     display: flex;
 }
 
@@ -23,6 +23,12 @@
 }
 
 #aiFaceOneDepthShowQrCode, #aiFaceCategoryIdShowQrCode, #aiFaceContentIdShowQrCode, #aiFaceCombineContentCategoryIdShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#faceRatioOneDepthShowQrCode, #faceRatioTwoDepthShowQrCode, #bgExtensionOneDepthShowQrCode, #bgExtensionTwoDepthShowQrCode, #newUserPageShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -50,6 +56,11 @@
     font-size: 20px;
 }
 
+#faceRatioOneDepthSchemeCopy, #faceRatioTwoDepthSchemeCopy, #bgExtensionOneDepthSchemeCopy, #bgExtensionTwoDepthSchemeCopy, #newUserPageSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
 #bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
@@ -61,6 +72,11 @@
 }
 
 #aiFaceOneDepthAddQrcode, #aiFaceCategoryIdAddQrcode, #aiFaceContentIdAddQrcode, #aiFaceCombineContentCategoryIdAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceRatioOneDepthAddQrcode, #faceRatioTwoDepthAddQrcode, #bgExtensionOneDepthAddQrcode, #bgExtensionTwoDepthAddQrcode, #newUserPageAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
@@ -80,6 +96,11 @@
     font-size: 30px;
 }
 
+#faceRatioOneDepthReset, #faceRatioTwoDepthReset, #bgExtensionOneDepthReset, #bgExtensionTwoDepthReset, #newUserPageReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #bodyOneDepthDownloadQrBtn, #skinOneDepthDownloadQrBtn, #skinTwoDepthDownloadQrBtn, #skinToneOneDepthDownloadQrBtn, #middleFaceOneDepthDownloadQrBtn, #middleFaceTwoDepthDownloadQrBtn, #reshapeOneDepthDownloadQrBtn, #reshapeTwoDepthDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
@@ -92,5 +113,16 @@
 
 #aiFaceOneDepthDownloadQrBtn, #aiFaceCategoryIdDownloadQrBtn, #aiFaceContentIdDownloadQrBtn, #aiFaceCombineContentCategoryIdDownloadQrBtn {
     margin: 10px;
+    font-size: 30px;
+}
+
+#faceRatioOneDepthDownloadQrBtn, #faceRatioTwoDepthDownloadQrBtn, #bgExtensionOneDepthDownloadQrBtn, #bgExtensionTwoDepthDownloadQrBtn, #newUserPageDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#subArea820 {
+    margin: 10px;
+    margin-bottom: 100px;
     font-size: 30px;
 }

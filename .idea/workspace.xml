@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/soda820.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soda800.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda800.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sodaStyle740.css" beforeDir="false" afterPath="$PROJECT_DIR$/sodaStyle740.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -139,7 +141,13 @@
       <workItem from="1708410572364" duration="111000" />
       <workItem from="1710064995705" duration="3657000" />
       <workItem from="1710132707962" duration="10685000" />
-      <workItem from="1710207124010" duration="2878000" />
+      <workItem from="1710207124010" duration="3535000" />
+      <workItem from="1710397927372" duration="796000" />
+      <workItem from="1710480926526" duration="883000" />
+      <workItem from="1715147663089" duration="5862000" />
+      <workItem from="1715231560038" duration="1688000" />
+      <workItem from="1715859449034" duration="1335000" />
+      <workItem from="1716359973669" duration="6443000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
