@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v8.2.0 Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea820">
+      <h2>SODA/Tianyan v8.2.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda820">
+        <h3>
+            Edit_Faceratio 1depth
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2269486719#SODA.Edit.Faceratio-AppScheme" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="optionArea820">
+        <select name="appList" id="faceRatioOneDepthAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda">SODA(Real)</option>
+            <option value="sodab">SODA(Beta)</option>
+            <option value="tianyan">Tianyan(Real)</option>
+            <option value="tianyanb">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="faceRatioOneDepthMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="faceRatioOneDepthSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="faceRatioOneDepthAddQrcode" value="Show QR Code" onclick="faceRatioOneDepthActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="faceRatioOneDepthReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="faceRatioOneDepthDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea820">
+            <div id="faceRatioOneDepthShowQrCode">
+                <div id="faceRatioOneDepthShowQrCodeDiv"></div>
+                <ul id="faceRatioOneDepthQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda820">
+        <h3>
+            Edit_Faceratio 2depth
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2269486719#SODA.Edit.Faceratio-AppScheme" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="optionArea820">
+        <select name="appList" id="faceRatioTwoDepthAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda">SODA(Real)</option>
+            <option value="sodab">SODA(Beta)</option>
+            <option value="tianyan">Tianyan(Real)</option>
+            <option value="tianyanb">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="beautyKeyname" id="faceRatioTwoDepthBeautyKeyname">
+            <option value="none" selected disabled style="width: 100px">Beauty Keyname</option>
+            <option value="ratioheadtop">Ratio head top(정수리)</option>
+            <option value="ratioforehead">Ratio fore head(이마)</option>
+            <option value="ratiolowerface">Ratio lower face(하관)</option>
+            <option value="ratioshrink">Ratio shrink(하안부)</option>
+            <option value="mfeyebrownose">Eyebrownose(중안부)</option>
+            <option value="mfphiltrum">Philtrum(인중)</option>
+        </select>
+        <br>
+        <br>
+        <input id="faceRatioTwoDepthMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="faceRatioTwoDepthSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="faceRatioTwoDepthAddQrcode" value="Show QR Code" onclick="faceRatioTwoDepthActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="faceRatioTwoDepthReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="faceRatioTwoDepthDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea820">
+            <div id="faceRatioTwoDepthShowQrCode">
+                <div id="faceRatioTwoDepthShowQrCodeDiv"></div>
+                <ul id="faceRatioTwoDepthQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda820">
+        <h3>
+            BG Extension 1depth
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2269499990#SODA.Edit.BgExtension-AppScheme" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="optionArea820">
+        <select name="appList" id="bgExtensionOneDepthAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda">SODA(Real)</option>
+            <option value="sodab">SODA(Beta)</option>
+            <option value="tianyan">Tianyan(Real)</option>
+            <option value="tianyanb">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="bgExtensionOneDepthMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="bgExtensionOneDepthSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bgExtensionOneDepthAddQrcode" value="Show QR Code" onclick="bgExtensionOneDepthActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bgExtensionOneDepthReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bgExtensionOneDepthDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea820">
+            <div id="bgExtensionOneDepthShowQrCode">
+                <div id="bgExtensionOneDepthShowQrCodeDiv"></div>
+                <ul id="bgExtensionOneDepthQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="titleAreaSoda820">
+        <h3>
+            BG Extension 2depth
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2269499990#SODA.Edit.BgExtension-AppScheme" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="optionArea820">
+        <select name="appList" id="bgExtensionTwoDepthAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda">SODA(Real)</option>
+            <option value="sodab">SODA(Beta)</option>
+            <option value="tianyan">Tianyan(Real)</option>
+            <option value="tianyanb">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="beautyKeyname" id="bgExtensionTwoDepthBgRatio">
+            <option value="none" selected disabled style="width: 100px">BG Ratio</option>
+            <option value="original">Original</option>
+            <option value="free">Free</option>
+            <option value="oneone">Square</option>
+            <option value="fourfive">4:5</option>
+            <option value="ninesixteen">9:16</option>
+            <option value="threefour">3:4</option>
+            <option value="sixteennine">16:9</option>
+            <option value="onetwo">1:2</option>
+            <option value="twothree">2:3</option>
+            <option value="ninetwenty">9:20</option>
+            <option value="threetwo">3:2</option>
+            <option value="fourthree">4:3</option>
+            <option value="fivefour">5:4</option>
+        </select>
+        <br>
+        <br>
+        <input id="bgExtensionTwoDepthMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="bgExtensionTwoDepthSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bgExtensionTwoDepthAddQrcode" value="Show QR Code" onclick="bgExtensionTwoDepthActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bgExtensionTwoDepthReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bgExtensionTwoDepthDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea820">
+            <div id="bgExtensionTwoDepthShowQrCode">
+                <div id="bgExtensionTwoDepthShowQrCodeDiv"></div>
+                <ul id="bgExtensionTwoDepthQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda820">
+        <h3>
+            Skin Enhance
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2273650970#SODA.Edit.Skin.Enhance-AppScheme" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="subArea820">
+        <a href="https://leeehwoo.github.io/sodaQaHelper/soda800.html" target="_blank">v8.0.0 QA Helper</a>
+    </div>
+
+
+    <div id="titleAreaSoda820">
+        <h3>
+            New User Subscription Page
+            <a href="https://wiki.navercorp.com/pages/viewpage.action?pageId=2283299081#SODA.New.User.Susbcription.Page.v2-AppScheme(기존)" target="_blank">(Wiki)</a>
+        </h3>
+    </div>
+    <div id="optionArea820">
+        <select name="appList" id="newUserPageAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda">SODA(Real)</option>
+            <option value="sodab">SODA(Beta)</option>
+            <option value="tianyan">Tianyan(Real)</option>
+            <option value="tianyanb">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="beautyKeyname" id="newUserPageType">
+            <option value="none" selected disabled style="width: 100px">Type</option>
+            <option value="yearly">Yearly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <br>
+        <br>
+        <input id="newUserPageMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="newUserPageSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="newUserPageAddQrcode" value="Show QR Code" onclick="newUserPageActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="newUserPageReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="newUserPageDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea820">
+            <div id="newUserPageShowQrCode">
+                <div id="newUserPageShowQrCodeDiv"></div>
+                <ul id="newUserPageQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var faceRatioOneDepthAppSelect = document.getElementById("faceRatioOneDepthAppList");
+            var faceRatioOneDepthSchemeValue = document.getElementById("faceRatioOneDepthMainUrl");
+
+            faceRatioOneDepthAppSelect.addEventListener("change", faceRatioOneDepthScheme);
+
+            function faceRatioOneDepthScheme() {
+                var faceRatioOneDepthAppValue = faceRatioOneDepthAppSelect.value;
+                faceRatioOneDepthSchemeValue.value = faceRatioOneDepthAppValue + '://pick?tab=faceratio';
+            }
+        });
+
+        $("#faceRatioOneDepthMainUrl").click(function () {
+            var faceRatioOneDepthSchemeUrl = $(this).val();
+            window.open(faceRatioOneDepthSchemeUrl);
+        });
+
+        $("#faceRatioOneDepthAddQrcode").click(function () {
+            $("#faceRatioOneDepthShowQrCode #faceRatioOneDepthShowQrCodeDiv").empty();
+            jQuery("#faceRatioOneDepthShowQrCode #faceRatioOneDepthShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#faceRatioOneDepthMainUrl").val()
+            });
+        })
+
+        function faceRatioOneDepthActionAdd() {
+            $("#faceRatioOneDepthQrUl").empty();
+            var faceRatioOneDepthTextAdd = $("#faceRatioOneDepthMainUrl").val();
+            var faceRatioOneDepthQrUl = $("#faceRatioOneDepthQrUl");
+            faceRatioOneDepthQrUl.append("<br>"+"<li>"+faceRatioOneDepthTextAdd+"</li>");
+            var faceRatioOneDepthSpace = $("#faceRatioOneDepthShowQrCodeDiv");
+            faceRatioOneDepthSpace.append("<br>");
+            var faceRatioOneDepthScroll = document.getElementById("faceRatioOneDepthAddQrcode");
+            faceRatioOneDepthScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#faceRatioOneDepthReset").click(function () {
+            $("#faceRatioOneDepthShowQrCode #faceRatioOneDepthShowQrCodeDiv").empty();
+            $("#faceRatioOneDepthQrUl").empty();
+        })
+
+        jQuery("#faceRatioOneDepthSchemeCopy").click(
+            function () {
+                var faceRatioOneDepthUrlInfo = document.getElementById("faceRatioOneDepthMainUrl");
+                faceRatioOneDepthUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#faceRatioOneDepthDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#faceRatioOneDepthShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var faceRatioTwoDepthAppSelect = document.getElementById("faceRatioTwoDepthAppList");
+            var faceRatioTwoDepthBeautyKeynameSelect = document.getElementById("faceRatioTwoDepthBeautyKeyname");
+            var faceRatioTwoDepthSchemeValue = document.getElementById("faceRatioTwoDepthMainUrl");
+
+            faceRatioTwoDepthAppSelect.addEventListener("change", faceRatioTwoDepthScheme);
+            faceRatioTwoDepthBeautyKeynameSelect.addEventListener("change", faceRatioTwoDepthScheme);
+
+            function faceRatioTwoDepthScheme() {
+                var faceRatioTwoDepthAppValue = faceRatioTwoDepthAppSelect.value;
+                var faceRatioTwoDepthBeautyKeynameValue = faceRatioTwoDepthBeautyKeynameSelect.value;
+                faceRatioTwoDepthSchemeValue.value = faceRatioTwoDepthAppValue + '://pick?tab=faceratio&beautyKeyname=' + faceRatioTwoDepthBeautyKeynameValue;
+            }
+        });
+
+        $("#faceRatioTwoDepthMainUrl").click(function () {
+            var faceRatioTwoDepthSchemeUrl = $(this).val();
+            window.open(faceRatioTwoDepthSchemeUrl);
+        });
+
+        $("#faceRatioTwoDepthAddQrcode").click(function () {
+            $("#faceRatioTwoDepthShowQrCode #faceRatioTwoDepthShowQrCodeDiv").empty();
+            jQuery("#faceRatioTwoDepthShowQrCode #faceRatioTwoDepthShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#faceRatioTwoDepthMainUrl").val()
+            });
+        })
+
+      function faceRatioTwoDepthActionAdd() {
+            $("#faceRatioTwoDepthQrUl").empty();
+            var faceRatioTwoDepthTextAdd = $("#faceRatioTwoDepthMainUrl").val();
+            var faceRatioTwoDepthQrUl = $("#faceRatioTwoDepthQrUl");
+            faceRatioTwoDepthQrUl.append("<br>"+"<li>"+faceRatioTwoDepthTextAdd+"</li>");
+            var faceRatioTwoDepthSpace = $("#faceRatioTwoDepthShowQrCodeDiv");
+            faceRatioTwoDepthSpace.append("<br>");
+            var faceRatioTwoDepthScroll = document.getElementById("faceRatioTwoDepthAddQrcode");
+            faceRatioTwoDepthScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+      $("#faceRatioTwoDepthReset").click(function () {
+          $("#faceRatioTwoDepthShowQrCode #faceRatioTwoDepthShowQrCodeDiv").empty();
+          $("#faceRatioTwoDepthQrUl").empty();
+      })
+
+      jQuery("#faceRatioTwoDepthSchemeCopy").click(
+          function () {
+              var faceRatioTwoDepthUrlInfo = document.getElementById("faceRatioTwoDepthMainUrl");
+              faceRatioTwoDepthUrlInfo.select();
+              document.execCommand("Copy");
+              alert("Add Scheme to Clipboard!")
+          }
+      )
+
+      $(function () {
+        $("#faceRatioTwoDepthDownloadQrBtn").on("click", function () {
+            html2canvas(document.querySelector("#faceRatioTwoDepthShowQrCode")).then(canvas => {
+                saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+            });
+        });
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+      });
+
+       document.addEventListener("DOMContentLoaded", function () {
+            var bgExtensionOneDepthAppSelect = document.getElementById("bgExtensionOneDepthAppList");
+            var bgExtensionOneDepthSchemeValue = document.getElementById("bgExtensionOneDepthMainUrl");
+
+            bgExtensionOneDepthAppSelect.addEventListener("change", bgExtensionOneDepthScheme);
+
+            function bgExtensionOneDepthScheme() {
+                var bgExtensionOneDepthAppValue = bgExtensionOneDepthAppSelect.value;
+                bgExtensionOneDepthSchemeValue.value = bgExtensionOneDepthAppValue + '://pick?tab=bgextension';
+            }
+        });
+
+        $("#bgExtensionOneDepthMainUrl").click(function () {
+            var bgExtensionOneDepthSchemeUrl = $(this).val();
+            window.open(bgExtensionOneDepthSchemeUrl);
+        });
+
+        $("#bgExtensionOneDepthAddQrcode").click(function () {
+            $("#bgExtensionOneDepthShowQrCode #bgExtensionOneDepthShowQrCodeDiv").empty();
+            jQuery("#bgExtensionOneDepthShowQrCode #bgExtensionOneDepthShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bgExtensionOneDepthMainUrl").val()
+            });
+        })
+
+        function bgExtensionOneDepthActionAdd() {
+            $("#bgExtensionOneDepthQrUl").empty();
+            var bgExtensionOneDepthTextAdd = $("#bgExtensionOneDepthMainUrl").val();
+            var bgExtensionOneDepthQrUl = $("#bgExtensionOneDepthQrUl");
+            bgExtensionOneDepthQrUl.append("<br>"+"<li>"+bgExtensionOneDepthTextAdd+"</li>");
+            var bgExtensionOneDepthSpace = $("#bgExtensionOneDepthShowQrCodeDiv");
+            bgExtensionOneDepthSpace.append("<br>");
+            var bgExtensionOneDepthScroll = document.getElementById("bgExtensionOneDepthAddQrcode");
+            bgExtensionOneDepthScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bgExtensionOneDepthReset").click(function () {
+            $("#bgExtensionOneDepthShowQrCode #bgExtensionOneDepthShowQrCodeDiv").empty();
+            $("#bgExtensionOneDepthQrUl").empty();
+        })
+
+        jQuery("#bgExtensionOneDepthSchemeCopy").click(
+            function () {
+                var bgExtensionOneDepthUrlInfo = document.getElementById("bgExtensionOneDepthMainUrl");
+                bgExtensionOneDepthUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bgExtensionOneDepthDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bgExtensionOneDepthShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bgExtensionTwoDepthAppSelect = document.getElementById("bgExtensionTwoDepthAppList");
+            var bgExtensionTwoDepthBgRatioSelect = document.getElementById("bgExtensionTwoDepthBgRatio");
+            var bgExtensionTwoDepthSchemeValue = document.getElementById("bgExtensionTwoDepthMainUrl");
+
+            bgExtensionTwoDepthAppSelect.addEventListener("change", bgExtensionTwoDepthScheme);
+            bgExtensionTwoDepthBgRatioSelect.addEventListener("change", bgExtensionTwoDepthScheme);
+
+            function bgExtensionTwoDepthScheme() {
+                var bgExtensionTwoDepthAppValue = bgExtensionTwoDepthAppSelect.value;
+                var bgExtensionTwoDepthBgRatioValue = bgExtensionTwoDepthBgRatioSelect.value;
+                bgExtensionTwoDepthSchemeValue.value = bgExtensionTwoDepthAppValue + '://pick?tab=bgextension&bgRatio=' + bgExtensionTwoDepthBgRatioValue;
+            }
+        });
+
+        $("#bgExtensionTwoDepthMainUrl").click(function () {
+            var bgExtensionTwoDepthSchemeUrl = $(this).val();
+            window.open(bgExtensionTwoDepthSchemeUrl);
+        });
+
+        $("#bgExtensionTwoDepthAddQrcode").click(function () {
+            $("#bgExtensionTwoDepthShowQrCode #bgExtensionTwoDepthShowQrCodeDiv").empty();
+            jQuery("#bgExtensionTwoDepthShowQrCode #bgExtensionTwoDepthShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bgExtensionTwoDepthMainUrl").val()
+            });
+        })
+
+      function bgExtensionTwoDepthActionAdd() {
+            $("#bgExtensionTwoDepthQrUl").empty();
+            var bgExtensionTwoDepthTextAdd = $("#bgExtensionTwoDepthMainUrl").val();
+            var bgExtensionTwoDepthQrUl = $("#bgExtensionTwoDepthQrUl");
+            bgExtensionTwoDepthQrUl.append("<br>"+"<li>"+bgExtensionTwoDepthTextAdd+"</li>");
+            var bgExtensionTwoDepthSpace = $("#bgExtensionTwoDepthShowQrCodeDiv");
+            bgExtensionTwoDepthSpace.append("<br>");
+            var bgExtensionTwoDepthScroll = document.getElementById("bgExtensionTwoDepthAddQrcode");
+            bgExtensionTwoDepthScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+      $("#bgExtensionTwoDepthReset").click(function () {
+          $("#bgExtensionTwoDepthShowQrCode #bgExtensionTwoDepthShowQrCodeDiv").empty();
+          $("#bgExtensionTwoDepthQrUl").empty();
+      })
+
+      jQuery("#bgExtensionTwoDepthSchemeCopy").click(
+          function () {
+              var bgExtensionTwoDepthUrlInfo = document.getElementById("bgExtensionTwoDepthMainUrl");
+              bgExtensionTwoDepthUrlInfo.select();
+              document.execCommand("Copy");
+              alert("Add Scheme to Clipboard!")
+          }
+      )
+
+      $(function () {
+        $("#bgExtensionTwoDepthDownloadQrBtn").on("click", function () {
+            html2canvas(document.querySelector("#bgExtensionTwoDepthShowQrCode")).then(canvas => {
+                saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+            });
+        });
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+      });
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+            var newUserPageAppSelect = document.getElementById("newUserPageAppList");
+            var newUserPageTypeSelect = document.getElementById("newUserPageType");
+            var newUserPageSchemeValue = document.getElementById("newUserPageMainUrl");
+
+            newUserPageAppSelect.addEventListener("change", newUserPageScheme);
+            newUserPageTypeSelect.addEventListener("change", newUserPageScheme);
+
+            function newUserPageScheme() {
+                var newUserPageAppValue = newUserPageAppSelect.value;
+                var newUserPageTypeValue = newUserPageTypeSelect.value;
+                newUserPageSchemeValue.value = newUserPageAppValue + '://purchase?type=subscribe&product=' + newUserPageTypeValue;
+            }
+        });
+
+        $("#newUserPageMainUrl").click(function () {
+            var newUserPageSchemeUrl = $(this).val();
+            window.open(newUserPageSchemeUrl);
+        });
+
+        $("#newUserPageAddQrcode").click(function () {
+            $("#newUserPageShowQrCode #newUserPageShowQrCodeDiv").empty();
+            jQuery("#newUserPageShowQrCode #newUserPageShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#newUserPageMainUrl").val()
+            });
+        })
+
+      function newUserPageActionAdd() {
+            $("#newUserPageQrUl").empty();
+            var newUserPageTextAdd = $("#newUserPageMainUrl").val();
+            var newUserPageQrUl = $("#newUserPageQrUl");
+            newUserPageQrUl.append("<br>"+"<li>"+newUserPageTextAdd+"</li>");
+            var newUserPageSpace = $("#newUserPageShowQrCodeDiv");
+            newUserPageSpace.append("<br>");
+            var newUserPageScroll = document.getElementById("newUserPageAddQrcode");
+            newUserPageScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+      $("#newUserPageReset").click(function () {
+          $("#newUserPageShowQrCode #newUserPageShowQrCodeDiv").empty();
+          $("#newUserPageQrUl").empty();
+      })
+
+      jQuery("#newUserPageSchemeCopy").click(
+          function () {
+              var newUserPageUrlInfo = document.getElementById("newUserPageMainUrl");
+              newUserPageUrlInfo.select();
+              document.execCommand("Copy");
+              alert("Add Scheme to Clipboard!")
+          }
+      )
+
+      $(function () {
+        $("#newUserPageDownloadQrBtn").on("click", function () {
+            html2canvas(document.querySelector("#newUserPageShowQrCode")).then(canvas => {
+                saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+            });
+        });
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+      });
+    </script>
+</body>
+</html>
