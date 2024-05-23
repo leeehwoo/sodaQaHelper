@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="hiresmode의 take 중첩 수정">
+    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="오타 수정">
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie1/feedRecipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie1/feedRecipe2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie1/feedRecipe3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie2/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie2/tab2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie3/pickTab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie4/purchase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie5/beta-help-foodie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/foodie5/help-foodie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/foodieScheme620/js/jquery-qrcode-0.18.0.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodieScheme605/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFoodie.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFoodie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFromFoodie.js" beforeDir="false" afterPath="$PROJECT_DIR$/foodieScheme605/js/foodie/inappBrowserFromFoodie.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,27 +65,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/PycharmProjects/sodaQaHelper&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/user/PycharmProjects/sodaQaHelper",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/foodieScheme620" />
+      <recent name="$PROJECT_DIR$/foodieScheme620/js" />
+      <recent name="$PROJECT_DIR$/foodieScheme605" />
       <recent name="$PROJECT_DIR$/foodieScheme600" />
-      <recent name="$PROJECT_DIR$/foodieScheme600/foodie6" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -157,7 +172,25 @@
       <workItem from="1713203538061" duration="175000" />
       <workItem from="1713203765830" duration="59000" />
       <workItem from="1713203855128" duration="794000" />
-      <workItem from="1713232979962" duration="75000" />
+      <workItem from="1713232979962" duration="193000" />
+      <workItem from="1713233175535" duration="37000" />
+      <workItem from="1713233216088" duration="19000" />
+      <workItem from="1713233253110" duration="389000" />
+      <workItem from="1713233644675" duration="7000" />
+      <workItem from="1713233689061" duration="2000" />
+      <workItem from="1713233740133" duration="203000" />
+      <workItem from="1713234005110" duration="1290000" />
+      <workItem from="1713235542271" duration="740000" />
+      <workItem from="1713252639498" duration="87000" />
+      <workItem from="1713252756158" duration="35000" />
+      <workItem from="1713252793426" duration="36000" />
+      <workItem from="1713252947671" duration="154000" />
+      <workItem from="1713253207526" duration="602000" />
+      <workItem from="1714625449998" duration="1256000" />
+      <workItem from="1714716168949" duration="1281000" />
+      <workItem from="1715858430959" duration="1216000" />
+      <workItem from="1716340077123" duration="971000" />
+      <workItem from="1716381154739" duration="1788000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
@@ -194,7 +227,42 @@
       <option name="project" value="LOCAL" />
       <updated>1713232582999</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="beta H5 defaul url 수정">
+      <created>1713233134807</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713233134807</updated>
+    </task>
+    <task id="LOCAL-00007" summary="beta H5 defaul url 수정">
+      <created>1713235667127</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713235667127</updated>
+    </task>
+    <task id="LOCAL-00008" summary="오타 수정">
+      <created>1713252689883</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713252689883</updated>
+    </task>
+    <task id="LOCAL-00009" summary="오타 수정">
+      <created>1713252825572</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713252825572</updated>
+    </task>
+    <task id="LOCAL-00010" summary="오타 수정">
+      <created>1713253099243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1713253099243</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +283,8 @@
     <MESSAGE value="Default Changelist" />
     <MESSAGE value="- 버그 수정&#10;- ID 디폴트 값 설정&#10;- 탭 6 hiresmode 추가" />
     <MESSAGE value="hiresmode의 take 중첩 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="hiresmode의 take 중첩 수정" />
+    <MESSAGE value="beta H5 defaul url 수정" />
+    <MESSAGE value="오타 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="오타 수정" />
   </component>
 </project>
