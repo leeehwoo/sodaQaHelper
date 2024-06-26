@@ -92,7 +92,7 @@
     font-size: 30px;
 }
 
-#styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, ##styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #studioContentsMultiIdReset {
+#styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #studioContentsMultiIdReset {
     margin: 10px;
     font-size: 30px;
                                                                                                                                                                                                                                                                                                                                                                                                                   }
@@ -132,6 +132,11 @@
 }
 
 #faceRatioOneDepthDownloadQrBtn, #faceRatioTwoDepthDownloadQrBtn, #bgExtensionOneDepthDownloadQrBtn, #bgExtensionTwoDepthDownloadQrBtn, #newUserPageDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#styleFilterDownloadQrBtn, #cameraTabDownloadQrBtn, #beautyDownloadQrBtn, #makeupDownloadQrBtn, #subscriptionPageDownloadQrBtn, #homeCategoryDownloadQrBtn, #homeIdDownloadQrBtn, #homeOpenPageDownloadQrBtn, #studioContentsIdDownloadQrBtn, #studioContentsMultiIdDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
