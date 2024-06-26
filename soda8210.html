@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v8.2.10 Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea8210">
+        <h2>SODA/Tianyan v8.2.10 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda8210">
+        <h3>
+            Style/Filter Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        Select App
+        <select name="appList" id="styleFilterAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Camera Scheme
+        <select name="cameraSchemeList" id="styleFilterCameraSchemeList">
+            <option value="" selected disabled style="width: 70px">Select Camera Scheme</option>
+            <option value="go?">Main Camera</option>
+            <option value="preivewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        Contents ID :
+        <select name="contentsIdSelect" id="styleFilterContentsIdSelect">
+            <option value="" selected disabled style="width: 70px">Style/Filter</option>
+            <option value="styleId=">Style</option>
+            <option value="filterId=">Filter</option>
+        </select>
+        Input ID :
+        <input id="styleFilterContentsIdInput" style="width: 100px">
+        <br>
+        <br>
+        Category ID :
+        <select name="categoryIdSelect" id="styleFilterCategoryIdSelect">
+            <option value="" selected disabled style="width: 70px">Style/Filter</option>
+            <option value="&styleCategoryId=">Style</option>
+            <option value="&filterCategoryId=">Filter</option>
+        </select>
+        Input ID :
+        <input id="styleFilterCategoryIdInput" style="width: 100px">
+        <br>
+        <h4>
+            Option
+        </h4>
+        Camera Position
+        <select name="cameraPositionList" id="styleFilterCameraPosition">
+            <option value="" selected disabled style="width: 70px">Camera Position</option>
+            <option value="&cameraPosition=0">Front Camera</option>
+            <option value="&cameraPosition=1">Back Camera</option>
+        </select>
+        <br>
+        <br>
+        Beauty Mode
+        <select name="beautyModeList" id="styleFilterBeautyMode">
+            <option value="" selected disabled style="width: 70px">Beauty Mode</option>
+            <option value="&beautyMode=1">Standard</option>
+            <option value="&beautyMode=2">Hires</option>
+        </select>
+        <br>
+        <br>
+        Take Mode
+        <select name="takeModeList" id="styleFilterTakeMode">
+            <option value="" selected disabled style="width: 70px">Take Mode</option>
+            <option value="&takeMode=0">Photo</option>
+            <option value="&takeMode=1">Video</option>
+            <option value="&takeMode=2">Live Photo</option>
+        </select>
+        <br>
+        <br>
+        Auto Download
+        <select name="autoDownloadList" id="styleFilterAutoDownload">
+            <option value="" selected disabled style="width: 70px">Auto Download</option>
+            <option value="&autoDownload=true">True</option>
+            <option value="&autoDownload=false">False</option>
+        </select>
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="styleFilterGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        Remove
+        <button id="styleFilterAndRemoveBtn">&</button>
+        <br>
+        <br>
+        <input id="styleFilterMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="styleFilterSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="styleFilterAddQrcode" value="Show QR Code" onclick="styleFilterActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="styleFilterReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="styleFilterDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="styleFilterShowQrCode">
+                <div id="styleFilterShowQrCodeDiv"></div>
+                <ul id="styleFilterQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Camera Tab Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="cameraTabAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="cameraSchemeList" id="cameraTabCameraSchemeList">
+            <option value="" selected disabled style="width: 70px">Select Camera Scheme</option>
+            <option value="go?">Main Camera</option>
+            <option value="preivewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        <select name="TabList" id="cameraTabList">
+            <option value="" selected disabled style="width: 70px">Tab List</option>
+            <option value="Filter">Filter</option>
+            <option value="Makeup">Makeup</option>
+            <option value="Beauty">Beauty</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Layout">Layout</option>
+            <option value="Burst">Burst</option>
+            <option value="Smartblur">Smartblur</option>
+            <option value="reshaped3d">Reshaped3d</option>
+            <option value="zoom">Zoom</option>
+        </select>
+        <br>
+        <br>
+        <input id="cameraTabMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="cameraTabSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="cameraTabAddQrcode" value="Show QR Code" onclick="cameraTabActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="cameraTabReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="cameraTabDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="cameraTabShowQrCode">
+                <div id="cameraTabShowQrCodeDiv"></div>
+                <ul id="cameraTabQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Beauty Keyname Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="beautyAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="cameraSchemeList" id="beautySchemeList">
+            <option value="" selected disabled style="width: 70px">Select Camera Scheme</option>
+            <option value="go?">Main Camera</option>
+            <option value="preivewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        Input Beauty Keyname :
+        <input id="beautyKeynameInput" style="width: 100px">
+        <br>
+        <br>
+        <select name="beautyTabList" id="beautyTabList">
+            <option value="" selected disabled style="width: 70px">Select Beauty Tab</option>
+            <option value="&tab=Beauty">Beauty</option>
+            <option value="&tab=Advanced">Advanced</option>
+        </select>
+        <br>
+        <br>
+        <input id="beautyMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="beautySchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="beautyAddQrcode" value="Show QR Code" onclick="beautyActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="beautyReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="beautyDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="beautyShowQrCode">
+                <div id="beautyShowQrCodeDiv"></div>
+                <ul id="beautyQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Makeup Keyname Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="makeupAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="cameraSchemeList" id="makeupSchemeList">
+            <option value="" selected disabled style="width: 70px">Select Camera Scheme</option>
+            <option value="go?">Main Camera</option>
+            <option value="preivewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        Input Makeup Keyname :
+        <input id="makeupKeynameInput" style="width: 100px">
+        <br>
+        <br>
+        Input Asset Keyname :
+        <input id="makeupAssetKeynameInput" style="width: 100px">
+        <br>
+        <br>
+        Input Intensity :
+        <input id="makeupAssetIntensityInput" style="width: 100px">
+        <br>
+        <br>
+        Sub Id :
+        <input id="makeupAssetSubIdInput" style="width: 100px">
+        <br>
+        <br>
+        <input id="makeupMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="makeupSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="makeupAddQrcode" value="Show QR Code" onclick="makeupActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="makeupReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="makeupDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="makeupShowQrCode">
+                <div id="makeupShowQrCodeDiv"></div>
+                <ul id="makeupQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Subscription Page Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="subscriptionPageAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="subscriptionPage" id="subscriptionPageList">
+            <option value="" selected disabled style="width: 70px">Select Subscription Page</option>
+            <option value="popup">Popup</option>
+            <option value="page">Page</option>
+            <option value="benefit">Benefit</option>
+        </select>
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="subscriptionPageGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="subscriptionPageMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="subscriptionPageSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="subscriptionPageAddQrcode" value="Show QR Code" onclick="subscriptionPageActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="subscriptionPageReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="subscriptionPageDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="subscriptionPageShowQrCode">
+                <div id="subscriptionPageShowQrCodeDiv"></div>
+                <ul id="subscriptionPageQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Home Category Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="homeCategoryAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home">SODA(Real)</option>
+            <option value="sodab://home">SODA(Beta)</option>
+            <option value="tianyan://home">Tianyan(Real)</option>
+            <option value="tianyanb://home">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="homeCategory" id="homeCategoryList">
+            <option value="" selected disabled style="width: 70px">Select Home Category List</option>
+            <option value="?category=filter">Filter</option>
+            <option value="?category=banner">Banner</option>
+            <option value="?category=topchart">Top Chart</option>
+            <option value="?category=shortcut">Shortcut</option>
+            <option value="?twodepthcategory=filter">Two depth Category(Filter)</option>
+        </select>
+        <br>
+        <br>
+        Group ID :
+        <input id="homeCategoryGroupIdInput" style="width: 100px">
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="homeCategoryGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="homeCategoryMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="homeCategorySchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="homeCategoryAddQrcode" value="Show QR Code" onclick="homeCategoryActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="homeCategoryReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="homeCategoryDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="homeCategoryShowQrCode">
+                <div id="homeCategoryShowQrCodeDiv"></div>
+                <ul id="homeCategoryQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Home Category(Group ID + Item ID) Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="homeIdAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home">SODA(Real)</option>
+            <option value="sodab://home">SODA(Beta)</option>
+            <option value="tianyan://home">Tianyan(Real)</option>
+            <option value="tianyanb://home">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Group ID :
+        <input id="homeIdGroupIdInput" style="width: 100px">
+        <br>
+        <br>
+        Item ID :
+        <input id="homeIdItemIdInput" style="width: 100px">
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="homeIdGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="homeIdMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="homeIdSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="homeIdAddQrcode" value="Show QR Code" onclick="homeIdActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="homeIdReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="homeIdDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="homeIdShowQrCode">
+                <div id="homeIdShowQrCodeDiv"></div>
+                <ul id="homeIdQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Home Open Page Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="homeOpenPageAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home">SODA(Real)</option>
+            <option value="sodab://home">SODA(Beta)</option>
+            <option value="tianyan://home">Tianyan(Real)</option>
+            <option value="tianyanb://home">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Item ID :
+        <input id="homeOpenPageItemIdInput" style="width: 100px">
+        <br>
+        <br>
+        <select name="fromlist" id="homeOpenPageFromList">
+            <option value="none" selected disabled style="width: 70px">Select From Value</option>
+            <option value="camera">Camera</option>
+            <option value="edit">Edit</option>
+        </select>
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="homeOpenPageGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="homeOpenPageMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="homeOpenPageSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="homeOpenPageAddQrcode" value="Show QR Code" onclick="homeOpenPageActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="homeOpenPageReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="homeOpenPageDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="homeOpenPageShowQrCode">
+                <div id="homeOpenPageShowQrCodeDiv"></div>
+                <ul id="homeOpenPageQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Studio Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="studioContentsIdAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home">SODA(Real)</option>
+            <option value="sodab://home">SODA(Beta)</option>
+            <option value="tianyan://home">Tianyan(Real)</option>
+            <option value="tianyanb://home">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="contentsList" id="studioContentsIdList">
+            <option value="none" selected disabled style="width: 70px">Select Tag/Template</option>
+            <option value="?tagId=">Tag</option>
+            <option value="?templateId=">Template</option>
+        </select>
+        <br>
+        <br>
+        Input ID :
+        <input id="studioContentsIdInput" style="width: 100px">
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="studioContentsIdGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="studioContentsIdMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="studioContentsIdSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="studioContentsIdAddQrcode" value="Show QR Code" onclick="studioContentsIdActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="studioContentsIdReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="studioContentsIdDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="studioContentsIdShowQrCode">
+                <div id="studioContentsIdShowQrCodeDiv"></div>
+                <ul id="studioContentsIdQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda8210">
+        <h3>
+            Studio Multi ID Scheme
+        </h3>
+    </div>
+    <div id="optionArea8210">
+        <select name="appList" id="studioContentsMultiIdAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home">SODA(Real)</option>
+            <option value="sodab://home">SODA(Beta)</option>
+            <option value="tianyan://home">Tianyan(Real)</option>
+            <option value="tianyanb://home">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Template ID :
+        <input id="studioTemplateIdInput" style="width: 100px">
+        <br>
+        <br>
+        Tag ID :
+        <input id="studioTagIdInput" style="width: 100px">
+        <br>
+        <br>
+        Mapped Template Id :
+        <input id="mappedTemplateIdInput" style="width: 100px">
+        <br>
+        <br>
+        GNB
+        <select name="gnbList" id="studioContentsMultiIdGnb">
+            <option value="" selected disabled style="width: 70px">GNB Value</option>
+            <option value="&gnb=home">Home</option>
+            <option value="&gnb=camera">Main</option>
+            <option value="&gnb=feed">Feed</option>
+        </select>
+        <br>
+        <br>
+        <input id="studioContentsMultiIdMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="studioContentsMultiIdSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="studioContentsMultiIdAddQrcode" value="Show QR Code" onclick="studioContentsMultiIdActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="studioContentsMultiIdReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="studioContentsMultiIdDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8210">
+            <div id="studioContentsMultiIdShowQrCode">
+                <div id="studioContentsMultiIdShowQrCodeDiv"></div>
+                <ul id="studioContentsMultiIdQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var styleFilterAppSelect = document.getElementById("styleFilterAppList");
+            var styleFilterCameraSelect = document.getElementById("styleFilterCameraSchemeList");
+            var styleFilterContentsIdSelect = document.getElementById("styleFilterContentsIdSelect");
+            var styleFilterContentsIdInput = document.getElementById("styleFilterContentsIdInput");
+            var styleFilterCategoryIdSelect = document.getElementById("styleFilterCategoryIdSelect");
+            var styleFilterCategoryIdInput = document.getElementById("styleFilterCategoryIdInput");
+            var styleFilterCameraPositionSelect = document.getElementById("styleFilterCameraPosition");
+            var styleFilterBeautyModeSelect = document.getElementById("styleFilterBeautyMode");
+            var styleFilterTakeModeSelect = document.getElementById("styleFilterTakeMode");
+            var styleFilterAutoDownloadSelect = document.getElementById("styleFilterAutoDownload");
+            var styleFilterGnbSelect = document.getElementById("styleFilterGnb");
+            var styleFilterAndRemoveBtn = document.getElementById("styleFilterAndRemoveBtn");
+            var styleFilterSchemeValue = document.getElementById("styleFilterMainUrl");
+
+            styleFilterAppSelect.addEventListener("change", styleFilterScheme);
+            styleFilterCameraSelect.addEventListener("change", styleFilterScheme);
+            styleFilterContentsIdSelect.addEventListener("change", styleFilterScheme);
+            styleFilterContentsIdInput.addEventListener("input", styleFilterScheme);
+            styleFilterCategoryIdSelect.addEventListener("change", styleFilterScheme);
+            styleFilterCategoryIdInput.addEventListener("input", styleFilterScheme);
+            styleFilterCameraPositionSelect.addEventListener("change", styleFilterScheme);
+            styleFilterBeautyModeSelect.addEventListener("change", styleFilterScheme);
+            styleFilterTakeModeSelect. addEventListener("change", styleFilterScheme);
+            styleFilterAutoDownloadSelect.addEventListener("change", styleFilterScheme);
+            styleFilterGnbSelect.addEventListener("change", styleFilterScheme);
+
+            function styleFilterScheme() {
+                var styleFilterAppSelectValue = styleFilterAppSelect.value;
+                var styleFilterCameraSelectValue = styleFilterCameraSelect.value;
+                var styleFilterContentsIdSelectValue = styleFilterContentsIdSelect.value;
+                var styleFilterContentsIdInputValue = styleFilterContentsIdInput.value;
+                var styleFilterCategoryIdSelectValue = styleFilterCategoryIdSelect.value;
+                var styleFilterCategoryIdInputValue = styleFilterCategoryIdInput.value;
+                var styleFilterCameraPositionSelectValue = styleFilterCameraPositionSelect.value;
+                var styleFilterBeautyModeSelectValue = styleFilterBeautyModeSelect.value;
+                var styleFilterTakeModeSelectValue = styleFilterTakeModeSelect.value;
+                var styleFilterAutoDownloadSelectValue = styleFilterAutoDownloadSelect.value;
+                var styleFilterGnbSelectValue = styleFilterGnbSelect.value;
+
+                styleFilterSchemeValue.value = styleFilterAppSelectValue + styleFilterCameraSelectValue + styleFilterContentsIdSelectValue + styleFilterContentsIdInputValue
+                + styleFilterCategoryIdSelectValue + styleFilterCategoryIdInputValue + styleFilterCameraPositionSelectValue
+                + styleFilterBeautyModeSelectValue + styleFilterTakeModeSelectValue + styleFilterAutoDownloadSelectValue
+                + styleFilterGnbSelectValue;
+            }
+
+            styleFilterAndRemoveBtn.addEventListener("click", function () {
+                styleFilterSchemeValue.value = styleFilterSchemeValue.value.replace(/&/g, '');
+            });
+
+            styleFilterScheme();
+        });
+
+        $("#styleFilterMainUrl").click(function () {
+                var styleFilterSchemeUrl = $(this).val();
+                window.open(styleFilterSchemeUrl);
+        });
+
+        $("#styleFilterAddQrcode").click(function () {
+            $("#styleFilterShowQrCode #styleFilterShowQrCodeDiv").empty();
+            jQuery("#styleFilterShowQrCode #styleFilterShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#styleFilterMainUrl").val()
+            });
+        })
+
+        function styleFilterActionAdd() {
+            $("#styleFilterQrUl").empty();
+            var styleFilterTextAdd = $("#styleFilterMainUrl").val();
+            var styleFilterQrUl = $("#styleFilterQrUl");
+            styleFilterQrUl.append("<br>"+"<li>"+styleFilterTextAdd+"</li>");
+            var styleFilterSpace = $("#styleFilterShowQrCodeDiv");
+            styleFilterSpace.append("<br>");
+            var styleFilterScroll = document.getElementById("styleFilterAddQrcode");
+            styleFilterScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            styleFilterScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#styleFilterReset").click(function () {
+            $("#styleFilterShowQrCode #styleFilterShowQrCodeDiv").empty();
+            $("#styleFilterQrUl").empty();
+        })
+
+        jQuery("#styleFilterSchemeCopy").click(
+            function () {
+                var styleFilterUrlInfo = document.getElementById("styleFilterMainUrl");
+                styleFilterUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#styleFilterDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#styleFilterShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var cameraTabAppSelect = document.getElementById("cameraTabAppList");
+            var cameraTabCameraSchemeSelect = document.getElementById("cameraTabCameraSchemeList");
+            var cameraTabListSelect = document.getElementById("cameraTabList");
+            var cameraTabSchemeValue = document.getElementById("cameraTabMainUrl");
+
+            cameraTabAppSelect.addEventListener("change", cameraTabScheme);
+            cameraTabCameraSchemeSelect.addEventListener("change", cameraTabScheme);
+            cameraTabListSelect.addEventListener("change", cameraTabScheme);
+
+            function cameraTabScheme() {
+                var cameraTabAppValue = cameraTabAppSelect.value;
+                var cameraTabCameraSchemeValue = cameraTabCameraSchemeSelect.value;
+                var cameraTabListValue = cameraTabListSelect.value;
+                cameraTabSchemeValue.value = cameraTabAppValue + cameraTabCameraSchemeValue + 'tab=' + cameraTabListValue;
+            }
+        });
+
+        $("#cameraTabMainUrl").click(function () {
+                var cameraTabSchemeUrl = $(this).val();
+                window.open(cameraTabSchemeUrl);
+        });
+
+        $("#cameraTabAddQrcode").click(function () {
+            $("#cameraTabShowQrCode #cameraTabShowQrCodeDiv").empty();
+            jQuery("#cameraTabShowQrCode #cameraTabShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#cameraTabMainUrl").val()
+            });
+        })
+
+        function cameraTabActionAdd() {
+            $("#cameraTabQrUl").empty();
+            var cameraTabTextAdd = $("#cameraTabMainUrl").val();
+            var cameraTabQrUl = $("#cameraTabQrUl");
+            cameraTabQrUl.append("<br>"+"<li>"+cameraTabTextAdd+"</li>");
+            var cameraTabSpace = $("#cameraTabShowQrCodeDiv");
+            cameraTabSpace.append("<br>");
+            var cameraTabScroll = document.getElementById("cameraTabAddQrcode");
+            cameraTabScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            cameraTabScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#cameraTabReset").click(function () {
+            $("#cameraTabShowQrCode #cameraTabShowQrCodeDiv").empty();
+            $("#cameraTabQrUl").empty();
+        })
+
+        jQuery("#cameraTabSchemeCopy").click(
+            function () {
+                var cameraTabUrlInfo = document.getElementById("cameraTabMainUrl");
+                cameraTabUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#cameraTabDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#cameraTabShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var beautyAppSelect = document.getElementById("beautyAppList");
+            var beautyCameraSchemeSelect = document.getElementById("beautySchemeList");
+            var beautyKeynameInput = document.getElementById("beautyKeynameInput");
+            var beautyTabSelect = document.getElementById("beautyTabList");
+            var beautySchemeValue = document.getElementById("beautyMainUrl");
+
+            beautyAppSelect.addEventListener("change", beautyScheme);
+            beautyCameraSchemeSelect.addEventListener("change", beautyScheme);
+            beautyKeynameInput.addEventListener("input", beautyScheme);
+            beautyTabSelect.addEventListener("change", beautyScheme);
+
+            function beautyScheme() {
+                var beautyAppValue = beautyAppSelect.value;
+                var beautyCameraSchemeValue = beautyCameraSchemeSelect.value;
+                var beautyKeynameValue = beautyKeynameInput.value;
+                var beautyTabValue = beautyTabSelect.value;
+                beautySchemeValue.value = beautyAppValue + beautyCameraSchemeValue + 'beautyKeyname=' + beautyKeynameValue + beautyTabValue;
+            }
+        });
+
+        $("#beautyMainUrl").click(function () {
+                var beautySchemeUrl = $(this).val();
+                window.open(beautySchemeUrl);
+        });
+
+        $("#beautyAddQrcode").click(function () {
+            $("#beautyShowQrCode #beautyShowQrCodeDiv").empty();
+            jQuery("#beautyShowQrCode #beautyShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#beautyMainUrl").val()
+            });
+        })
+
+        function beautyActionAdd() {
+            $("#beautyQrUl").empty();
+            var beautyTextAdd = $("#beautyMainUrl").val();
+            var beautyQrUl = $("#beautyQrUl");
+            beautyQrUl.append("<br>"+"<li>"+beautyTextAdd+"</li>");
+            var beautySpace = $("#beautyShowQrCodeDiv");
+            beautySpace.append("<br>");
+            var beautyScroll = document.getElementById("beautyAddQrcode");
+            beautyScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            beautyScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#beautyReset").click(function () {
+            $("#beautyShowQrCode #beautyShowQrCodeDiv").empty();
+            $("#beautyQrUl").empty();
+        })
+
+        jQuery("#beautySchemeCopy").click(
+            function () {
+                var beautyUrlInfo = document.getElementById("beautyMainUrl");
+                beautyUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#beautyDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#beautyShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var makeupAppSelect = document.getElementById("makeupAppList");
+            var makeupCameraSchemeSelect = document.getElementById("makeupSchemeList");
+            var makeupKeynameInput = document.getElementById("makeupKeynameInput");
+            var makeupAssetKeyNameInput = document.getElementById("makeupAssetKeynameInput");
+            var makeupAssetIntensityInput = document.getElementById("makeupAssetIntensityInput");
+            var makeupAssetSubIdInput = document.getElementById("makeupAssetSubIdInput");
+            var makeupSchemeValue = document.getElementById("makeupMainUrl");
+
+            function makeupScheme() {
+                var makeupSchemeValueResult = makeupAppSelect.value + makeupCameraSchemeSelect.value + 'makeupKeyname=' + makeupKeynameInput.value;
+
+                if (makeupAssetKeyNameInput.value) {
+                    makeupSchemeValueResult += '(' + makeupAssetKeyNameInput.value + ',' + makeupAssetIntensityInput.value + ')';
+                }
+
+                if (makeupAssetSubIdInput.value) {
+                    makeupSchemeValueResult += '&subId=' + makeupAssetSubIdInput.value;
+                }
+
+                makeupSchemeValue.value = makeupSchemeValueResult;
+            }
+
+            makeupAppSelect.addEventListener("change", makeupScheme);
+            makeupCameraSchemeSelect.addEventListener("change", makeupScheme);
+            makeupKeynameInput.addEventListener("input", makeupScheme);
+            makeupAssetKeyNameInput.addEventListener("input", makeupScheme);
+            makeupAssetIntensityInput.addEventListener("input", makeupScheme);
+            makeupAssetSubIdInput.addEventListener("input", makeupScheme);
+        });
+
+        $("#makeupMainUrl").click(function () {
+                var makeupSchemeUrl = $(this).val();
+                window.open(makeupSchemeUrl);
+        });
+
+        $("#makeupAddQrcode").click(function () {
+            $("#makeupShowQrCode #makeupShowQrCodeDiv").empty();
+            jQuery("#makeupShowQrCode #makeupShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#makeupMainUrl").val()
+            });
+        })
+
+        function makeupActionAdd() {
+            $("#makeupQrUl").empty();
+            var makeupTextAdd = $("#makeupMainUrl").val();
+            var makeupQrUl = $("#makeupQrUl");
+            makeupQrUl.append("<br>"+"<li>"+makeupTextAdd+"</li>");
+            var makeupSpace = $("#makeupShowQrCodeDiv");
+            makeupSpace.append("<br>");
+            var makeupScroll = document.getElementById("makeupAddQrcode");
+            makeupScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            makeupScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#makeupReset").click(function () {
+            $("#makeupShowQrCode #makeupShowQrCodeDiv").empty();
+            $("#makeupQrUl").empty();
+        })
+
+        jQuery("#makeupSchemeCopy").click(
+            function () {
+                var makeupUrlInfo = document.getElementById("makeupMainUrl");
+                makeupUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#makeupDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#makeupShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var subscriptionPageAppSelect = document.getElementById("subscriptionPageAppList");
+            var subscriptionPageList = document.getElementById("subscriptionPageList");
+            var subscriptionPageGnb = document.getElementById("subscriptionPageGnb");
+            var subscriptionSchemeValue = document.getElementById("subscriptionPageMainUrl");
+
+            function subscriptionPageScheme() {
+                var subscriptionPageSchemeValueResult = subscriptionPageAppSelect.value + 'open?vipOpen=' + subscriptionPageList.value + subscriptionPageGnb.value;
+                subscriptionSchemeValue.value = subscriptionPageSchemeValueResult;
+            }
+
+            subscriptionPageAppSelect.addEventListener("change", subscriptionPageScheme);
+            subscriptionPageList.addEventListener("change", subscriptionPageScheme);
+            subscriptionPageGnb.addEventListener("change", subscriptionPageScheme);
+        });
+
+        $("#subscriptionPageMainUrl").click(function () {
+                var subscriptionPageSchemeUrl = $(this).val();
+                window.open(subscriptionPageSchemeUrl);
+        });
+
+        $("#subscriptionPageAddQrcode").click(function () {
+            $("#subscriptionPageShowQrCode #subscriptionPageShowQrCodeDiv").empty();
+            jQuery("#subscriptionPageShowQrCode #subscriptionPageShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#subscriptionPageMainUrl").val()
+            });
+        })
+
+        function subscriptionPageActionAdd() {
+            $("#subscriptionPageQrUl").empty();
+            var subscriptionPageTextAdd = $("#subscriptionPageMainUrl").val();
+            var subscriptionPageQrUl = $("#subscriptionPageQrUl");
+            subscriptionPageQrUl.append("<br>"+"<li>"+subscriptionPageTextAdd+"</li>");
+            var subscriptionPageSpace = $("#subscriptionPageShowQrCodeDiv");
+            subscriptionPageSpace.append("<br>");
+            var subscriptionPageScroll = document.getElementById("subscriptionPageAddQrcode");
+            subscriptionPageScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            subscriptionPageScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#subscriptionPageReset").click(function () {
+            $("#subscriptionPageShowQrCode #subscriptionPageShowQrCodeDiv").empty();
+            $("#subscriptionPageQrUl").empty();
+        })
+
+        jQuery("#subscriptionPageSchemeCopy").click(
+            function () {
+                var subscriptionPageUrlInfo = document.getElementById("subscriptionPageMainUrl");
+                subscriptionPageUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#subscriptionPageDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#subscriptionPageShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeCategoryAppSelect = document.getElementById("homeCategoryAppList");
+            var homeCategoryList = document.getElementById("homeCategoryList");
+            var homeCategoryGroupIdInput = document.getElementById("homeCategoryGroupIdInput");
+            var homeCategoryGnb = document.getElementById("homeCategoryGnb");
+            var homeCategorySchemeValue = document.getElementById("homeCategoryMainUrl");
+
+            function homeCategoryScheme() {
+                var homeCategorySchemeValueResult = homeCategoryAppSelect.value + homeCategoryList.value;
+
+                if (homeCategoryGroupIdInput.value) {
+                    homeCategorySchemeValueResult += '&groupId=' + homeCategoryGroupIdInput.value;
+                }
+
+                if (homeCategoryGnb.value) {
+                    homeCategorySchemeValueResult += homeCategoryGnb.value;
+                }
+
+                homeCategorySchemeValue.value = homeCategorySchemeValueResult;
+            }
+
+            homeCategoryAppSelect.addEventListener("change", homeCategoryScheme);
+            homeCategoryList.addEventListener("change", homeCategoryScheme);
+            homeCategoryGroupIdInput.addEventListener("input", homeCategoryScheme);
+            homeCategoryGnb.addEventListener("change", homeCategoryScheme);
+        });
+
+        $("#homeCategoryMainUrl").click(function () {
+                var homeCategorySchemeUrl = $(this).val();
+                window.open(homeCategorySchemeUrl);
+        });
+
+        $("#homeCategoryAddQrcode").click(function () {
+            $("#homeCategoryShowQrCode #homeCategoryShowQrCodeDiv").empty();
+            jQuery("#homeCategoryShowQrCode #homeCategoryShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#homeCategoryMainUrl").val()
+            });
+        })
+
+        function homeCategoryActionAdd() {
+            $("#homeCategoryQrUl").empty();
+            var homeCategoryTextAdd = $("#homeCategoryMainUrl").val();
+            var homeCategoryQrUl = $("#homeCategoryQrUl");
+            homeCategoryQrUl.append("<br>"+"<li>"+homeCategoryTextAdd+"</li>");
+            var homeCategorySpace = $("#homeCategoryShowQrCodeDiv");
+            homeCategorySpace.append("<br>");
+            var homeCategoryScroll = document.getElementById("homeCategoryAddQrcode");
+            homeCategoryScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            homeCategoryScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#homeCategoryReset").click(function () {
+            $("#homeCategoryShowQrCode #homeCategoryShowQrCodeDiv").empty();
+            $("#homeCategoryQrUl").empty();
+        })
+
+        jQuery("#homeCategorySchemeCopy").click(
+            function () {
+                var homeCategoryUrlInfo = document.getElementById("homeCategoryMainUrl");
+                homeCategoryUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#homeCategoryDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#homeCategoryShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeIdAppSelect = document.getElementById("homeIdAppList");
+            var homeIdGroupIdInput = document.getElementById("homeIdGroupIdInput");
+            var homeIdItemIdInput = document.getElementById("homeIdItemIdInput");
+            var homeIdGnb = document.getElementById("homeIdGnb");
+            var homeIdSchemeValue = document.getElementById("homeIdMainUrl");
+
+            function homeIdScheme() {
+                var homeIdSchemeValueResult = homeIdAppSelect.value + '?groupId=' + homeIdGroupIdInput.value + '&itemId=' + homeIdItemIdInput.value;
+
+                if (homeIdGnb.value) {
+                    homeIdSchemeValueResult += homeIdGnb.value;
+                }
+
+                homeIdSchemeValue.value = homeIdSchemeValueResult;
+            }
+
+            homeIdAppSelect.addEventListener("change", homeIdScheme);
+            homeIdGroupIdInput.addEventListener("input", homeIdScheme);
+            homeIdItemIdInput.addEventListener("input", homeIdScheme);
+            homeIdGnb.addEventListener("change", homeIdScheme);
+        });
+
+        $("#homeIdMainUrl").click(function () {
+                var homeIdSchemeUrl = $(this).val();
+                window.open(homeIdSchemeUrl);
+        });
+
+        $("#homeIdAddQrcode").click(function () {
+            $("#homeIdShowQrCode #homeIdShowQrCodeDiv").empty();
+            jQuery("#homeIdShowQrCode #homeIdShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#homeIdMainUrl").val()
+            });
+        })
+
+        function homeIdActionAdd() {
+            $("#homeIdQrUl").empty();
+            var homeIdTextAdd = $("#homeIdMainUrl").val();
+            var homeIdQrUl = $("#homeIdQrUl");
+            homeIdQrUl.append("<br>"+"<li>"+homeIdTextAdd+"</li>");
+            var homeIdSpace = $("#homeIdShowQrCodeDiv");
+            homeIdSpace.append("<br>");
+            var homeIdScroll = document.getElementById("homeIdAddQrcode");
+            homeIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            homeIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#homeIdReset").click(function () {
+            $("#homeIdShowQrCode #homeIdShowQrCodeDiv").empty();
+            $("#homeIdQrUl").empty();
+        })
+
+        jQuery("#homeIdSchemeCopy").click(
+            function () {
+                var homeIdUrlInfo = document.getElementById("homeIdMainUrl");
+                homeIdUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#homeIdDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#homeIdShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeOpenPageAppSelect = document.getElementById("homeOpenPageAppList");
+            var homeOpenPageItemIdInput = document.getElementById("homeOpenPageItemIdInput");
+            var homeOpenPageFromSelect = document.getElementById("homeOpenPageFromList");
+            var homeOpenPageGnb = document.getElementById("homeOpenPageGnb");
+            var homeOpenPageSchemeValue = document.getElementById("homeOpenPageMainUrl");
+
+            function homeOpenPageScheme() {
+                var homeOpenPageSchemeValueResult = homeOpenPageAppSelect.value + '?open=page&itemId=' + homeOpenPageItemIdInput.value + '&from=' + homeOpenPageFromSelect.value;
+
+                if (homeOpenPageGnb.value) {
+                    homeOpenPageSchemeValueResult += homeOpenPageGnb.value;
+                }
+
+                homeOpenPageSchemeValue.value = homeOpenPageSchemeValueResult;
+            }
+
+            homeOpenPageAppSelect.addEventListener("change", homeOpenPageScheme);
+            homeOpenPageItemIdInput.addEventListener("input", homeOpenPageScheme);
+            homeOpenPageFromSelect.addEventListener("change", homeOpenPageScheme);
+            homeOpenPageGnb.addEventListener("change", homeOpenPageScheme);
+        });
+
+        $("#homeOpenPageMainUrl").click(function () {
+                var homeOpenPageSchemeUrl = $(this).val();
+                window.open(homeOpenPageSchemeUrl);
+        });
+
+        $("#homeOpenPageAddQrcode").click(function () {
+            $("#homeOpenPageShowQrCode #homeOpenPageShowQrCodeDiv").empty();
+            jQuery("#homeOpenPageShowQrCode #homeOpenPageShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#homeOpenPageMainUrl").val()
+            });
+        })
+
+        function homeOpenPageActionAdd() {
+            $("#homeOpenPageQrUl").empty();
+            var homeOpenPageTextAdd = $("#homeOpenPageMainUrl").val();
+            var homeOpenPageQrUl = $("#homeOpenPageQrUl");
+            homeOpenPageQrUl.append("<br>"+"<li>"+homeOpenPageTextAdd+"</li>");
+            var homeOpenPageSpace = $("#homeIdShowQrCodeDiv");
+            homeOpenPageSpace.append("<br>");
+            var homeOpenPageScroll = document.getElementById("homeOpenPageAddQrcode");
+            homeOpenPageScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            homeOpenPageScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#homeOpenPageReset").click(function () {
+            $("#homeOpenPageShowQrCode #homeOpenPageShowQrCodeDiv").empty();
+            $("#homeOpenPageQrUl").empty();
+        })
+
+        jQuery("#homeOpenPageSchemeCopy").click(
+            function () {
+                var homeOpenPageUrlInfo = document.getElementById("homeOpenPageMainUrl");
+                homeOpenPageUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#homeOpenPageDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#homeOpenPageShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var studioContentsIdAppSelect = document.getElementById("studioContentsIdAppList");
+            var studioContentsIdList = document.getElementById("studioContentsIdList");
+            var studioContentsIdInput = document.getElementById("studioContentsIdInput");
+            var studioContentsGnb = document.getElementById("studioContentsIdGnb");
+            var studioContentsIdSchemeValue = document.getElementById("studioContentsIdMainUrl");
+
+            function studioContentsIdScheme() {
+                var studioContentsIdSchemeValueResult = studioContentsIdAppSelect.value + studioContentsIdList.value + studioContentsIdInput.value;
+
+                if (studioContentsGnb.value) {
+                    studioContentsIdSchemeValueResult += studioContentsGnb.value;
+                }
+
+                studioContentsIdSchemeValue.value = studioContentsIdSchemeValueResult;
+            }
+
+            studioContentsIdAppSelect.addEventListener("change", studioContentsIdScheme);
+            studioContentsIdList.addEventListener("change", studioContentsIdScheme);
+            studioContentsIdInput.addEventListener("input", studioContentsIdScheme);
+            studioContentsGnb.addEventListener("change", studioContentsIdScheme);
+        });
+
+        $("#studioContentsIdMainUrl").click(function () {
+                var studioContentsIdSchemeUrl = $(this).val();
+                window.open(studioContentsIdSchemeUrl);
+        });
+
+        $("#studioContentsIdAddQrcode").click(function () {
+            $("#studioContentsIdShowQrCode #studioContentsIdShowQrCodeDiv").empty();
+            jQuery("#studioContentsIdShowQrCode #studioContentsIdShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#studioContentsIdMainUrl").val()
+            });
+        })
+
+        function studioContentsIdActionAdd() {
+            $("#studioContentsIdQrUl").empty();
+            var studioContentsIdTextAdd = $("#studioContentsIdMainUrl").val();
+            var studioContentsIdQrUl = $("#studioContentsIdQrUl");
+            studioContentsIdQrUl.append("<br>"+"<li>"+studioContentsIdTextAdd+"</li>");
+            var studioContentsIdSpace = $("#studioContentsIdShowQrCodeDiv");
+            studioContentsIdSpace.append("<br>");
+            var studioContentsIdScroll = document.getElementById("studioContentsIdAddQrcode");
+            studioContentsIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            studioContentsIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#studioContentsIdReset").click(function () {
+            $("#studioContentsIdShowQrCode #studioContentsIdShowQrCodeDiv").empty();
+            $("#studioContentsIdQrUl").empty();
+        })
+
+        jQuery("#studioContentsIdSchemeCopy").click(
+            function () {
+                var studioContentsIdUrlInfo = document.getElementById("studioContentsIdMainUrl");
+                studioContentsIdUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#studioContentsIdDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#studioContentsIdShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var studioContentsMultiIdAppSelect = document.getElementById("studioContentsMultiIdAppList");
+            var studioTemplateIdInput = document.getElementById("studioTemplateIdInput");
+            var studioTagIdInput = document.getElementById("studioTagIdInput");
+            var mappedTemplateIdInput = document.getElementById("mappedTemplateIdInput");
+            var studioContentsMultiGnb = document.getElementById("studioContentsMultiIdGnb");
+            var studioContentsMultiIdSchemeValue = document.getElementById("studioContentsMultiIdMainUrl");
+
+            function studioContentsMultiIdScheme() {
+                var studioContentsMultiIdSchemeValueResult = studioContentsMultiIdAppSelect.value + '?template=' + studioTemplateIdInput.value + '&tagId=' + studioTagIdInput.value;
+
+                if (mappedTemplateIdInput.value) {
+                    studioContentsMultiIdSchemeValueResult += '&mappedtemplateId=' + mappedTemplateIdInput.value;
+                }
+
+                if (studioContentsMultiGnb.value) {
+                    studioContentsMultiIdSchemeValueResult += studioContentsMultiGnb.value;
+                }
+
+                studioContentsMultiIdSchemeValue.value = studioContentsMultiIdSchemeValueResult;
+            }
+
+            studioContentsMultiIdAppSelect.addEventListener("change", studioContentsMultiIdScheme);
+            studioTemplateIdInput.addEventListener("input", studioContentsMultiIdScheme);
+            studioTagIdInput.addEventListener("input", studioContentsMultiIdScheme);
+            mappedTemplateIdInput.addEventListener("input", studioContentsMultiIdScheme);
+            studioContentsMultiGnb.addEventListener("change", studioContentsMultiIdScheme);
+        });
+
+        $("#studioContentsMultiIdMainUrl").click(function () {
+                var studioContentsMultiIdSchemeUrl = $(this).val();
+                window.open(studioContentsMultiIdSchemeUrl);
+        });
+
+        $("#studioContentsMultiIdAddQrcode").click(function () {
+            $("#studioContentsMultiIdShowQrCode #studioContentsMultiIdShowQrCodeDiv").empty();
+            jQuery("#studioContentsMultiIdShowQrCode #studioContentsMultiIdShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#studioContentsMultiIdMainUrl").val()
+            });
+        })
+
+        function studioContentsMultiIdActionAdd() {
+            $("#studioContentsMultiIdQrUl").empty();
+            var studioContentsMultiIdTextAdd = $("#studioContentsMultiIdMainUrl").val();
+            var studioContentsMultiIdQrUl = $("#studioContentsMultiIdQrUl");
+            studioContentsMultiIdQrUl.append("<br>"+"<li>"+studioContentsMultiIdTextAdd+"</li>");
+            var studioContentsMultiIdSpace = $("#studioContentsMultiIdShowQrCodeDiv");
+            studioContentsMultiIdSpace.append("<br>");
+            var studioContentsMultiIdScroll = document.getElementById("studioContentsMultiIdAddQrcode");
+            studioContentsMultiIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            studioContentsMultiIdScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#studioContentsMultiIdReset").click(function () {
+            $("#studioContentsMultiIdShowQrCode #studioContentsMultiIdShowQrCodeDiv").empty();
+            $("#studioContentsMultiIdQrUl").empty();
+        })
+
+        jQuery("#studioContentsMultiIdSchemeCopy").click(
+            function () {
+                var studioContentsMultiIdUrlInfo = document.getElementById("studioContentsMultiIdMainUrl");
+                studioContentsMultiIdUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#studioContentsMultiIdDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#studioContentsMultiIdShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
