@@ -1,6 +1,6 @@
 let FEM = "foodie";
 let FEMTab = "filter";
-let FEMTabResult = `${FEM}://pick?tab=${FEMTab}`;
+let FEMTabResult = `${FEM}://store?tab=${FEMTab}`;
 
 // 최초
 $("#FEMValue").text(FEMTabResult).attr("href", FEMTabResult);
@@ -10,7 +10,7 @@ qrCode(".qr-FEM", FEMTabResult);
 $("#FEM").change(function () {
     const val = $(this).val();
     FEM = val;
-    FEMTabResult = `${FEM}://pick?tab=${FEMTab}`;
+    FEMTabResult = `${FEM}://store?tab=${FEMTab}`;
     $("#FEMValue").text(FEMTabResult).attr("href", FEMTabResult);
     qrCode(".qr-FEM", FEMTabResult);
 });
@@ -19,7 +19,7 @@ $("#FEM").change(function () {
 $("#FEMTab").change(function () {
     const val = $(this).val();
     FEMTab = val;
-    FEMTabResult = `${FEM}://pick?tab=${FEMTab}`;
+    FEMTabResult = `${FEM}://store?tab=${FEMTab}`;
     $("#FEMValue").text(FEMTabResult).attr("href", FEMTabResult);
     qrCode(".qr-FEM", FEMTabResult);
 });
