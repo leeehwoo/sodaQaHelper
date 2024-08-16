@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v8.2.15 Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea8215">
+        <h2>SODA/Tianyan v8.2.15 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda8215">
+        <h3>Edit.Body Scheme</h3>
+    </div>
+    <div id="optionArea8215">
+        select App
+        <select name="appList" id="editBodyAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Body Keyname
+        <select name="editBodyKeynameList" id="editBodyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select Body Keyname</option>
+            <option value="allbody">All Body(전신)</option>
+            <option value="slim">Slim(슬림하게)</option>
+            <option value="head">Head(머리)</option>
+            <option value="shoulder">Shoulder(어깨)</option>
+            <option value="squareshoulder">Square Shoulder(일자 어깨)</option>
+            <option value="neck">Neck(승모근)</option>
+            <option value="chest">Chest(가슴)</option>
+            <option value="arm">Arm(팔뚝얇게)</option>
+            <option value="waist">Waist(허리)</option>
+            <option value="hip">Hip(엉덩이)</option>
+            <option value="leg">Leg(다리굵기)</option>
+            <option value="longleg">Long leg(다리길이)</option>
+        </select>
+        <br>
+        <br>
+        Media Type
+        <select name="mediaTypeList" id="editBodyMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select Media Type</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+        </select>
+        <br>
+        <br>
+        <input id="editBodyMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="editBodySchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="editBodyAddQrcode" value="Show QR Code" onclick="editBodyActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="editBodyReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="editBodyDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea8215">
+            <div id="editBodyShowQrCode">
+                <div id="editBodyShowQrCodeDiv"></div>
+                <ul id="editBodyQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var editBodyAppSelect = document.getElementById("editBodyAppList");
+            var editBodyKeynameList = document.getElementById("editBodyKeynameList");
+            var editBodyMediaTypeList = document.getElementById("editBodyMediaTypeList");
+            var editBodySchemeValue = document.getElementById("editBodyMainUrl");
+
+            function editBodyScheme() {
+                var editBodySchemeValueResult = editBodyAppSelect.value + 'pick?tab=body&bodykeyname=' + editBodyKeynameList.value + editBodyMediaTypeList.value;
+                editBodySchemeValue.value = editBodySchemeValueResult;
+            }
+
+            editBodyAppSelect.addEventListener("change", editBodyScheme);
+            editBodyKeynameList.addEventListener("change", editBodyScheme);
+            editBodyMediaTypeList.addEventListener("change", editBodyScheme);
+        });
+
+        $("#editBodyMainUrl").click(function () {
+                var editBodySchemeUrl = $(this).val();
+                window.open(editBodySchemeUrl);
+        });
+
+        $("#editBodyAddQrcode").click(function () {
+            $("#editBodyShowQrCode #editBodyShowQrCodeDiv").empty();
+            jQuery("#editBodyQrCode #editBodyShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#editBodyMainUrl").val()
+            });
+        });
+
+        function editBodyActionAdd() {
+            $("#editBodyQrUl").empty();
+            var editBodyTextAdd = $("#editBodyMainUrl").val();
+            var editBodyQrUl = $("#editBodyQrUl");
+            editBodyQrUl.append("<br>"+"<li>"+editBodyTextAdd+"</li>");
+            var editBodySpace = $("#editBodyShowQrCodeDiv");
+            editBodySpace.append("<br>");
+            var editBodyScroll = document.getElementById("editBodyAddQrcode");
+            editBodyScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#editBodyReset").click(function () {
+            $("#editBodyShowQrCode #editBodyShowQrCodeDiv").empty();
+            $("#editBodyQrUl").empty();
+        });
+
+        jQuery("#editBodySchemeCopy").click(
+            function () {
+                var editBodyUrlInfo = document.getElementById("editBodyMainUrl");
+                editBodyUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#editBodyDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#editBodyShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
