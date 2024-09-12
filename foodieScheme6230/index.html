@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QR - Code</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+		integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+	<div class="container-sm" style="width: 1000px;padding-bottom: 100px;">
+		<div class="pt-5 pb-5">
+			<nav class="nav nav-pills nav-fill">
+				<a class="nav-item nav-link active" href="#foodie-content1">Foodie.Edit.Tools</a>
+				<a class="nav-item nav-link" href="#foodie-content2">Foodie.Gallerylist.Mediatype.Tab</a>
+			</nav>
+		</div>
+
+		<div id="foodie-content1" class="tab-content" style="display: block;">
+			<div class="card" id="saveImg1">
+				<div class="card-body">
+					<h1>[Foodie.Edit.Tools]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg1"
+							data-name="Foodie.Edit.Tools">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="tools" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://pick?tab=
+								</span>
+								<select name="" id="toolsSelect" class="form-select" style="width: 150px;">
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+									<option value="adjustment">adjustment</option>
+									<option value="my">my</option>
+									<option value="tools">tools</option>
+								</select>
+								<span class="hidden" style="display: none;">
+									&toolsKeyname=
+								</span>
+								<select name="" id="toolsSelectKey" class="form-select hidden"
+									style="display: none;width: 150px;">
+									<option value="enhance">enhance</option>
+									<option value="remove">remove</option>
+									<option value="crop">crop</option>
+									<option value="dslr">dslr</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="toolsValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-tools"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-tools-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="foodie-content2" class="tab-content" style="display: none;">
+			<div class="card" id="saveImg2">
+				<div class="card-body">
+					<h1>[foodie.album]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg2"
+							data-name="Foodie.album">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="album" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://album
+								</span>
+							</div>
+							<a href="#" class="mt-2" id="albumValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-album"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-album-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4" id="saveImg3">
+				<div class="card-body">
+					<h1>[foodie.album.tab]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg3"
+							data-name="Foodie.album.tab">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="albumTabIntensity" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://album?tab=
+								</span>
+								<select name="" id="albumTabAdKeynameIntensity" class="form-select"
+									style="width: 150px;">
+									<option value="batch">batch</option>
+									<option value="all">all</option>
+									<option value="favorite">favorite</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="albumTabValueIntensity"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-albumTabIntensity"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-albumTabIntensity-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4" id="saveImg4">
+				<div class="card-body">
+					<h1>[foodie.album.mediatype]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg4"
+							data-name="Foodie.album.mediatype">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="mediatype" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://album?mediatype=
+								</span>
+								<select name="" id="mediatypeTab" class="form-select" style="width: 150px;">
+									<option value="image">image</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="mediatypeValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-mediatype"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-mediatype-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4" id="saveImg5">
+				<div class="card-body">
+					<h1>[foodie.pick.tab.mediatype]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg5"
+							data-name="Foodie.pick.tab.mediatype">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="tabMediaType" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://pick?tab=
+								</span>
+								<select name="" id="tabMediaType2" class="form-select" style="width: 150px;">
+									<option value="batch">batch</option>
+									<option value="all">all</option>
+									<option value="favorite">favorite</option>
+									<option value="video">video</option>
+								</select>
+								<span>
+									&mediatype=
+								</span>
+								<select name="" id="tabMediaType3" class="form-select" style="width: 150px;">
+									<option value="image">image</option>
+									<option value="video">video</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="tabMediaTypeValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-tabMediaType"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-tabMediaType-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+		<script src="./js/jquery-qrcode-0.18.0.min.js"></script>
+		<script src="./js/common.js"></script>
+		<script src="./js/TOOLS.js"></script>
+		<script src="./js/ALBUM.js"></script>
+		<script src="./js/ALBUM_TAB.js"></script>
+		<script src="./js/MEDIA_TYPE.js"></script>
+		<script src="./js/TAB_MEDIA_TYPE.js"></script>
+</body>
+
+</html>
