@@ -1,12 +1,12 @@
-#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210 {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215 {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800, #optionArea820, #optionArea8210 {
+#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215 {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210 {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215 {
     display: flex;
 }
 
@@ -35,6 +35,12 @@
 }
 
 #styleFilterShowQrCode, #cameraTabShowQrCode, #beautyShowQrCode, #makeupShowQrCode, #subscriptionPageShowQrCode, #homeCategoryShowQrCode, #homeIdAddShowQrcode, #homeIdShowQrCode, #homeOpenPageShowQrCode, #studioContentsIdShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#editBodyShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -72,6 +78,11 @@
     font-size: 20px;
 }
 
+#editBodySchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
 #bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
@@ -95,7 +106,13 @@
 #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #studioContentsMultiIdReset {
     margin: 10px;
     font-size: 30px;
-                                                                                                                                                                                                                                                                                                                                                                                                                  }
+}
+
+#editBodyAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
     margin: 10px;
     font-size: 30px;
@@ -112,6 +129,11 @@
 }
 
 #faceRatioOneDepthReset, #faceRatioTwoDepthReset, #bgExtensionOneDepthReset, #bgExtensionTwoDepthReset, #newUserPageReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#editBodyReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -137,6 +159,11 @@
 }
 
 #styleFilterDownloadQrBtn, #cameraTabDownloadQrBtn, #beautyDownloadQrBtn, #makeupDownloadQrBtn, #subscriptionPageDownloadQrBtn, #homeCategoryDownloadQrBtn, #homeIdDownloadQrBtn, #homeOpenPageDownloadQrBtn, #studioContentsIdDownloadQrBtn, #studioContentsMultiIdDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#editBodyDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
