@@ -1,58 +1,58 @@
-let tools = "foodie";
-let toolsSelect = "filter";
-let toolsSelectKey = "enhance";
-let toolsSelectResult = `${tools}://pick?tab=${toolsSelect}`;
+let tool = "foodie";
+let toolSelect = "filter";
+let toolSelectKey = "enhance";
+let toolSelectResult = `${tool}://pick?tab=${toolSelect}`;
 
 // 최초
-$("#toolsValue").text(toolsSelectResult).attr("href", toolsSelectResult);
-qrCode(".qr-tools", toolsSelectResult);
+$("#toolValue").text(toolSelectResult).attr("href", toolSelectResult);
+qrCode(".qr-tool", toolSelectResult);
 
 // [Foodie.Edit.Merge] : Foodie
-$("#tools").change(function () {
+$("#tool").change(function () {
     const val = $(this).val();
-    tools = val;
+    tool = val;
 
-    if (toolsSelect === "tools") {
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
+    if (toolSelect === "tool") {
+        toolSelectResult = `${tool}://pick?tab=${toolSelect}&toolKeyname=${toolSelectKey}`;
     } else {
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}`;
+        toolSelectResult = `${tool}://pick?tab=${toolSelect}`;
     }
 
-    $("#toolsValue").text(toolsSelectResult).attr("href", toolsSelectResult);
-    qrCode(".qr-tools", toolsSelectResult);
+    $("#toolValue").text(toolSelectResult).attr("href", toolSelectResult);
+    qrCode(".qr-tool", toolSelectResult);
 });
 
 // [Foodie.Edit.Merge] : Tab
-$("#toolsSelect").change(function () {
+$("#toolSelect").change(function () {
     const val = $(this).val();
-    if (val === "tools") {
+    if (val === "tool") {
         $(".hidden").show();
-        toolsSelect = val;
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
+        toolSelect = val;
+        toolSelectResult = `${tool}://pick?tab=${toolSelect}&toolKeyname=${toolSelectKey}`;
     } else {
         $(".hidden").hide();
-        toolsSelect = val;
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}`;
+        toolSelect = val;
+        toolSelectResult = `${tool}://pick?tab=${toolSelect}`;
     }
 
-    $("#toolsValue").text(toolsSelectResult).attr("href", toolsSelectResult);
-    qrCode(".qr-tools", toolsSelectResult);
+    $("#toolValue").text(toolSelectResult).attr("href", toolSelectResult);
+    qrCode(".qr-tool", toolSelectResult);
 });
 
 // [Foodie.Edit.Merge] : Tab
-$("#toolsSelectKey").change(function () {
+$("#toolSelectKey").change(function () {
     const val = $(this).val();
-    toolsSelectKey = val;
-    toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
-    $("#toolsValue").text(toolsSelectResult).attr("href", toolsSelectResult);
-    qrCode(".qr-tools", toolsSelectResult);
+    toolSelectKey = val;
+    toolSelectResult = `${tool}://pick?tab=${toolSelect}&toolKeyname=${toolSelectKey}`;
+    $("#toolValue").text(toolSelectResult).attr("href", toolSelectResult);
+    qrCode(".qr-tool", toolSelectResult);
 });
 
 // qr 다운로드
-$(".qr-tools-link").click(function (e) {
+$(".qr-tool-link").click(function (e) {
     e.preventDefault();
     const imgURL = $(this).prev("div").find("img").attr("src");
-    imgDownload(imgURL, toolsSelectResult);
+    imgDownload(imgURL, toolSelectResult);
 });
 
 // 캡쳐된 파일을 저장하는 함수
