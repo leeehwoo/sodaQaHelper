@@ -13,7 +13,7 @@ $("#tools").change(function () {
     tools = val;
 
     if (toolsSelect === "tools") {
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolsKeyname=${toolsSelectKey}`;
+        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
     } else {
         toolsSelectResult = `${tools}://pick?tab=${toolsSelect}`;
     }
@@ -28,7 +28,7 @@ $("#toolsSelect").change(function () {
     if (val === "tools") {
         $(".hidden").show();
         toolsSelect = val;
-        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolsKeyname=${toolsSelectKey}`;
+        toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
     } else {
         $(".hidden").hide();
         toolsSelect = val;
@@ -43,7 +43,7 @@ $("#toolsSelect").change(function () {
 $("#toolsSelectKey").change(function () {
     const val = $(this).val();
     toolsSelectKey = val;
-    toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolsKeyname=${toolsSelectKey}`;
+    toolsSelectResult = `${tools}://pick?tab=${toolsSelect}&toolKeyname=${toolsSelectKey}`;
     $("#toolsValue").text(toolsSelectResult).attr("href", toolsSelectResult);
     qrCode(".qr-tools", toolsSelectResult);
 });
