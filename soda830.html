@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v8.2.15 Scheme</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea830">
+        <h2>SODA/Tianyan v8.3.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda830">
+        <h3>
+            Subscription Product Scheme
+        </h3>
+    </div>
+    <div id="optionArea830">
+        <select name="appList" id="productAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="productList" id="productList">
+            <option value="" selected disabled style="width: 70px">Product List</option>
+            <option value="yearly">Yearly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <br>
+        <br>
+        <input id="productListMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="productListCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="productListAddQrcode" value="Show QR Code" onclick="productListActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="productListReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="productListDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea830">
+            <div id="productListShowQrCode">
+                <div id="productListShowQrCodeDiv"></div>
+                <ul id="productListQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda830">
+        <h3>
+            VIP Page Open Scheme
+        </h3>
+    </div>
+    <div id="optionArea830">
+        <select name="appList" id="vipOpenPromotionCodeAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://open?vipOpen=page">SODA(Real)</option>
+            <option value="sodab://open?vipOpen=page">SODA(Beta)</option>
+            <option value="tianyan://open?vipOpen=page">Tianyan(Real)</option>
+            <option value="tianyanb://open?vipOpen=page">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Promotion Code :
+        <input id="vipOpenPromotionCodeInput" style="width: 100px">
+        <br>
+        <br>
+        <input id="vipOpenPromotionCodeMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="vipOpenPromotionCodeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="vipOpenPromotionCodeAddQrcode" value="Show QR Code" onclick="vipOpenPromotionCodeActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="vipOpenPromotionCodeReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="vipOpenPromotionCodeDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea830">
+            <div id="vipOpenPromotionCodeShowQrCode">
+                <div id="vipOpenPromotionCodeShowQrCodeDiv"></div>
+                <ul id="vipOpenPromotionCodeQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda830">
+        <h3>
+            Enhance Scheme
+        </h3>
+    </div>
+    <div id="optionArea830">
+        <select name="appList" id="v2EnhanceAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="v2EnhanceMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="v2EnhanceCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="v2EnhanceAddQrcode" value="Show QR Code" onclick="v2EnhanceActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="v2EnhanceReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="v2EnhanceDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea830">
+            <div id="v2EnhanceShowQrCode">
+                <div id="v2EnhanceShowQrCodeDiv"></div>
+                <ul id="v2EnhanceQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda830">
+        <h3>
+            Inpaint Scheme
+        </h3>
+    </div>
+    <div id="optionArea830">
+        <select name="appList" id="v2InpaintAppList">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://pick?tab=remove">SODA(Real)</option>
+            <option value="sodab://pick?tab=remove">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=remove">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=remove">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Remove Type
+        <select name="v2InpaintRemoveTypeList" id="v2InpaintRemoveTypeList">
+            <option value="" selected disabled style="width: 70px">Select Type</option>
+            <option value="standard">Standard</option>
+            <option value="ai">AI</option>
+        </select>
+        <br>
+        <br>
+        <input id="v2InpaintMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="v2InpaintCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="v2InpaintAddQrcode" value="Show QR Code" onclick="v2InpaintActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="v2InpaintReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="v2InpaintDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea830">
+            <div id="v2InpaintShowQrCode">
+                <div id="v2InpaintShowQrCodeDiv"></div>
+                <ul id="v2InpaintQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var productAppSelect = document.getElementById("productAppList");
+            var productListSelect = document.getElementById("productList");
+            var productListSchemeValue = document.getElementById("productListMainUrl");
+
+            productAppSelect.addEventListener("change", productListScheme);
+            productListSelect.addEventListener("change", productListScheme);
+
+            function productListScheme() {
+                var productAppValue = productAppSelect.value;
+                var productListValue = productListSelect.value;
+                productListSchemeValue.value = productAppValue + 'purchase?type=subscribe&product=' + productListValue;
+            }
+        });
+
+        $("#productListMainUrl").click(function () {
+            var productListSchemeUrl = $(this).val();
+            window.open(productListSchemeUrl);
+        });
+
+        $("#productListAddQrcode").click(function () {
+            $("#productListShowQrCode #productListShowQrCodeDiv").empty();
+            jQuery("#productListShowQrCode #productListShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#productListMainUrl").val()
+            });
+        })
+
+        function productListActionAdd() {
+            $("productListQrUl").empty();
+            var productListTextAdd = $("#productListMainUrl").val();
+            var productListQrUl = $("#productListQrUl");
+            productListQrUl.append("<br>"+"<li>"+productListTextAdd+"</li>");
+            var productListSpace = $("#productListShowQrCodeDiv");
+            productListSpace.append("<br>");
+            var productListScroll = document.getElementById("productListAddQrcode");
+            productListScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#productListReset").click(function () {
+            $("#productListShowQrCode #productListShowQrCodeDiv").empty();
+            $("#productListQrUl").empty();
+        })
+
+        jQuery("#productListCopy").click(
+            function () {
+                var productListUrlInfo = document.getElementById("productListMainUrl");
+                productListUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#productListDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#productListShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var vipOpenPromotionCodeAppSelect = document.getElementById("vipOpenPromotionCodeAppList");
+            var vipOpenPromotionCodeInput = document.getElementById("vipOpenPromotionCodeInput");
+            var vipOpenPromotionCodeSchemeValue = document.getElementById("vipOpenPromotionCodeMainUrl");
+
+            vipOpenPromotionCodeAppSelect.addEventListener("change", vipOpenPromotionCodeScheme);
+            vipOpenPromotionCodeInput.addEventListener("input", vipOpenPromotionCodeScheme);
+
+            function vipOpenPromotionCodeScheme() {
+                var vipOpenPromotionCodeAppValue = vipOpenPromotionCodeAppSelect.value;
+                var vipOpenPromotionCodeInputValue = vipOpenPromotionCodeInput.value;
+                if (vipOpenPromotionCodeInputValue) {
+                    vipOpenPromotionCodeInputValue = '$promotionCode=' + vipOpenPromotionCodeInputValue;
+                } else {
+                    vipOpenPromotionCodeInputValue = '';
+                }
+                vipOpenPromotionCodeSchemeValue.value = vipOpenPromotionCodeAppValue + vipOpenPromotionCodeInputValue;
+            }
+        });
+
+        $("#vipOpenPromotionCodeMainUrl").click(function () {
+            var vipOpenPromotionCodeSchemeUrl = $(this).val();
+            window.open(vipOpenPromotionCodeSchemeUrl);
+        });
+
+        $("#vipOpenPromotionCodeAddQrcode").click(function () {
+            $("#vipOpenPromotionCodeShowQrCode #vipOpenPromotionCodeShowQrCodeDiv").empty();
+            jQuery("#vipOpenPromotionCodeShowQrCode #vipOpenPromotionCodeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#vipOpenPromotionCodeMainUrl").val()
+            });
+        })
+
+        function vipOpenPromotionCodeActionAdd() {
+            $("vipOpenPromotionCodeQrUl").empty();
+            var vipOpenPromotionCodeTextAdd = $("#vipOpenPromotionCodeMainUrl").val();
+            var vipOpenPromotionCodeQrUl = $("#vipOpenPromotionCodeQrUl");
+            vipOpenPromotionCodeQrUl.append("<br>"+"<li>"+vipOpenPromotionCodeTextAdd+"</li>");
+            var vipOpenPromotionCodeSpace = $("#vipOpenPromotionCodeShowQrCodeDiv");
+            vipOpenPromotionCodeSpace.append("<br>");
+            var vipOpenPromotionCodeScroll = document.getElementById("vipOpenPromotionCodeAddQrcode");
+            vipOpenPromotionCodeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#vipOpenPromotionCodeReset").click(function () {
+            $("#vipOpenPromotionCodeShowQrCode #vipOpenPromotionCodeShowQrCodeDiv").empty();
+            $("#vipOpenPromotionCodeListQrUl").empty();
+        })
+
+        jQuery("#vipOpenPromotionCodeCopy").click(
+            function () {
+                var vipOpenPromotionCodeUrlInfo = document.getElementById("vipOpenPromotionCodeMainUrl");
+                vipOpenPromotionCodeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#vipOpenPromotionCodeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#vipOpenPromotionCodeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var v2EnhanceAppSelect = document.getElementById("v2EnhanceAppList");
+            var v2EnhanceSchemeValue = document.getElementById("v2EnhanceMainUrl");
+
+            v2EnhanceAppSelect.addEventListener("change", v2EnhanceScheme);
+
+            function v2EnhanceScheme() {
+                var v2EnhanceAppValue = v2EnhanceAppSelect.value;
+                v2EnhanceSchemeValue.value = v2EnhanceAppValue + 'pick?tab=enhance';
+            }
+        });
+
+        $("#v2EnhanceMainUrl").click(function () {
+            var v2EnhanceSchemeUrl = $(this).val();
+            window.open(v2EnhanceSchemeUrl);
+        });
+
+        $("#v2EnhanceAddQrcode").click(function () {
+            $("#v2EnhanceShowQrCode #v2EnhanceShowQrCodeDiv").empty();
+            jQuery("#v2EnhanceShowQrCode #v2EnhanceShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#v2EnhanceMainUrl").val()
+            });
+        })
+
+        function v2EnhanceActionAdd() {
+            $("v2EnhanceQrUl").empty();
+            var v2EnhanceTextAdd = $("#v2EnhanceMainUrl").val();
+            var v2EnhanceQrUl = $("#v2EnhanceQrUl");
+            v2EnhanceQrUl.append("<br>"+"<li>"+v2EnhanceTextAdd+"</li>");
+            var v2EnhanceSpace = $("#v2EnhanceShowQrCodeDiv");
+            v2EnhanceSpace.append("<br>");
+            var v2EnhanceScroll = document.getElementById("v2EnhanceAddQrcode");
+            v2EnhanceScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#v2EnhanceReset").click(function () {
+            $("#v2EnhanceShowQrCode #v2EnhanceShowQrCodeDiv").empty();
+            $("#v2EnhanceQrUl").empty();
+        })
+
+        jQuery("#v2EnhanceCopy").click(
+            function () {
+                var v2EnhanceUrlInfo = document.getElementById("v2EnhanceMainUrl");
+                v2EnhanceUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#v2EnhanceDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#v2EnhanceShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var v2InpaintAppSelect = document.getElementById("v2InpaintAppList");
+            var v2InpaintRemoveTypeSelect = document.getElementById("v2InpaintRemoveTypeList");
+            var v2InpaintSchemeValue = document.getElementById("v2InpaintMainUrl");
+
+            v2InpaintAppSelect.addEventListener("change", v2InpaintScheme);
+            v2InpaintRemoveTypeSelect.addEventListener("change", v2InpaintScheme);
+
+            function v2InpaintScheme() {
+                var v2InpaintAppValue = v2InpaintAppSelect.value;
+                var v2InpaintRemoveTypeValue = v2InpaintRemoveTypeSelect.value;
+                if (v2InpaintRemoveTypeValue) {
+                    v2InpaintRemoveTypeValue = '&removeType=' + v2InpaintRemoveTypeValue;
+                } else {
+                    v2InpaintRemoveTypeValue = '';
+                }
+                v2InpaintSchemeValue.value = v2InpaintAppValue + v2InpaintRemoveTypeValue;
+            }
+        });
+
+        $("#v2InpaintMainUrl").click(function () {
+            var v2InpaintSchemeUrl = $(this).val();
+            window.open(v2InpaintSchemeUrl);
+        });
+
+        $("#v2InpaintAddQrcode").click(function () {
+            $("#v2InpaintShowQrCode #v2InpaintShowQrCodeDiv").empty();
+            jQuery("#v2InpaintShowQrCode #v2InpaintShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#v2InpaintMainUrl").val()
+            });
+        })
+
+        function v2InpaintActionAdd() {
+            $("v2InpaintQrUl").empty();
+            var v2InpaintTextAdd = $("#v2InpaintMainUrl").val();
+            var v2InpaintQrUl = $("#v2InpaintQrUl");
+            v2InpaintQrUl.append("<br>"+"<li>"+v2InpaintTextAdd+"</li>");
+            var v2InpaintSpace = $("#v2InpaintShowQrCodeDiv");
+            v2InpaintSpace.append("<br>");
+            var v2InpaintScroll = document.getElementById("v2InpaintAddQrcode");
+            v2InpaintScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#v2InpaintReset").click(function () {
+            $("#v2InpaintShowQrCode #v2InpaintShowQrCodeDiv").empty();
+            $("#v2InpaintQrUl").empty();
+        })
+
+        jQuery("#v2InpaintCopy").click(
+            function () {
+                var v2InpaintUrlInfo = document.getElementById("v2InpaintMainUrl");
+                v2InpaintUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#v2InpaintDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#v2InpaintShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
