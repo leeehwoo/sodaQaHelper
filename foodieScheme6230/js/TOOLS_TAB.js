@@ -15,7 +15,7 @@ $("#toolTab").change(function () {
     toolTab = val;
 
     if (toolTabSelect === "tool") {
-        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyName=${toolTabSelectKey}`;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyname=${toolTabSelectKey}`;
     } else {
         toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     }
@@ -53,7 +53,7 @@ $("#toolTabSelectKey").change(function () {
     if (toolTabSelectKey === "선택") {
         toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     } else {
-        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyName=${toolTabSelectKey}`;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyname=${toolTabSelectKey}`;
     }
 
     $("#toolTabValue")
