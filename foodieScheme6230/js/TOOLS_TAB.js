@@ -1,72 +1,72 @@
-let toolsTab = "foodie";
-let toolsTabSelect = "filter";
-let toolsTabSelectKey = "선택";
-let toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}`;
+let toolTab = "foodie";
+let toolTabSelect = "filter";
+let toolTabSelectKey = "선택";
+let toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
 
 // 최초
-$("#toolsTabValue")
-    .text(toolsTabSelectResult)
-    .attr("href", toolsTabSelectResult);
-qrCode(".qr-toolsTab", toolsTabSelectResult);
+$("#toolTabValue")
+    .text(toolTabSelectResult)
+    .attr("href", toolTabSelectResult);
+qrCode(".qr-toolTab", toolTabSelectResult);
 
 // [Foodie.Edit.Merge] : Foodie
-$("#toolsTab").change(function () {
+$("#toolTab").change(function () {
     const val = $(this).val();
-    toolsTab = val;
+    toolTab = val;
 
-    if (toolsTabSelect === "tools") {
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}&adjustKeyName=${toolsTabSelectKey}`;
+    if (toolTabSelect === "tool") {
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyName=${toolTabSelectKey}`;
     } else {
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}`;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     }
 
-    $("#toolsTabValue")
-        .text(toolsTabSelectResult)
-        .attr("href", toolsTabSelectResult);
-    qrCode(".qr-toolsTab", toolsTabSelectResult);
+    $("#toolTabValue")
+        .text(toolTabSelectResult)
+        .attr("href", toolTabSelectResult);
+    qrCode(".qr-toolTab", toolTabSelectResult);
 });
 
 // [Foodie.Edit.Merge] : Tab
-$("#toolsTabSelect").change(function () {
+$("#toolTabSelect").change(function () {
     const val = $(this).val();
     if (val === "adjustment") {
         $(".hidden2").show();
-        toolsTabSelect = val;
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}`;
+        toolTabSelect = val;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     } else {
         $(".hidden2").hide();
-        toolsTabSelect = val;
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}`;
+        toolTabSelect = val;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     }
 
-    $("#toolsTabValue")
-        .text(toolsTabSelectResult)
-        .attr("href", toolsTabSelectResult);
-    qrCode(".qr-toolsTab", toolsTabSelectResult);
+    $("#toolTabValue")
+        .text(toolTabSelectResult)
+        .attr("href", toolTabSelectResult);
+    qrCode(".qr-toolTab", toolTabSelectResult);
 });
 
 // [Foodie.Edit.Merge] : Tab
-$("#toolsTabSelectKey").change(function () {
+$("#toolTabSelectKey").change(function () {
     const val = $(this).val();
-    toolsTabSelectKey = val;
+    toolTabSelectKey = val;
 
-    if (toolsTabSelectKey === "선택") {
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}`;
+    if (toolTabSelectKey === "선택") {
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}`;
     } else {
-        toolsTabSelectResult = `${toolsTab}://pick?tab=${toolsTabSelect}&adjustKeyName=${toolsTabSelectKey}`;
+        toolTabSelectResult = `${toolTab}://pick?tab=${toolTabSelect}&adjustKeyName=${toolTabSelectKey}`;
     }
 
-    $("#toolsTabValue")
-        .text(toolsTabSelectResult)
-        .attr("href", toolsTabSelectResult);
-    qrCode(".qr-toolsTab", toolsTabSelectResult);
+    $("#toolTabValue")
+        .text(toolTabSelectResult)
+        .attr("href", toolTabSelectResult);
+    qrCode(".qr-toolTab", toolTabSelectResult);
 });
 
 // qr 다운로드
-$(".qr-toolsTab-link").click(function (e) {
+$(".qr-toolTab-link").click(function (e) {
     e.preventDefault();
     const imgURL = $(this).prev("div").find("img").attr("src");
-    imgDownload(imgURL, toolsTabSelectResult);
+    imgDownload(imgURL, toolTabSelectResult);
 });
 
 // 캡쳐된 파일을 저장하는 함수
