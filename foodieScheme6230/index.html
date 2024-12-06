@@ -18,7 +18,7 @@
 	<div class="container-sm" style="width: 1000px;padding-bottom: 100px;">
 		<div class="pt-5 pb-5">
 			<nav class="nav nav-pills nav-fill">
-				<a class="nav-item nav-link active" href="#foodie-content1">Foodie.Edit.Tool</a>
+				<a class="nav-item nav-link active" href="#foodie-content1">Foodie.Edit.Tools</a>
 				<a class="nav-item nav-link" href="#foodie-content2">Foodie.Gallerylist.Mediatype.Tab</a>
 			</nav>
 		</div>
@@ -26,17 +26,17 @@
 		<div id="foodie-content1" class="tab-content" style="display: block;">
 			<div class="card" id="saveImg1">
 				<div class="card-body">
-					<h1>[Foodie.Edit.Tool]</h1>
+					<h1>[Foodie.Edit.Tools]</h1>
 
 					<div class="position-absolute top-0" style="right: -50px">
 						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg1"
-							data-name="Foodie.Edit.Tool">캡처</button>
+							data-name="Foodie.Edit.Tools">캡처</button>
 					</div>
 
 					<div class="d-flex align-items-center">
 						<div class="d-flex flex-column my-4">
 							<div class="d-flex align-items-center">
-								<select name="" id="tool" class="form-select" style="width: 150px;">
+								<select name="" id="tools" class="form-select" style="width: 150px;">
 									<option value="foodie">foodie</option>
 									<option value="foodieb">foodieb</option>
 									<option value="foodiecn">foodiecn</option>
@@ -45,17 +45,17 @@
 								<span>
 									://pick?tab=
 								</span>
-								<select name="" id="toolSelect" class="form-select" style="width: 150px;">
+								<select name="" id="toolsSelect" class="form-select" style="width: 150px;">
 									<option value="filter">filter</option>
 									<option value="effect">effect</option>
 									<option value="adjustment">adjustment</option>
 									<option value="my">my</option>
-									<option value="tool">tool</option>
+									<option value="tools">tools</option>
 								</select>
 								<span class="hidden" style="display: none;">
-									&toolKeyname=
+									&toolsKeyname=
 								</span>
-								<select name="" id="toolSelectKey" class="form-select hidden"
+								<select name="" id="toolsSelectKey" class="form-select hidden"
 									style="display: none;width: 150px;">
 									<option value="enhance">enhance</option>
 									<option value="remove">remove</option>
@@ -63,12 +63,82 @@
 									<option value="dslr">dslr</option>
 								</select>
 							</div>
-							<a href="#" class="mt-2" id="toolValue"></a>
+							<a href="#" class="mt-2" id="toolsValue"></a>
 						</div>
 
 						<div class="ms-5">
-							<div class="qr-tool"></div>
-							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-tool-link">다운로드</a>
+							<div class="qr-tools"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-tools-link">다운로드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mt-4" id="saveImg99">
+				<div class="card-body">
+					<h1>[Foodie.Edit.tab.adjustment]</h1>
+
+					<div class="position-absolute top-0" style="right: -50px">
+						<button type="button" class="btn btn-warning btn-sm handleImgDown" data-id="saveImg99"
+							data-name="Foodie.Edit.tab.adjustment">캡처</button>
+					</div>
+
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column my-4">
+							<div class="d-flex align-items-center">
+								<select name="" id="toolsTab" class="form-select" style="width: 150px;">
+									<option value="foodie">foodie</option>
+									<option value="foodieb">foodieb</option>
+									<option value="foodiecn">foodiecn</option>
+									<option value="foodiecnb">foodiecnb</option>
+								</select>
+								<span>
+									://pick?tab=
+								</span>
+								<select name="" id="toolsTabSelect" class="form-select" style="width: 150px;">
+									<option value="filter">filter</option>
+									<option value="effect">effect</option>
+									<option value="adjustment">adjustment</option>
+									<option value="my">my</option>
+									<option value="tools">tools</option>
+								</select>
+								<span class="hidden2" style="display: none;">
+									&adjustKeyName=
+								</span>
+
+								<select name="" id="toolsTabSelectKey" class="form-select hidden2"
+									style="display: none;width: 150px;">
+									<option value="선택">선택</option>
+									<option value="auto">auto</option>
+									<option value="brilliance">brilliance</option>
+									<option value="brightness">brightness</option>
+									<option value="contrast">contrast</option>
+									<option value="saturation">saturation</option>
+									<option value="vibrance">vibrance</option>
+									<option value="texture">texture</option>
+									<option value="grain">grain</option>
+									<option value="dust">dust</option>
+									<option value="color">color</option>
+									<option value="highlight">highlight</option>
+									<option value="shadow">shadow</option>
+									<option value="sharpen">sharpen</option>
+									<option value="warmth">warmth</option>
+									<option value="tint">tint</option>
+									<option value="fade">fade</option>
+									<option value="vignette">vignette</option>
+									<option value="blur">blur</option>
+									<option value="hsl">hsl</option>
+									<option value="lux">lux</option>
+									<option value="clarity">clarity</option>
+									<option value="curve">curve</option>
+								</select>
+							</div>
+							<a href="#" class="mt-2" id="toolsTabValue"></a>
+						</div>
+
+						<div class="ms-5">
+							<div class="qr-toolsTab"></div>
+							<a href="#" class="btn btn-primary btn-sm d-block mt-1 qr-toolsTab-link">다운로드</a>
 						</div>
 					</div>
 				</div>
@@ -236,7 +306,8 @@
 		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 		<script src="./js/jquery-qrcode-0.18.0.min.js"></script>
 		<script src="./js/common.js"></script>
-		<script src="./js/TOOLS.js?20241021"></script>
+		<script src="./js/TOOLS.js"></script>
+		<script src="./js/TOOLS_TAB.js"></script>
 		<script src="./js/ALBUM.js"></script>
 		<script src="./js/ALBUM_TAB.js"></script>
 		<script src="./js/MEDIA_TYPE.js"></script>
