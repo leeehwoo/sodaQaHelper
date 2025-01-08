@@ -1,12 +1,12 @@
-#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830 {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860 {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830 {
+#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860 {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830 {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, qrCodeArea860 {
     display: flex;
 }
 
@@ -47,6 +47,12 @@
 }
 
 #productListShowQrCode, #vipOpenPromotionCodeShowQrCode, #v2EnhanceShowQrCode, #v2InpaintShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#hiResModeExceptionShowQrCode, #homeStyleShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -94,6 +100,11 @@
     font-size: 20px;
 }
 
+#hiResModeExceptionCopy, #homeStyleCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
 #bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
@@ -129,6 +140,11 @@
     font-size: 30px;
 }
 
+#hiResModeExceptionAddQrcode, #homeStyleAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
     margin: 10px;
     font-size: 30px;
@@ -155,6 +171,11 @@
 }
 
 #productListReset, #vipOpenPromotionCodeReset, #v2EnhanceReset, #v2InpaintReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#hiResModeExceptionReset, #homeStyleReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -190,6 +211,11 @@
 }
 
 #productListDownloadQrBtn, #vipOpenPromotionCodeDownloadQrBtn, #v2EnhanceDownloadQrBtn, #v2InpaintDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#hiResModeExceptionDownloadQrBtn, #homeStyleDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }

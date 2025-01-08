@@ -13,6 +13,228 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
+    <div id="mainTitleArea860">
+        <h2>SODA/Tianyan v8.6.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda860">
+        <h3>HiResMode > Exception Case</h3>
+    </div>
+    <div id="optionArea860">
+        <select name="appList" id="hiResModeException">
+            <option value="" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="hiResModeExceptionMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="hiResModeExceptionCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="hiResModeExceptionAddQrcode" value="Show QR Code" onclick="hiResModeExceptionActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="hiResModeExceptionReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="hiResModeExceptionDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea860">
+            <div id="hiResModeExceptionShowQrCode">
+                <div id="hiResModeExceptionShowQrCodeDiv"></div>
+                <ul id="hiResModeExceptionQrUl"></ul>
+            </div>
+        </div>
 
+        <div id="titleAreaSoda860">
+            <h3>Home Style</h3>
+        </div>
+    </div>
+    <div id="optionArea860">
+        <select name="appList" id="homeStyleAppList">
+            <option value="none" selected disabled style="width: 70px">Select App</option>
+            <option value="soda://home?twodepthcategory=">SODA(Real)</option>
+            <option value="sodab://home?twodepthcategory=">SODA(Beta)</option>
+            <option value="tianyan://home?twodepthcategory=">Tianyan(Real)</option>
+            <option value="tianyanb://home?twodepthcategory=">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <select name="contentsSchemeList" id="homeStyleContentsSchemeList">
+            <option value="" selected disabled style="width: 70px">Select Filter/Effect</option>
+            <option value="filter">Filter</option>
+            <option value="effect">Effect</option>
+        </select>
+        <br>
+        <br>
+        Group ID :
+        <input id="homeStyleGroupIdInput" style="width: 100px">
+        <br>
+        <br>
+        <input id="homeStyleMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="homeStyleCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="homeStyleAddQrcode" value="Show QR Code" onclick="homeStyleActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="homeStyleReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="homeStyleDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea860">
+            <div id="homeStyleShowQrCode">
+                <div id="homeStyleShowQrCodeDiv"></div>
+                <ul id="homeStyleQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var hiResModeExceptionAppSelect = document.getElementById("hiResModeException");
+            var hiResModeExceptionSchemeValue = document.getElementById("hiResModeExceptionMainUrl");
+
+            hiResModeExceptionAppSelect.addEventListener("change", hiResModeExceptionScheme);
+
+            function hiResModeExceptionScheme() {
+                var hiResModeExceptionAppValue = hiResModeExceptionAppSelect.value;
+                hiResModeExceptionSchemeValue.value = hiResModeExceptionAppValue + 'previewcamera?beautyMode=Hires';
+            }
+        });
+
+        $("#hiResModeExceptionMainUrl").click(function () {
+            var hiResModeExceptionSchemeUrl = $(this).val();
+            window.open(hiResModeExceptionSchemeUrl);
+        });
+
+        $("#hiResModeExceptionAddQrcode").click(function () {
+            $("#hiResModeExceptionShowQrCode #hiResModeExceptionShowQrCodeDiv").empty();
+            jQuery("#hiResModeExceptionShowQrCode #hiResModeExceptionShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#hiResModeExceptionMainUrl").val()
+            });
+        })
+
+        function hiResModeExceptionActionAdd() {
+            $("hiResModeExceptionQrUl").empty();
+            var hiResModeExceptionTextAdd = $("#hiResModeExceptionMainUrl").val();
+            var hiResModeExceptionQrUl = $("#hiResModeExceptionQrUl");
+            hiResModeExceptionQrUl.append("<br>"+"<li>"+hiResModeExceptionTextAdd+"</li>");
+            var hiResModeExceptionSpace = $("#hiResModeExceptionShowQrCodeDiv");
+            hiResModeExceptionSpace.append("<br>");
+            var hiResModeExceptionScroll = document.getElementById("hiResModeExceptionAddQrcode");
+            hiResModeExceptionScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#hiResModeExceptionReset").click(function () {
+            $("#hiResModeExceptionShowQrCode #hiResModeExceptionShowQrCodeDiv").empty();
+            $("#hiResModeExceptionQrUl").empty();
+        })
+
+        jQuery("#hiResModeExceptionCopy").click(
+            function () {
+                var hiResModeExceptionUrlInfo = document.getElementById("hiResModeExceptionMainUrl");
+                hiResModeExceptionUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#hiResModeExceptionDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#hiResModeExceptionShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var homeStyleAppSelect = document.getElementById("homeStyleAppList");
+            var homeStyleContentsSelect = document.getElementById("homeStyleContentsSchemeList");
+            var homeStyleGroupIdInput = document.getElementById("homeStyleGroupIdInput");
+            var homeStyleSchemeValue = document.getElementById("homeStyleMainUrl");
+
+            homeStyleAppSelect.addEventListener("change", homeStyleScheme);
+            homeStyleContentsSelect.addEventListener("change", homeStyleScheme);
+            homeStyleGroupIdInput.addEventListener("input", homeStyleScheme);
+
+            function homeStyleScheme() {
+                var homeStyleAppValue = homeStyleAppSelect.value;
+                var homeStyleContentsValue = homeStyleContentsSelect.value;
+                var homeStyleGroupIdValue = homeStyleGroupIdInput.value;
+                homeStyleSchemeValue.value = homeStyleAppValue + homeStyleContentsValue + '&' + homeStyleGroupIdValue;
+            }
+        });
+
+        $("#homeStyleMainUrl").click(function () {
+                var homeStyleSchemeUrl = $(this).val();
+                window.open(homeStyleSchemeUrl);
+        });
+
+        $("#homeStyleAddQrcode").click(function () {
+            $("#homeStyleShowQrCode #homeStyleShowQrCodeDiv").empty();
+            jQuery("#homeStyleShowQrCode #homeStyleShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#homeStyleMainUrl").val()
+            });
+        })
+
+        function homeStyleActionAdd() {
+            $("#homeStyleQrUl").empty();
+            var homeStyleTextAdd = $("#homeStyleMainUrl").val();
+            var homeStyleQrUl = $("#homeStyleQrUl");
+            homeStyleQrUl.append("<br>"+"<li>"+homeStyleTextAdd+"</li>");
+            var homeStyleSpace = $("#homeStyleShowQrCodeDiv");
+            homeStyleSpace.append("<br>");
+            var homeStyleScroll = document.getElementById("homeStyleAddQrcode");
+            homeStyleScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+            homeStyleScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#homeStyleReset").click(function () {
+            $("#homeStyleShowQrCode #homeStyleShowQrCodeDiv").empty();
+            $("#homeStyleQrUl").empty();
+        })
+
+        jQuery("#homeStyleSchemeCopy").click(
+            function () {
+                var homeStyleUrlInfo = document.getElementById("homeStyleMainUrl");
+                homeStyleUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#homeStyleDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#homeStyleShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
