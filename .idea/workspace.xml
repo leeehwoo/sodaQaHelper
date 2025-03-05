@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="v6.2.10 신규 스펙(batch) 추가 및 기존 스킴 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/soda860.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda860.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,17 +36,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="22e18b5b-b5d7-4063-b1a2-617afd59a103" />
-        <option name="url" value="https://github.com/leeehwoo/sodaQaHelper.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/leeehwoo/sodaQaHelper.git&quot;,
+    &quot;accountId&quot;: &quot;0f264d63-bb5d-47b2-bbf9-883ce6a211bc&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="20ffji3buDGr9TKUVSWBenIVV6j" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -58,7 +58,9 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/user/PycharmProjects/sodaQaHelper/foodieScheme6230&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -77,6 +79,14 @@
       <recent name="$PROJECT_DIR$/foodieScheme5410" />
       <recent name="$PROJECT_DIR$" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177" />
+        <option value="bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -163,6 +173,8 @@
       <workItem from="1733460608657" duration="237000" />
       <workItem from="1733471459183" duration="373000" />
       <workItem from="1736945777331" duration="127000" />
+      <workItem from="1739163160150" duration="45000" />
+      <workItem from="1741142419045" duration="7175000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
