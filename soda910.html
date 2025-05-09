@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.1.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea910">
+        <h2>SODA/Tianyan v9.1.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda910">
+        <h3>
+            Faceangle Scheme
+        </h3>
+    </div>
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="faceangleAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=faceangle">SODA(Real)</option>
+            <option value="sodab://pick?tab=faceangle">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=faceangle">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=faceangle">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="faceangleMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="faceangleSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="faceangleAddQrcode" value="Show QR Code" onclick="faceangleActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="faceangleReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="faceangleDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="faceangleShowQrCode">
+                <div id="faceangleShowQrCodeDiv"></div>
+                <ul id="faceangleQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda910">
+        <h3>
+            Body Enhance Scheme
+        </h3>
+    </div>
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="bodyEnhanceAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=">SODA(Real)</option>
+            <option value="sodab://pick?tab=">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Body Keyname
+        <select name="bodyEnhanceList" id="bodyEnhanceList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="" disabled style="width: 70px">==v9.1.0==</option>
+            <option value="hip2">Hip2</option>
+            <option value="hip">Hip</option>
+            <option value="belly">Belly</option>
+            <option value="back">Back</option>
+            <option value="neckwidth">Neck width</option>
+            <option value="necklength">Neck width</option>
+            <option value="" disabled style="width: 70px">==v7.4.0==</option>
+            <option value="body">Body</option>
+            <option value="all">All</option>
+            <option value="slim">Slim</option>
+            <option value="head">Head</option>
+            <option value="shoulder">Shoulder</option>
+            <option value="square_shoulder">Square Shoulder</option>
+            <option value="neck">Neck</option>
+            <option value="chest">Chest</option>
+            <option value="arm">Arm</option>
+            <option value="waist">Waist</option>
+            <option value="leg">Leg</option>
+            <option value="longleg">Long Leg</option>
+        </select>
+        <br>
+        <br>
+        Media Type
+        <select name="bodyEnhanceMediatypeList" id="bodyEnhanceMediatypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="bodyEnhanceMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="bodyEnhanceSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bodyEnhanceAddQrcode" value="Show QR Code" onclick="bodyEnhanceActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bodyEnhanceReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bodyEnhanceDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="bodyEnhanceShowQrCode">
+                <div id="bodyEnhanceShowQrCodeDiv"></div>
+                <ul id="bodyEnhanceQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var faceangleAppSelect = document.getElementById("faceangleAppList");
+            var faceangleSchemeValue = document.getElementById("faceangleMainUrl");
+
+            function faceangleScheme() {
+                var faceangleSchemeValueResult = faceangleAppSelect.value;
+                faceangleSchemeValue.value = faceangleSchemeValueResult;
+            }
+
+            faceangleAppSelect.addEventListener("change", faceangleScheme);
+        });
+
+        $("#faceangleMainUrl").click(function () {
+            var faceangleSchemeUrl = $(this).val();
+            window.open(faceangleSchemeUrl);
+        });
+
+        $("#faceangleAddQrcode").click(function () {
+            $("#faceangleShowQrCode #faceangleShowQrCodeDiv").empty();
+            jQuery("#faceangleShowQrCode #faceangleShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#faceangleMainUrl").val()
+            });
+        });
+
+        function faceangleActionAdd() {
+            $("#faceangleQrUl").empty();
+            var faceangleTextAdd = $("#faceangleMainUrl").val();
+            var faceangleQrUl = $("#faceangleQrUl");
+            faceangleQrUl.append("<br>"+"<li>"+faceangleTextAdd+"</li>");
+            var faceangleSpace = $("#faceangleShowQrCodeDiv");
+            faceangleSpace.append("<br>");
+            var faceangleScroll = document.getElementById("faceangleAddQrcode");
+            faceangleScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#faceangleReset").click(function () {
+            $("#faceangleShowQrCode #faceangleShowQrCodeDiv").empty();
+            $("#faceangleQrUl").empty();
+        });
+
+        jQuery("#faceangleSchemeCopy").click(
+            function () {
+                var faceangleUrlInfo = document.getElementById("faceangleMainUrl");
+                faceangleUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#faceangleDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#faceangleShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bodyEnhanceAppSelect = document.getElementById("bodyEnhanceAppList");
+            var bodyEnhanceList = document.getElementById("bodyEnhanceList");
+            var bodyEnhanceMediaTypeList = document.getElementById("bodyEnhanceMediatypeList");
+            var bodyEnhanceValue = document.getElementById("bodyEnhanceMainUrl");
+
+            function bodyEnhanceScheme() {
+                var bodyEnhanceSchemeValueResult = bodyEnhanceAppSelect.value + bodyEnhanceList.value + bodyEnhanceMediaTypeList.value;
+                bodyEnhanceValue.value = bodyEnhanceSchemeValueResult;
+            }
+
+            bodyEnhanceAppSelect.addEventListener("change", bodyEnhanceScheme);
+            bodyEnhanceList.addEventListener("change", bodyEnhanceScheme);
+            bodyEnhanceMediaTypeList.addEventListener("change", bodyEnhanceScheme);
+        });
+
+        $("#bodyEnhanceMainUrl").click(function () {
+            var bodyEnhanceSchemeUrl = $(this).val();
+            window.open(bodyEnhanceSchemeUrl);
+        });
+
+        $("#bodyEnhanceAddQrcode").click(function () {
+            $("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").empty();
+            jQuery("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bodyEnhanceMainUrl").val()
+            });
+        });
+
+        function bodyEnhanceActionAdd() {
+            $("#bodyEnhanceQrUl").empty();
+            var bodyEnhanceTextAdd = $("#bodyEnhanceMainUrl").val();
+            var bodyEnhanceQrUl = $("#bodyEnhanceQrUl");
+            bodyEnhanceQrUl.append("<br>"+"<li>"+bodyEnhanceTextAdd+"</li>");
+            var bodyEnhanceSpace = $("#bodyEnhanceShowQrCodeDiv");
+            bodyEnhanceSpace.append("<br>");
+            var bodyEnhanceScroll = document.getElementById("bodyEnhanceAddQrcode");
+            bodyEnhanceScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bodyEnhanceReset").click(function () {
+            $("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").empty();
+            $("#bodyEnhanceQrUl").empty();
+        });
+
+        jQuery("#bodyEnhanceSchemeCopy").click(
+            function () {
+                var bodyEnhanceUrlInfo = document.getElementById("bodyEnhanceMainUrl");
+                bodyEnhanceUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bodyEnhanceDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bodyEnhanceShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
