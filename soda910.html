@@ -170,7 +170,7 @@
         <input id="combinationCategoryInput" style="width: 100px">
         <br>
         <br>
-        <h4>Parameter</h4>
+        <h4>* Parameter</h4>
         Auto Download
         <select name="combinationAutoDownload" id="combinationAutoDownload">
             <option value="" selected disabled style="width: 70px">Select</option>
@@ -222,7 +222,7 @@
         </select>
         <br>
         <br>
-        <input id="combinationMainUrl" readonly style="width: 600px">
+        <input id="combinationMainUrl" readonly style="width: 900px">
         <i class="fas fa-copy copyStyle" id="combinationSchemeCopy"></i>
         <br>
         <h3>* QR Code</h3>
@@ -384,11 +384,102 @@
                     document.body.removeChild(link);
                 } else {
                     window.open(uri);
+
                 }
             }
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            var combinationAppSelect = document.getElementById("combinationAppList");
+            var combinationCameraOptionList = document.getElementById("combinationCameraOptionList");
+            var combinationContentsOptionList = document.getElementById("combinationContentsOptionList");
+            var combinationContentsInput = document.getElementById("combinationContentsInput");
+            var combinationCategoryOptionList = document.getElementById("combinationCategoryOptionList");
+            var combinationCategoryInput = document.getElementById("combinationCategoryInput");
+            var combinationAutoDownload = document.getElementById("combinationAutoDownload");
+            var combinationCameraPosition = document.getElementById("combinationCameraPosition");
+            var combinationTakeMode = document.getElementById("combinationTakeMode");
+            var combinationBeautyMode = document.getElementById("combinationBeautyMode");
+            var combinationBurst = document.getElementById("combinationBurst");
+            var combinationSchemeValue = document.getElementById("combinationMainUrl");
 
+            function combinationScheme() {
+                var combinationSchemeValueResult = combinationAppSelect.value + combinationCameraOptionList.value + combinationContentsOptionList.value + combinationContentsInput.value + combinationCategoryOptionList.value + combinationCategoryInput.value + combinationAutoDownload.value + combinationCameraPosition.value + combinationTakeMode.value + combinationBeautyMode.value + combinationBurst.value
+                combinationSchemeValue.value = combinationSchemeValueResult;
+            }
+
+            combinationAppSelect.addEventListener("change", combinationScheme);
+            combinationCameraOptionList.addEventListener("change", combinationScheme);
+            combinationContentsOptionList.addEventListener("change", combinationScheme);
+            combinationContentsInput.addEventListener("input", combinationScheme);
+            combinationCategoryOptionList.addEventListener("change", combinationScheme);
+            combinationCategoryInput.addEventListener("input", combinationScheme);
+            combinationAutoDownload.addEventListener("change", combinationScheme);
+            combinationCameraPosition.addEventListener("change", combinationScheme);
+            combinationTakeMode.addEventListener("change", combinationScheme);
+            combinationBeautyMode.addEventListener("change", combinationScheme);
+            combinationBurst.addEventListener("change", combinationScheme);
+        });
+
+        $("#combinationMainUrl").click(function () {
+            var combinationSchemeUrl = $(this).val();
+            window.open(combinationSchemeUrl);
+        });
+
+        $("#combinationAddQrcode").click(function () {
+            $("#combinationShowQrCode #combinationShowQrCodeDiv").empty();
+            jQuery("#combinationShowQrCode #combinationShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#combinationMainUrl").val()
+            });
+        });
+
+        function combinationActionAdd() {
+            $("#combinationQrUl").empty();
+            var combinationTextAdd = $("#combinationMainUrl").val();
+            var combinationQrUl = $("#combinationQrUl");
+            combinationQrUl.append("<br>"+"<li>"+combinationTextAdd+"</li>");
+            var combinationSpace = $("#combinationShowQrCodeDiv");
+            combinationSpace.append("<br>");
+            var combinationScroll = document.getElementById("combinationAddQrcode");
+            combinationScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#combinationReset").click(function () {
+            $("#combinationShowQrCode #combinationShowQrCodeDiv").empty();
+            $("#combinationQrUl").empty();
+        });
+
+        jQuery("#combinationSchemeCopy").click(
+            function () {
+                var combinationUrlInfo = document.getElementById("combinationMainUrl");
+                combinationUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#combinationDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#combinationShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
     </script>
 </body>
 </html>

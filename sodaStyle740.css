@@ -64,7 +64,7 @@
     margin: 20px;
 }
 
-#faceangleShowQrCode, #bodyEnhanceShowQrCode {
+#faceangleShowQrCode, #bodyEnhanceShowQrCode, #combinationShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -122,7 +122,7 @@
     font-size: 20px;
 }
 
-#faceangleSchemeCopy, #bodyEnhanceSchemeCopy {
+#faceangleSchemeCopy, #bodyEnhanceSchemeCopy, #combinationSchemeCopy {
     margin: 10px;
     font-size: 20px;
 }
@@ -172,7 +172,7 @@
     font-size: 30px;
 }
 
-#faceangleAddQrcode, #bodyEnhanceAddQrcode {
+#faceangleAddQrcode, #bodyEnhanceAddQrcode, #combinationAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
@@ -217,7 +217,7 @@
     font-size: 30px;
 }
 
-#faceangleReset, #bodyEnhanceReset {
+#faceangleReset, #bodyEnhanceReset, #combinationReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -267,7 +267,7 @@
     font-size: 30px;
 }
 
-#faceangleDownloadQrBtn, #bodyEnhanceDownloadQrBtn {
+#faceangleDownloadQrBtn, #bodyEnhanceDownloadQrBtn, #combinationDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
