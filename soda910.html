@@ -116,6 +116,127 @@
         </div>
     </div>
 
+    <div id="titleAreaSoda910">
+        <h3>
+            go, preview scheme combination
+        </h3>
+    </div>
+
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="combinationAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="combinationCameraOptionList" id="combinationCameraOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">go?</option>
+            <option value="previewcamera?">previewcamera?</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Contents(Filter/Style)
+        <select name="combinationContentsOptionList" id="combinationContentsOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="filterId=">filterId=</option>
+            <option value="styleId=">styleId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        Insert Filter/Style Contents ID :
+        <input id="combinationContentsInput" style="width: 100px">
+        <br>
+        <br>
+        Select Category(Filter/Style)
+        <select name="combinationCategoryOptionList" id="combinationCategoryOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="filterCategoryId=">filterCategoryId=</option>
+            <option value="styleCategoryId=">styleCategoryId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="&filterCategoryId=">&filterCategoryId=</option>
+            <option value="&styleCategoryId=">&styleCategoryId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        Insert Filter/Style Category ID :
+        <input id="combinationCategoryInput" style="width: 100px">
+        <br>
+        <br>
+        <h4>Parameter</h4>
+        Auto Download
+        <select name="combinationAutoDownload" id="combinationAutoDownload">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&autoDownload=true">true</option>
+            <option value="&autoDownload=false">false</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Camera Position
+        <select name="combinationCameraPosition" id="combinationCameraPosition">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&cameraPosition=0">0 (Front Camera)</option>
+            <option value="&cameraPosition=1">1 (Back Camera)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Take Mode
+        <select name="combinationTakeMode" id="combinationTakeMode">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&takemodeId=0">0 (Photo)</option>
+            <option value="&takemodeId=1">1 (Video)</option>
+            <option value="&takemodeId=2">2 (Live Photo)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Beauty Mode
+        <select name="combinationBeautyMode" id="combinationBeautyMode">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&beautyMode=1">1 (Standard)</option>
+            <option value="&beautyMode=2">2 (Hires)</option>
+            <option value="&beautyMode=3">3 (Hdskin)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Burst
+        <select name="combinationBurst" id="combinationBurst">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&tab=Burst">Burst</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="combinationMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="combinationSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="combinationAddQrcode" value="Show QR Code" onclick="combinationActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="combinationReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="combinationDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="combinationShowQrCode">
+                <div id="combinationShowQrCodeDiv"></div>
+                <ul id="combinationQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -266,6 +387,8 @@
                 }
             }
         });
+
+
     </script>
 </body>
 </html>
