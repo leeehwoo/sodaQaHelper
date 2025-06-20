@@ -42,7 +42,7 @@
         </select>
         <br>
         <br>
-        Select Mode
+        Select Beauty Mode
         <select name="iphonemodeModeOptionList" id="iphonemodeModeOptionList">
             <option value="" selected disabled style="width: 70px">Select</option>
             <option value="beautyMode=1">1 (standard)</option>
@@ -52,6 +52,13 @@
             <option value="beautyMode=hires">hires</option>
             <option value="beautyMode=iphone">iphone</option>
             <option value="" disabled style="width: 70px">==========</option>
+            <option value="&beautyMode=1">&1 (standard)</option>
+            <option value="&beautyMode=2">&2 (hires)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="&beautyMode=standard">&standard</option>
+            <option value="&beautyMode=hires">&hires</option>
+            <option value="&beautyMode=iphone">&iphone</option>
+            <option value="" disabled style="width: 70px">==========</option>
             <option value="">Cancel</option>
         </select>
         <br>
@@ -59,12 +66,30 @@
         Input Contents ID
         <select name="iphonemodeInputIdList" id="iphonemodeInputIdList">
             <option value="" selected disabled style="width: 70px">Select</option>
-            <option value="&ipfilterId=">&ipfilterId</option>
+            <option value="ipfilterId=">ipfilterId</option>
             <option value="" disabled style="width: 70px">==========</option>
             <option value="">Cancel</option>
         </select>
         ID :
         <input id="iphonemodeFilterIdInput" style="width: 100px">
+        <br>
+        <br>
+        Select Tab
+        <select name="iphonemodeTabList" id="iphonemodeTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=Filter">Filter</option>
+            <option value="tab=Makeup">Makeup</option>
+            <option value="tab=Beauty">Beauty</option>
+            <option value="tab=Advanced">Advanced</option>
+            <option value="tab=Layout">Layout</option>
+            <option value="tab=Burst">Burst</option>
+            <option value="tab=Smartblur">Smartblur</option>
+            <option value="tab=reshape3d">reshape3d</option>
+            <option value="tab=zoom">zoom</option>
+            <option value="tab=hdskin">hdskin</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
         <br>
         <br>
         <input id="iphonemodeMainUrl" readonly style="width: 900px">
@@ -215,10 +240,11 @@
             var iphonemodeModeOptionList = document.getElementById("iphonemodeModeOptionList");
             var iphonemodeInputIdList = document.getElementById("iphonemodeInputIdList");
             var iphonemodeFilterIdInput = document.getElementById("iphonemodeFilterIdInput");
+            var iphonemodeTabList = document.getElementById("iphonemodeTabList");
             var iphonemodeSchemeValue = document.getElementById("iphonemodeMainUrl");
 
             function iphonemodeScheme() {
-                var iphonemodeSchemeValueResult = iphonemodeAppSelect.value + iphonemodeCameraOptionList.value + iphonemodeModeOptionList.value + iphonemodeInputIdList.value + iphonemodeFilterIdInput.value
+                var iphonemodeSchemeValueResult = iphonemodeAppSelect.value + iphonemodeCameraOptionList.value + iphonemodeInputIdList.value + iphonemodeFilterIdInput.value + iphonemodeTabList.value + iphonemodeModeOptionList.value;
                 iphonemodeSchemeValue.value = iphonemodeSchemeValueResult;
             }
 
@@ -227,6 +253,7 @@
             iphonemodeModeOptionList.addEventListener("change", iphonemodeScheme);
             iphonemodeInputIdList.addEventListener("change", iphonemodeScheme);
             iphonemodeFilterIdInput.addEventListener("input", iphonemodeScheme);
+            iphonemodeTabList.addEventListener("change", iphonemodeScheme);
         });
 
         $("#iphonemodeMainUrl").click(function () {
