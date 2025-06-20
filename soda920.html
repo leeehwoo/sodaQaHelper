@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.2.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea920">
+        <h2>SODA/Tianyan v9.2.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda920">
+        <h3>
+            iPhone Mode Scheme
+        </h3>
+    </div>
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="iphonemodeAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="iphonemodeCameraOptionList" id="iphonemodeCameraOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">go?</option>
+            <option value="previewcamera?">previewcamera?</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Mode
+        <select name="iphonemodeModeOptionList" id="iphonemodeModeOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="beautyMode=1">1 (standard)</option>
+            <option value="beautyMode=2">2 (hires)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="beautyMode=standard">standard</option>
+            <option value="beautyMode=hires">hires</option>
+            <option value="beautyMode=iphone">iphone</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Input Contents ID
+        <select name="iphonemodeInputIdList" id="iphonemodeInputIdList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&ipfilterId=">&ipfilterId</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        ID :
+        <input id="iphonemodeFilterIdInput" style="width: 100px">
+        <br>
+        <br>
+        <input id="iphonemodeMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="iphonemodeSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="iphonemodeAddQrcode" value="Show QR Code" onclick="iphonemodeActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="iphonemodeReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="iphonemodeDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="iphonemodeShowQrCode">
+                <div id="iphonemodeShowQrCodeDiv"></div>
+                <ul id="iphonemodeQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var iphonemodeAppSelect = document.getElementById("iphonemodeAppList");
+            var iphonemodeCameraOptionList = document.getElementById("iphonemodeCameraOptionList");
+            var iphonemodeModeOptionList = document.getElementById("iphonemodeModeOptionList");
+            var iphonemodeInputIdList = document.getElementById("iphonemodeInputIdList");
+            var iphonemodeFilterIdInput = document.getElementById("iphonemodeFilterIdInput");
+            var iphonemodeSchemeValue = document.getElementById("iphonemodeMainUrl");
+
+            function iphonemodeScheme() {
+                var iphonemodeSchemeValueResult = iphonemodeAppSelect.value + iphonemodeCameraOptionList.value + iphonemodeModeOptionList.value + iphonemodeInputIdList.value + iphonemodeFilterIdInput.value
+                iphonemodeSchemeValue.value = iphonemodeSchemeValueResult;
+            }
+
+            iphonemodeAppSelect.addEventListener("change", iphonemodeScheme);
+            iphonemodeCameraOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeModeOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeInputIdList.addEventListener("change", iphonemodeScheme);
+            iphonemodeFilterIdInput.addEventListener("input", iphonemodeScheme);
+        });
+
+        $("#iphonemodeMainUrl").click(function () {
+            var iphonemodeSchemeUrl = $(this).val();
+            window.open(iphonemodeSchemeUrl);
+        });
+
+        $("#iphonemodeAddQrcode").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            jQuery("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#iphonemodeMainUrl").val()
+            });
+        });
+
+        function iphonemodeActionAdd() {
+            $("#iphonemodeQrUl").empty();
+            var iphonemodeTextAdd = $("#iphonemodeMainUrl").val();
+            var iphonemodeQrUl = $("#iphonemodeQrUl");
+            iphonemodeQrUl.append("<br>"+"<li>"+iphonemodeTextAdd+"</li>");
+            var iphonemodeSpace = $("#iphonemodeShowQrCodeDiv");
+            iphonemodeSpace.append("<br>");
+            var iphonemodeScroll = document.getElementById("iphonemodeAddQrcode");
+            iphonemodeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#iphonemodeReset").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            $("#iphonemodeQrUl").empty();
+        });
+
+        jQuery("#iphonemodeSchemeCopy").click(
+            function () {
+                var iphonemodeUrlInfo = document.getElementById("iphonemodeMainUrl");
+                iphonemodeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#iphonemodeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#iphonemodeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
