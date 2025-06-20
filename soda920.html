@@ -82,6 +82,67 @@
         </div>
     </div>
 
+    <div id="titleAreaSoda920">
+        <h3>
+            Body Proportions Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="bodyProportionsAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="bodyProportionsTabList" id="bodyProportionsTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=proportions">proportions</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Mediatype
+        <select name="bodyProportionsMediaTypeList" id="bodyProportionsMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Body Keyname
+        <select name="bodyProportionsBodyKeynameList" id="bodyProportionsBodyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&bodykeyname=longleg">longleg</option>
+            <option value="&bodykeyname=head">head</option>
+            <option value="&bodykeyname=waist">waist</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="bodyProportionsMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="bodyProportionsSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bodyProportionsAddQrcode" value="Show QR Code" onclick="bodyProportionsActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bodyProportionsReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bodyProportionsDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="bodyProportionsShowQrCode">
+                <div id="bodyProportionsShowQrCodeDiv"></div>
+                <ul id="bodyProportionsQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var iphonemodeAppSelect = document.getElementById("iphonemodeAppList");
@@ -144,8 +205,88 @@
         )
 
         $(function () {
+
             $("#iphonemodeDownloadQrBtn").on("click", function () {
                 html2canvas(document.querySelector("#iphonemodeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bodyProportionsAppSelect = document.getElementById("bodyProportionsAppList");
+            var bodyProportionsTabList = document.getElementById("bodyProportionsTabList");
+            var bodyProportionsMediatypeList = document.getElementById("bodyProportionsMediaTypeList");
+            var bodyProportionsBodyKeynameList = document.getElementById("bodyProportionsBodyKeynameList");
+            var bodyProportionsSchemeValue = document.getElementById("bodyProportionsMainUrl");
+
+            function bodyProportionsScheme() {
+                var bodyProportionsSchemeValueResult = bodyProportionsAppSelect.value + bodyProportionsTabList.value + bodyProportionsBodyKeynameList.value + bodyProportionsMediatypeList.value;
+                bodyProportionsSchemeValue.value = bodyProportionsSchemeValueResult;
+            }
+
+            bodyProportionsAppSelect.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsTabList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsMediatypeList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsBodyKeynameList.addEventListener("change", bodyProportionsScheme);
+        });
+
+        $("#bodyProportionsMainUrl").click(function () {
+            var bodyProportionsSchemeUrl = $(this).val();
+            window.open(bodyProportionsSchemeUrl);
+        });
+
+        $("#bodyProportionsAddQrcode").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            jQuery("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bodyProportionsMainUrl").val()
+            });
+        });
+
+        function bodyProportionsActionAdd() {
+            $("#bodyProportionsQrUl").empty();
+            var bodyProportionsTextAdd = $("#bodyProportionsMainUrl").val();
+            var bodyProportionsQrUl = $("#bodyProportionsQrUl");
+            bodyProportionsQrUl.append("<br>"+"<li>"+bodyProportionsTextAdd+"</li>");
+            var bodyProportionsSpace = $("#bodyProportionsShowQrCodeDiv");
+            bodyProportionsSpace.append("<br>");
+            var bodyProportionsScroll = document.getElementById("bodyProportionsAddQrcode");
+            bodyProportionsScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bodyProportionsReset").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            $("#bodyProportionsQrUl").empty();
+        });
+
+        jQuery("#bodyProportionsSchemeCopy").click(
+            function () {
+                var bodyProportionsUrlInfo = document.getElementById("bodyProportionsMainUrl");
+                bodyProportionsUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bodyProportionsDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bodyProportionsShowQrCode")).then(canvas => {
                     saveAs(canvas.toDataURL('image/png'),"qrcode.png");
                 });
             });

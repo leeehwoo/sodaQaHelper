@@ -70,7 +70,7 @@
     margin: 20px;
 }
 
-#iphonemodeShowQrCode {
+#iphonemodeShowQrCode, #bodyProportionsShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -133,7 +133,7 @@
     font-size: 20px;
 }
 
-#iphonemodeSchemeCopy {
+#iphonemodeSchemeCopy, #bodyProportionsSchemeCopy {
     margin: 10px;
     font-size: 20px;
 }
@@ -188,7 +188,7 @@
     font-size: 30px;
 }
 
-#iphonemodeAddQrcode {
+#iphonemodeAddQrcode, #bodyProportionsAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
@@ -238,7 +238,7 @@
     font-size: 30px;
 }
 
-#iphonemodeReset {
+#iphonemodeReset, #bodyProportionsReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -293,7 +293,7 @@
     font-size: 30px;
 }
 
-#iphonemodeDownloadQrBtn {
+#iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
