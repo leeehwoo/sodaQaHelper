@@ -143,6 +143,71 @@
         </div>
     </div>
 
+    <div id="titleAreaSoda920">
+        <h3>
+            Pickscheme Tooltip Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="pickschemeTooltipAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="pickschemeTooltipTabList" id="pickschemeTooltipTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=reshape">reshape</option>
+            <option value="tab=makeup">makeup</option>
+            <option value="tab=liquify">liquify</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select showTooltip
+        <select name="pickschemeTooltipShowTooltipList" id="pickschemeTooltipShowTooltipList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&showTooltip=true">true</option>
+            <option value="&showTooltip=my">my</option>
+            <option value="&showTooltip=bgdistortion">bgdistortion</option>
+            <option value="&showTooltip=faceside">faceside</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Mediatype
+        <select name="pickschemeTooltipMediaTypeList" id="pickschemeTooltipMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="&mediatype=video">video</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="pickschemeTooltipMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="pickschemeTooltipSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="pickschemeTooltipAddQrcode" value="Show QR Code" onclick="pickschemeTooltipActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="pickschemeTooltipReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="pickschemeTooltipDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="pickschemeTooltipShowQrCode">
+                <div id="pickschemeTooltipShowQrCodeDiv"></div>
+                <ul id="pickschemeTooltipQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var iphonemodeAppSelect = document.getElementById("iphonemodeAppList");
@@ -287,6 +352,85 @@
         $(function () {
             $("#bodyProportionsDownloadQrBtn").on("click", function () {
                 html2canvas(document.querySelector("#bodyProportionsShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var pickschemeTooltipAppSelect = document.getElementById("pickschemeTooltipAppList");
+            var pickschemeTooltipTabList = document.getElementById("pickschemeTooltipTabList");
+            var pickschemeTooltipShowTooltipList = document.getElementById("pickschemeTooltipShowTooltipList");
+            var pickschemeTooltipMediatypeList = document.getElementById("pickschemeTooltipMediaTypeList");
+            var pickschemeTooltipSchemeValue = document.getElementById("pickschemeTooltipMainUrl");
+
+            function pickschemeTooltipScheme() {
+                var pickschemeTooltipSchemeValueResult = pickschemeTooltipAppSelect.value + pickschemeTooltipTabList.value + pickschemeTooltipShowTooltipList.value + pickschemeTooltipMediatypeList.value;
+                pickschemeTooltipSchemeValue.value = pickschemeTooltipSchemeValueResult;
+            }
+
+            pickschemeTooltipAppSelect.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipTabList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipShowTooltipList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipMediatypeList.addEventListener("change", pickschemeTooltipScheme);
+        });
+
+        $("#pickschemeTooltipMainUrl").click(function () {
+            var pickschemeTooltipSchemeUrl = $(this).val();
+            window.open(pickschemeTooltipSchemeUrl);
+        });
+
+        $("#pickschemeTooltipAddQrcode").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            jQuery("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#pickschemeTooltipMainUrl").val()
+            });
+        });
+
+        function pickschemeTooltipActionAdd() {
+            $("#pickschemeTooltipQrUl").empty();
+            var pickschemeTooltipTextAdd = $("#pickschemeTooltipMainUrl").val();
+            var pickschemeTooltipQrUl = $("#pickschemeTooltipQrUl");
+            pickschemeTooltipQrUl.append("<br>"+"<li>"+pickschemeTooltipTextAdd+"</li>");
+            var pickschemeTooltipSpace = $("#pickschemeTooltipShowQrCodeDiv");
+            pickschemeTooltipSpace.append("<br>");
+            var pickschemeTooltipScroll = document.getElementById("pickschemeTooltipAddQrcode");
+            pickschemeTooltipScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#pickschemeTooltipReset").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            $("#pickschemeTooltipQrUl").empty();
+        });
+
+        jQuery("#pickschemeTooltipSchemeCopy").click(
+            function () {
+                var pickschemeTooltipUrlInfo = document.getElementById("pickschemeTooltipMainUrl");
+                pickschemeTooltipUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#pickschemeTooltipDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#pickschemeTooltipShowQrCode")).then(canvas => {
                     saveAs(canvas.toDataURL('image/png'),"qrcode.png");
                 });
             });
