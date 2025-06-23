@@ -70,7 +70,7 @@
     margin: 20px;
 }
 
-#iphonemodeShowQrCode, #bodyProportionsShowQrCode, #pickschemeTooltipShowQrCode {
+#iphonemodeShowQrCode, #bodyProportionsShowQrCode, #pickschemeTooltipShowQrCode, #flashColorLightShowQrCode, #flashColorLightFSShowQrCode, #flashColorLightModeShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -133,7 +133,7 @@
     font-size: 20px;
 }
 
-#iphonemodeSchemeCopy, #bodyProportionsSchemeCopy, #pickschemeTooltipSchemeCopy {
+#iphonemodeSchemeCopy, #bodyProportionsSchemeCopy, #pickschemeTooltipSchemeCopy, #flashColorLightSchemeCopy, #flashColorLightFSSchemeCopy, #flashColorLightModeSchemeCopy {
     margin: 10px;
     font-size: 20px;
 }
@@ -188,7 +188,7 @@
     font-size: 30px;
 }
 
-#iphonemodeAddQrcode, #bodyProportionsAddQrcode, #pickschemeTooltipAddQrcode {
+#iphonemodeAddQrcode, #bodyProportionsAddQrcode, #pickschemeTooltipAddQrcode, #flashColorLightAddQrcode, #flashColorLightFSAddQrcode, #flashColorLightModeAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
@@ -238,7 +238,7 @@
     font-size: 30px;
 }
 
-#iphonemodeReset, #bodyProportionsReset, #pickschemeTooltipReset {
+#iphonemodeReset, #bodyProportionsReset, #pickschemeTooltipReset, #flashColorLightReset, #flashColorLightFSReset, #flashColorLightModeReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -293,7 +293,7 @@
     font-size: 30px;
 }
 
-#iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn, #pickschemeTooltipDownloadQrBtn {
+#iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn, #pickschemeTooltipDownloadQrBtn, #flashColorLightDownloadQrBtn, #flashColorLightFSDownloadQrBtn, #flashColorLightModeDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
