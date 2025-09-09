@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.3.20 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea9320">
+        <h2>SODA/Tianyan v9.3.20 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda9320">
+        <h3>
+            AI Flash Scheme
+        </h3>
+    </div>
+    <div id="optionArea9320">
+        Select App
+        <select name="appList" id="aiFlashAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=aiflash">SODA(Real)</option>
+            <option value="sodab://pick?tab=aiflash">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=aiflash">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=aiflash">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Flash Type
+        <select name="aiFlashTypeList" id="aiFlashTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&aiflashType=standard">Standard</option>
+            <option value="&aiflashType=pro">Pro</option>
+        </select>
+        <br>
+        <br>
+        <input id="aiFlashMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="aiFlashSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="aiFlashAddQrcode" value="Show QR Code" onclick="aiFlashActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="aiFlashReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="aiFlashDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea9320">
+            <div id="aiFlashShowQrCode">
+                <div id="aiFlashShowQrCodeDiv"></div>
+                <ul id="aiFlashQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda9320">
+        <h3>
+            Edit Retouch Lock Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea9320">
+        Select App
+        <select name="appList" id="retouchLockAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=liquify">SODA(Real)</option>
+            <option value="sodab://pick?tab=liquify">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=liquify">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=liquify">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="retouchLockMediaTypeList" id="retouchLockMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+        </select>
+        <br>
+        <br>
+        <input id="retouchLockMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="retouchLockSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="retouchLockAddQrcode" value="Show QR Code" onclick="retouchLockActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="retouchLockReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="retouchLockDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea9320">
+            <div id="retouchLockShowQrCode">
+                <div id="retouchLockShowQrCodeDiv"></div>
+                <ul id="retouchLockQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var aiFlashAppSelect = document.getElementById("aiFlashAppList");
+            var aiFlashTypeList = document.getElementById("aiFlashTypeList");
+            var aiFlashSchemeValue = document.getElementById("aiFlashMainUrl");
+
+            function aiFlashScheme() {
+                var aiFlashSchemeValueResult = aiFlashAppSelect.value + aiFlashTypeList.value;
+                aiFlashSchemeValue.value = aiFlashSchemeValueResult;
+            }
+
+            aiFlashAppSelect.addEventListener("change", aiFlashScheme);
+            aiFlashTypeList.addEventListener("change", aiFlashScheme);
+        });
+
+        $("#aiFlashMainUrl").click(function () {
+            var aiFlashSchemeUrl = $(this).val();
+            window.open(aiFlashSchemeUrl);
+        });
+
+        $("#aiFlashAddQrcode").click(function () {
+            $("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").empty();
+            jQuery("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#aiFlashMainUrl").val()
+            });
+        });
+
+        function aiFlashActionAdd() {
+            $("#aiFlashQrUl").empty();
+            var aiFlashTextAdd = $("#aiFlashMainUrl").val();
+            var aiFlashQrUl = $("#aiFlashQrUl");
+            aiFlashQrUl.append("<br>"+"<li>"+aiFlashTextAdd+"</li>");
+            var aiFlashSpace = $("#aiFlasheShowQrCodeDiv");
+            aiFlashSpace.append("<br>");
+            var aiFlashScroll = document.getElementById("aiFlashAddQrcode");
+            aiFlashScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#aiFlashReset").click(function () {
+            $("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").empty();
+            $("#aiFlashQrUl").empty();
+        });
+
+        jQuery("#aiFlashSchemeCopy").click(
+            function () {
+                var aiFlashUrlInfo = document.getElementById("aiFlashMainUrl");
+                aiFlashUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+
+            $("#aiFlashDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#aiFlashShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var retouchLockAppSelect = document.getElementById("retouchLockAppList");
+            var retouchLockMediaTypeList = document.getElementById("retouchLockMediaTypeList");
+            var retouchLockSchemeValue = document.getElementById("retouchLockMainUrl");
+
+            function retouchLockScheme() {
+                var retouchLockSchemeValueResult = retouchLockAppSelect.value + retouchLockMediaTypeList.value;
+                retouchLockSchemeValue.value = retouchLockSchemeValueResult;
+            }
+
+            retouchLockAppSelect.addEventListener("change", retouchLockScheme);
+            retouchLockMediaTypeList.addEventListener("change", retouchLockScheme);
+        });
+
+        $("#retouchLockMainUrl").click(function () {
+            var retouchLockSchemeUrl = $(this).val();
+            window.open(retouchLockSchemeUrl);
+        });
+
+        $("#retouchLockAddQrcode").click(function () {
+            $("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").empty();
+            jQuery("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#retouchLockMainUrl").val()
+            });
+        });
+
+        function retouchLockActionAdd() {
+            $("#retouchLockQrUl").empty();
+            var retouchLockTextAdd = $("#retouchLockMainUrl").val();
+            var retouchLockQrUl = $("#retouchLockQrUl");
+            retouchLockQrUl.append("<br>"+"<li>"+retouchLockTextAdd+"</li>");
+            var retouchLockSpace = $("#retouchLockShowQrCodeDiv");
+            retouchLockSpace.append("<br>");
+            var retouchLockScroll = document.getElementById("retouchLockAddQrcode");
+            retouchLockScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#retouchLockReset").click(function () {
+            $("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").empty();
+            $("#retouchLockQrUl").empty();
+        });
+
+        jQuery("#retouchLockSchemeCopy").click(
+            function () {
+                var retouchLockUrlInfo = document.getElementById("retouchLockMainUrl");
+                retouchLockUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+
+            $("#retouchLockDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#retouchLockShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

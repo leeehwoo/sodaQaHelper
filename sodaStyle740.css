@@ -1,12 +1,12 @@
-#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860, #titleAreaSoda900, #titleAreaSoda910, #titleAreaSoda920 {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860, #titleAreaSoda900, #titleAreaSoda910, #titleAreaSoda920, #titleAreaSoda9320 {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860, #optionArea900, #optionArea910, #optionArea920 {
+#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860, #optionArea900, #optionArea910, #optionArea920, #optionArea9320 {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, #qrCodeArea860, #qrCodeArea900, #qrCodeArea910, #qrCodeArea920 {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, #qrCodeArea860, #qrCodeArea900, #qrCodeArea910, #qrCodeArea920, #qrCodeArea9320 {
     display: flex;
 }
 
@@ -76,6 +76,12 @@
     margin: 20px;
 }
 
+#aiFlashShowQrCode, #retouchLockShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
 .qrcodeStyle, .resetStyle, .qrDownloadStyle {
   color: black;
   font-size: 30px;
@@ -138,6 +144,11 @@
     font-size: 20px;
 }
 
+#aiFlashSchemeCopy, #retouchLockSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
 #bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
@@ -193,6 +204,11 @@
     font-size: 30px;
 }
 
+#aiFlashAddQrcode, #retouchLockAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
     margin: 10px;
     font-size: 30px;
@@ -239,6 +255,11 @@
 }
 
 #iphonemodeReset, #bodyProportionsReset, #pickschemeTooltipReset, #flashColorLightReset, #flashColorLightFSReset, #flashColorLightModeReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#aiFlashReset, #retouchLockReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -294,6 +315,11 @@
 }
 
 #iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn, #pickschemeTooltipDownloadQrBtn, #flashColorLightDownloadQrBtn, #flashColorLightFSDownloadQrBtn, #flashColorLightModeDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#aiFlashDownloadQrBtn, #retouchLockDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }
