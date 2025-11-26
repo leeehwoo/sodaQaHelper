@@ -216,10 +216,20 @@
         Select App
         <select name="appList" id="makeupAppList">
             <option value="" selected disabled style="width: 70px">Select</option>
-            <option value="soda://go?">SODA(Real)</option>
-            <option value="sodab://go?">SODA(Beta)</option>
-            <option value="tianyan://go?">Tianyan(Real)</option>
-            <option value="tianyanb://go?">Tianyan(Beta)</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Mode
+        <select name="makeupModeList" id="makeupModeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">Camera</option>
+            <option value="pick?tab=makeup&">Edit</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
         </select>
         <br>
         <br>
@@ -606,6 +616,7 @@
 
             // Makeup Scheme 설정
             var makeupAppSelect = document.getElementById("makeupAppList");
+            var makeupModeSelect = document.getElementById("makeupModeList");
             var makeupKeynameSelect = document.getElementById("makeupKeynameList");
             var makeupOptionTypeSelect = document.getElementById("makeupOptionTypeList");
             var makeupCategoryIdInput = document.getElementById("makeupCategoryIdInput");
@@ -637,6 +648,9 @@
                 if (makeupAppSelect && makeupAppSelect.value) {
                     schemeValue += makeupAppSelect.value;
                 }
+                if (makeupModeSelect && makeupModeSelect.value) {
+                    schemeValue += makeupModeSelect.value;
+                }
                 if (makeupKeynameSelect && makeupKeynameSelect.value) {
                     schemeValue += makeupKeynameSelect.value;
                 }
@@ -662,6 +676,9 @@
 
             if (makeupAppSelect) {
                 makeupAppSelect.addEventListener("change", makeupScheme);
+            }
+            if (makeupModeSelect) {
+                makeupModeSelect.addEventListener("change", makeupScheme);
             }
             if (makeupKeynameSelect) {
                 makeupKeynameSelect.addEventListener("change", makeupScheme);
