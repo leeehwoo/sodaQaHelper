@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="v6.2.10 신규 스펙(batch) 추가 및 기존 스킴 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soda920.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda920.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soda9320.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda9320.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sodaStyle740.css" beforeDir="false" afterPath="$PROJECT_DIR$/sodaStyle740.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,24 +56,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/PycharmProjects/sodaQaHelper/foodieScheme6230&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/user/PycharmProjects/sodaQaHelper/foodieScheme6230",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/foodieScheme6230" />
@@ -84,8 +87,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PY-243.23654.177" />
-        <option value="bundled-python-sdk-91d3a02ef49d-43b77aa2d136-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.23654.177" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
       </set>
     </attachedChunks>
   </component>
@@ -184,7 +187,9 @@
       <workItem from="1750739328423" duration="3000" />
       <workItem from="1750748825108" duration="869000" />
       <workItem from="1756360034340" duration="486000" />
-      <workItem from="1757416349817" duration="1924000" />
+      <workItem from="1757416349817" duration="2435000" />
+      <workItem from="1757472289422" duration="8000" />
+      <workItem from="1764133988897" duration="1826000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>

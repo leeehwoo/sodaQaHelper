@@ -96,157 +96,140 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var aiFlashAppSelect = document.getElementById("aiFlashAppList");
-            var aiFlashTypeList = document.getElementById("aiFlashTypeList");
-            var aiFlashSchemeValue = document.getElementById("aiFlashMainUrl");
-
-            function aiFlashScheme() {
-                var aiFlashSchemeValueResult = aiFlashAppSelect.value + aiFlashTypeList.value;
-                aiFlashSchemeValue.value = aiFlashSchemeValueResult;
+        // 공통 유틸리티 함수
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
             }
-
-            aiFlashAppSelect.addEventListener("change", aiFlashScheme);
-            aiFlashTypeList.addEventListener("change", aiFlashScheme);
-        });
-
-        $("#aiFlashMainUrl").click(function () {
-            var aiFlashSchemeUrl = $(this).val();
-            window.open(aiFlashSchemeUrl);
-        });
-
-        $("#aiFlashAddQrcode").click(function () {
-            $("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").empty();
-            jQuery("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").qrcode({
-                render: "table",
-                width: 100,
-                height: 100,
-                text: $("#aiFlashMainUrl").val()
-            });
-        });
-
-        function aiFlashActionAdd() {
-            $("#aiFlashQrUl").empty();
-            var aiFlashTextAdd = $("#aiFlashMainUrl").val();
-            var aiFlashQrUl = $("#aiFlashQrUl");
-            aiFlashQrUl.append("<br>"+"<li>"+aiFlashTextAdd+"</li>");
-            var aiFlashSpace = $("#aiFlasheShowQrCodeDiv");
-            aiFlashSpace.append("<br>");
-            var aiFlashScroll = document.getElementById("aiFlashAddQrcode");
-            aiFlashScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
         }
 
-        $("#aiFlashReset").click(function () {
-            $("#aiFlashShowQrCode #aiFlashShowQrCodeDiv").empty();
-            $("#aiFlashQrUl").empty();
-        });
+        // Scheme 섹션 초기화 함수
+        function initSchemeSection(config) {
+            var appSelect = document.getElementById(config.appListId);
+            var optionSelect = document.getElementById(config.optionListId);
+            var schemeInput = document.getElementById(config.mainUrlId);
+            var mainUrlSelector = "#" + config.mainUrlId;
+            var qrCodeDivSelector = "#" + config.showQrCodeId + " #" + config.showQrCodeDivId;
+            var qrUlSelector = "#" + config.qrUlId;
+            var addQrcodeSelector = "#" + config.addQrcodeId;
+            var resetSelector = "#" + config.resetId;
+            var copySelector = "#" + config.copyId;
+            var downloadSelector = "#" + config.downloadId;
+            var showQrCodeSelector = "#" + config.showQrCodeId;
 
-        jQuery("#aiFlashSchemeCopy").click(
-            function () {
-                var aiFlashUrlInfo = document.getElementById("aiFlashMainUrl");
-                aiFlashUrlInfo.select();
-                document.execCommand("Copy");
-                alert("Add Scheme to Clipboard!")
+            // Scheme 생성 함수
+            function updateScheme() {
+                var schemeValue = appSelect.value + optionSelect.value;
+                schemeInput.value = schemeValue;
             }
-        )
 
-        $(function () {
+            // 이벤트 리스너 등록
+            if (appSelect && optionSelect) {
+                appSelect.addEventListener("change", updateScheme);
+                optionSelect.addEventListener("change", updateScheme);
+            }
 
-            $("#aiFlashDownloadQrBtn").on("click", function () {
-                html2canvas(document.querySelector("#aiFlashShowQrCode")).then(canvas => {
-                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+            // URL 클릭 핸들러
+            $(mainUrlSelector).click(function () {
+                var schemeUrl = $(this).val();
+                if (schemeUrl) {
+                    window.open(schemeUrl);
+                }
+            });
+
+            // QR 코드 생성 핸들러
+            $(addQrcodeSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                var urlValue = $(mainUrlSelector).val();
+                if (urlValue) {
+                    jQuery(qrCodeDivSelector).qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            // ActionAdd 함수 (글로벌 스코프에 등록)
+            window[config.actionAddFunctionName] = function() {
+                $(qrUlSelector).empty();
+                var textAdd = $(mainUrlSelector).val();
+                if (textAdd) {
+                    var qrUl = $(qrUlSelector);
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#" + config.showQrCodeDivId);
+                    space.append("<br>");
+                    var scroll = document.getElementById(config.addQrcodeId);
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            // Reset 핸들러
+            $(resetSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                $(qrUlSelector).empty();
+            });
+
+            // Copy 핸들러
+            $(copySelector).click(function () {
+                var urlInfo = document.getElementById(config.mainUrlId);
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            // Download 핸들러
+            $(downloadSelector).on("click", function () {
+                html2canvas(document.querySelector(showQrCodeSelector)).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
                 });
             });
-            function saveAs(uri, filename) {
-                var link = document.createElement('a');
-                if (typeof link.download === 'string') {
-                    link.href = uri;
-                    link.download = filename;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                } else {
-                    window.open(uri);
-                }
-            }
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var retouchLockAppSelect = document.getElementById("retouchLockAppList");
-            var retouchLockMediaTypeList = document.getElementById("retouchLockMediaTypeList");
-            var retouchLockSchemeValue = document.getElementById("retouchLockMainUrl");
-
-            function retouchLockScheme() {
-                var retouchLockSchemeValueResult = retouchLockAppSelect.value + retouchLockMediaTypeList.value;
-                retouchLockSchemeValue.value = retouchLockSchemeValueResult;
-            }
-
-            retouchLockAppSelect.addEventListener("change", retouchLockScheme);
-            retouchLockMediaTypeList.addEventListener("change", retouchLockScheme);
-        });
-
-        $("#retouchLockMainUrl").click(function () {
-            var retouchLockSchemeUrl = $(this).val();
-            window.open(retouchLockSchemeUrl);
-        });
-
-        $("#retouchLockAddQrcode").click(function () {
-            $("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").empty();
-            jQuery("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").qrcode({
-                render: "table",
-                width: 100,
-                height: 100,
-                text: $("#retouchLockMainUrl").val()
-            });
-        });
-
-        function retouchLockActionAdd() {
-            $("#retouchLockQrUl").empty();
-            var retouchLockTextAdd = $("#retouchLockMainUrl").val();
-            var retouchLockQrUl = $("#retouchLockQrUl");
-            retouchLockQrUl.append("<br>"+"<li>"+retouchLockTextAdd+"</li>");
-            var retouchLockSpace = $("#retouchLockShowQrCodeDiv");
-            retouchLockSpace.append("<br>");
-            var retouchLockScroll = document.getElementById("retouchLockAddQrcode");
-            retouchLockScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
         }
 
-        $("#retouchLockReset").click(function () {
-            $("#retouchLockShowQrCode #retouchLockShowQrCodeDiv").empty();
-            $("#retouchLockQrUl").empty();
-        });
-
-        jQuery("#retouchLockSchemeCopy").click(
-            function () {
-                var retouchLockUrlInfo = document.getElementById("retouchLockMainUrl");
-                retouchLockUrlInfo.select();
-                document.execCommand("Copy");
-                alert("Add Scheme to Clipboard!")
-            }
-        )
-
-        $(function () {
-
-            $("#retouchLockDownloadQrBtn").on("click", function () {
-                html2canvas(document.querySelector("#retouchLockShowQrCode")).then(canvas => {
-                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
-                });
+        // DOMContentLoaded 시 각 섹션 초기화
+        document.addEventListener("DOMContentLoaded", function () {
+            // AI Flash Scheme 설정
+            initSchemeSection({
+                appListId: "aiFlashAppList",
+                optionListId: "aiFlashTypeList",
+                mainUrlId: "aiFlashMainUrl",
+                showQrCodeId: "aiFlashShowQrCode",
+                showQrCodeDivId: "aiFlashShowQrCodeDiv",
+                qrUlId: "aiFlashQrUl",
+                addQrcodeId: "aiFlashAddQrcode",
+                resetId: "aiFlashReset",
+                copyId: "aiFlashSchemeCopy",
+                downloadId: "aiFlashDownloadQrBtn",
+                actionAddFunctionName: "aiFlashActionAdd"
             });
-            function saveAs(uri, filename) {
-                var link = document.createElement('a');
-                if (typeof link.download === 'string') {
-                    link.href = uri;
-                    link.download = filename;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                } else {
-                    window.open(uri);
-                }
-            }
-        });
 
+            // Edit Retouch Lock Scheme 설정
+            initSchemeSection({
+                appListId: "retouchLockAppList",
+                optionListId: "retouchLockMediaTypeList",
+                mainUrlId: "retouchLockMainUrl",
+                showQrCodeId: "retouchLockShowQrCode",
+                showQrCodeDivId: "retouchLockShowQrCodeDiv",
+                qrUlId: "retouchLockQrUl",
+                addQrcodeId: "retouchLockAddQrcode",
+                resetId: "retouchLockReset",
+                copyId: "retouchLockSchemeCopy",
+                downloadId: "retouchLockDownloadQrBtn",
+                actionAddFunctionName: "retouchLockActionAdd"
+            });
+        });
     </script>
 
 </body>
