@@ -1,355 +1,57 @@
-#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860, #titleAreaSoda900, #titleAreaSoda910, #titleAreaSoda920, #titleAreaSoda9320, #titleAreaSoda960 {
+/* 공통 영역 스타일 - 속성 선택자로 패턴 매칭 */
+[id^="titleAreaSoda"] {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860, #optionArea900, #optionArea910, #optionArea920, #optionArea9320, #optionArea960 {
+[id^="optionArea"] {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, #qrCodeArea860, #qrCodeArea900, #qrCodeArea910, #qrCodeArea920, #qrCodeArea9320, #qrCodeArea960 {
+[id^="qrCodeArea"] {
     display: flex;
 }
 
-#bodyOneDepthShowQrCode, #skinOneDepthShowQrCode, #skinTwoDepthShowQrCode,#skinToneOneDepthShowQrCode, #middleFaceOneDepthShowQrCode, #middleFaceTwoDepthShowQrCode, #reshapeOneDepthShowQrCode, #reshapeTwoDepthShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#manualSkinOneDepthShowQrCode, #manualSkinTwoDepthShowQrCode, #autoSkinOneDepthShowQrCode, #autoSkinTwoDepthShowQrCode {
+/* QR 코드 표시 영역 - ShowQrCode로 끝나는 모든 ID */
+[id$="ShowQrCode"] {
     display: flex;
     flex-direction: row;
     margin: 20px;
 }
 
-#aiFaceOneDepthShowQrCode, #aiFaceCategoryIdShowQrCode, #aiFaceContentIdShowQrCode, #aiFaceCombineContentCategoryIdShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#faceRatioOneDepthShowQrCode, #faceRatioTwoDepthShowQrCode, #bgExtensionOneDepthShowQrCode, #bgExtensionTwoDepthShowQrCode, #newUserPageShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#styleFilterShowQrCode, #cameraTabShowQrCode, #beautyShowQrCode, #makeupShowQrCode, #subscriptionPageShowQrCode, #homeCategoryShowQrCode, #homeIdAddShowQrcode, #homeIdShowQrCode, #homeOpenPageShowQrCode, #studioContentsIdShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#editBodyShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#productListShowQrCode, #vipOpenPromotionCodeShowQrCode, #v2EnhanceShowQrCode, #v2InpaintShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#hiResModeExceptionShowQrCode, #homeStyleShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#toolCropShowQrCode, #toolDslrShowQrCode, #portraitPickschemeShowQrCode, #hdSkinShowQrCode, #hdSkinExceptionShowQrCode, #hdSkinExceptionModeShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#faceangleShowQrCode, #bodyEnhanceShowQrCode, #combinationShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#iphonemodeShowQrCode, #bodyProportionsShowQrCode, #pickschemeTooltipShowQrCode, #flashColorLightShowQrCode, #flashColorLightFSShowQrCode, #flashColorLightModeShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#aiFlashShowQrCode, #retouchLockShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-#cameraFaceratioShowQrCode, #editReshapeFaceratioShowQrCode, #skintoneEnhanceShowQrCode, #editReshapeSymmetryShowQrCode, #makeupShowQrCode {
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
+/* 공통 버튼 스타일 */
 .qrcodeStyle, .resetStyle, .qrDownloadStyle {
-  color: black;
-  font-size: 30px;
-  margin-left: 20px;
-  cursor: pointer;
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
-#bodyOneDepthschemeCopy,#skinOneDepthSchemeCopy, #skinTwoDepthSchemeCopy, #skinToneOneDepthSchemeCopy, #middleFaceOneDepthSchemeCopy, #middleFaceTwoDepthSchemeCopy, #reshapeOneDepthSchemeCopy, #reshapeTwoDepthSchemeCopy {
+/* Scheme Copy 버튼 - SchemeCopy로 끝나는 모든 ID */
+[id$="SchemeCopy"],
+[id$="Copy"] {
     margin: 10px;
     font-size: 20px;
 }
 
-#manualSkinOneDepthSchemeCopy, #manualSkinTwoDepthSchemeCopy, #autoSkinOneDepthSchemeCopy, #autoSkinTwoDepthSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#aiFaceOneDepthSchemeCopy, #aiFaceCategoryIdSchemeCopy, #aiFaceContentIdSchemeCopy, #aiFaceCombineContentCategoryIdSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#faceRatioOneDepthSchemeCopy, #faceRatioTwoDepthSchemeCopy, #bgExtensionOneDepthSchemeCopy, #bgExtensionTwoDepthSchemeCopy, #newUserPageSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#styleFilterSchemeCopy, #cameraTabSchemeCopy, #beautySchemeCopy, #makeupSchemeCopy, #subscriptionPageSchemeCopy, #homeCategorySchemeCopy, #homeIdSchemeCopy, #homeOpenPageSchemeCopy, #studioContentsIdSchemeCopy, #studioContentsMultiIdSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#editBodySchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#productListCopy, #vipOpenPromotionCodeCopy, #v2EnhanceCopy, #v2InpaintCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#hiResModeExceptionCopy, #homeStyleCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#toolCropSchemeCopy, #toolDslrSchemeCopy, #portraitPickschemeSchemeCopy, #hdSkinSchemeCopy, #hdSkinExceptionSchemeCopy, #hdSkinExceptionModeSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#faceangleSchemeCopy, #bodyEnhanceSchemeCopy, #combinationSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#iphonemodeSchemeCopy, #bodyProportionsSchemeCopy, #pickschemeTooltipSchemeCopy, #flashColorLightSchemeCopy, #flashColorLightFSSchemeCopy, #flashColorLightModeSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#aiFlashSchemeCopy, #retouchLockSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#cameraFaceratioSchemeCopy, #editReshapeFaceratioSchemeCopy, #skintoneEnhanceSchemeCopy, #editReshapeSymmetrySchemeCopy, #makeupSchemeCopy {
-    margin: 10px;
-    font-size: 20px;
-}
-
-#bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
+/* QR 코드 추가 버튼 - AddQrcode로 끝나는 모든 ID */
+[id$="AddQrcode"] {
     margin: 10px;
     font-size: 30px;
 }
 
-#manualSkinOneDepthAddQrcode, #manualSkinTwoDepthAddQrcode, #autoSkinOneDepthAddQrcode, #autoSkinOneDepthAddQrcode {
+/* Reset 버튼 - Reset으로 끝나는 모든 ID */
+[id$="Reset"] {
     margin: 10px;
     font-size: 30px;
 }
 
-#aiFaceOneDepthAddQrcode, #aiFaceCategoryIdAddQrcode, #aiFaceContentIdAddQrcode, #aiFaceCombineContentCategoryIdAddQrcode {
+/* Download 버튼 - DownloadQrBtn으로 끝나는 모든 ID */
+[id$="DownloadQrBtn"] {
     margin: 10px;
     font-size: 30px;
 }
 
-#faceRatioOneDepthAddQrcode, #faceRatioTwoDepthAddQrcode, #bgExtensionOneDepthAddQrcode, #bgExtensionTwoDepthAddQrcode, #newUserPageAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #studioContentsMultiIdReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#editBodyAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#productListAddQrcode, #vipOpenPromotionCodeAddQrcode, #v2EnhanceAddQrcode, #v2InpaintAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#hiResModeExceptionAddQrcode, #homeStyleAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#toolCropAddQrcode, #toolDslrAddQrcode, #portraitPickschemeAddQrcode, #hdSkinAddQrcode, #hdSkinExceptionAddQrcode, #hdSkinExceptionModeAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#faceangleAddQrcode, #bodyEnhanceAddQrcode, #combinationAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#iphonemodeAddQrcode, #bodyProportionsAddQrcode, #pickschemeTooltipAddQrcode, #flashColorLightAddQrcode, #flashColorLightFSAddQrcode, #flashColorLightModeAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#aiFlashAddQrcode, #retouchLockAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#cameraFaceratioAddQrcode, #editReshapeFaceratioAddQrcode, #skintoneEnhanceAddQrcode, #editReshapeSymmetryAddQrcode, #makeupAddQrcode {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#manualSkinOneDepthReset, #manualSkinTwoDepthReset, #autoSkinOneDepthReset, #autoSkinTwoDepthReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#aiFaceOneDepthReset, #aiFaceCategoryIdReset, #aiFaceContentIdReset, #aiFaceCombineContentCategoryIdReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#faceRatioOneDepthReset, #faceRatioTwoDepthReset, #bgExtensionOneDepthReset, #bgExtensionTwoDepthReset, #newUserPageReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#editBodyReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#productListReset, #vipOpenPromotionCodeReset, #v2EnhanceReset, #v2InpaintReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#hiResModeExceptionReset, #homeStyleReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#toolCropReset, #toolDslrReset, #portraitPickschemeReset, #hdSkinReset, #hdSkinExceptionReset, #hdSkinExceptionModeReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#faceangleReset, #bodyEnhanceReset, #combinationReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#iphonemodeReset, #bodyProportionsReset, #pickschemeTooltipReset, #flashColorLightReset, #flashColorLightFSReset, #flashColorLightModeReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#aiFlashReset, #retouchLockReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#cameraFaceratioReset, #editReshapeFaceratioReset, #skintoneEnhanceReset, #editReshapeSymmetryReset, #makeupReset {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#bodyOneDepthDownloadQrBtn, #skinOneDepthDownloadQrBtn, #skinTwoDepthDownloadQrBtn, #skinToneOneDepthDownloadQrBtn, #middleFaceOneDepthDownloadQrBtn, #middleFaceTwoDepthDownloadQrBtn, #reshapeOneDepthDownloadQrBtn, #reshapeTwoDepthDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#manualSkinOneDepthDownloadQrBtn, #manualSkinTwoDepthDownloadQrBtn, #autoSkinOneDepthDownloadQrBtn, #autoSkinTwoDepthDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#aiFaceOneDepthDownloadQrBtn, #aiFaceCategoryIdDownloadQrBtn, #aiFaceContentIdDownloadQrBtn, #aiFaceCombineContentCategoryIdDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#faceRatioOneDepthDownloadQrBtn, #faceRatioTwoDepthDownloadQrBtn, #bgExtensionOneDepthDownloadQrBtn, #bgExtensionTwoDepthDownloadQrBtn, #newUserPageDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#styleFilterDownloadQrBtn, #cameraTabDownloadQrBtn, #beautyDownloadQrBtn, #makeupDownloadQrBtn, #subscriptionPageDownloadQrBtn, #homeCategoryDownloadQrBtn, #homeIdDownloadQrBtn, #homeOpenPageDownloadQrBtn, #studioContentsIdDownloadQrBtn, #studioContentsMultiIdDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#editBodyDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#productListDownloadQrBtn, #vipOpenPromotionCodeDownloadQrBtn, #v2EnhanceDownloadQrBtn, #v2InpaintDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#hiResModeExceptionDownloadQrBtn, #homeStyleDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#toolCropDownloadQrBtn, #toolDslrDownloadQrBtn, #portraitPickschemeDownloadQrBtn, #hdSkinDownloadQrBtn, #hdSkinExceptionDownloadQrBtn, #hdSkinExceptionModeDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#faceangleDownloadQrBtn, #bodyEnhanceDownloadQrBtn, #combinationDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn, #pickschemeTooltipDownloadQrBtn, #flashColorLightDownloadQrBtn, #flashColorLightFSDownloadQrBtn, #flashColorLightModeDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#aiFlashDownloadQrBtn, #retouchLockDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
-#cameraFaceratioDownloadQrBtn, #editReshapeFaceratioDownloadQrBtn, #skintoneEnhanceDownloadQrBtn, #editReshapeSymmetryDownloadQrBtn, #makeupDownloadQrBtn {
-    margin: 10px;
-    font-size: 30px;
-}
-
+/* 특수 케이스 - subArea820 */
 #subArea820 {
     margin: 10px;
     margin-bottom: 100px;
