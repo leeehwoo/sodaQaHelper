@@ -1,57 +1,225 @@
-/* 공통 영역 스타일 - 속성 선택자로 패턴 매칭 */
-[id^="titleAreaSoda"] {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860, #titleAreaSoda920, #titleAreaSoda960, #titleAreaSoda1000 {
     background-color: rgb(193, 232, 248);
 }
 
-[id^="optionArea"] {
+#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860, #optionArea920, #optionArea960, #optionArea1000 {
     margin: 20px;
 }
 
-[id^="qrCodeArea"] {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, #qrCodeArea860, #qrCodeArea920, #qrCodeArea960, #qrCodeArea1000 {
     display: flex;
 }
 
-/* QR 코드 표시 영역 - ShowQrCode로 끝나는 모든 ID */
-[id$="ShowQrCode"] {
+#bodyOneDepthShowQrCode, #skinOneDepthShowQrCode, #skinTwoDepthShowQrCode,#skinToneOneDepthShowQrCode, #middleFaceOneDepthShowQrCode, #middleFaceTwoDepthShowQrCode, #reshapeOneDepthShowQrCode, #reshapeTwoDepthShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
 }
 
-/* 공통 버튼 스타일 */
-.qrcodeStyle, .resetStyle, .qrDownloadStyle {
-    color: black;
-    font-size: 30px;
-    margin-left: 20px;
-    cursor: pointer;
+#manualSkinOneDepthShowQrCode, #manualSkinTwoDepthShowQrCode, #autoSkinOneDepthShowQrCode, #autoSkinTwoDepthShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
 }
 
-/* Scheme Copy 버튼 - SchemeCopy로 끝나는 모든 ID */
-[id$="SchemeCopy"],
-[id$="Copy"] {
+#aiFaceOneDepthShowQrCode, #aiFaceCategoryIdShowQrCode, #aiFaceContentIdShowQrCode, #aiFaceCombineContentCategoryIdShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#faceRatioOneDepthShowQrCode, #faceRatioTwoDepthShowQrCode, #bgExtensionOneDepthShowQrCode, #bgExtensionTwoDepthShowQrCode, #newUserPageShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#styleFilterShowQrCode, #cameraTabShowQrCode, #beautyShowQrCode, #makeupShowQrCode, #subscriptionPageShowQrCode, #homeCategoryShowQrCode, #homeIdAddShowQrcode, #homeIdShowQrCode, #homeOpenPageShowQrCode, #studioContentsIdShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#editBodyShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#productListShowQrCode, #vipOpenPromotionCodeShowQrCode, #v2EnhanceShowQrCode, #v2InpaintShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#hiResModeExceptionShowQrCode, #homeStyleShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.qrcodeStyle, .resetStyle, .qrDownloadStyle {
+  color: black;
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#bodyOneDepthschemeCopy,#skinOneDepthSchemeCopy, #skinTwoDepthSchemeCopy, #skinToneOneDepthSchemeCopy, #middleFaceOneDepthSchemeCopy, #middleFaceTwoDepthSchemeCopy, #reshapeOneDepthSchemeCopy, #reshapeTwoDepthSchemeCopy {
     margin: 10px;
     font-size: 20px;
 }
 
-/* QR 코드 추가 버튼 - AddQrcode로 끝나는 모든 ID */
-[id$="AddQrcode"] {
+#manualSkinOneDepthSchemeCopy, #manualSkinTwoDepthSchemeCopy, #autoSkinOneDepthSchemeCopy, #autoSkinTwoDepthSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#aiFaceOneDepthSchemeCopy, #aiFaceCategoryIdSchemeCopy, #aiFaceContentIdSchemeCopy, #aiFaceCombineContentCategoryIdSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#faceRatioOneDepthSchemeCopy, #faceRatioTwoDepthSchemeCopy, #bgExtensionOneDepthSchemeCopy, #bgExtensionTwoDepthSchemeCopy, #newUserPageSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#styleFilterSchemeCopy, #cameraTabSchemeCopy, #beautySchemeCopy, #makeupSchemeCopy, #subscriptionPageSchemeCopy, #homeCategorySchemeCopy, #homeIdSchemeCopy, #homeOpenPageSchemeCopy, #studioContentsIdSchemeCopy, #studioContentsMultiIdSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#editBodySchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#productListCopy, #vipOpenPromotionCodeCopy, #v2EnhanceCopy, #v2InpaintCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#hiResModeExceptionCopy, #homeStyleCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
 
-/* Reset 버튼 - Reset으로 끝나는 모든 ID */
-[id$="Reset"] {
+#manualSkinOneDepthAddQrcode, #manualSkinTwoDepthAddQrcode, #autoSkinOneDepthAddQrcode, #autoSkinOneDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
 
-/* Download 버튼 - DownloadQrBtn으로 끝나는 모든 ID */
-[id$="DownloadQrBtn"] {
+#aiFaceOneDepthAddQrcode, #aiFaceCategoryIdAddQrcode, #aiFaceContentIdAddQrcode, #aiFaceCombineContentCategoryIdAddQrcode {
     margin: 10px;
     font-size: 30px;
 }
 
-/* 특수 케이스 - subArea820 */
+#faceRatioOneDepthAddQrcode, #faceRatioTwoDepthAddQrcode, #bgExtensionOneDepthAddQrcode, #bgExtensionTwoDepthAddQrcode, #newUserPageAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #styleFilterAddQrcode, #styleFilterReset, #cameraTabAddQrcode, #cameraTabReset, #beautyAddQrcode, #beautyReset, #makeupAddQrcode, #makeupReset, #subscriptionPageAddQrcode, #subscriptionPageReset, #homeCategoryAddQrcode, #homeCategoryReset, #homeIdAddQrcode, #homeIdReset, #homeOpenPageAddQrcode, #homeOpenPageReset, #studioContentsIdAddQrcode, #studioContentsIdReset, #studioContentsMultiIdAddQrcode, #studioContentsMultiIdReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#editBodyAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#productListAddQrcode, #vipOpenPromotionCodeAddQrcode, #v2EnhanceAddQrcode, #v2InpaintAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#hiResModeExceptionAddQrcode, #homeStyleAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#manualSkinOneDepthReset, #manualSkinTwoDepthReset, #autoSkinOneDepthReset, #autoSkinTwoDepthReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#aiFaceOneDepthReset, #aiFaceCategoryIdReset, #aiFaceContentIdReset, #aiFaceCombineContentCategoryIdReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceRatioOneDepthReset, #faceRatioTwoDepthReset, #bgExtensionOneDepthReset, #bgExtensionTwoDepthReset, #newUserPageReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#editBodyReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#productListReset, #vipOpenPromotionCodeReset, #v2EnhanceReset, #v2InpaintReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#hiResModeExceptionReset, #homeStyleReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#bodyOneDepthDownloadQrBtn, #skinOneDepthDownloadQrBtn, #skinTwoDepthDownloadQrBtn, #skinToneOneDepthDownloadQrBtn, #middleFaceOneDepthDownloadQrBtn, #middleFaceTwoDepthDownloadQrBtn, #reshapeOneDepthDownloadQrBtn, #reshapeTwoDepthDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#manualSkinOneDepthDownloadQrBtn, #manualSkinTwoDepthDownloadQrBtn, #autoSkinOneDepthDownloadQrBtn, #autoSkinTwoDepthDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#aiFaceOneDepthDownloadQrBtn, #aiFaceCategoryIdDownloadQrBtn, #aiFaceContentIdDownloadQrBtn, #aiFaceCombineContentCategoryIdDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceRatioOneDepthDownloadQrBtn, #faceRatioTwoDepthDownloadQrBtn, #bgExtensionOneDepthDownloadQrBtn, #bgExtensionTwoDepthDownloadQrBtn, #newUserPageDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#styleFilterDownloadQrBtn, #cameraTabDownloadQrBtn, #beautyDownloadQrBtn, #makeupDownloadQrBtn, #subscriptionPageDownloadQrBtn, #homeCategoryDownloadQrBtn, #homeIdDownloadQrBtn, #homeOpenPageDownloadQrBtn, #studioContentsIdDownloadQrBtn, #studioContentsMultiIdDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#editBodyDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#productListDownloadQrBtn, #vipOpenPromotionCodeDownloadQrBtn, #v2EnhanceDownloadQrBtn, #v2InpaintDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#hiResModeExceptionDownloadQrBtn, #homeStyleDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #subArea820 {
     margin: 10px;
     margin-bottom: 100px;

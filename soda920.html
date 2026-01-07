@@ -553,202 +553,245 @@
 <!--    </div>-->
 
     <script>
-        // 공통 유틸리티 함수
-        function saveAs(uri, filename) {
-            var link = document.createElement('a');
-            if (typeof link.download === 'string') {
-                link.href = uri;
-                link.download = filename;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } else {
-                window.open(uri);
-            }
-        }
-
-        // Scheme 섹션 초기화 함수 (여러 입력 필드 지원)
-        function initSchemeSection(config) {
-            var schemeInput = document.getElementById(config.mainUrlId);
-            var mainUrlSelector = "#" + config.mainUrlId;
-            var qrCodeDivSelector = "#" + config.showQrCodeId + " #" + config.showQrCodeDivId;
-            var qrUlSelector = "#" + config.qrUlId;
-            var addQrcodeSelector = "#" + config.addQrcodeId;
-            var resetSelector = "#" + config.resetId;
-            var copySelector = "#" + config.copyId;
-            var downloadSelector = "#" + config.downloadId;
-            var showQrCodeSelector = "#" + config.showQrCodeId;
-
-            // 입력 필드들을 배열로 수집
-            var inputFields = [];
-            var inputEventTypes = [];
-
-            // select 필드들
-            if (config.selectFieldIds && config.selectFieldIds.length > 0) {
-                config.selectFieldIds.forEach(function(fieldId) {
-                    var field = document.getElementById(fieldId);
-                    if (field) {
-                        inputFields.push(field);
-                        inputEventTypes.push('change');
-                    }
-                });
-            }
-
-            // input 필드들
-            if (config.inputFieldIds && config.inputFieldIds.length > 0) {
-                config.inputFieldIds.forEach(function(fieldId) {
-                    var field = document.getElementById(fieldId);
-                    if (field) {
-                        inputFields.push(field);
-                        inputEventTypes.push('input');
-                    }
-                });
-            }
-
-            // Scheme 생성 함수
-            function updateScheme() {
-                var schemeValue = "";
-                inputFields.forEach(function(field) {
-                    if (field && field.value) {
-                        schemeValue += field.value;
-                    }
-                });
-                if (schemeInput) {
-                    schemeInput.value = schemeValue;
-                }
-            }
-
-            // 이벤트 리스너 등록
-            inputFields.forEach(function(field, index) {
-                if (field) {
-                    field.addEventListener(inputEventTypes[index], updateScheme);
-                }
-            });
-
-            // URL 클릭 핸들러
-            $(mainUrlSelector).click(function () {
-                var schemeUrl = $(this).val();
-                if (schemeUrl) {
-                    window.open(schemeUrl);
-                }
-            });
-
-            // QR 코드 생성 핸들러
-            $(addQrcodeSelector).click(function () {
-                $(qrCodeDivSelector).empty();
-                var urlValue = $(mainUrlSelector).val();
-                if (urlValue) {
-                    jQuery(qrCodeDivSelector).qrcode({
-                        render: "table",
-                        width: 100,
-                        height: 100,
-                        text: urlValue
-                    });
-                }
-            });
-
-            // ActionAdd 함수 (글로벌 스코프에 등록)
-            window[config.actionAddFunctionName] = function() {
-                $(qrUlSelector).empty();
-                var textAdd = $(mainUrlSelector).val();
-                if (textAdd) {
-                    var qrUl = $(qrUlSelector);
-                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
-                    var space = $("#" + config.showQrCodeDivId);
-                    space.append("<br>");
-                    var scroll = document.getElementById(config.addQrcodeId);
-                    if (scroll) {
-                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
-                    }
-                }
-            };
-
-            // Reset 핸들러
-            $(resetSelector).click(function () {
-                $(qrCodeDivSelector).empty();
-                $(qrUlSelector).empty();
-            });
-
-            // Copy 핸들러
-            $(copySelector).click(function () {
-                var urlInfo = document.getElementById(config.mainUrlId);
-                if (urlInfo) {
-                    urlInfo.select();
-                    document.execCommand("Copy");
-                    alert("Add Scheme to Clipboard!");
-                }
-            });
-
-            // Download 핸들러
-            $(downloadSelector).on("click", function () {
-                html2canvas(document.querySelector(showQrCodeSelector)).then(canvas => {
-                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
-                });
-            });
-        }
-
-        // DOMContentLoaded 시 각 섹션 초기화
         document.addEventListener("DOMContentLoaded", function () {
-            // iPhone Mode Scheme 설정
-            initSchemeSection({
-                mainUrlId: "iphonemodeMainUrl",
-                showQrCodeId: "iphonemodeShowQrCode",
-                showQrCodeDivId: "iphonemodeShowQrCodeDiv",
-                qrUlId: "iphonemodeQrUl",
-                addQrcodeId: "iphonemodeAddQrcode",
-                resetId: "iphonemodeReset",
-                copyId: "iphonemodeSchemeCopy",
-                downloadId: "iphonemodeDownloadQrBtn",
-                actionAddFunctionName: "iphonemodeActionAdd",
-                selectFieldIds: [
-                    "iphonemodeAppList",
-                    "iphonemodeCameraOptionList",
-                    "iphonemodeModeOptionList",
-                    "iphonemodeInputIdList",
-                    "iphonemodeTabList"
-                ],
-                inputFieldIds: [
-                    "iphonemodeFilterIdInput"
-                ]
-            });
+            var iphonemodeAppSelect = document.getElementById("iphonemodeAppList");
+            var iphonemodeCameraOptionList = document.getElementById("iphonemodeCameraOptionList");
+            var iphonemodeModeOptionList = document.getElementById("iphonemodeModeOptionList");
+            var iphonemodeInputIdList = document.getElementById("iphonemodeInputIdList");
+            var iphonemodeFilterIdInput = document.getElementById("iphonemodeFilterIdInput");
+            var iphonemodeTabList = document.getElementById("iphonemodeTabList");
+            var iphonemodeSchemeValue = document.getElementById("iphonemodeMainUrl");
 
-            // Body Proportions Scheme 설정
-            initSchemeSection({
-                mainUrlId: "bodyProportionsMainUrl",
-                showQrCodeId: "bodyProportionsShowQrCode",
-                showQrCodeDivId: "bodyProportionsShowQrCodeDiv",
-                qrUlId: "bodyProportionsQrUl",
-                addQrcodeId: "bodyProportionsAddQrcode",
-                resetId: "bodyProportionsReset",
-                copyId: "bodyProportionsSchemeCopy",
-                downloadId: "bodyProportionsDownloadQrBtn",
-                actionAddFunctionName: "bodyProportionsActionAdd",
-                selectFieldIds: [
-                    "bodyProportionsAppList",
-                    "bodyProportionsTabList",
-                    "bodyProportionsMediaTypeList",
-                    "bodyProportionsBodyKeynameList"
-                ]
-            });
+            function iphonemodeScheme() {
+                var iphonemodeSchemeValueResult = iphonemodeAppSelect.value + iphonemodeCameraOptionList.value + iphonemodeInputIdList.value + iphonemodeFilterIdInput.value + iphonemodeTabList.value + iphonemodeModeOptionList.value;
+                iphonemodeSchemeValue.value = iphonemodeSchemeValueResult;
+            }
 
-            // Pickscheme Tooltip Scheme 설정
-            initSchemeSection({
-                mainUrlId: "pickschemeTooltipMainUrl",
-                showQrCodeId: "pickschemeTooltipShowQrCode",
-                showQrCodeDivId: "pickschemeTooltipShowQrCodeDiv",
-                qrUlId: "pickschemeTooltipQrUl",
-                addQrcodeId: "pickschemeTooltipAddQrcode",
-                resetId: "pickschemeTooltipReset",
-                copyId: "pickschemeTooltipSchemeCopy",
-                downloadId: "pickschemeTooltipDownloadQrBtn",
-                actionAddFunctionName: "pickschemeTooltipActionAdd",
-                selectFieldIds: [
-                    "pickschemeTooltipAppList",
-                    "pickschemeTooltipTabList",
-                    "pickschemeTooltipShowTooltipList",
-                    "pickschemeTooltipMediaTypeList"
-                ]
+            iphonemodeAppSelect.addEventListener("change", iphonemodeScheme);
+            iphonemodeCameraOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeModeOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeInputIdList.addEventListener("change", iphonemodeScheme);
+            iphonemodeFilterIdInput.addEventListener("input", iphonemodeScheme);
+            iphonemodeTabList.addEventListener("change", iphonemodeScheme);
+        });
+
+        $("#iphonemodeMainUrl").click(function () {
+            var iphonemodeSchemeUrl = $(this).val();
+            window.open(iphonemodeSchemeUrl);
+        });
+
+        $("#iphonemodeAddQrcode").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            jQuery("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#iphonemodeMainUrl").val()
             });
+        });
+
+        function iphonemodeActionAdd() {
+            $("#iphonemodeQrUl").empty();
+            var iphonemodeTextAdd = $("#iphonemodeMainUrl").val();
+            var iphonemodeQrUl = $("#iphonemodeQrUl");
+            iphonemodeQrUl.append("<br>"+"<li>"+iphonemodeTextAdd+"</li>");
+            var iphonemodeSpace = $("#iphonemodeShowQrCodeDiv");
+            iphonemodeSpace.append("<br>");
+            var iphonemodeScroll = document.getElementById("iphonemodeAddQrcode");
+            iphonemodeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#iphonemodeReset").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            $("#iphonemodeQrUl").empty();
+        });
+
+        jQuery("#iphonemodeSchemeCopy").click(
+            function () {
+                var iphonemodeUrlInfo = document.getElementById("iphonemodeMainUrl");
+                iphonemodeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+
+            $("#iphonemodeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#iphonemodeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bodyProportionsAppSelect = document.getElementById("bodyProportionsAppList");
+            var bodyProportionsTabList = document.getElementById("bodyProportionsTabList");
+            var bodyProportionsMediatypeList = document.getElementById("bodyProportionsMediaTypeList");
+            var bodyProportionsBodyKeynameList = document.getElementById("bodyProportionsBodyKeynameList");
+            var bodyProportionsSchemeValue = document.getElementById("bodyProportionsMainUrl");
+
+            function bodyProportionsScheme() {
+                var bodyProportionsSchemeValueResult = bodyProportionsAppSelect.value + bodyProportionsTabList.value + bodyProportionsBodyKeynameList.value + bodyProportionsMediatypeList.value;
+                bodyProportionsSchemeValue.value = bodyProportionsSchemeValueResult;
+            }
+
+            bodyProportionsAppSelect.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsTabList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsMediatypeList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsBodyKeynameList.addEventListener("change", bodyProportionsScheme);
+        });
+
+        $("#bodyProportionsMainUrl").click(function () {
+            var bodyProportionsSchemeUrl = $(this).val();
+            window.open(bodyProportionsSchemeUrl);
+        });
+
+        $("#bodyProportionsAddQrcode").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            jQuery("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bodyProportionsMainUrl").val()
+            });
+        });
+
+        function bodyProportionsActionAdd() {
+            $("#bodyProportionsQrUl").empty();
+            var bodyProportionsTextAdd = $("#bodyProportionsMainUrl").val();
+            var bodyProportionsQrUl = $("#bodyProportionsQrUl");
+            bodyProportionsQrUl.append("<br>"+"<li>"+bodyProportionsTextAdd+"</li>");
+            var bodyProportionsSpace = $("#bodyProportionsShowQrCodeDiv");
+            bodyProportionsSpace.append("<br>");
+            var bodyProportionsScroll = document.getElementById("bodyProportionsAddQrcode");
+            bodyProportionsScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bodyProportionsReset").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            $("#bodyProportionsQrUl").empty();
+        });
+
+        jQuery("#bodyProportionsSchemeCopy").click(
+            function () {
+                var bodyProportionsUrlInfo = document.getElementById("bodyProportionsMainUrl");
+                bodyProportionsUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bodyProportionsDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bodyProportionsShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var pickschemeTooltipAppSelect = document.getElementById("pickschemeTooltipAppList");
+            var pickschemeTooltipTabList = document.getElementById("pickschemeTooltipTabList");
+            var pickschemeTooltipShowTooltipList = document.getElementById("pickschemeTooltipShowTooltipList");
+            var pickschemeTooltipMediatypeList = document.getElementById("pickschemeTooltipMediaTypeList");
+            var pickschemeTooltipSchemeValue = document.getElementById("pickschemeTooltipMainUrl");
+
+            function pickschemeTooltipScheme() {
+                var pickschemeTooltipSchemeValueResult = pickschemeTooltipAppSelect.value + pickschemeTooltipTabList.value + pickschemeTooltipShowTooltipList.value + pickschemeTooltipMediatypeList.value;
+                pickschemeTooltipSchemeValue.value = pickschemeTooltipSchemeValueResult;
+            }
+
+            pickschemeTooltipAppSelect.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipTabList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipShowTooltipList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipMediatypeList.addEventListener("change", pickschemeTooltipScheme);
+        });
+
+        $("#pickschemeTooltipMainUrl").click(function () {
+            var pickschemeTooltipSchemeUrl = $(this).val();
+            window.open(pickschemeTooltipSchemeUrl);
+        });
+
+        $("#pickschemeTooltipAddQrcode").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            jQuery("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#pickschemeTooltipMainUrl").val()
+            });
+        });
+
+        function pickschemeTooltipActionAdd() {
+            $("#pickschemeTooltipQrUl").empty();
+            var pickschemeTooltipTextAdd = $("#pickschemeTooltipMainUrl").val();
+            var pickschemeTooltipQrUl = $("#pickschemeTooltipQrUl");
+            pickschemeTooltipQrUl.append("<br>"+"<li>"+pickschemeTooltipTextAdd+"</li>");
+            var pickschemeTooltipSpace = $("#pickschemeTooltipShowQrCodeDiv");
+            pickschemeTooltipSpace.append("<br>");
+            var pickschemeTooltipScroll = document.getElementById("pickschemeTooltipAddQrcode");
+            pickschemeTooltipScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#pickschemeTooltipReset").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            $("#pickschemeTooltipQrUl").empty();
+        });
+
+        jQuery("#pickschemeTooltipSchemeCopy").click(
+            function () {
+                var pickschemeTooltipUrlInfo = document.getElementById("pickschemeTooltipMainUrl");
+                pickschemeTooltipUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#pickschemeTooltipDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#pickschemeTooltipShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
         });
 
         // v9.3.0에서 스펙 추가 예정

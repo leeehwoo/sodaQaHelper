@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="v6.2.10 신규 스펙(batch) 추가 및 기존 스킴 추가">
+    <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="v10.0.0 신규 스펙 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soda920.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda920.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sodaStyle740.css" beforeDir="false" afterPath="$PROJECT_DIR$/sodaStyle740.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +184,8 @@
       <workItem from="1750385479681" duration="14261000" />
       <workItem from="1750739328423" duration="3000" />
       <workItem from="1750748825108" duration="628000" />
+      <workItem from="1767780768775" duration="43000" />
+      <workItem from="1767781857672" duration="58000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
@@ -233,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1733471827142</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v10.0.0 신규 스펙 추가">
+      <created>1767781897606</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767781897606</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +265,7 @@
     <MESSAGE value="v6.2.10 신규 스펙(batch) 추가 및 기존 스킴 추가" />
     <MESSAGE value="toolKeyname 오타수정" />
     <MESSAGE value="v6.5.0 spec 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="v6.5.0 spec 추가" />
+    <MESSAGE value="v10.0.0 신규 스펙 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="v10.0.0 신규 스펙 추가" />
   </component>
 </project>
