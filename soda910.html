@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.1.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea910">
+        <h2>SODA/Tianyan v9.1.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda910">
+        <h3>
+            Faceangle Scheme
+        </h3>
+    </div>
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="faceangleAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=faceangle">SODA(Real)</option>
+            <option value="sodab://pick?tab=faceangle">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=faceangle">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=faceangle">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="faceangleMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="faceangleSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="faceangleAddQrcode" value="Show QR Code" onclick="faceangleActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="faceangleReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="faceangleDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="faceangleShowQrCode">
+                <div id="faceangleShowQrCodeDiv"></div>
+                <ul id="faceangleQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda910">
+        <h3>
+            Body Enhance Scheme
+        </h3>
+    </div>
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="bodyEnhanceAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=body">SODA(Real)</option>
+            <option value="sodab://pick?tab=body">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=body">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=body">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Body Keyname
+        <select name="bodyEnhanceList" id="bodyEnhanceList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="" disabled style="width: 70px">==v9.1.0==</option>
+            <option value="&bodykeyname=hip2">Hip2</option>
+            <option value="&bodykeyname=hip">Hip</option>
+            <option value="&bodykeyname=belly">Belly</option>
+            <option value="&bodykeyname=back">Back</option>
+            <option value="&bodykeyname=neckwidth">Neck width</option>
+            <option value="&bodykeyname=necklength">Neck width</option>
+            <option value="" disabled style="width: 70px">==v7.4.0==</option>
+            <option value="&bodykeyname=body">Body</option>
+            <option value="&bodykeyname=all">All</option>
+            <option value="&bodykeyname=slim">Slim</option>
+            <option value="&bodykeyname=head">Head</option>
+            <option value="&bodykeyname=shoulder">Shoulder</option>
+            <option value="&bodykeyname=square_shoulder">Square Shoulder</option>
+            <option value="&bodykeyname=neck">Neck</option>
+            <option value="&bodykeyname=chest">Chest</option>
+            <option value="&bodykeyname=arm">Arm</option>
+            <option value="&bodykeyname=waist">Waist</option>
+            <option value="&bodykeyname=leg">Leg</option>
+            <option value="&bodykeyname=longleg">Long Leg</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Media Type
+        <select name="bodyEnhanceMediatypeList" id="bodyEnhanceMediatypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="bodyEnhanceMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="bodyEnhanceSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bodyEnhanceAddQrcode" value="Show QR Code" onclick="bodyEnhanceActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bodyEnhanceReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bodyEnhanceDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="bodyEnhanceShowQrCode">
+                <div id="bodyEnhanceShowQrCodeDiv"></div>
+                <ul id="bodyEnhanceQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda910">
+        <h3>
+            go, preview scheme combination
+        </h3>
+    </div>
+
+    <div id="optionArea910">
+        Select App
+        <select name="appList" id="combinationAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="combinationCameraOptionList" id="combinationCameraOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">go?</option>
+            <option value="previewcamera?">previewcamera?</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Contents(Filter/Style)
+        <select name="combinationContentsOptionList" id="combinationContentsOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="filterId=">filterId=</option>
+            <option value="styleId=">styleId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        Insert Filter/Style Contents ID :
+        <input id="combinationContentsInput" style="width: 100px">
+        <br>
+        <br>
+        Select Category(Filter/Style)
+        <select name="combinationCategoryOptionList" id="combinationCategoryOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="filterCategoryId=">filterCategoryId=</option>
+            <option value="styleCategoryId=">styleCategoryId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="&filterCategoryId=">&filterCategoryId=</option>
+            <option value="&styleCategoryId=">&styleCategoryId=</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        Insert Filter/Style Category ID :
+        <input id="combinationCategoryInput" style="width: 100px">
+        <br>
+        <br>
+        <h4>* Parameter</h4>
+        Auto Download
+        <select name="combinationAutoDownload" id="combinationAutoDownload">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&autoDownload=true">true</option>
+            <option value="&autoDownload=false">false</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Camera Position
+        <select name="combinationCameraPosition" id="combinationCameraPosition">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&cameraPosition=0">0 (Front Camera)</option>
+            <option value="&cameraPosition=1">1 (Back Camera)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Take Mode
+        <select name="combinationTakeMode" id="combinationTakeMode">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&takemodeId=0">0 (Photo)</option>
+            <option value="&takemodeId=1">1 (Video)</option>
+            <option value="&takemodeId=2">2 (Live Photo)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Beauty Mode
+        <select name="combinationBeautyMode" id="combinationBeautyMode">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&beautyMode=1">1 (Standard)</option>
+            <option value="&beautyMode=2">2 (Hires)</option>
+            <option value="&beautyMode=3">3 (Hdskin)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Burst
+        <select name="combinationBurst" id="combinationBurst">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&tab=Burst">Burst</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="combinationMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="combinationSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="combinationAddQrcode" value="Show QR Code" onclick="combinationActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="combinationReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="combinationDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea910">
+            <div id="combinationShowQrCode">
+                <div id="combinationShowQrCodeDiv"></div>
+                <ul id="combinationQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var faceangleAppSelect = document.getElementById("faceangleAppList");
+            var faceangleSchemeValue = document.getElementById("faceangleMainUrl");
+
+            function faceangleScheme() {
+                var faceangleSchemeValueResult = faceangleAppSelect.value;
+                faceangleSchemeValue.value = faceangleSchemeValueResult;
+            }
+
+            faceangleAppSelect.addEventListener("change", faceangleScheme);
+        });
+
+        $("#faceangleMainUrl").click(function () {
+            var faceangleSchemeUrl = $(this).val();
+            window.open(faceangleSchemeUrl);
+        });
+
+        $("#faceangleAddQrcode").click(function () {
+            $("#faceangleShowQrCode #faceangleShowQrCodeDiv").empty();
+            jQuery("#faceangleShowQrCode #faceangleShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#faceangleMainUrl").val()
+            });
+        });
+
+        function faceangleActionAdd() {
+            $("#faceangleQrUl").empty();
+            var faceangleTextAdd = $("#faceangleMainUrl").val();
+            var faceangleQrUl = $("#faceangleQrUl");
+            faceangleQrUl.append("<br>"+"<li>"+faceangleTextAdd+"</li>");
+            var faceangleSpace = $("#faceangleShowQrCodeDiv");
+            faceangleSpace.append("<br>");
+            var faceangleScroll = document.getElementById("faceangleAddQrcode");
+            faceangleScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#faceangleReset").click(function () {
+            $("#faceangleShowQrCode #faceangleShowQrCodeDiv").empty();
+            $("#faceangleQrUl").empty();
+        });
+
+        jQuery("#faceangleSchemeCopy").click(
+            function () {
+                var faceangleUrlInfo = document.getElementById("faceangleMainUrl");
+                faceangleUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#faceangleDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#faceangleShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bodyEnhanceAppSelect = document.getElementById("bodyEnhanceAppList");
+            var bodyEnhanceList = document.getElementById("bodyEnhanceList");
+            var bodyEnhanceMediaTypeList = document.getElementById("bodyEnhanceMediatypeList");
+            var bodyEnhanceValue = document.getElementById("bodyEnhanceMainUrl");
+
+            function bodyEnhanceScheme() {
+                var bodyEnhanceSchemeValueResult = bodyEnhanceAppSelect.value + bodyEnhanceList.value + bodyEnhanceMediaTypeList.value;
+                bodyEnhanceValue.value = bodyEnhanceSchemeValueResult;
+            }
+
+            bodyEnhanceAppSelect.addEventListener("change", bodyEnhanceScheme);
+            bodyEnhanceList.addEventListener("change", bodyEnhanceScheme);
+            bodyEnhanceMediaTypeList.addEventListener("change", bodyEnhanceScheme);
+        });
+
+        $("#bodyEnhanceMainUrl").click(function () {
+            var bodyEnhanceSchemeUrl = $(this).val();
+            window.open(bodyEnhanceSchemeUrl);
+        });
+
+        $("#bodyEnhanceAddQrcode").click(function () {
+            $("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").empty();
+            jQuery("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bodyEnhanceMainUrl").val()
+            });
+        });
+
+        function bodyEnhanceActionAdd() {
+            $("#bodyEnhanceQrUl").empty();
+            var bodyEnhanceTextAdd = $("#bodyEnhanceMainUrl").val();
+            var bodyEnhanceQrUl = $("#bodyEnhanceQrUl");
+            bodyEnhanceQrUl.append("<br>"+"<li>"+bodyEnhanceTextAdd+"</li>");
+            var bodyEnhanceSpace = $("#bodyEnhanceShowQrCodeDiv");
+            bodyEnhanceSpace.append("<br>");
+            var bodyEnhanceScroll = document.getElementById("bodyEnhanceAddQrcode");
+            bodyEnhanceScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bodyEnhanceReset").click(function () {
+            $("#bodyEnhanceShowQrCode #bodyEnhanceShowQrCodeDiv").empty();
+            $("#bodyEnhanceQrUl").empty();
+        });
+
+        jQuery("#bodyEnhanceSchemeCopy").click(
+            function () {
+                var bodyEnhanceUrlInfo = document.getElementById("bodyEnhanceMainUrl");
+                bodyEnhanceUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bodyEnhanceDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bodyEnhanceShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var combinationAppSelect = document.getElementById("combinationAppList");
+            var combinationCameraOptionList = document.getElementById("combinationCameraOptionList");
+            var combinationContentsOptionList = document.getElementById("combinationContentsOptionList");
+            var combinationContentsInput = document.getElementById("combinationContentsInput");
+            var combinationCategoryOptionList = document.getElementById("combinationCategoryOptionList");
+            var combinationCategoryInput = document.getElementById("combinationCategoryInput");
+            var combinationAutoDownload = document.getElementById("combinationAutoDownload");
+            var combinationCameraPosition = document.getElementById("combinationCameraPosition");
+            var combinationTakeMode = document.getElementById("combinationTakeMode");
+            var combinationBeautyMode = document.getElementById("combinationBeautyMode");
+            var combinationBurst = document.getElementById("combinationBurst");
+            var combinationSchemeValue = document.getElementById("combinationMainUrl");
+
+            function combinationScheme() {
+                var combinationSchemeValueResult = combinationAppSelect.value + combinationCameraOptionList.value + combinationContentsOptionList.value + combinationContentsInput.value + combinationCategoryOptionList.value + combinationCategoryInput.value + combinationAutoDownload.value + combinationCameraPosition.value + combinationTakeMode.value + combinationBeautyMode.value + combinationBurst.value
+                combinationSchemeValue.value = combinationSchemeValueResult;
+            }
+
+            combinationAppSelect.addEventListener("change", combinationScheme);
+            combinationCameraOptionList.addEventListener("change", combinationScheme);
+            combinationContentsOptionList.addEventListener("change", combinationScheme);
+            combinationContentsInput.addEventListener("input", combinationScheme);
+            combinationCategoryOptionList.addEventListener("change", combinationScheme);
+            combinationCategoryInput.addEventListener("input", combinationScheme);
+            combinationAutoDownload.addEventListener("change", combinationScheme);
+            combinationCameraPosition.addEventListener("change", combinationScheme);
+            combinationTakeMode.addEventListener("change", combinationScheme);
+            combinationBeautyMode.addEventListener("change", combinationScheme);
+            combinationBurst.addEventListener("change", combinationScheme);
+        });
+
+        $("#combinationMainUrl").click(function () {
+            var combinationSchemeUrl = $(this).val();
+            window.open(combinationSchemeUrl);
+        });
+
+        $("#combinationAddQrcode").click(function () {
+            $("#combinationShowQrCode #combinationShowQrCodeDiv").empty();
+            jQuery("#combinationShowQrCode #combinationShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#combinationMainUrl").val()
+            });
+        });
+
+        function combinationActionAdd() {
+            $("#combinationQrUl").empty();
+            var combinationTextAdd = $("#combinationMainUrl").val();
+            var combinationQrUl = $("#combinationQrUl");
+            combinationQrUl.append("<br>"+"<li>"+combinationTextAdd+"</li>");
+            var combinationSpace = $("#combinationShowQrCodeDiv");
+            combinationSpace.append("<br>");
+            var combinationScroll = document.getElementById("combinationAddQrcode");
+            combinationScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#combinationReset").click(function () {
+            $("#combinationShowQrCode #combinationShowQrCodeDiv").empty();
+            $("#combinationQrUl").empty();
+        });
+
+        jQuery("#combinationSchemeCopy").click(
+            function () {
+                var combinationUrlInfo = document.getElementById("combinationMainUrl");
+                combinationUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#combinationDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#combinationShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.0.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea900">
+        <h2>SODA/Tianyan v9.0.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda900">
+        <h3>
+            Edit Tool Crop Scheme
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="toolCropAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=crop">SODA(Real)</option>
+            <option value="sodab://pick?tab=crop">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=crop">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=crop">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Crop Tab Option
+        <select name="toolCropOptionList" id="toolCropOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&cropTab=crop">Crop</option>
+            <option value="&cropTab=rotate">Rotate</option>
+            <option value="&cropTab=perspective">Perspective</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="toolCropMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="toolCropSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="toolCropAddQrcode" value="Show QR Code" onclick="toolCropActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="toolCropReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="toolCropDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="toolCropShowQrCode">
+                <div id="toolCropShowQrCodeDiv"></div>
+                <ul id="toolCropQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda900">
+        <h3>
+            Edit Tool DSLR Scheme
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="toolDslrAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=dslr">SODA(Real)</option>
+            <option value="sodab://pick?tab=dslr">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=dslr">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=dslr">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        DSLR Tab Option
+        <select name="toolDslrOptionList" id="toolDslrOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&dslrMenu=strength">Strength</option>
+            <option value="&dslrMenu=focus">Focus</option>
+            <option value="&dslrMenu=depth">Depth</option>
+            <option value="&dslrMenu=bluredges">Bluredges</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="toolDslrMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="toolDslrSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="toolDslrAddQrcode" value="Show QR Code" onclick="toolDslrActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="toolDslrReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="toolDslrDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="toolDslrShowQrCode">
+                <div id="toolDslrShowQrCodeDiv"></div>
+                <ul id="toolDslrQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="titleAreaSoda900">
+        <h3>
+            Portrait_Liquify/Skin Firm, Pickscheme Gallery Tooltip Scheme
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="portraitPickschemeAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=">SODA(Real)</option>
+            <option value="sodab://pick?tab=">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Pickscheme Tab
+        <select name="portraitPickschemeList" id="portraitPickschemeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="liquify">Liquify</option>
+            <option value="skinfirm">Skinfirm</option>
+            <option value="" disabled style="width: 70px">=======</option>
+            <option value="hdskin">HD Skin</option>
+            <option value="aihair">AI Hair</option>
+            <option value="aiface">AI Face</option>
+            <option value="body">Body</option>
+            <option value="" disabled style="width: 70px">=======</option>
+            <option value="crop">Crop</option>
+            <option value="enhance">Enhance</option>
+            <option value="remove">Remove</option>
+            <option value="bgextension">BG Extension</option>
+            <option value="dslr">DSLR</option>
+            <option value="" disabled style="width: 70px">=======</option>
+            <option value="filter">Filter</option>
+            <option value="" disabled style="width: 70px">=======</option>
+            <option value="style">Style</option>
+        </select>
+        <br>
+        <br>
+        Media Type
+        <select name="portraitPickschemeMediatypeList" id="portraitPickSchemeMediatypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="portraitPickschemeMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="portraitPickschemeSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="portraitPickschemeAddQrcode" value="Show QR Code" onclick="portraitPickschemeActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="portraitPickschemeReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="portraitPickschemeDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="portraitPickschemeShowQrCode">
+                <div id="portraitPickschemeShowQrCodeDiv"></div>
+                <ul id="portraitPickschemeQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="titleAreaSoda900">
+        <h3>
+            HD Skin Scheme
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="hdSkinAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="hdSkinCameraList" id="hdSkinCameraList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">Main Camera</option>
+            <option value="previewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        Mode
+        <select name="hdSkinModeList" id="hdSkinModeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="beautyMode=1">Standard</option>
+            <option value="beautyMode=2">Hires</option>
+            <option value="beautyMode=3">HD Skin</option>
+        </select>
+        <br>
+        <br>
+        <input id="hdSkinMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="hdSkinSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="hdSkinAddQrcode" value="Show QR Code" onclick="hdSkinActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="hdSkinReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="hdSkinDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="hdSkinShowQrCode">
+                <div id="hdSkinShowQrCodeDiv"></div>
+                <ul id="hdSkinQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="titleAreaSoda900">
+        <h3>
+            HD Skin Exception Scheme
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="hdSkinExceptionAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="hdSkinExceptionCameraList" id="hdSkinExceptionCameraList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">Main Camera</option>
+            <option value="previewcamera?">Preview Camera</option>
+        </select>
+        <br>
+        <br>
+        Contents
+        <select name="hdSkinExceptionContentsList" id="hdSkinExceptionContentsList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="styleId=">Style</option>
+            <option value="filterId=">Filter</option>
+            <option value="beautyKeyname=">Beauty</option>
+            <option value="makeupOpen=">Makeup</option>
+        </select>
+        <br>
+        <br>
+        Insert ID or KeyName
+        <input id="hdSkinExceptionInput" style="width: 100px">
+        <br>
+        <br>
+        <input id="hdSkinExceptionMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="hdSkinExceptionSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="hdSkinExceptionAddQrcode" value="Show QR Code" onclick="hdSkinExceptionActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="hdSkinExceptionReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="hdSkinExceptionDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="hdSkinExceptionShowQrCode">
+                <div id="hdSkinExceptionShowQrCodeDiv"></div>
+                <ul id="hdSkinExceptionQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="titleAreaSoda900">
+        <h3>
+            HD Skin Exception Scheme (Mode)
+        </h3>
+    </div>
+    <div id="optionArea900">
+        Select App
+        <select name="appList" id="hdSkinExceptionModeAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Exception
+        <select name="hdSkinExceptionModeList" id="hdSkinExceptionModeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?beautyMode=1">Standard</option>
+            <option value="go?takemode=2&beautyMode=2">Live Photo + Hires</option>
+            <option value="previewcamera?filterId=400665&beautyMode=2">Filter + Hires</option>
+            <option value="go?filterId=400665&beautyMode=3">Filter + HD Skin</option>
+        </select>
+        <br>
+        <br>
+        <input id="hdSkinExceptionModeMainUrl" readonly style="width: 600px">
+        <i class="fas fa-copy copyStyle" id="hdSkinExceptionModeSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="hdSkinExceptionModeAddQrcode" value="Show QR Code" onclick="hdSkinExceptionModeActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="hdSkinExceptionModeReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="hdSkinExceptionModeDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea900">
+            <div id="hdSkinExceptionModeShowQrCode">
+                <div id="hdSkinExceptionModeShowQrCodeDiv"></div>
+                <ul id="hdSkinExceptionModeQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var toolCropAppSelect = document.getElementById("toolCropAppList");
+            var toolCropOptionList = document.getElementById("toolCropOptionList");
+            var toolCropSchemeValue = document.getElementById("toolCropMainUrl");
+
+            function toolCropScheme() {
+                var toolCropSchemeValueResult = toolCropAppSelect.value + toolCropOptionList.value;
+                toolCropSchemeValue.value = toolCropSchemeValueResult;
+            }
+
+            toolCropAppSelect.addEventListener("change", toolCropScheme);
+            toolCropOptionList.addEventListener("change", toolCropScheme);
+        });
+
+        $("#toolCropMainUrl").click(function () {
+            var toolCropSchemeUrl = $(this).val();
+            window.open(toolCropSchemeUrl);
+        });
+
+        $("#toolCropAddQrcode").click(function () {
+            $("#toolCropShowQrCode #toolCropShowQrCodeDiv").empty();
+            jQuery("#toolCropShowQrCode #toolCropShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#toolCropMainUrl").val()
+            });
+        });
+
+        function toolCropActionAdd() {
+            $("#toolCropQrUl").empty();
+            var toolCropTextAdd = $("#toolCropMainUrl").val();
+            var toolCropQrUl = $("#toolCropQrUl");
+            toolCropQrUl.append("<br>"+"<li>"+toolCropTextAdd+"</li>");
+            var toolCropSpace = $("#toolCropShowQrCodeDiv");
+            toolCropSpace.append("<br>");
+            var toolCropScroll = document.getElementById("toolCropAddQrcode");
+            toolCropScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#toolCropReset").click(function () {
+            $("#toolCropShowQrCode #toolCropShowQrCodeDiv").empty();
+            $("#toolCropQrUl").empty();
+        });
+
+        jQuery("#toolCropSchemeCopy").click(
+            function () {
+                var toolCropUrlInfo = document.getElementById("toolCropMainUrl");
+                toolCropUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#toolCropDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#toolCropShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var toolDslrAppSelect = document.getElementById("toolDslrAppList");
+            var toolDslrOptionList = document.getElementById("toolDslrOptionList");
+            var toolDslrSchemeValue = document.getElementById("toolDslrMainUrl");
+
+            function toolDslrScheme() {
+                var toolDslrSchemeValueResult = toolDslrAppSelect.value + toolDslrOptionList.value;
+                toolDslrSchemeValue.value = toolDslrSchemeValueResult;
+            }
+
+            toolDslrAppSelect.addEventListener("change", toolDslrScheme);
+            toolDslrOptionList.addEventListener("change", toolDslrScheme);
+        });
+
+        $("#toolDslrMainUrl").click(function () {
+            var toolDslrSchemeUrl = $(this).val();
+            window.open(toolDslrSchemeUrl);
+        });
+
+        $("#toolDslrAddQrcode").click(function () {
+            $("#toolDslrShowQrCode #toolDslrShowQrCodeDiv").empty();
+            jQuery("#toolDslrShowQrCode #toolDslrShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#toolDslrMainUrl").val()
+            });
+        });
+
+        function toolDslrActionAdd() {
+            $("#toolDslrQrUl").empty();
+            var toolDslrTextAdd = $("#toolDslrMainUrl").val();
+            var toolDslrQrUl = $("#toolDslrQrUl");
+            toolDslrQrUl.append("<br>"+"<li>"+toolDslrTextAdd+"</li>");
+            var toolDslrSpace = $("#toolDslrShowQrCodeDiv");
+            toolDslrSpace.append("<br>");
+            var toolDslrScroll = document.getElementById("toolDslrAddQrcode");
+            toolDslrScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#toolDslrReset").click(function () {
+            $("#toolDslrShowQrCode #toolDslrShowQrCodeDiv").empty();
+            $("#toolDslrQrUl").empty();
+        });
+
+        jQuery("#toolDslrSchemeCopy").click(
+            function () {
+                var toolDslrUrlInfo = document.getElementById("toolDslrMainUrl");
+                toolDslrUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#toolDslrDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#toolDslrShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var portraitPickschemeAppSelect = document.getElementById("portraitPickschemeAppList");
+            var portraitPickschemeList = document.getElementById("portraitPickschemeList");
+            var portraitPickschemeMediaTypeList = document.getElementById("portraitPickSchemeMediatypeList");
+            var portraitPickschemeSchemeValue = document.getElementById("portraitPickschemeMainUrl");
+
+            function portraitPickschemeScheme() {
+                var portraitPickschemeSchemeValueResult = portraitPickschemeAppSelect.value + portraitPickschemeList.value + portraitPickschemeMediaTypeList.value;
+                portraitPickschemeSchemeValue.value = portraitPickschemeSchemeValueResult;
+            }
+
+            portraitPickschemeAppSelect.addEventListener("change", portraitPickschemeScheme);
+            portraitPickschemeList.addEventListener("change", portraitPickschemeScheme);
+            portraitPickschemeMediaTypeList.addEventListener("change", portraitPickschemeScheme);
+        });
+
+        $("#portraitPickschemeMainUrl").click(function () {
+                var portraitPickschemeSchemeUrl = $(this).val();
+                window.open(portraitPickschemeSchemeUrl);
+        });
+
+        $("#portraitPickschemeAddQrcode").click(function () {
+            $("#portraitPickschemeShowQrCode #portraitPickschemeShowQrCodeDiv").empty();
+            jQuery("#portraitPickschemeShowQrCode #portraitPickschemeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#portraitPickschemeMainUrl").val()
+            });
+        });
+
+        function portraitPickschemeActionAdd() {
+            $("#portraitPickschemeQrUl").empty();
+            var portraitPickschemeTextAdd = $("#portraitPickschemeMainUrl").val();
+            var portraitPickschemeQrUl = $("#portraitPickschemeQrUl");
+            portraitPickschemeQrUl.append("<br>"+"<li>"+portraitPickschemeTextAdd+"</li>");
+            var portraitPickschemeSpace = $("#portraitPickschemeShowQrCodeDiv");
+            portraitPickschemeSpace.append("<br>");
+            var portraitPickschemeScroll = document.getElementById("portraitPickschemeAddQrcode");
+            portraitPickschemeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#portraitPickschemeReset").click(function () {
+            $("#portraitPickschemeShowQrCode #portraitPickschemeShowQrCodeDiv").empty();
+            $("#portraitPickschemeQrUl").empty();
+        });
+
+        jQuery("#portraitPickschemeSchemeCopy").click(
+            function () {
+                var portraitPickschemeUrlInfo = document.getElementById("portraitPickschemeMainUrl");
+                portraitPickschemeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#portraitPickschemeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#portraitPickschemeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var hdSkinAppSelect = document.getElementById("hdSkinAppList");
+            var hdSkinCameraList = document.getElementById("hdSkinCameraList");
+            var hdSkinModeList = document.getElementById("hdSkinModeList");
+            var hdSkinSchemeValue = document.getElementById("hdSkinMainUrl");
+
+            function hdSkinScheme() {
+                var hdSkinSchemeValueResult = hdSkinAppSelect.value + hdSkinCameraList.value + hdSkinModeList.value;
+                hdSkinSchemeValue.value = hdSkinSchemeValueResult;
+            }
+
+            hdSkinAppSelect.addEventListener("change", hdSkinScheme);
+            hdSkinCameraList.addEventListener("change", hdSkinScheme);
+            hdSkinModeList.addEventListener("change", hdSkinScheme);
+        });
+
+        $("#hdSkinMainUrl").click(function () {
+                var hdSkinSchemeUrl = $(this).val();
+                window.open(hdSkinSchemeUrl);
+        });
+
+        $("#hdSkinAddQrcode").click(function () {
+            $("#hdSkinShowQrCode #hdSkinShowQrCodeDiv").empty();
+            jQuery("#hdSkinShowQrCode #hdSkinShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#hdSkinMainUrl").val()
+            });
+        });
+
+        function hdSkinActionAdd() {
+            $("#hdSkinQrUl").empty();
+            var hdSkinTextAdd = $("#hdSkinMainUrl").val();
+            var hdSkinQrUl = $("#hdSkinQrUl");
+            hdSkinQrUl.append("<br>"+"<li>"+hdSkinTextAdd+"</li>");
+            var hdSkinSpace = $("#hdSkinShowQrCodeDiv");
+            hdSkinSpace.append("<br>");
+            var hdSkinScroll = document.getElementById("hdSkinAddQrcode");
+            hdSkinScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#hdSkinReset").click(function () {
+            $("#hdSkinShowQrCode #hdSkinShowQrCodeDiv").empty();
+            $("#hdSkinQrUl").empty();
+        });
+
+        jQuery("#hdSkinSchemeCopy").click(
+            function () {
+                var hdSkinUrlInfo = document.getElementById("hdSkinMainUrl");
+                hdSkinUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#hdSkinDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#hdSkinShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var hdSkinExceptionAppSelect = document.getElementById("hdSkinExceptionAppList");
+            var hdSkinExceptionCameraList = document.getElementById("hdSkinExceptionCameraList");
+            var hdSkinExceptionContentsList = document.getElementById("hdSkinExceptionContentsList");
+            var hdSkinExceptionInput = document.getElementById("hdSkinExceptionInput");
+            var hdSkinExceptionSchemeValue = document.getElementById("hdSkinExceptionMainUrl");
+
+            function hdSkinExceptionScheme() {
+                var hdSkinExceptionSchemeValueResult = hdSkinExceptionAppSelect.value + hdSkinExceptionCameraList.value + hdSkinExceptionContentsList.value + hdSkinExceptionInput.value;
+                hdSkinExceptionSchemeValue.value = hdSkinExceptionSchemeValueResult;
+            }
+
+            hdSkinExceptionAppSelect.addEventListener("change", hdSkinExceptionScheme);
+            hdSkinExceptionCameraList.addEventListener("change", hdSkinExceptionScheme);
+            hdSkinExceptionContentsList.addEventListener("change", hdSkinExceptionScheme);
+            hdSkinExceptionInput.addEventListener("input", hdSkinExceptionScheme);
+        });
+
+        $("#hdSkinExceptionMainUrl").click(function () {
+                var hdSkinExceptionSchemeUrl = $(this).val();
+                window.open(hdSkinExceptionSchemeUrl);
+        });
+
+        $("#hdSkinExceptionAddQrcode").click(function () {
+            $("#hdSkinExceptionShowQrCode #hdSkinExceptionShowQrCodeDiv").empty();
+            jQuery("#hdSkinExceptionShowQrCode #hdSkinExceptionShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#hdSkinExceptionMainUrl").val()
+            });
+        });
+
+        function hdSkinExceptionActionAdd() {
+            $("#hdSkinExceptionQrUl").empty();
+            var hdSkinExceptionTextAdd = $("#hdSkinExceptionMainUrl").val();
+            var hdSkinExceptionQrUl = $("#hdSkinExceptionQrUl");
+            hdSkinExceptionQrUl.append("<br>"+"<li>"+hdSkinExceptionTextAdd+"</li>");
+            var hdSkinExceptionSpace = $("#hdSkinExceptionShowQrCodeDiv");
+            hdSkinExceptionSpace.append("<br>");
+            var hdSkinExceptionScroll = document.getElementById("hdSkinExceptionAddQrcode");
+            hdSkinExceptionScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#hdSkinExceptionReset").click(function () {
+            $("#hdSkinExceptionShowQrCode #hdSkinExceptionShowQrCodeDiv").empty();
+            $("#hdSkinExceptionQrUl").empty();
+        });
+
+        jQuery("#hdSkinExceptionSchemeCopy").click(
+            function () {
+                var hdSkinExceptionUrlInfo = document.getElementById("hdSkinExceptionMainUrl");
+                hdSkinExceptionUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#hdSkinExceptionDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#hdSkinExceptionShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var hdSkinExceptionModeAppSelect = document.getElementById("hdSkinExceptionModeAppList");
+            var hdSkinExceptionModeList = document.getElementById("hdSkinExceptionModeList");
+            var hdSkinExceptionModeSchemeValue = document.getElementById("hdSkinExceptionModeMainUrl");
+
+            function hdSkinExceptionModeScheme() {
+                var hdSkinExceptionModeSchemeValueResult = hdSkinExceptionModeAppSelect.value + hdSkinExceptionModeList.value;
+                hdSkinExceptionModeSchemeValue.value = hdSkinExceptionModeSchemeValueResult;
+            }
+
+            hdSkinExceptionModeAppSelect.addEventListener("change", hdSkinExceptionModeScheme);
+            hdSkinExceptionModeList.addEventListener("change", hdSkinExceptionModeScheme);
+        });
+
+        $("#hdSkinExceptionModeMainUrl").click(function () {
+                var hdSkinExceptionModeSchemeUrl = $(this).val();
+                window.open(hdSkinExceptionModeSchemeUrl);
+        });
+
+        $("#hdSkinExceptionModeAddQrcode").click(function () {
+            $("#hdSkinExceptionModeShowQrCode #hdSkinExceptionModeShowQrCodeDiv").empty();
+            jQuery("#hdSkinExceptionModeShowQrCode #hdSkinExceptionModeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#hdSkinExceptionModeMainUrl").val()
+            });
+        });
+
+        function hdSkinExceptionModeActionAdd() {
+            $("#hdSkinExceptionModeQrUl").empty();
+            var hdSkinExceptionModeTextAdd = $("#hdSkinExceptionModeMainUrl").val();
+            var hdSkinExceptionModeQrUl = $("#hdSkinExceptionModeQrUl");
+            hdSkinExceptionModeQrUl.append("<br>"+"<li>"+hdSkinExceptionModeTextAdd+"</li>");
+            var hdSkinExceptionModeSpace = $("#hdSkinExceptionModeShowQrCodeDiv");
+            hdSkinExceptionModeSpace.append("<br>");
+            var hdSkinExceptionModeScroll = document.getElementById("hdSkinExceptionModeAddQrcode");
+            hdSkinExceptionModeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#hdSkinExceptionModeReset").click(function () {
+            $("#hdSkinExceptionModeShowQrCode #hdSkinExceptionModeShowQrCodeDiv").empty();
+            $("#hdSkinExceptionModeQrUl").empty();
+        });
+
+        jQuery("#hdSkinExceptionModeSchemeCopy").click(
+            function () {
+                var hdSkinExceptionModeUrlInfo = document.getElementById("hdSkinExceptionModeMainUrl");
+                hdSkinExceptionModeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#hdSkinExceptionModeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#hdSkinExceptionModeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+    </script>
+</body>

@@ -1,12 +1,12 @@
-#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860 {
+#titleAreaSoda740, #titleAreaSoda800, #titleAreaSoda820, #titleAreaSoda8210, #titleAreaSoda8215, #titleAreaSoda830, #titleAreaSoda860, #titleAreaSoda900, #titleAreaSoda910, #titleAreaSoda920 {
     background-color: rgb(193, 232, 248);
 }
 
-#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860 {
+#optionArea740, #optionArea800, #optionArea820, #optionArea8210, #optionArea8215, #optionArea830, #optionArea860, #optionArea900, #optionArea910, #optionArea920 {
     margin: 20px;
 }
 
-#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, qrCodeArea860 {
+#qrCodeArea740, #qrCodeArea800, #qrCodeArea820, #qrCodeArea8210, #qrCodeArea8215, #qrCodeArea830, #qrCodeArea860, #qrCodeArea900, #qrCodeArea910, #qrCodeArea920 {
     display: flex;
 }
 
@@ -53,6 +53,24 @@
 }
 
 #hiResModeExceptionShowQrCode, #homeStyleShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#toolCropShowQrCode, #toolDslrShowQrCode, #portraitPickschemeShowQrCode, #hdSkinShowQrCode, #hdSkinExceptionShowQrCode, #hdSkinExceptionModeShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#faceangleShowQrCode, #bodyEnhanceShowQrCode, #combinationShowQrCode {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+#iphonemodeShowQrCode, #bodyProportionsShowQrCode, #pickschemeTooltipShowQrCode, #flashColorLightShowQrCode, #flashColorLightFSShowQrCode, #flashColorLightModeShowQrCode {
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -105,6 +123,21 @@
     font-size: 20px;
 }
 
+#toolCropSchemeCopy, #toolDslrSchemeCopy, #portraitPickschemeSchemeCopy, #hdSkinSchemeCopy, #hdSkinExceptionSchemeCopy, #hdSkinExceptionModeSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#faceangleSchemeCopy, #bodyEnhanceSchemeCopy, #combinationSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
+#iphonemodeSchemeCopy, #bodyProportionsSchemeCopy, #pickschemeTooltipSchemeCopy, #flashColorLightSchemeCopy, #flashColorLightFSSchemeCopy, #flashColorLightModeSchemeCopy {
+    margin: 10px;
+    font-size: 20px;
+}
+
 #bodyOneDepthAddQrcode, #skinOneDepthAddQrcode, #skinTwoDepthAddQrcode, #skinToneOneDepthAddQrcode, #middleFaceOneDepthAddQrcode, #middleFaceTwoDepthAddQrcode, #reshapeOneDepthAddQrcode, #reshapeTwoDepthAddQrcode {
     margin: 10px;
     font-size: 30px;
@@ -145,6 +178,21 @@
     font-size: 30px;
 }
 
+#toolCropAddQrcode, #toolDslrAddQrcode, #portraitPickschemeAddQrcode, #hdSkinAddQrcode, #hdSkinExceptionAddQrcode, #hdSkinExceptionModeAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceangleAddQrcode, #bodyEnhanceAddQrcode, #combinationAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#iphonemodeAddQrcode, #bodyProportionsAddQrcode, #pickschemeTooltipAddQrcode, #flashColorLightAddQrcode, #flashColorLightFSAddQrcode, #flashColorLightModeAddQrcode {
+    margin: 10px;
+    font-size: 30px;
+}
+
 #bodyOneDepthReset, #skinOneDepthReset, #skinTwoDepthReset, #skinToneOneDepthReset, #middleFaceOneDepthReset, #middleFaceTwoDepthReset, #reshapeOneDepthReset, #reshapeTwoDepthReset {
     margin: 10px;
     font-size: 30px;
@@ -176,6 +224,21 @@
 }
 
 #hiResModeExceptionReset, #homeStyleReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#toolCropReset, #toolDslrReset, #portraitPickschemeReset, #hdSkinReset, #hdSkinExceptionReset, #hdSkinExceptionModeReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceangleReset, #bodyEnhanceReset, #combinationReset {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#iphonemodeReset, #bodyProportionsReset, #pickschemeTooltipReset, #flashColorLightReset, #flashColorLightFSReset, #flashColorLightModeReset {
     margin: 10px;
     font-size: 30px;
 }
@@ -216,6 +279,21 @@
 }
 
 #hiResModeExceptionDownloadQrBtn, #homeStyleDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#toolCropDownloadQrBtn, #toolDslrDownloadQrBtn, #portraitPickschemeDownloadQrBtn, #hdSkinDownloadQrBtn, #hdSkinExceptionDownloadQrBtn, #hdSkinExceptionModeDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#faceangleDownloadQrBtn, #bodyEnhanceDownloadQrBtn, #combinationDownloadQrBtn {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#iphonemodeDownloadQrBtn, #bodyProportionsDownloadQrBtn, #pickschemeTooltipDownloadQrBtn, #flashColorLightDownloadQrBtn, #flashColorLightFSDownloadQrBtn, #flashColorLightModeDownloadQrBtn {
     margin: 10px;
     font-size: 30px;
 }

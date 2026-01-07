@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.2.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea920">
+        <h2>SODA/Tianyan v9.2.0 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda920">
+        <h3>
+            iPhone Mode Scheme
+        </h3>
+    </div>
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="iphonemodeAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="iphonemodeCameraOptionList" id="iphonemodeCameraOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">go?</option>
+            <option value="previewcamera?">previewcamera?</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Beauty Mode
+        <select name="iphonemodeModeOptionList" id="iphonemodeModeOptionList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="beautyMode=1">1 (standard)</option>
+            <option value="beautyMode=2">2 (hires)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="beautyMode=standard">standard</option>
+            <option value="beautyMode=hires">hires</option>
+            <option value="beautyMode=iphone">iphone</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="&beautyMode=1">&1 (standard)</option>
+            <option value="&beautyMode=2">&2 (hires)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="&beautyMode=standard">&standard</option>
+            <option value="&beautyMode=hires">&hires</option>
+            <option value="&beautyMode=iphone">&iphone</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Input Contents ID
+        <select name="iphonemodeInputIdList" id="iphonemodeInputIdList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="ipfilterId=">ipfilterId</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        ID :
+        <input id="iphonemodeFilterIdInput" style="width: 100px">
+        <br>
+        <br>
+        Select Tab
+        <select name="iphonemodeTabList" id="iphonemodeTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=Filter">Filter</option>
+            <option value="tab=Makeup">Makeup</option>
+            <option value="tab=Beauty">Beauty</option>
+            <option value="tab=Advanced">Advanced</option>
+            <option value="tab=Layout">Layout</option>
+            <option value="tab=Burst">Burst</option>
+            <option value="tab=Smartblur">Smartblur</option>
+            <option value="tab=reshape3d">reshape3d</option>
+            <option value="tab=zoom">zoom</option>
+            <option value="tab=hdskin">hdskin</option>
+            <option value="tab=ipFilter">ipFilter</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="iphonemodeMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="iphonemodeSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="iphonemodeAddQrcode" value="Show QR Code" onclick="iphonemodeActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="iphonemodeReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="iphonemodeDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="iphonemodeShowQrCode">
+                <div id="iphonemodeShowQrCodeDiv"></div>
+                <ul id="iphonemodeQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda920">
+        <h3>
+            Body Proportions Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="bodyProportionsAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="bodyProportionsTabList" id="bodyProportionsTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=proportions">proportions</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Mediatype
+        <select name="bodyProportionsMediaTypeList" id="bodyProportionsMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Body Keyname
+        <select name="bodyProportionsBodyKeynameList" id="bodyProportionsBodyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&bodykeyname=longleg">longleg</option>
+            <option value="&bodykeyname=head">head</option>
+            <option value="&bodykeyname=waist">waist</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="bodyProportionsMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="bodyProportionsSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="bodyProportionsAddQrcode" value="Show QR Code" onclick="bodyProportionsActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="bodyProportionsReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="bodyProportionsDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="bodyProportionsShowQrCode">
+                <div id="bodyProportionsShowQrCodeDiv"></div>
+                <ul id="bodyProportionsQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda920">
+        <h3>
+            Pickscheme Tooltip Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea920">
+        Select App
+        <select name="appList" id="pickschemeTooltipAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="pickschemeTooltipTabList" id="pickschemeTooltipTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=reshape">reshape</option>
+            <option value="tab=makeup">makeup</option>
+            <option value="tab=liquify">liquify</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select showTooltip
+        <select name="pickschemeTooltipShowTooltipList" id="pickschemeTooltipShowTooltipList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&showTooltip=true">true</option>
+            <option value="&showTooltip=my">my</option>
+            <option value="&showTooltip=bgdistortion">bgdistortion</option>
+            <option value="&showTooltip=faceside">faceside</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Mediatype
+        <select name="pickschemeTooltipMediaTypeList" id="pickschemeTooltipMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="&mediatype=video">video</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="pickschemeTooltipMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="pickschemeTooltipSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="pickschemeTooltipAddQrcode" value="Show QR Code" onclick="pickschemeTooltipActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="pickschemeTooltipReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="pickschemeTooltipDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea920">
+            <div id="pickschemeTooltipShowQrCode">
+                <div id="pickschemeTooltipShowQrCodeDiv"></div>
+                <ul id="pickschemeTooltipQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+<!--    v9.3.0에서 추가 예정-->
+<!--    <div id="titleAreaSoda920">-->
+<!--        <h3>-->
+<!--            Flash ColorLight Scheme > Flash, Flash Color-->
+<!--        </h3>-->
+<!--    </div>-->
+<!--    <div id="optionArea920">-->
+<!--        Select App-->
+<!--        <select name="appList" id="flashColorLightAppList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="soda://go?">SODA(Real)</option>-->
+<!--            <option value="sodab://go?">SODA(Beta)</option>-->
+<!--            <option value="tianyan://go?">Tianyan(Real)</option>-->
+<!--            <option value="tianyanb://go?">Tianyan(Beta)</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Select Camera Position-->
+<!--        <select name="flashColorLightCameraPositionList" id="flashColorLightCameraPositionList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="cameraPosition=0">0 (Front Camera)</option>-->
+<!--            <option value="cameraPosition=1">1 (Back Camera)</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Select Flash-->
+<!--        <select name="flashColorLightFlashList" id="flashColorLightFlashList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flash=off">off</option>-->
+<!--            <option value="&flash=on">on</option>-->
+<!--            <option value="&flash=auto">auto</option>-->
+<!--            <option value="&flash=torch">torch</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        -->
+<!--        Select Flash Color-->
+<!--        <select name="flashColorLightFlashColorList" id="flashColorLightFlashColorList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flashColor=white">white</option>-->
+<!--            <option value="&flashColor=yellow">yellow</option>-->
+<!--            <option value="&flashColor=pink">pink</option>-->
+<!--            <option value="&flashColor=skyblue">skyblue</option>-->
+<!--            <option value="&flashColor=purple">purple</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <input id="flashColorLightMainUrl" readonly style="width: 900px">-->
+<!--        <i class="fas fa-copy copyStyle" id="flashColorLightSchemeCopy"></i>-->
+<!--        <br>-->
+<!--        <h3>* QR Code</h3>-->
+<!--        <i class="fas fa-qrcode qrcodeStyle" id="flashColorLightAddQrcode" value="Show QR Code" onclick="flashColorLightActionAdd()"></i>-->
+<!--        <i class="fas fa-redo-alt resetStyle" id="flashColorLightReset" value="Reset"></i>-->
+<!--        <i class="fas fa-reqular fa-download qrDownloadStyle" id="flashColorLightDownloadQrBtn" value="Download QR Code"></i>-->
+<!--        <div id="qrCodeArea920">-->
+<!--            <div id="flashColorLightShowQrCode">-->
+<!--                <div id="flashColorLightShowQrCodeDiv"></div>-->
+<!--                <ul id="flashColorLightQrUl"></ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div id="titleAreaSoda920">-->
+<!--        <h3>-->
+<!--            Flash ColorLight Scheme > Filter/Style Contents + Flash, Flash Color-->
+<!--        </h3>-->
+<!--    </div>-->
+<!--    <div id="optionArea920">-->
+<!--        Select App-->
+<!--        <select name="appList" id="flashColorLightFSAppList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="soda://go?">SODA(Real)</option>-->
+<!--            <option value="sodab://go?">SODA(Beta)</option>-->
+<!--            <option value="tianyan://go?">Tianyan(Real)</option>-->
+<!--            <option value="tianyanb://go?">Tianyan(Beta)</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Select Filter/Style & Input ID-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        *-->
+<!--        <select name="flashColorLightFSList" id="flashColorLightFSList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="filterId=">filter</option>-->
+<!--            <option value="styleId=">style</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        ID :-->
+<!--        <input id="flashColorLightFSIdInput" style="width: 100px">-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Select Filter/Style Category & input ID-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        *-->
+<!--        <select name="flashColorLightFSCategoryList" id="flashColorLightFSCategoryList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="filterCategoryId=">filter category</option>-->
+<!--            <option value="styleCategoryId=">style category</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="&filterCategoryId=">&filter category</option>-->
+<!--            <option value="&styleCategoryId=">&style category</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        ID :-->
+<!--        <input id="flashColorLightFSCategoryIdInput" style="widht: 100px">-->
+<!--        <h4>Option</h4>-->
+<!--        Auto Download-->
+<!--        <select name="flashColorLightFSAutoDownload" id="flashColorLightFSAutoDownload">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&autoDownload=true">true</option>-->
+<!--            <option value="&autoDownload=false">false</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Camera Position-->
+<!--        <select name="flashColorLightFSCameraPosition" id="flashColorLightFSCameraPosition">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&cameraPosition=0">0 : front camera</option>-->
+<!--            <option value="&cameraPosition=1">1 : back camera</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Take Mode-->
+<!--        <select name="flashColorLightFSTakeMode" id="flashColorLightFSTakeMode">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&takemode=0">0 : photo</option>-->
+<!--            <option value="&takemode=1">1 : video</option>-->
+<!--            <option value="&takemode=2">2 : live photo(iOS only)</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Beauty Mode-->
+<!--        <select name="flashColorLightFSBeautyMode" id="flashColorLightFSBeautyMode">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&beautyMode=1">1 : standard</option>-->
+<!--            <option value="&beautyMode=2">2 : hires</option>-->
+<!--            <option value="&beautyMode=3">3 : hdsdkin</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="&beautyMode=iphone">iphone mode</option>-->
+<!--            <option value="&beautyMode=standard">standard</option>-->
+<!--            <option value="&beautyMode=hires">hires</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Tab-->
+<!--        <select name="flashColorLightFSTab" id="flashColorLightFSTab">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&tab=Burst">burst</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="&tab=Filter">filter</option>-->
+<!--            <option value="&tab=Makeup">makeup</option>-->
+<!--            <option value="&tab=Beauty">beauty</option>-->
+<!--            <option value="&tab=Advanced">advanced</option>-->
+<!--            <option value="&tab=Layout">layout</option>-->
+<!--            <option value="&tab=Smartblur">smartblur</option>-->
+<!--            <option value="&tab=reshape3d">reshape3d</option>-->
+<!--            <option value="&tab=zoop">zoom</option>-->
+<!--            <option value="&tab=hdskin">hdskin</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Flash-->
+<!--        <select name="flashColorLightFSFlash" id="flashColorLightFSFlash">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flash=off">off</option>-->
+<!--            <option value="&flash=on">on</option>-->
+<!--            <option value="&flash=auto">auto</option>-->
+<!--            <option value="&flash=torch">torch</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Flash Color-->
+<!--        <select name="flashColorLightFSFlashColorList" id="flashColorLightFSFlashColorList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flashColor=white">white</option>-->
+<!--            <option value="&flashColor=yellow">yellow</option>-->
+<!--            <option value="&flashColor=pink">pink</option>-->
+<!--            <option value="&flashColor=skyblue">skyblue</option>-->
+<!--            <option value="&flashColor=purple">purple</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <input id="flashColorLightFSMainUrl" readonly style="width: 1200px">-->
+<!--        <i class="fas fa-copy copyStyle" id="flashColorLightFSSchemeCopy"></i>-->
+<!--        <br>-->
+<!--        <h3>* QR Code</h3>-->
+<!--        <i class="fas fa-qrcode qrcodeStyle" id="flashColorLightFSAddQrcode" value="Show QR Code" onclick="flashColorLightFSActionAdd()"></i>-->
+<!--        <i class="fas fa-redo-alt resetStyle" id="flashColorLightFSReset" value="Reset"></i>-->
+<!--        <i class="fas fa-reqular fa-download qrDownloadStyle" id="flashColorLightFSDownloadQrBtn" value="Download QR Code"></i>-->
+<!--        <div id="qrCodeArea920">-->
+<!--            <div id="flashColorLightFSShowQrCode">-->
+<!--                <div id="flashColorLightFSShowQrCodeDiv"></div>-->
+<!--                <ul id="flashColorLightFSQrUl"></ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div id="titleAreaSoda920">-->
+<!--        <h3>-->
+<!--            Flash ColorLight Scheme > Filter/Style Contents + Mode-->
+<!--        </h3>-->
+<!--    </div>-->
+<!--    <div id="optionArea920">-->
+<!--        Select App-->
+<!--        <select name="appList" id="flashColorLightModeAppList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="soda://go?">SODA(Real)</option>-->
+<!--            <option value="sodab://go?">SODA(Beta)</option>-->
+<!--            <option value="tianyan://go?">Tianyan(Real)</option>-->
+<!--            <option value="tianyanb://go?">Tianyan(Beta)</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Select Mode-->
+<!--        <select name="flashColorLightModeList" id="flashColorLightModeList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="beautyMode=1">Beauty Mode : 1 (standard)</option>-->
+<!--            <option value="beautyMode=2">Beauty Mode : 2 (hires)</option>-->
+<!--            <option value="beautyMode=3">Beauty Mode : 3 (hdskin)</option>-->
+<!--            <option value="beautyMode=iphone">Beauty Mode : iphone</option>-->
+<!--            <option value="beautyMode=standard">Beauty Mode : standard</option>-->
+<!--            <option value="beautyMode=hires">Beauty Mode : hires</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="takemode=0">Take Mode : 0 (photo)</option>-->
+<!--            <option value="takemode=1">Take Mode : 1 (video)</option>-->
+<!--            <option value="takemode=2">Take Mode : 2 (live photo)</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <h4>Option</h4>-->
+<!--        Beauty Mode (takemode + beautyMode)-->
+<!--        <select name="flashColorLightModeBeautyModeList" id="flashColorLightModeBeautyModeList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&beautyMode=1">Beauty Mode : 1 (standard)</option>-->
+<!--            <option value="&beautyMode=2">Beauty Mode : 2 (hires)</option>-->
+<!--            <option value="&beautyMode=3">Beauty Mode : 3 (hdskin)</option>-->
+<!--            <option value="&beautyMode=iphone">Beauty Mode : iphone</option>-->
+<!--            <option value="&beautyMode=standard">Beauty Mode : standard</option>-->
+<!--            <option value="&beautyMode=hires">Beauty Mode : hires</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Flash-->
+<!--        <select name="flashColorLightModeFlash" id="flashColorLightModeFlash">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flash=off">off</option>-->
+<!--            <option value="&flash=on">on</option>-->
+<!--            <option value="&flash=auto">auto</option>-->
+<!--            <option value="&flash=torch">torch</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Flash Color-->
+<!--        <select name="flashColorLightModeFlashColorList" id="flashColorLightModeFlashColorList">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&flashColor=white">white</option>-->
+<!--            <option value="&flashColor=yellow">yellow</option>-->
+<!--            <option value="&flashColor=pink">pink</option>-->
+<!--            <option value="&flashColor=skyblue">skyblue</option>-->
+<!--            <option value="&flashColor=purple">purple</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        Camera Position-->
+<!--        <select name="flashColorLightModeCameraPosition" id="flashColorLightModeCameraPosition">-->
+<!--            <option value="" selected disabled style="width: 70px">Select</option>-->
+<!--            <option value="&cameraPosition=0">0 : front camera</option>-->
+<!--            <option value="&cameraPosition=1">1 : back camera</option>-->
+<!--            <option value="" disabled style="width: 70px">==========</option>-->
+<!--            <option value="">Cancel</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <br>-->
+<!--        <input id="flashColorLightModeMainUrl" readonly style="width: 1200px">-->
+<!--        <i class="fas fa-copy copyStyle" id="flashColorLightModeSchemeCopy"></i>-->
+<!--        <br>-->
+<!--        <h3>* QR Code</h3>-->
+<!--        <i class="fas fa-qrcode qrcodeStyle" id="flashColorLightModeAddQrcode" value="Show QR Code" onclick="flashColorLightModeActionAdd()"></i>-->
+<!--        <i class="fas fa-redo-alt resetStyle" id="flashColorLightModeReset" value="Reset"></i>-->
+<!--        <i class="fas fa-reqular fa-download qrDownloadStyle" id="flashColorLightModeDownloadQrBtn" value="Download QR Code"></i>-->
+<!--        <div id="qrCodeArea920">-->
+<!--            <div id="flashColorLightModeShowQrCode">-->
+<!--                <div id="flashColorLightModeShowQrCodeDiv"></div>-->
+<!--                <ul id="flashColorLightModeQrUl"></ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var iphonemodeAppSelect = document.getElementById("iphonemodeAppList");
+            var iphonemodeCameraOptionList = document.getElementById("iphonemodeCameraOptionList");
+            var iphonemodeModeOptionList = document.getElementById("iphonemodeModeOptionList");
+            var iphonemodeInputIdList = document.getElementById("iphonemodeInputIdList");
+            var iphonemodeFilterIdInput = document.getElementById("iphonemodeFilterIdInput");
+            var iphonemodeTabList = document.getElementById("iphonemodeTabList");
+            var iphonemodeSchemeValue = document.getElementById("iphonemodeMainUrl");
+
+            function iphonemodeScheme() {
+                var iphonemodeSchemeValueResult = iphonemodeAppSelect.value + iphonemodeCameraOptionList.value + iphonemodeInputIdList.value + iphonemodeFilterIdInput.value + iphonemodeTabList.value + iphonemodeModeOptionList.value;
+                iphonemodeSchemeValue.value = iphonemodeSchemeValueResult;
+            }
+
+            iphonemodeAppSelect.addEventListener("change", iphonemodeScheme);
+            iphonemodeCameraOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeModeOptionList.addEventListener("change", iphonemodeScheme);
+            iphonemodeInputIdList.addEventListener("change", iphonemodeScheme);
+            iphonemodeFilterIdInput.addEventListener("input", iphonemodeScheme);
+            iphonemodeTabList.addEventListener("change", iphonemodeScheme);
+        });
+
+        $("#iphonemodeMainUrl").click(function () {
+            var iphonemodeSchemeUrl = $(this).val();
+            window.open(iphonemodeSchemeUrl);
+        });
+
+        $("#iphonemodeAddQrcode").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            jQuery("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#iphonemodeMainUrl").val()
+            });
+        });
+
+        function iphonemodeActionAdd() {
+            $("#iphonemodeQrUl").empty();
+            var iphonemodeTextAdd = $("#iphonemodeMainUrl").val();
+            var iphonemodeQrUl = $("#iphonemodeQrUl");
+            iphonemodeQrUl.append("<br>"+"<li>"+iphonemodeTextAdd+"</li>");
+            var iphonemodeSpace = $("#iphonemodeShowQrCodeDiv");
+            iphonemodeSpace.append("<br>");
+            var iphonemodeScroll = document.getElementById("iphonemodeAddQrcode");
+            iphonemodeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#iphonemodeReset").click(function () {
+            $("#iphonemodeShowQrCode #iphonemodeShowQrCodeDiv").empty();
+            $("#iphonemodeQrUl").empty();
+        });
+
+        jQuery("#iphonemodeSchemeCopy").click(
+            function () {
+                var iphonemodeUrlInfo = document.getElementById("iphonemodeMainUrl");
+                iphonemodeUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+
+            $("#iphonemodeDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#iphonemodeShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var bodyProportionsAppSelect = document.getElementById("bodyProportionsAppList");
+            var bodyProportionsTabList = document.getElementById("bodyProportionsTabList");
+            var bodyProportionsMediatypeList = document.getElementById("bodyProportionsMediaTypeList");
+            var bodyProportionsBodyKeynameList = document.getElementById("bodyProportionsBodyKeynameList");
+            var bodyProportionsSchemeValue = document.getElementById("bodyProportionsMainUrl");
+
+            function bodyProportionsScheme() {
+                var bodyProportionsSchemeValueResult = bodyProportionsAppSelect.value + bodyProportionsTabList.value + bodyProportionsBodyKeynameList.value + bodyProportionsMediatypeList.value;
+                bodyProportionsSchemeValue.value = bodyProportionsSchemeValueResult;
+            }
+
+            bodyProportionsAppSelect.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsTabList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsMediatypeList.addEventListener("change", bodyProportionsScheme);
+            bodyProportionsBodyKeynameList.addEventListener("change", bodyProportionsScheme);
+        });
+
+        $("#bodyProportionsMainUrl").click(function () {
+            var bodyProportionsSchemeUrl = $(this).val();
+            window.open(bodyProportionsSchemeUrl);
+        });
+
+        $("#bodyProportionsAddQrcode").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            jQuery("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#bodyProportionsMainUrl").val()
+            });
+        });
+
+        function bodyProportionsActionAdd() {
+            $("#bodyProportionsQrUl").empty();
+            var bodyProportionsTextAdd = $("#bodyProportionsMainUrl").val();
+            var bodyProportionsQrUl = $("#bodyProportionsQrUl");
+            bodyProportionsQrUl.append("<br>"+"<li>"+bodyProportionsTextAdd+"</li>");
+            var bodyProportionsSpace = $("#bodyProportionsShowQrCodeDiv");
+            bodyProportionsSpace.append("<br>");
+            var bodyProportionsScroll = document.getElementById("bodyProportionsAddQrcode");
+            bodyProportionsScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#bodyProportionsReset").click(function () {
+            $("#bodyProportionsShowQrCode #bodyProportionsShowQrCodeDiv").empty();
+            $("#bodyProportionsQrUl").empty();
+        });
+
+        jQuery("#bodyProportionsSchemeCopy").click(
+            function () {
+                var bodyProportionsUrlInfo = document.getElementById("bodyProportionsMainUrl");
+                bodyProportionsUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#bodyProportionsDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#bodyProportionsShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var pickschemeTooltipAppSelect = document.getElementById("pickschemeTooltipAppList");
+            var pickschemeTooltipTabList = document.getElementById("pickschemeTooltipTabList");
+            var pickschemeTooltipShowTooltipList = document.getElementById("pickschemeTooltipShowTooltipList");
+            var pickschemeTooltipMediatypeList = document.getElementById("pickschemeTooltipMediaTypeList");
+            var pickschemeTooltipSchemeValue = document.getElementById("pickschemeTooltipMainUrl");
+
+            function pickschemeTooltipScheme() {
+                var pickschemeTooltipSchemeValueResult = pickschemeTooltipAppSelect.value + pickschemeTooltipTabList.value + pickschemeTooltipShowTooltipList.value + pickschemeTooltipMediatypeList.value;
+                pickschemeTooltipSchemeValue.value = pickschemeTooltipSchemeValueResult;
+            }
+
+            pickschemeTooltipAppSelect.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipTabList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipShowTooltipList.addEventListener("change", pickschemeTooltipScheme);
+            pickschemeTooltipMediatypeList.addEventListener("change", pickschemeTooltipScheme);
+        });
+
+        $("#pickschemeTooltipMainUrl").click(function () {
+            var pickschemeTooltipSchemeUrl = $(this).val();
+            window.open(pickschemeTooltipSchemeUrl);
+        });
+
+        $("#pickschemeTooltipAddQrcode").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            jQuery("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").qrcode({
+                render: "table",
+                width: 100,
+                height: 100,
+                text: $("#pickschemeTooltipMainUrl").val()
+            });
+        });
+
+        function pickschemeTooltipActionAdd() {
+            $("#pickschemeTooltipQrUl").empty();
+            var pickschemeTooltipTextAdd = $("#pickschemeTooltipMainUrl").val();
+            var pickschemeTooltipQrUl = $("#pickschemeTooltipQrUl");
+            pickschemeTooltipQrUl.append("<br>"+"<li>"+pickschemeTooltipTextAdd+"</li>");
+            var pickschemeTooltipSpace = $("#pickschemeTooltipShowQrCodeDiv");
+            pickschemeTooltipSpace.append("<br>");
+            var pickschemeTooltipScroll = document.getElementById("pickschemeTooltipAddQrcode");
+            pickschemeTooltipScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        }
+
+        $("#pickschemeTooltipReset").click(function () {
+            $("#pickschemeTooltipShowQrCode #pickschemeTooltipShowQrCodeDiv").empty();
+            $("#pickschemeTooltipQrUl").empty();
+        });
+
+        jQuery("#pickschemeTooltipSchemeCopy").click(
+            function () {
+                var pickschemeTooltipUrlInfo = document.getElementById("pickschemeTooltipMainUrl");
+                pickschemeTooltipUrlInfo.select();
+                document.execCommand("Copy");
+                alert("Add Scheme to Clipboard!")
+            }
+        )
+
+        $(function () {
+            $("#pickschemeTooltipDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#pickschemeTooltipShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+                });
+            });
+            function saveAs(uri, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    link.href = uri;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } else {
+                    window.open(uri);
+                }
+            }
+        });
+
+        // v9.3.0에서 스펙 추가 예정
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var flashColorLightAppSelect = document.getElementById("flashColorLightAppList");
+        //     var flashColorLightCameraPositonList = document.getElementById("flashColorLightCameraPositionList");
+        //     var flashColorLightFlashList = document.getElementById("flashColorLightFlashList");
+        //     var flashColorLightFlashColorList = document.getElementById("flashColorLightFlashColorList");
+        //     var flashColorLightSchemeValue = document.getElementById("flashColorLightMainUrl");
+        //
+        //     function flashColorLightScheme() {
+        //         var flashColorLightSchemeValueResult = flashColorLightAppSelect.value + flashColorLightCameraPositonList.value + flashColorLightFlashList.value + flashColorLightFlashColorList.value;
+        //         flashColorLightSchemeValue.value = flashColorLightSchemeValueResult;
+        //     }
+        //
+        //     flashColorLightAppSelect.addEventListener("change", flashColorLightScheme);
+        //     flashColorLightCameraPositonList.addEventListener("change", flashColorLightScheme);
+        //     flashColorLightFlashList.addEventListener("change", flashColorLightScheme);
+        //     flashColorLightFlashColorList.addEventListener("change", flashColorLightScheme);
+        // });
+        //
+        // $("#flashColorLightMainUrl").click(function () {
+        //     var flashColorLightSchemeUrl = $(this).val();
+        //     window.open(flashColorLightSchemeUrl);
+        // });
+        //
+        // $("#flashColorLightAddQrcode").click(function () {
+        //     $("#flashColorLightShowQrCode #flashColorLightShowQrCodeDiv").empty();
+        //     jQuery("#flashColorLightShowQrCode #flashColorLightShowQrCodeDiv").qrcode({
+        //         render: "table",
+        //         width: 100,
+        //         height: 100,
+        //         text: $("#flashColorLightMainUrl").val()
+        //     });
+        // });
+        //
+        // function flashColorLightActionAdd() {
+        //     $("#flashColorLightQrUl").empty();
+        //     var flashColorLightTextAdd = $("#flashColorLightMainUrl").val();
+        //     var flashColorLightQrUl = $("#flashColorLightQrUl");
+        //     flashColorLightQrUl.append("<br>"+"<li>"+flashColorLightTextAdd+"</li>");
+        //     var flashColorLightSpace = $("#flashColorLightShowQrCodeDiv");
+        //     flashColorLightSpace.append("<br>");
+        //     var flashColorLightScroll = document.getElementById("flashColorLightAddQrcode");
+        //     flashColorLightScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        // }
+        //
+        // $("#flashColorLightReset").click(function () {
+        //     $("#flashColorLightShowQrCode #flashColorLightShowQrCodeDiv").empty();
+        //     $("#flashColorLightQrUl").empty();
+        // });
+        //
+        // jQuery("#flashColorLightSchemeCopy").click(
+        //     function () {
+        //         var flashColorLightUrlInfo = document.getElementById("flashColorLightMainUrl");
+        //         flashColorLightUrlInfo.select();
+        //         document.execCommand("Copy");
+        //         alert("Add Scheme to Clipboard!")
+        //     }
+        // )
+        //
+        // $(function () {
+        //     $("#flashColorLightDownloadQrBtn").on("click", function () {
+        //         html2canvas(document.querySelector("#flashColorLightShowQrCode")).then(canvas => {
+        //             saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+        //         });
+        //     });
+        //     function saveAs(uri, filename) {
+        //         var link = document.createElement('a');
+        //         if (typeof link.download === 'string') {
+        //             link.href = uri;
+        //             link.download = filename;
+        //             document.body.appendChild(link);
+        //             link.click();
+        //             document.body.removeChild(link);
+        //         } else {
+        //             window.open(uri);
+        //         }
+        //     }
+        // });
+        //
+        //
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var flashColorLightFSAppSelect = document.getElementById("flashColorLightFSAppList");
+        //     var flashColorLightFSList = document.getElementById("flashColorLightFSList");
+        //     var flashColorLightFSIdInput = document.getElementById("flashColorLightFSIdInput");
+        //     var flashColorLightFSCategoryList = document.getElementById("flashColorLightFSCategoryList");
+        //     var flashColorLightFSCategoryIdInput = document.getElementById("flashColorLightFSCategoryIdInput");
+        //     var flashColorLightFSAutoDownload = document.getElementById("flashColorLightFSAutoDownload");
+        //     var flashColorLightFSCameraPosition = document.getElementById("flashColorLightFSCameraPosition");
+        //     var flashColorLightFSTakeMode = document.getElementById("flashColorLightFSTakeMode");
+        //     var flashColorLightFSBeautyMode = document.getElementById("flashColorLightFSBeautyMode");
+        //     var flashColorLightFSTab = document.getElementById("flashColorLightFSTab");
+        //     var flashColorLightFSFlash = document.getElementById("flashColorLightFSFlash");
+        //     var flashColorLightFSFlashColorList = document.getElementById("flashColorLightFSFlashColorList");
+        //     var flashColorLightFSSchemeValue = document.getElementById("flashColorLightFSMainUrl");
+        //
+        //     function flashColorLightFSScheme() {
+        //         var flashColorLightFSSchemeValueResult = flashColorLightFSAppSelect.value + flashColorLightFSList.value + flashColorLightFSIdInput.value + flashColorLightFSCategoryList.value + flashColorLightFSCategoryIdInput.value + flashColorLightFSAutoDownload.value + flashColorLightFSCameraPosition.value + flashColorLightFSTakeMode.value + flashColorLightFSBeautyMode.value + flashColorLightFSTab.value + flashColorLightFSFlash.value + flashColorLightFSFlashColorList.value;
+        //         flashColorLightFSSchemeValue.value = flashColorLightFSSchemeValueResult;
+        //     }
+        //
+        //     flashColorLightFSAppSelect.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSList.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSIdInput.addEventListener("input", flashColorLightFSScheme);
+        //     flashColorLightFSCategoryList.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSCategoryIdInput.addEventListener("input", flashColorLightFSScheme);
+        //     flashColorLightFSAutoDownload.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSCameraPosition.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSTakeMode.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSBeautyMode.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSTab.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSFlash.addEventListener("change", flashColorLightFSScheme);
+        //     flashColorLightFSFlashColorList.addEventListener("change", flashColorLightFSScheme);
+        // });
+        //
+        // $("#flashColorLightFSMainUrl").click(function () {
+        //     var flashColorLightFSSchemeUrl = $(this).val();
+        //     window.open(flashColorLightFSSchemeUrl);
+        // });
+        //
+        // $("#flashColorLightFSAddQrcode").click(function () {
+        //     $("#flashColorLightFSShowQrCode #flashColorLightFSShowQrCodeDiv").empty();
+        //     jQuery("#flashColorLightFSShowQrCode #flashColorLightFSShowQrCodeDiv").qrcode({
+        //         render: "table",
+        //         width: 100,
+        //         height: 100,
+        //         text: $("#flashColorLightFSMainUrl").val()
+        //     });
+        // });
+        //
+        // function flashColorLightFSActionAdd() {
+        //     $("#flashColorLightFSQrUl").empty();
+        //     var flashColorLightFSTextAdd = $("#flashColorLightFSMainUrl").val();
+        //     var flashColorLightFSQrUl = $("#flashColorLightFSQrUl");
+        //     flashColorLightFSQrUl.append("<br>"+"<li>"+flashColorLightFSTextAdd+"</li>");
+        //     var flashColorLightFSSpace = $("#flashColorLightFSShowQrCodeDiv");
+        //     flashColorLightFSSpace.append("<br>");
+        //     var flashColorLightFSScroll = document.getElementById("flashColorLightFSAddQrcode");
+        //     flashColorLightFSScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        // }
+        //
+        // $("#flashColorLightFSReset").click(function () {
+        //     $("#flashColorLightFSShowQrCode #flashColorLightFSShowQrCodeDiv").empty();
+        //     $("#flashColorLightFSQrUl").empty();
+        // });
+        //
+        // jQuery("#flashColorLightFSSchemeCopy").click(
+        //     function () {
+        //         var flashColorLightFSUrlInfo = document.getElementById("flashColorLightFSMainUrl");
+        //         flashColorLightFSUrlInfo.select();
+        //         document.execCommand("Copy");
+        //         alert("Add Scheme to Clipboard!")
+        //     }
+        // )
+        //
+        // $(function () {
+        //
+        //     $("#flashColorLightFSDownloadQrBtn").on("click", function () {
+        //         html2canvas(document.querySelector("#flashColorLightFSShowQrCode")).then(canvas => {
+        //             saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+        //         });
+        //     });
+        //     function saveAs(uri, filename) {
+        //         var link = document.createElement('a');
+        //         if (typeof link.download === 'string') {
+        //             link.href = uri;
+        //             link.download = filename;
+        //             document.body.appendChild(link);
+        //             link.click();
+        //             document.body.removeChild(link);
+        //         } else {
+        //             window.open(uri);
+        //         }
+        //     }
+        // });
+        //
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var flashColorLightModeAppSelect = document.getElementById("flashColorLightModeAppList");
+        //     var flashColorLightModeList = document.getElementById("flashColorLightModeList");
+        //     var flashColorLightModeBeautyModeList = document.getElementById("flashColorLightModeBeautyModeList");
+        //     var flashColorLightModeFlash = document.getElementById("flashColorLightModeFlash");
+        //     var flashColorLightModeFlashColorList = document.getElementById("flashColorLightModeFlashColorList");
+        //     var flashColorLightModeCameraPosition = document.getElementById("flashColorLightModeCameraPosition");
+        //     var flashColorLightModeSchemeValue = document.getElementById("flashColorLightModeMainUrl");
+        //
+        //     function flashColorLightModeScheme() {
+        //         var flashColorLightModeSchemeValueResult = flashColorLightModeAppSelect.value + flashColorLightModeList.value + flashColorLightModeBeautyModeList.value + flashColorLightModeFlash.value + flashColorLightModeFlashColorList.value + flashColorLightModeCameraPosition.value;
+        //         flashColorLightModeSchemeValue.value = flashColorLightModeSchemeValueResult;
+        //     }
+        //
+        //     flashColorLightModeAppSelect.addEventListener("change", flashColorLightModeScheme);
+        //     flashColorLightModeList.addEventListener("change", flashColorLightModeScheme);
+        //     flashColorLightModeBeautyModeList.addEventListener("change", flashColorLightModeScheme);
+        //     flashColorLightModeFlash.addEventListener("change", flashColorLightModeScheme);
+        //     flashColorLightModeFlashColorList.addEventListener("change", flashColorLightModeScheme);
+        //     flashColorLightModeCameraPosition.addEventListener("change", flashColorLightModeScheme);
+        // });
+        //
+        // $("#flashColorLightModeMainUrl").click(function () {
+        //     var flashColorLightModeSchemeUrl = $(this).val();
+        //     window.open(flashColorLightModeSchemeUrl);
+        // });
+        //
+        // $("#flashColorLightModeAddQrcode").click(function () {
+        //     $("#flashColorLightModeShowQrCode #flashColorLightModeShowQrCodeDiv").empty();
+        //     jQuery("#flashColorLightModeShowQrCode #flashColorLightModeShowQrCodeDiv").qrcode({
+        //         render: "table",
+        //         width: 100,
+        //         height: 100,
+        //         text: $("#flashColorLightModeMainUrl").val()
+        //     });
+        // });
+        //
+        // function flashColorLightModeActionAdd() {
+        //     $("#flashColorLightModeQrUl").empty();
+        //     var flashColorLightModeTextAdd = $("#flashColorLightModeMainUrl").val();
+        //     var flashColorLightModeQrUl = $("#flashColorLightModeQrUl");
+        //     flashColorLightModeQrUl.append("<br>"+"<li>"+flashColorLightModeTextAdd+"</li>");
+        //     var flashColorLightModeSpace = $("#flashColorLightModeShowQrCodeDiv");
+        //     flashColorLightModeSpace.append("<br>");
+        //     var flashColorLightModeScroll = document.getElementById("flashColorLightModeAddQrcode");
+        //     flashColorLightModeScroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+        // }
+        //
+        // $("#flashColorLightModeReset").click(function () {
+        //     $("#flashColorLightModeShowQrCode #flashColorLightModeShowQrCodeDiv").empty();
+        //     $("#flashColorLightModeQrUl").empty();
+        // });
+        //
+        // jQuery("#flashColorLightModeSchemeCopy").click(
+        //     function () {
+        //         var flashColorLightModeUrlInfo = document.getElementById("flashColorLightModeMainUrl");
+        //         flashColorLightModeUrlInfo.select();
+        //         document.execCommand("Copy");
+        //         alert("Add Scheme to Clipboard!")
+        //     }
+        // )
+        //
+        // $(function () {
+        //
+        //     $("#flashColorLightModeDownloadQrBtn").on("click", function () {
+        //         html2canvas(document.querySelector("#flashColorLightModeShowQrCode")).then(canvas => {
+        //             saveAs(canvas.toDataURL('image/png'),"qrcode.png");
+        //         });
+        //     });
+        //     function saveAs(uri, filename) {
+        //         var link = document.createElement('a');
+        //         if (typeof link.download === 'string') {
+        //             link.href = uri;
+        //             link.download = filename;
+        //             document.body.appendChild(link);
+        //             link.click();
+        //             document.body.removeChild(link);
+        //         } else {
+        //             window.open(uri);
+        //         }
+        //     }
+        // });
+    </script>
+
+</body>
+</html>

@@ -7,7 +7,6 @@
     <list default="true" id="4b533998-1b8b-4e02-a459-099c2ba18d43" name="Default Changelist" comment="v6.2.10 신규 스펙(batch) 추가 및 기존 스킴 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/soda860.html" beforeDir="false" afterPath="$PROJECT_DIR$/soda860.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sodaStyle740.css" beforeDir="false" afterPath="$PROJECT_DIR$/sodaStyle740.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +162,7 @@
       <workItem from="1733460213564" duration="352000" />
       <workItem from="1733460608657" duration="237000" />
       <workItem from="1733471459183" duration="373000" />
+      <workItem from="1736945777331" duration="127000" />
     </task>
     <task id="LOCAL-00001" summary="Default Changelist">
       <created>1708510867337</created>
