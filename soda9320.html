@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.3.20 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea9320">
+        <h2>SODA/Tianyan v9.3.20 Scheme</h2>
+    </div>
+    <div id="titleAreaSoda9320">
+        <h3>
+            AI Flash Scheme
+        </h3>
+    </div>
+    <div id="optionArea9320">
+        Select App
+        <select name="appList" id="aiFlashAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=aiflash">SODA(Real)</option>
+            <option value="sodab://pick?tab=aiflash">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=aiflash">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=aiflash">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Flash Type
+        <select name="aiFlashTypeList" id="aiFlashTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&aiflashType=standard">Standard</option>
+            <option value="&aiflashType=pro">Pro</option>
+        </select>
+        <br>
+        <br>
+        <input id="aiFlashMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="aiFlashSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="aiFlashAddQrcode" value="Show QR Code" onclick="aiFlashActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="aiFlashReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="aiFlashDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea9320">
+            <div id="aiFlashShowQrCode">
+                <div id="aiFlashShowQrCodeDiv"></div>
+                <ul id="aiFlashQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="titleAreaSoda9320">
+        <h3>
+            Edit Retouch Lock Scheme
+        </h3>
+    </div>
+
+    <div id="optionArea9320">
+        Select App
+        <select name="appList" id="retouchLockAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?tab=liquify">SODA(Real)</option>
+            <option value="sodab://pick?tab=liquify">SODA(Beta)</option>
+            <option value="tianyan://pick?tab=liquify">Tianyan(Real)</option>
+            <option value="tianyanb://pick?tab=liquify">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="retouchLockMediaTypeList" id="retouchLockMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">Image</option>
+            <option value="&mediatype=video">Video</option>
+        </select>
+        <br>
+        <br>
+        <input id="retouchLockMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="retouchLockSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="retouchLockAddQrcode" value="Show QR Code" onclick="retouchLockActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="retouchLockReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="retouchLockDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea9320">
+            <div id="retouchLockShowQrCode">
+                <div id="retouchLockShowQrCodeDiv"></div>
+                <ul id="retouchLockQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 공통 유틸리티 함수
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+
+        // Scheme 섹션 초기화 함수
+        function initSchemeSection(config) {
+            var appSelect = document.getElementById(config.appListId);
+            var optionSelect = document.getElementById(config.optionListId);
+            var schemeInput = document.getElementById(config.mainUrlId);
+            var mainUrlSelector = "#" + config.mainUrlId;
+            var qrCodeDivSelector = "#" + config.showQrCodeId + " #" + config.showQrCodeDivId;
+            var qrUlSelector = "#" + config.qrUlId;
+            var addQrcodeSelector = "#" + config.addQrcodeId;
+            var resetSelector = "#" + config.resetId;
+            var copySelector = "#" + config.copyId;
+            var downloadSelector = "#" + config.downloadId;
+            var showQrCodeSelector = "#" + config.showQrCodeId;
+
+            // Scheme 생성 함수
+            function updateScheme() {
+                var schemeValue = appSelect.value + optionSelect.value;
+                schemeInput.value = schemeValue;
+            }
+
+            // 이벤트 리스너 등록
+            if (appSelect && optionSelect) {
+                appSelect.addEventListener("change", updateScheme);
+                optionSelect.addEventListener("change", updateScheme);
+            }
+
+            // URL 클릭 핸들러
+            $(mainUrlSelector).click(function () {
+                var schemeUrl = $(this).val();
+                if (schemeUrl) {
+                    window.open(schemeUrl);
+                }
+            });
+
+            // QR 코드 생성 핸들러
+            $(addQrcodeSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                var urlValue = $(mainUrlSelector).val();
+                if (urlValue) {
+                    jQuery(qrCodeDivSelector).qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            // ActionAdd 함수 (글로벌 스코프에 등록)
+            window[config.actionAddFunctionName] = function() {
+                $(qrUlSelector).empty();
+                var textAdd = $(mainUrlSelector).val();
+                if (textAdd) {
+                    var qrUl = $(qrUlSelector);
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#" + config.showQrCodeDivId);
+                    space.append("<br>");
+                    var scroll = document.getElementById(config.addQrcodeId);
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            // Reset 핸들러
+            $(resetSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                $(qrUlSelector).empty();
+            });
+
+            // Copy 핸들러
+            $(copySelector).click(function () {
+                var urlInfo = document.getElementById(config.mainUrlId);
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            // Download 핸들러
+            $(downloadSelector).on("click", function () {
+                html2canvas(document.querySelector(showQrCodeSelector)).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
+                });
+            });
+        }
+
+        // DOMContentLoaded 시 각 섹션 초기화
+        document.addEventListener("DOMContentLoaded", function () {
+            // AI Flash Scheme 설정
+            initSchemeSection({
+                appListId: "aiFlashAppList",
+                optionListId: "aiFlashTypeList",
+                mainUrlId: "aiFlashMainUrl",
+                showQrCodeId: "aiFlashShowQrCode",
+                showQrCodeDivId: "aiFlashShowQrCodeDiv",
+                qrUlId: "aiFlashQrUl",
+                addQrcodeId: "aiFlashAddQrcode",
+                resetId: "aiFlashReset",
+                copyId: "aiFlashSchemeCopy",
+                downloadId: "aiFlashDownloadQrBtn",
+                actionAddFunctionName: "aiFlashActionAdd"
+            });
+
+            // Edit Retouch Lock Scheme 설정
+            initSchemeSection({
+                appListId: "retouchLockAppList",
+                optionListId: "retouchLockMediaTypeList",
+                mainUrlId: "retouchLockMainUrl",
+                showQrCodeId: "retouchLockShowQrCode",
+                showQrCodeDivId: "retouchLockShowQrCodeDiv",
+                qrUlId: "retouchLockQrUl",
+                addQrcodeId: "retouchLockAddQrcode",
+                resetId: "retouchLockReset",
+                copyId: "retouchLockSchemeCopy",
+                downloadId: "retouchLockDownloadQrBtn",
+                actionAddFunctionName: "retouchLockActionAdd"
+            });
+        });
+    </script>
+
+</body>
+</html>

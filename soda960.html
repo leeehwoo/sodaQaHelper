@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v9.6.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea960">
+        <h2>SODA/Tianyan v9.6.0 Scheme</h2>
+    </div>
+
+    <!-- Camera Faceratio Scheme -->
+    <div id="titleAreaSoda960">
+        <h3>
+            Camera Faceratio
+        </h3>
+    </div>
+    <div id="optionArea960">
+        Select App
+        <select name="appList" id="cameraFaceratioAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Camera
+        <select name="cameraFaceratioCameraList" id="cameraFaceratioCameraList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">go?</option>
+            <option value="previewcamera?">previewcamera?</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Beauty Keyname
+        <select name="cameraFaceratioBeautyKeynameList" id="cameraFaceratioBeautyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="beautyKeyname=mfeyebrownose">mfeyebrownose (중안부)</option>
+            <option value="beautyKeyname=ratioforehead">ratioforehead (이마)</option>
+            <option value="beautyKeyname=ratioheadtop">ratioheadtop (정수리)</option>
+            <option value="beautyKeyname=ratiolowerface">ratiolowerface (하관)</option>
+            <option value="beautyKeyname=ratioshrink">ratioshrink (하안부)</option>
+            <option value="beautyKeyname=mfphiltrum">mfphiltrum (인중)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="cameraFaceratioMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="cameraFaceratioSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="cameraFaceratioAddQrcode" value="Show QR Code" onclick="cameraFaceratioActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="cameraFaceratioReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="cameraFaceratioDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea960">
+            <div id="cameraFaceratioShowQrCode">
+                <div id="cameraFaceratioShowQrCodeDiv"></div>
+                <ul id="cameraFaceratioQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Reshape Faceratio Scheme -->
+    <div id="titleAreaSoda960">
+        <h3>
+            Edit Reshape Faceratio
+        </h3>
+    </div>
+    <div id="optionArea960">
+        Select App
+        <select name="appList" id="editReshapeFaceratioAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Menu
+        <select name="editReshapeFaceratioMenuList" id="editReshapeFaceratioMenuList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=onetouch">onetouch (피부 보정)</option>
+            <option value="tab=reshape">reshape (얼굴 보정)</option>
+            <option value="tab=reshape3d">reshape (3D 얼굴 보정)</option>
+            <option value="tab=manualskin">manualskin (수동 피부 보정)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Beauty Keyname
+        <select name="editReshapeFaceratioBeautyKeynameList" id="editReshapeFaceratioBeautyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&beautyKeyname=mfeyebrownose">mfeyebrownose (중안부)</option>
+            <option value="&beautyKeyname=ratioforehead">ratioforehead (이마)</option>
+            <option value="&beautyKeyname=ratioheadtop">ratioheadtop (정수리)</option>
+            <option value="&beautyKeyname=ratiolowerface">ratiolowerface (하관)</option>
+            <option value="&beautyKeyname=ratioshrink">ratioshrink (하안부)</option>
+            <option value="&beautyKeyname=mfphiltrum">mfphiltrum (인중)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="editReshapeFaceratioMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="editReshapeFaceratioSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="editReshapeFaceratioAddQrcode" value="Show QR Code" onclick="editReshapeFaceratioActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="editReshapeFaceratioReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="editReshapeFaceratioDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea960">
+            <div id="editReshapeFaceratioShowQrCode">
+                <div id="editReshapeFaceratioShowQrCodeDiv"></div>
+                <ul id="editReshapeFaceratioQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skintone Enhance Scheme -->
+    <div id="titleAreaSoda960">
+        <h3>
+            Skintone Enhance
+        </h3>
+    </div>
+    <div id="optionArea960">
+        Select App
+        <select name="appList" id="skintoneEnhanceAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="skintoneEnhanceMediaTypeList" id="skintoneEnhanceMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=skintone">skintone (기본)</option>
+            <option value="tab=skintone&mediatype=image">skintone + image</option>
+            <option value="tab=skintone&mediatype=video">skintone + video</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="skintoneEnhanceMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="skintoneEnhanceSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="skintoneEnhanceAddQrcode" value="Show QR Code" onclick="skintoneEnhanceActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="skintoneEnhanceReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="skintoneEnhanceDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea960">
+            <div id="skintoneEnhanceShowQrCode">
+                <div id="skintoneEnhanceShowQrCodeDiv"></div>
+                <ul id="skintoneEnhanceQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Reshape Symmetry Scheme -->
+    <div id="titleAreaSoda960">
+        <h3>
+            Edit Reshape Symmetry
+        </h3>
+    </div>
+    <div id="optionArea960">
+        Select App
+        <select name="appList" id="editReshapeSymmetryAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        <input id="editReshapeSymmetryMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="editReshapeSymmetrySchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="editReshapeSymmetryAddQrcode" value="Show QR Code" onclick="editReshapeSymmetryActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="editReshapeSymmetryReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="editReshapeSymmetryDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea960">
+            <div id="editReshapeSymmetryShowQrCode">
+                <div id="editReshapeSymmetryShowQrCodeDiv"></div>
+                <ul id="editReshapeSymmetryQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Makeup Scheme -->
+    <div id="titleAreaSoda960">
+        <h3>
+            Makeup Scheme
+        </h3>
+    </div>
+    <div id="optionArea960">
+        Select App
+        <select name="appList" id="makeupAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://">SODA(Real)</option>
+            <option value="sodab://">SODA(Beta)</option>
+            <option value="tianyan://">Tianyan(Real)</option>
+            <option value="tianyanb://">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Mode
+        <select name="makeupModeList" id="makeupModeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="go?">Camera</option>
+            <option value="pick?tab=makeup&">Edit</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Makeup Keyname
+        <select name="makeupKeynameList" id="makeupKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="makeupkeyname=skinton">skinton</option>
+            <option value="makeupkeyname=lip_color">lip_color</option>
+            <option value="makeupkeyname=blush">blush</option>
+            <option value="makeupkeyname=contour">contour</option>
+            <option value="makeupkeyname=highlight">highlight</option>
+            <option value="makeupkeyname=eyeplim">eyeplim</option>
+            <option value="makeupkeyname=eye_light">eye_light</option>
+            <option value="makeupkeyname=eye_color">eye_color</option>
+            <option value="makeupkeyname=double_eyelid">double_eyelid</option>
+            <option value="makeupkeyname=beauty_mark">beauty_mark</option>
+            <option value="makeupkeyname=eyebrows">eyebrows</option>
+            <option value="makeupkeyname=eye_shadow">eye_shadow</option>
+            <option value="makeupkeyname=eye_liner">eye_liner</option>
+            <option value="makeupkeyname=eyelashes">eyelashes</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Option Type
+        <select name="makeupOptionTypeList" id="makeupOptionTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="basic">Basic (makeupkeyname only)</option>
+            <option value="category">Category (makeupkeyname + contentCategoryId)</option>
+            <option value="content">Content (makeupkeyname + contentId)</option>
+            <option value="content2">Content2 (makeupkeyname + contentId1 + contentId2)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <div id="makeupCategoryInput" style="display: none;">
+            Content Category ID:
+            <input id="makeupCategoryIdInput" style="width: 200px" placeholder="Enter Category ID">
+            <br>
+            <br>
+        </div>
+        <div id="makeupContentInput" style="display: none;">
+            Content ID:
+            <input id="makeupContentIdInput" style="width: 200px" placeholder="Enter Content ID">
+            <br>
+            <br>
+        </div>
+        <div id="makeupContent2Input" style="display: none;">
+            Content ID 1:
+            <input id="makeupContentId1Input" style="width: 200px" placeholder="Enter Content ID 1">
+            <br>
+            Content ID 2:
+            <input id="makeupContentId2Input" style="width: 200px" placeholder="Enter Content ID 2">
+            <br>
+            <br>
+        </div>
+        <input id="makeupMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="makeupSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="makeupAddQrcode" value="Show QR Code" onclick="makeupActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="makeupReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="makeupDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea960">
+            <div id="makeupShowQrCode">
+                <div id="makeupShowQrCodeDiv"></div>
+                <ul id="makeupQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 언어 감지 및 번역 함수
+        function detectAndTranslate() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var isJapanese = userLang.startsWith('ja');
+            
+            if (isJapanese) {
+                // 한국어-일본어 번역 매핑
+                var translations = {
+                    '중안부': '中顔部',
+                    '이마': '額',
+                    '정수리': '頭頂部',
+                    '하관': '下顎',
+                    '하안부': '下顔部',
+                    '인중': '人中',
+                    '피부 보정': '肌補正',
+                    '얼굴 보정': '顔補正',
+                    '3D 얼굴 보정': '3D顔補正',
+                    '수동 피부 보정': '手動肌補正',
+                    '기본': '基本'
+                };
+                
+                // option 태그의 텍스트 번역
+                var options = document.querySelectorAll('option');
+                options.forEach(function(option) {
+                    var optionText = option.textContent || option.innerText;
+                    var translatedText = optionText;
+                    
+                    for (var ko in translations) {
+                        if (optionText.indexOf(ko) !== -1) {
+                            translatedText = translatedText.replace(ko, translations[ko]);
+                        }
+                    }
+                    
+                    if (translatedText !== optionText) {
+                        if (option.textContent !== undefined) {
+                            option.textContent = translatedText;
+                        } else {
+                            option.innerText = translatedText;
+                        }
+                    }
+                });
+            }
+        }
+        
+        // 공통 유틸리티 함수
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+
+        // Scheme 섹션 초기화 함수 (여러 입력 필드 지원)
+        function initSchemeSection(config) {
+            var schemeInput = document.getElementById(config.mainUrlId);
+            var mainUrlSelector = "#" + config.mainUrlId;
+            var qrCodeDivSelector = "#" + config.showQrCodeId + " #" + config.showQrCodeDivId;
+            var qrUlSelector = "#" + config.qrUlId;
+            var addQrcodeSelector = "#" + config.addQrcodeId;
+            var resetSelector = "#" + config.resetId;
+            var copySelector = "#" + config.copyId;
+            var downloadSelector = "#" + config.downloadId;
+            var showQrCodeSelector = "#" + config.showQrCodeId;
+
+            // 입력 필드들을 배열로 수집
+            var inputFields = [];
+            var inputEventTypes = [];
+
+            // select 필드들
+            if (config.selectFieldIds && config.selectFieldIds.length > 0) {
+                config.selectFieldIds.forEach(function(fieldId) {
+                    var field = document.getElementById(fieldId);
+                    if (field) {
+                        inputFields.push(field);
+                        inputEventTypes.push('change');
+                    }
+                });
+            }
+
+            // input 필드들
+            if (config.inputFieldIds && config.inputFieldIds.length > 0) {
+                config.inputFieldIds.forEach(function(fieldId) {
+                    var field = document.getElementById(fieldId);
+                    if (field) {
+                        inputFields.push(field);
+                        inputEventTypes.push('input');
+                    }
+                });
+            }
+
+            // Scheme 생성 함수
+            function updateScheme() {
+                var schemeValue = "";
+                inputFields.forEach(function(field) {
+                    if (field && field.value) {
+                        schemeValue += field.value;
+                    }
+                });
+                if (schemeInput) {
+                    schemeInput.value = schemeValue;
+                }
+            }
+
+            // 이벤트 리스너 등록
+            inputFields.forEach(function(field, index) {
+                if (field) {
+                    field.addEventListener(inputEventTypes[index], updateScheme);
+                }
+            });
+
+            // URL 클릭 핸들러
+            $(mainUrlSelector).click(function () {
+                var schemeUrl = $(this).val();
+                if (schemeUrl) {
+                    window.open(schemeUrl);
+                }
+            });
+
+            // QR 코드 생성 핸들러
+            $(addQrcodeSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                var urlValue = $(mainUrlSelector).val();
+                if (urlValue) {
+                    jQuery(qrCodeDivSelector).qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            // ActionAdd 함수 (글로벌 스코프에 등록)
+            window[config.actionAddFunctionName] = function() {
+                $(qrUlSelector).empty();
+                var textAdd = $(mainUrlSelector).val();
+                if (textAdd) {
+                    var qrUl = $(qrUlSelector);
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#" + config.showQrCodeDivId);
+                    space.append("<br>");
+                    var scroll = document.getElementById(config.addQrcodeId);
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            // Reset 핸들러
+            $(resetSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                $(qrUlSelector).empty();
+            });
+
+            // Copy 핸들러
+            $(copySelector).click(function () {
+                var urlInfo = document.getElementById(config.mainUrlId);
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            // Download 핸들러
+            $(downloadSelector).on("click", function () {
+                html2canvas(document.querySelector(showQrCodeSelector)).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
+                });
+            });
+        }
+
+        // DOMContentLoaded 시 각 섹션 초기화
+        document.addEventListener("DOMContentLoaded", function () {
+            // 언어 감지 및 번역 실행
+            detectAndTranslate();
+            
+            // Camera Faceratio Scheme 설정
+            initSchemeSection({
+                mainUrlId: "cameraFaceratioMainUrl",
+                showQrCodeId: "cameraFaceratioShowQrCode",
+                showQrCodeDivId: "cameraFaceratioShowQrCodeDiv",
+                qrUlId: "cameraFaceratioQrUl",
+                addQrcodeId: "cameraFaceratioAddQrcode",
+                resetId: "cameraFaceratioReset",
+                copyId: "cameraFaceratioSchemeCopy",
+                downloadId: "cameraFaceratioDownloadQrBtn",
+                actionAddFunctionName: "cameraFaceratioActionAdd",
+                selectFieldIds: [
+                    "cameraFaceratioAppList",
+                    "cameraFaceratioCameraList",
+                    "cameraFaceratioBeautyKeynameList"
+                ]
+            });
+
+            // Edit Reshape Faceratio Scheme 설정
+            initSchemeSection({
+                mainUrlId: "editReshapeFaceratioMainUrl",
+                showQrCodeId: "editReshapeFaceratioShowQrCode",
+                showQrCodeDivId: "editReshapeFaceratioShowQrCodeDiv",
+                qrUlId: "editReshapeFaceratioQrUl",
+                addQrcodeId: "editReshapeFaceratioAddQrcode",
+                resetId: "editReshapeFaceratioReset",
+                copyId: "editReshapeFaceratioSchemeCopy",
+                downloadId: "editReshapeFaceratioDownloadQrBtn",
+                actionAddFunctionName: "editReshapeFaceratioActionAdd",
+                selectFieldIds: [
+                    "editReshapeFaceratioAppList",
+                    "editReshapeFaceratioMenuList",
+                    "editReshapeFaceratioBeautyKeynameList"
+                ]
+            });
+
+            // Skintone Enhance Scheme 설정
+            initSchemeSection({
+                mainUrlId: "skintoneEnhanceMainUrl",
+                showQrCodeId: "skintoneEnhanceShowQrCode",
+                showQrCodeDivId: "skintoneEnhanceShowQrCodeDiv",
+                qrUlId: "skintoneEnhanceQrUl",
+                addQrcodeId: "skintoneEnhanceAddQrcode",
+                resetId: "skintoneEnhanceReset",
+                copyId: "skintoneEnhanceSchemeCopy",
+                downloadId: "skintoneEnhanceDownloadQrBtn",
+                actionAddFunctionName: "skintoneEnhanceActionAdd",
+                selectFieldIds: [
+                    "skintoneEnhanceAppList",
+                    "skintoneEnhanceMediaTypeList"
+                ]
+            });
+
+            // Edit Reshape Symmetry Scheme 설정 (특수 케이스: 고정값 포함)
+            var editReshapeSymmetryAppSelect = document.getElementById("editReshapeSymmetryAppList");
+            var editReshapeSymmetrySchemeValue = document.getElementById("editReshapeSymmetryMainUrl");
+
+            function editReshapeSymmetryScheme() {
+                var schemeValue = "";
+                if (editReshapeSymmetryAppSelect && editReshapeSymmetryAppSelect.value) {
+                    schemeValue = editReshapeSymmetryAppSelect.value + "tap=reshape&beautyKeyname=symmetry";
+                }
+                if (editReshapeSymmetrySchemeValue) {
+                    editReshapeSymmetrySchemeValue.value = schemeValue;
+                }
+            }
+
+            if (editReshapeSymmetryAppSelect) {
+                editReshapeSymmetryAppSelect.addEventListener("change", editReshapeSymmetryScheme);
+            }
+
+            // Edit Reshape Symmetry의 나머지 기능들
+            $("#editReshapeSymmetryMainUrl").click(function () {
+                var schemeUrl = $(this).val();
+                if (schemeUrl) {
+                    window.open(schemeUrl);
+                }
+            });
+
+            $("#editReshapeSymmetryAddQrcode").click(function () {
+                $("#editReshapeSymmetryShowQrCode #editReshapeSymmetryShowQrCodeDiv").empty();
+                var urlValue = $("#editReshapeSymmetryMainUrl").val();
+                if (urlValue) {
+                    jQuery("#editReshapeSymmetryShowQrCode #editReshapeSymmetryShowQrCodeDiv").qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            window.editReshapeSymmetryActionAdd = function() {
+                $("#editReshapeSymmetryQrUl").empty();
+                var textAdd = $("#editReshapeSymmetryMainUrl").val();
+                if (textAdd) {
+                    var qrUl = $("#editReshapeSymmetryQrUl");
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#editReshapeSymmetryShowQrCodeDiv");
+                    space.append("<br>");
+                    var scroll = document.getElementById("editReshapeSymmetryAddQrcode");
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            $("#editReshapeSymmetryReset").click(function () {
+                $("#editReshapeSymmetryShowQrCode #editReshapeSymmetryShowQrCodeDiv").empty();
+                $("#editReshapeSymmetryQrUl").empty();
+            });
+
+            $("#editReshapeSymmetrySchemeCopy").click(function () {
+                var urlInfo = document.getElementById("editReshapeSymmetryMainUrl");
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            $("#editReshapeSymmetryDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#editReshapeSymmetryShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
+                });
+            });
+
+            // Makeup Scheme 설정
+            var makeupAppSelect = document.getElementById("makeupAppList");
+            var makeupModeSelect = document.getElementById("makeupModeList");
+            var makeupKeynameSelect = document.getElementById("makeupKeynameList");
+            var makeupOptionTypeSelect = document.getElementById("makeupOptionTypeList");
+            var makeupCategoryIdInput = document.getElementById("makeupCategoryIdInput");
+            var makeupContentIdInput = document.getElementById("makeupContentIdInput");
+            var makeupContentId1Input = document.getElementById("makeupContentId1Input");
+            var makeupContentId2Input = document.getElementById("makeupContentId2Input");
+            var makeupSchemeValue = document.getElementById("makeupMainUrl");
+
+            // Option Type에 따라 입력 필드 표시/숨김
+            if (makeupOptionTypeSelect) {
+                makeupOptionTypeSelect.addEventListener("change", function() {
+                    var optionType = makeupOptionTypeSelect.value;
+                    $("#makeupCategoryInput").hide();
+                    $("#makeupContentInput").hide();
+                    $("#makeupContent2Input").hide();
+
+                    if (optionType === "category") {
+                        $("#makeupCategoryInput").show();
+                    } else if (optionType === "content") {
+                        $("#makeupContentInput").show();
+                    } else if (optionType === "content2") {
+                        $("#makeupContent2Input").show();
+                    }
+                });
+            }
+
+            function makeupScheme() {
+                var schemeValue = "";
+                if (makeupAppSelect && makeupAppSelect.value) {
+                    schemeValue += makeupAppSelect.value;
+                }
+                if (makeupModeSelect && makeupModeSelect.value) {
+                    schemeValue += makeupModeSelect.value;
+                }
+                if (makeupKeynameSelect && makeupKeynameSelect.value) {
+                    schemeValue += makeupKeynameSelect.value;
+                }
+
+                var optionType = makeupOptionTypeSelect ? makeupOptionTypeSelect.value : "";
+                if (optionType === "category" && makeupCategoryIdInput && makeupCategoryIdInput.value) {
+                    schemeValue += "&contentCategoryId=" + makeupCategoryIdInput.value;
+                } else if (optionType === "content" && makeupContentIdInput && makeupContentIdInput.value) {
+                    schemeValue += "&contentId=" + makeupContentIdInput.value;
+                } else if (optionType === "content2") {
+                    if (makeupContentId1Input && makeupContentId1Input.value) {
+                        schemeValue += "&contentId1=" + makeupContentId1Input.value;
+                    }
+                    if (makeupContentId2Input && makeupContentId2Input.value) {
+                        schemeValue += "&contentId2=" + makeupContentId2Input.value;
+                    }
+                }
+
+                if (makeupSchemeValue) {
+                    makeupSchemeValue.value = schemeValue;
+                }
+            }
+
+            if (makeupAppSelect) {
+                makeupAppSelect.addEventListener("change", makeupScheme);
+            }
+            if (makeupModeSelect) {
+                makeupModeSelect.addEventListener("change", makeupScheme);
+            }
+            if (makeupKeynameSelect) {
+                makeupKeynameSelect.addEventListener("change", makeupScheme);
+            }
+            if (makeupOptionTypeSelect) {
+                makeupOptionTypeSelect.addEventListener("change", makeupScheme);
+            }
+            if (makeupCategoryIdInput) {
+                makeupCategoryIdInput.addEventListener("input", makeupScheme);
+            }
+            if (makeupContentIdInput) {
+                makeupContentIdInput.addEventListener("input", makeupScheme);
+            }
+            if (makeupContentId1Input) {
+                makeupContentId1Input.addEventListener("input", makeupScheme);
+            }
+            if (makeupContentId2Input) {
+                makeupContentId2Input.addEventListener("input", makeupScheme);
+            }
+
+            // Makeup Scheme의 나머지 기능들 (QR 코드, 복사, 다운로드 등)
+            $("#makeupMainUrl").click(function () {
+                var makeupSchemeUrl = $(this).val();
+                if (makeupSchemeUrl) {
+                    window.open(makeupSchemeUrl);
+                }
+            });
+
+            $("#makeupAddQrcode").click(function () {
+                $("#makeupShowQrCode #makeupShowQrCodeDiv").empty();
+                var urlValue = $("#makeupMainUrl").val();
+                if (urlValue) {
+                    jQuery("#makeupShowQrCode #makeupShowQrCodeDiv").qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            window.makeupActionAdd = function() {
+                $("#makeupQrUl").empty();
+                var textAdd = $("#makeupMainUrl").val();
+                if (textAdd) {
+                    var qrUl = $("#makeupQrUl");
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#makeupShowQrCodeDiv");
+                    space.append("<br>");
+                    var scroll = document.getElementById("makeupAddQrcode");
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            $("#makeupReset").click(function () {
+                $("#makeupShowQrCode #makeupShowQrCodeDiv").empty();
+                $("#makeupQrUl").empty();
+            });
+
+            $("#makeupSchemeCopy").click(function () {
+                var urlInfo = document.getElementById("makeupMainUrl");
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            $("#makeupDownloadQrBtn").on("click", function () {
+                html2canvas(document.querySelector("#makeupShowQrCode")).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
