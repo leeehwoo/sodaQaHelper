@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>SODA/Tianyan v10.0.0 Scheme</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.qrcode.js"></script>
+    <script src="qrcode.js"></script>
+    <link rel="stylesheet" href="./sodaStyle740.css">
+    <script src="https://kit.fontawesome.com/3d6daedbc5.js" crossorigin="anonymous"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="mainTitleArea1000">
+        <h2>SODA/Tianyan v10.0.0 Scheme</h2>
+    </div>
+
+    <!-- Facesculpt Scheme -->
+    <div id="titleAreaSoda1000">
+        <h3>
+            Facesculpt Scheme
+        </h3>
+    </div>
+    <div id="optionArea1000">
+        Select App
+        <select name="appList" id="facesculptAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="facesculptTabList" id="facesculptTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=facesculpt">facesculpt</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Facesculpt Keyname
+        <select name="facesculptKeynameList" id="facesculptKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&facesculptKeyname=pforehead">pforehead (이마)</option>
+            <option value="&facesculptKeyname=pundereyes">pundereyes (눈밑)</option>
+            <option value="&facesculptKeyname=pcheekbone">pcheekbone (애플존)</option>
+            <option value="&facesculptKeyname=pcheeks">pcheeks (볼)</option>
+            <option value="&facesculptKeyname=pnoseside">pnoseside (코 옆)</option>
+            <option value="&facesculptKeyname=peyelids">peyelids (아이라인)</option>
+            <option value="&facesculptKeyname=pbrowarch">pbrowarch (눈썹 위)</option>
+            <option value="&facesculptKeyname=pchin">pchin (턱)</option>
+            <option value="&facesculptKeyname=plipcorner">plipcorner (입꼬리)</option>
+            <option value="&facesculptKeyname=ponetouch">ponetouch (원터치)</option>
+            <option value="&facesculptKeyname=peyesmile">peyesmile (애교살)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="facesculptMediaTypeList" id="facesculptMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="facesculptMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="facesculptSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="facesculptAddQrcode" value="Show QR Code" onclick="facesculptActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="facesculptReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="facesculptDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea1000">
+            <div id="facesculptShowQrCode">
+                <div id="facesculptShowQrCodeDiv"></div>
+                <ul id="facesculptQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skintexture Scheme -->
+    <div id="titleAreaSoda1000">
+        <h3>
+            Skintexture Scheme
+        </h3>
+    </div>
+    <div id="optionArea1000">
+        Select App
+        <select name="appList" id="skintextureAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="skintextureTabList" id="skintextureTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=skintexture">skintexture</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="skintextureMediaTypeList" id="skintextureMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select skintextureId
+        <select name="skintextureIdList" id="skintextureIdList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&skintextureId=000000">000000</option>
+            <option value="&skintextureId=145393">145393 : Glossy</option>
+            <option value="&skintextureId=145396">145396 : HD</option>
+            <option value="&skintextureId=145392">145392 : Glass</option>
+            <option value="&skintextureId=145398">145398 : Matte</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="skintextureMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="skintextureSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="skintextureAddQrcode" value="Show QR Code" onclick="skintextureActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="skintextureReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="skintextureDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea1000">
+            <div id="skintextureShowQrCode">
+                <div id="skintextureShowQrCodeDiv"></div>
+                <ul id="skintextureQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhance Scheme -->
+    <div id="titleAreaSoda1000">
+        <h3>
+            Enhance Scheme
+        </h3>
+    </div>
+    <div id="optionArea1000">
+        Select App
+        <select name="appList" id="enhanceAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="enhanceTabList" id="enhanceTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=enhance">enhance (화질 개선)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="enhanceMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="enhanceSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="enhanceAddQrcode" value="Show QR Code" onclick="enhanceActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="enhanceReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="enhanceDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea1000">
+            <div id="enhanceShowQrCode">
+                <div id="enhanceShowQrCodeDiv"></div>
+                <ul id="enhanceQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proportions Scheme -->
+    <div id="titleAreaSoda1000">
+        <h3>
+            Proportions Scheme
+        </h3>
+    </div>
+    <div id="optionArea1000">
+        Select App
+        <select name="appList" id="proportionsAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://pick?">SODA(Real)</option>
+            <option value="sodab://pick?">SODA(Beta)</option>
+            <option value="tianyan://pick?">Tianyan(Real)</option>
+            <option value="tianyanb://pick?">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        Select Tab
+        <select name="proportionsTabList" id="proportionsTabList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="tab=proportions">proportions (비율 개선)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Body Keyname
+        <select name="proportionsBodyKeynameList" id="proportionsBodyKeynameList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&bodykeyname=longleg">longleg</option>
+            <option value="&bodykeyname=head">head</option>
+            <option value="&bodykeyname=waist">waist</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select FaceLock
+        <select name="proportionsFaceLockList" id="proportionsFaceLockList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&facelock=on">facelock=on (얼굴 잠금 ON)</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        Select Media Type
+        <select name="proportionsMediaTypeList" id="proportionsMediaTypeList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="&mediatype=image">image</option>
+            <option value="" disabled style="width: 70px">==========</option>
+            <option value="">Cancel</option>
+        </select>
+        <br>
+        <br>
+        <input id="proportionsMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="proportionsSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="proportionsAddQrcode" value="Show QR Code" onclick="proportionsActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="proportionsReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="proportionsDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea1000">
+            <div id="proportionsShowQrCode">
+                <div id="proportionsShowQrCodeDiv"></div>
+                <ul id="proportionsQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscription Page Scheme (vipOpen=page & subp) -->
+    <div id="titleAreaSoda1000">
+        <h3>
+            Subscription Page Scheme (subp)
+        </h3>
+    </div>
+    <div id="optionArea1000">
+        Select App
+        <select name="appList" id="vipOpenSubpAppList">
+            <option value="" selected disabled style="width: 70px">Select</option>
+            <option value="soda://open?vipOpen=page">SODA(Real)</option>
+            <option value="sodab://open?vipOpen=page">SODA(Beta)</option>
+            <option value="tianyan://open?vipOpen=page">Tianyan(Real)</option>
+            <option value="tianyanb://open?vipOpen=page">Tianyan(Beta)</option>
+        </select>
+        <br>
+        <br>
+        subp (선택)
+        <input id="vipOpenSubpInput" style="width: 220px" placeholder="ex) edit_popup" list="vipOpenSubpSuggestions">
+        <datalist id="vipOpenSubpSuggestions">
+            <option value="edit_popup"></option>
+        </datalist>
+        <input id="vipOpenSubpParam" readonly style="display: none;">
+        <br>
+        <br>
+        <input id="vipOpenSubpMainUrl" readonly style="width: 900px">
+        <i class="fas fa-copy copyStyle" id="vipOpenSubpSchemeCopy"></i>
+        <br>
+        <h3>* QR Code</h3>
+        <i class="fas fa-qrcode qrcodeStyle" id="vipOpenSubpAddQrcode" value="Show QR Code" onclick="vipOpenSubpActionAdd()"></i>
+        <i class="fas fa-redo-alt resetStyle" id="vipOpenSubpReset" value="Reset"></i>
+        <i class="fas fa-reqular fa-download qrDownloadStyle" id="vipOpenSubpDownloadQrBtn" value="Download QR Code"></i>
+        <div id="qrCodeArea1000">
+            <div id="vipOpenSubpShowQrCode">
+                <div id="vipOpenSubpShowQrCodeDiv"></div>
+                <ul id="vipOpenSubpQrUl"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 언어 감지 및 번역 함수
+        function detectAndTranslate() {
+            var userLang = navigator.language || navigator.userLanguage;
+            var isJapanese = userLang.startsWith('ja');
+
+            if (isJapanese) {
+                // 한국어-일본어 번역 매핑
+                var translations = {
+                    '이마': '額',
+                    '눈밑': '目の下',
+                    '애플존': '頬骨(アップルゾーン)',
+                    '볼': '頬',
+                    '코 옆': '小鼻',
+                    '아이라인': 'アイライン',
+                    '눈썹 위': '眉上',
+                    '턱': '顎',
+                    '입꼬리': '口角',
+                    '원터치': 'ワンタッチ',
+                    '애교살': '涙袋',
+                    '화질 개선': '画質改善',
+                    '비율 개선': '比率改善',
+                    '얼굴 잠금 ON': '顔ロックON',
+                    '선택': '選択',
+                    '기본': '基本'
+                };
+
+                // option 태그의 텍스트 번역
+                var options = document.querySelectorAll('option');
+                options.forEach(function(option) {
+                    var optionText = option.textContent || option.innerText;
+                    var translatedText = optionText;
+
+                    for (var ko in translations) {
+                        if (optionText.indexOf(ko) !== -1) {
+                            translatedText = translatedText.replace(ko, translations[ko]);
+                        }
+                    }
+
+                    if (translatedText !== optionText) {
+                        if (option.textContent !== undefined) {
+                            option.textContent = translatedText;
+                        } else {
+                            option.innerText = translatedText;
+                        }
+                    }
+                });
+            }
+        }
+
+        // 공통 유틸리티 함수
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+
+        // Scheme 섹션 초기화 함수 (여러 입력 필드 지원)
+        function initSchemeSection(config) {
+            var schemeInput = document.getElementById(config.mainUrlId);
+            var mainUrlSelector = "#" + config.mainUrlId;
+            var qrCodeDivSelector = "#" + config.showQrCodeId + " #" + config.showQrCodeDivId;
+            var qrUlSelector = "#" + config.qrUlId;
+            var addQrcodeSelector = "#" + config.addQrcodeId;
+            var resetSelector = "#" + config.resetId;
+            var copySelector = "#" + config.copyId;
+            var downloadSelector = "#" + config.downloadId;
+            var showQrCodeSelector = "#" + config.showQrCodeId;
+
+            // 입력 필드들을 배열로 수집
+            var inputFields = [];
+            var inputEventTypes = [];
+
+            // select 필드들
+            if (config.selectFieldIds && config.selectFieldIds.length > 0) {
+                config.selectFieldIds.forEach(function(fieldId) {
+                    var field = document.getElementById(fieldId);
+                    if (field) {
+                        inputFields.push(field);
+                        inputEventTypes.push('change');
+                    }
+                });
+            }
+
+            // input 필드들
+            if (config.inputFieldIds && config.inputFieldIds.length > 0) {
+                config.inputFieldIds.forEach(function(fieldId) {
+                    var field = document.getElementById(fieldId);
+                    if (field) {
+                        inputFields.push(field);
+                        inputEventTypes.push('input');
+                    }
+                });
+            }
+
+            // Scheme 생성 함수
+            function updateScheme() {
+                var schemeValue = "";
+                inputFields.forEach(function(field) {
+                    if (field && field.value) {
+                        schemeValue += field.value;
+                    }
+                });
+                if (schemeInput) {
+                    schemeInput.value = schemeValue;
+                }
+            }
+
+            // 이벤트 리스너 등록
+            inputFields.forEach(function(field, index) {
+                if (field) {
+                    field.addEventListener(inputEventTypes[index], updateScheme);
+                }
+            });
+
+            // URL 클릭 핸들러
+            $(mainUrlSelector).click(function () {
+                var schemeUrl = $(this).val();
+                if (schemeUrl) {
+                    window.open(schemeUrl);
+                }
+            });
+
+            // QR 코드 생성 핸들러
+            $(addQrcodeSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                var urlValue = $(mainUrlSelector).val();
+                if (urlValue) {
+                    jQuery(qrCodeDivSelector).qrcode({
+                        render: "table",
+                        width: 100,
+                        height: 100,
+                        text: urlValue
+                    });
+                }
+            });
+
+            // ActionAdd 함수 (글로벌 스코프에 등록)
+            window[config.actionAddFunctionName] = function() {
+                $(qrUlSelector).empty();
+                var textAdd = $(mainUrlSelector).val();
+                if (textAdd) {
+                    var qrUl = $(qrUlSelector);
+                    qrUl.append("<br>" + "<li>" + textAdd + "</li>");
+                    var space = $("#" + config.showQrCodeDivId);
+                    space.append("<br>");
+                    var scroll = document.getElementById(config.addQrcodeId);
+                    if (scroll) {
+                        scroll.scrollIntoView({ behavior: 'smooth', block: 'center'});
+                    }
+                }
+            };
+
+            // Reset 핸들러
+            $(resetSelector).click(function () {
+                $(qrCodeDivSelector).empty();
+                $(qrUlSelector).empty();
+            });
+
+            // Copy 핸들러
+            $(copySelector).click(function () {
+                var urlInfo = document.getElementById(config.mainUrlId);
+                if (urlInfo) {
+                    urlInfo.select();
+                    document.execCommand("Copy");
+                    alert("Add Scheme to Clipboard!");
+                }
+            });
+
+            // Download 핸들러
+            $(downloadSelector).on("click", function () {
+                html2canvas(document.querySelector(showQrCodeSelector)).then(canvas => {
+                    saveAs(canvas.toDataURL('image/png'), "qrcode.png");
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            detectAndTranslate();
+
+            // Facesculpt
+            initSchemeSection({
+                mainUrlId: "facesculptMainUrl",
+                showQrCodeId: "facesculptShowQrCode",
+                showQrCodeDivId: "facesculptShowQrCodeDiv",
+                qrUlId: "facesculptQrUl",
+                addQrcodeId: "facesculptAddQrcode",
+                resetId: "facesculptReset",
+                copyId: "facesculptSchemeCopy",
+                downloadId: "facesculptDownloadQrBtn",
+                actionAddFunctionName: "facesculptActionAdd",
+                selectFieldIds: [
+                    "facesculptAppList",
+                    "facesculptTabList",
+                    "facesculptKeynameList",
+                    "facesculptMediaTypeList"
+                ]
+            });
+
+            // Skintexture
+            initSchemeSection({
+                mainUrlId: "skintextureMainUrl",
+                showQrCodeId: "skintextureShowQrCode",
+                showQrCodeDivId: "skintextureShowQrCodeDiv",
+                qrUlId: "skintextureQrUl",
+                addQrcodeId: "skintextureAddQrcode",
+                resetId: "skintextureReset",
+                copyId: "skintextureSchemeCopy",
+                downloadId: "skintextureDownloadQrBtn",
+                actionAddFunctionName: "skintextureActionAdd",
+                selectFieldIds: [
+                    "skintextureAppList",
+                    "skintextureTabList",
+                    "skintextureMediaTypeList",
+                    "skintextureIdList"
+                ]
+            });
+
+            // Enhance
+            initSchemeSection({
+                mainUrlId: "enhanceMainUrl",
+                showQrCodeId: "enhanceShowQrCode",
+                showQrCodeDivId: "enhanceShowQrCodeDiv",
+                qrUlId: "enhanceQrUl",
+                addQrcodeId: "enhanceAddQrcode",
+                resetId: "enhanceReset",
+                copyId: "enhanceSchemeCopy",
+                downloadId: "enhanceDownloadQrBtn",
+                actionAddFunctionName: "enhanceActionAdd",
+                selectFieldIds: [
+                    "enhanceAppList",
+                    "enhanceTabList"
+                ]
+            });
+
+            // Proportions
+            initSchemeSection({
+                mainUrlId: "proportionsMainUrl",
+                showQrCodeId: "proportionsShowQrCode",
+                showQrCodeDivId: "proportionsShowQrCodeDiv",
+                qrUlId: "proportionsQrUl",
+                addQrcodeId: "proportionsAddQrcode",
+                resetId: "proportionsReset",
+                copyId: "proportionsSchemeCopy",
+                downloadId: "proportionsDownloadQrBtn",
+                actionAddFunctionName: "proportionsActionAdd",
+                selectFieldIds: [
+                    "proportionsAppList",
+                    "proportionsTabList",
+                    "proportionsBodyKeynameList",
+                    "proportionsFaceLockList",
+                    "proportionsMediaTypeList"
+                ]
+            });
+
+            // vipOpen=page & subp (입력값을 &subp= 형태로 변환해서 붙임)
+            var vipOpenSubpInput = document.getElementById("vipOpenSubpInput");
+            var vipOpenSubpParam = document.getElementById("vipOpenSubpParam");
+
+            function updateVipOpenSubpParam() {
+                if (!vipOpenSubpParam) return;
+                var v = vipOpenSubpInput ? (vipOpenSubpInput.value || "").trim() : "";
+                vipOpenSubpParam.value = v ? ("&subp=" + v) : "";
+                vipOpenSubpParam.dispatchEvent(new Event('input'));
+            }
+
+            if (vipOpenSubpInput) {
+                vipOpenSubpInput.addEventListener("input", updateVipOpenSubpParam);
+            }
+
+            initSchemeSection({
+                mainUrlId: "vipOpenSubpMainUrl",
+                showQrCodeId: "vipOpenSubpShowQrCode",
+                showQrCodeDivId: "vipOpenSubpShowQrCodeDiv",
+                qrUlId: "vipOpenSubpQrUl",
+                addQrcodeId: "vipOpenSubpAddQrcode",
+                resetId: "vipOpenSubpReset",
+                copyId: "vipOpenSubpSchemeCopy",
+                downloadId: "vipOpenSubpDownloadQrBtn",
+                actionAddFunctionName: "vipOpenSubpActionAdd",
+                selectFieldIds: [
+                    "vipOpenSubpAppList"
+                ],
+                inputFieldIds: [
+                    "vipOpenSubpParam"
+                ]
+            });
+        });
+    </script>
+
+</body>
+</html>
